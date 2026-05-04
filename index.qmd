@@ -1,0 +1,61 @@
+---
+title: "A Decision-Centred Modelling Environment"
+---
+
+# Welcome {.unnumbered}
+
+This is the online companion to the manuscript:
+
+**A Decision-Centred Modelling Environment for Long-Horizon Planning 
+Under Deep Uncertainty: Foundations, Architecture, and Application to 
+Industrial Process Heat Decarbonisation**
+
+*Seyed Ahmad Mahmoudi Lahijani*
+
+---
+
+## Quick Navigation {.unnumbered}
+
+| If you want to... | Go to... |
+|---|---|
+| Understand the framework's big picture | [Context Declaration](front-matter/context-declaration.qmd) |
+| Know how to read this document | [Navigation Guide](front-matter/navigation-guide.qmd) |
+| Start the conceptual argument | [Module 0: Orientation](manuscript/module-0-orientation.qmd) |
+| See what has been built | [Module 6: The Proof of Concept](manuscript/module-6-poc.qmd) |
+| Ask the framework a question | [AI Discussion Panel](#ai-panel) |
+| Contribute an extension | [Contributing](../CONTRIBUTING.md) |
+
+---
+
+## The Core Finding {.unnumbered}
+
+> When the Edendale electrification pathway is evaluated against a 
+> structured ensemble of 64 futures, **23 of those futures** produce 
+> grid hosting capacity exceedances that generate regional infrastructure 
+> costs invisible from within the site boundary alone. 
+> 
+> This result — 36 percent of the ensemble revealing a constraint that 
+> site-level analysis cannot see — is the gap this framework fills, 
+> made analytically visible.
+
+---
+
+## The Central Commitment {.unnumbered}
+
+The framework is organised around a single foundational reversal:
+
+> *The decision makes the boundary; the artefact makes the connection.*
+
+This document is a living resource. Contributions, extensions, and 
+critiques are welcomed. See the 
+[Community Extension](front-matter/context-declaration.qmd#community-extension) 
+section of the Context Declaration.
+
+::: {.callout-note}
+## AI-Assisted Engagement {#ai-panel}
+Upload this document to your preferred AI assistant to ask 
+framework-specific questions. The Context Declaration is written as 
+a system prompt for AI agents. The Node Declaration at the start of 
+every section tells AI readers what they can skip and what they must 
+read.
+:::

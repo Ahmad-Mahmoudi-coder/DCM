@@ -1,0 +1,116 @@
+project:
+  type: book
+  output-dir: _output
+
+book:
+  title: "A Decision-Centred Modelling Environment for Long-Horizon Planning Under Deep Uncertainty"
+  subtitle: "Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation"
+  author:
+    - name: "Seyed Ahmad Mahmoudi Lahijani"
+      affiliation: "Auckland University of Technology"
+  date: "2025"
+  date-format: "YYYY"
+  
+  repo-url: https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling
+  repo-actions: [edit, issue]
+  
+  chapters:
+    - index.qmd
+    - part: "Front Matter"
+      chapters:
+        - front-matter/context-declaration.qmd
+        - front-matter/ai-acknowledgement.qmd
+        - front-matter/preamble.qmd
+        - front-matter/navigation-guide.qmd
+    - part: "Module 0: Orientation"
+      chapters:
+        - manuscript/module-0-orientation.qmd
+    - part: "Module 1: Foundations"
+      chapters:
+        - manuscript/module-1-foundations.qmd
+        - manuscript/sub-modules/sm-1-1A-philosophical-lineage.qmd
+        - manuscript/sub-modules/sm-1-4A-decision-theory.qmd
+        - manuscript/sub-modules/sm-1-7A-requirements-mapping.qmd
+    - part: "Module 2: Modelling Foundations"
+      chapters:
+        - manuscript/module-2-modelling.qmd
+        - manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd
+        - manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd
+        - manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
+    - part: "Module 3: Architecture"
+      chapters:
+        - manuscript/module-3-architecture.qmd
+        - manuscript/sub-modules/sm-3-5A-artefact-schema.qmd
+        - manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd
+        - manuscript/sub-modules/sm-3-8A-aiml-governance.qmd
+    - part: "Module 4: Domain Translation"
+      chapters:
+        - manuscript/module-4-domain.qmd
+        - manuscript/sub-modules/sm-4-4A-system-regret.qmd
+    - part: "Module 5: The New Zealand Context"
+      chapters:
+        - manuscript/module-5-nz-context.qmd
+        - manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
+        - manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
+        - manuscript/sub-modules/sm-5-4A-ets-history.qmd
+    - part: "Module 6: The Proof of Concept"
+      chapters:
+        - manuscript/module-6-poc.qmd
+        - manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd
+        - manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd
+        - manuscript/sub-modules/sm-6-4C-site-interface-contract.qmd
+        - manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd
+        - manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd
+        - manuscript/sub-modules/sm-6-8F-validation-records.qmd
+    - part: "Module 7: Extension and Synthesis"
+      chapters:
+        - manuscript/module-7-synthesis.qmd
+    - references/glossary.qmd
+
+bibliography: references/references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    number-sections: true
+    number-depth: 3
+    smooth-scroll: true
+    code-fold: false
+    css: assets/custom.css
+    link-external-icon: true
+    link-external-newwindow: true
+    callout-appearance: minimal
+  pdf:
+    documentclass: scrbook
+    classoption: [twoside, openright]
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - top=25mm
+      - bottom=25mm
+      - left=30mm
+      - right=25mm
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    linkcolor: "0.2,0.4,0.6"
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{multirow}
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+
+execute:
+  echo: false
+  warning: false

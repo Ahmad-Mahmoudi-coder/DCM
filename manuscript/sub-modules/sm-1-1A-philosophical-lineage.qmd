@@ -1,0 +1,9 @@
+---
+title: "Sub-Module 1.1-A"
+subtitle: "Philosophical Lineage of Deep Uncertainty"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-1-1A -->
+<!-- Skip condition: Skip if reader accepts deep uncertainty stance 
+     without wanting the intellectual genealogy -->

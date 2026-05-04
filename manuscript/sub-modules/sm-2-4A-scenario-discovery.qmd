@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 2.4-A"
+subtitle: "Scenario Discovery"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-2-4A -->
+<!-- Skip condition: TO BE ADDED -->

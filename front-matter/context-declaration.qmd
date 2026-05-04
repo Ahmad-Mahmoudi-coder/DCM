@@ -1,0 +1,6 @@
+---
+title: "Context Declaration"
+subtitle: "For Human Readers, AI Assistants, and the Research Community"
+---
+
+<!-- CONTENT TO BE ADDED: See Claude content prompt CD-01 -->

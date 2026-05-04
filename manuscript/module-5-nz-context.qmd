@@ -1,0 +1,7 @@
+---
+title: "Module 5: The New Zealand Context"
+subtitle: "Conditions, Constraints, and Empirical Grounding"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt M5-01 -->

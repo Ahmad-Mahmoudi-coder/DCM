@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 6.3-B"
+subtitle: "DemandPack Methods"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-3B -->
+<!-- Skip condition: TO BE ADDED -->

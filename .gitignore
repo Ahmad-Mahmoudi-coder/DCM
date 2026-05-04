@@ -1,0 +1,45 @@
+# Quarto output
+_output/
+.quarto/
+*_files/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.venv/
+
+# R
+.Rhistory
+.RData
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
+*.swp
+*.swo
+.cursor/
+
+# Large data files (link to these, don't commit them)
+*.csv
+*.parquet
+*.h5
+*.nc
+outputs_latest/
+Output/
+
+# But DO commit small reference CSVs in manuscript
+!manuscript/**/*.csv
+!references/*.bib
+
+# Secrets
+*.env
+.env.*
+secrets/

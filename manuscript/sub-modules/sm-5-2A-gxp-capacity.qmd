@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 5.2-A"
+subtitle: "GXP Capacity"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-5-2A -->
+<!-- Skip condition: TO BE ADDED -->

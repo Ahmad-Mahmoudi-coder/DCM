@@ -1,0 +1,6 @@
+---
+title: "Navigation Guide"
+subtitle: "The Node Declaration System Explained"
+---
+
+<!-- CONTENT TO BE ADDED: See Claude content prompt NG-01 -->

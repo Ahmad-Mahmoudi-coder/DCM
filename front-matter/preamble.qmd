@@ -1,0 +1,6 @@
+---
+title: "Preamble"
+subtitle: "How to Read This Document"
+---
+
+<!-- CONTENT TO BE ADDED: See Claude content prompt PR-01 -->

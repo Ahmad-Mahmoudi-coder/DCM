@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 6.8-F"
+subtitle: "Validation Records"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-8F -->
+<!-- Skip condition: TO BE ADDED -->

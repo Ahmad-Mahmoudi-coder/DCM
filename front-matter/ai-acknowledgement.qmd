@@ -1,0 +1,5 @@
+---
+title: "Acknowledgement of AI-Assisted Development"
+---
+
+<!-- CONTENT TO BE ADDED: See Claude content prompt AI-01 -->

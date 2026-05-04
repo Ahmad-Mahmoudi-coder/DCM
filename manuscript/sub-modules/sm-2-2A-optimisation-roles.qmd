@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 2.2-A"
+subtitle: "Optimisation Roles"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-2-2A -->
+<!-- Skip condition: TO BE ADDED -->

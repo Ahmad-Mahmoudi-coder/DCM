@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 3.7-A"
+subtitle: "Backbone Implementation"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-7A -->
+<!-- Skip condition: TO BE ADDED -->

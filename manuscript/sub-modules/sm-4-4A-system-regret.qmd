@@ -1,0 +1,8 @@
+---
+title: "Sub-Module 4.4-A"
+subtitle: "System Regret"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-4-4A -->
+<!-- Skip condition: TO BE ADDED -->

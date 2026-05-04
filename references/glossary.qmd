@@ -1,0 +1,6 @@
+---
+title: "Glossary"
+subtitle: "Artefact Families, Schema Versions, and Key Terms"
+---
+
+<!-- CONTENT TO BE ADDED: See Claude content prompt GL-01 -->

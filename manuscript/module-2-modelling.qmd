@@ -1,0 +1,7 @@
+---
+title: "Module 2: Modelling Foundations"
+subtitle: "Tools, Machinery, and the Logic of Exploration"
+---
+
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt M2-01 -->
