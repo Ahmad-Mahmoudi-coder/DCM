@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -584,8 +584,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-architectural-wrong-and-its-correction" id="toc-the-architectural-wrong-and-its-correction" class="nav-link active" data-scroll-target="#the-architectural-wrong-and-its-correction"><span class="header-section-number">6.1</span> §0.1 The Architectural Wrong and Its Correction</a></li>
+  <li><a href="#the-gap-this-framework-fills" id="toc-the-gap-this-framework-fills" class="nav-link" data-scroll-target="#the-gap-this-framework-fills"><span class="header-section-number">6.2</span> §0.2 The Gap This Framework Fills</a></li>
+  <li><a href="#the-decision-first-boundary-principle" id="toc-the-decision-first-boundary-principle" class="nav-link" data-scroll-target="#the-decision-first-boundary-principle"><span class="header-section-number">6.3</span> §0.3 The Decision-First Boundary Principle</a></li>
+  <li><a href="#the-seven-functional-layers" id="toc-the-seven-functional-layers" class="nav-link" data-scroll-target="#the-seven-functional-layers"><span class="header-section-number">6.4</span> §0.4 The Seven Functional Layers</a></li>
+  <li><a href="#the-thin-waist-principle" id="toc-the-thin-waist-principle" class="nav-link" data-scroll-target="#the-thin-waist-principle"><span class="header-section-number">6.5</span> §0.5 The Thin-Waist Principle</a></li>
+  <li><a href="#current-state-of-the-framework" id="toc-current-state-of-the-framework" class="nav-link" data-scroll-target="#current-state-of-the-framework"><span class="header-section-number">6.6</span> §0.6 Current State of the Framework</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-0-orientation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -611,10 +622,570 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt M0-01 -->
+<section id="the-architectural-wrong-and-its-correction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="the-architectural-wrong-and-its-correction"><span class="header-section-number">6.1</span> §0.1 The Architectural Wrong and Its Correction</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §0.1 The Architectural Wrong and Its Correction
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>Context Declaration and Preamble</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes the diagnostic of what is wrong with how planning analysis is currently organised, and states the reversal that the framework proposes</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader already accepts the model-centred/decision-centred contrast and wants the architecture directly; proceed to §0.4</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§0.2, §0.3, Module 1</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Planning analysis has an architectural problem, not a computational one. The problem is not that models are too simple, too slow, or poorly calibrated. Many of the models brought to bear on complex infrastructure decisions are technically sophisticated by any reasonable standard. The problem is that they are organised around the wrong object. They are organised around the system rather than the decision, and that reversal of priority produces a characteristic failure whose consequences are visible in the very planning contexts where the analytical investment is largest.</p>
+<p>The model-centred logic is easy to understand and in many settings entirely appropriate. One model is assembled, its boundaries are drawn according to the physical or technical extent of the system being studied, its objective is specified, and its outputs flow in one direction toward a recommendation. The boundary is the fence line of the facility, the perimeter of the network, the scope of the sector. These choices feel natural because they follow the contours of the physical world. When decisions are short-horizon, tightly bounded, and made in stable environments, this logic works well. The model is adequate because the problem is tractable within a boundary the physical system conveniently provides.</p>
+<p>The failure arrives when decisions are long-horizon, when their consequences propagate across scales that do not coincide with the physical system’s boundary, and when the futures that determine whether a choice was wise cannot be agreed upon in advance. At this point the model-centred logic produces a specific and predictable error: the model optimises within its declared boundary while the consequences that most matter to the decision lie outside it. A site-level techno-economic assessment of an electrification pathway can be internally coherent and technically rigorous while remaining blind to the regional grid constraints that will determine whether the pathway is actually feasible. The model solves the problem it was given. The problem it was given is not the decision being made.</p>
+<p>This is not merely an academic diagnosis. In the Edendale proof of concept documented in Module 6, the electrification pathway was evaluated against a structured ensemble of 64 futures spanning plausible combinations of grid headroom, regional demand growth, hydro year conditions, biomass supply, and carbon price trajectory. Twenty-three of those 64 futures produced GXP hosting capacity exceedances that generated regional infrastructure costs entirely invisible from within the site boundary. Thirty-six percent of a carefully constructed plausible future set revealed a constraint that site-level analysis structurally cannot see. That result is not a flaw in the site model. It is a flaw in the logic that organises analytical work around the physical system rather than around the decision the analysis is meant to inform.</p>
+<p>The architectural wrong can be stated precisely. In conventional practice, the boundary of the analysis is set by the physical system first, and the decision is then framed as a query to whatever the model within that boundary can answer. This arrangement guarantees that any decision-relevant consequence lying outside the physical boundary will be invisible. It also guarantees that the analysis will find an answer, because every model answers something. The answer will be precise, internally consistent, and answerable in the terms the model was built to provide. It may not be the answer to the question that matters.</p>
+<p>The response this framework proposes is a reversal. The decision is articulated first: what is being chosen, by whom, with consequences at which scales, and under which dimensions of uncertainty. The boundary is then drawn around what must remain visible for that comparison to be valid. Physical parameters, engineering constraints, and process detail enter the architecture as required by the decision, not as prior constraints on what the decision can address. Decision-centred modelling is the term used throughout this manuscript for an analytical approach organised on this basis.</p>
+<p>The reversal carries a memorable formulation, introduced here and maintained throughout the manuscript as the framework’s central commitment: the decision makes the boundary; the artefact makes the connection. Section §0.3 develops this principle fully. What follows immediately in §0.2 is its grounding in the specific analytical landscape of New Zealand process heat decarbonisation, where the gap between what current practice provides and what the decision requires is not hypothetical but measurable.</p>
+</section>
+<section id="the-gap-this-framework-fills" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-gap-this-framework-fills"><span class="header-section-number">6.2</span> §0.2 The Gap This Framework Fills</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §0.2 The Gap This Framework Fills
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§0.1</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Translates the abstract architectural wrong into a specific, empirically grounded gap in the analytical landscape for New Zealand process heat decarbonisation</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader is already familiar with the NZ process heat analytical landscape; proceed to §0.3</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§0.3, Module 5, §6.9</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The architectural wrong described in §0.1 is not a theoretical possibility. In the domain of industrial process heat decarbonisation, it is the standard condition. Two well-developed analytical traditions serve this domain, and each is powerful within its own scope. The gap between them is where the framework lives.</p>
+<p>The first tradition is national energy system modelling. TIMES-NZ, the New Zealand national energy model, provides economy-wide scenario analysis spanning primary resources to end-use demand. It produces electricity price trajectories, sectoral fuel demand projections, and national emissions pathways under different policy environments. These outputs are essential for policy design, investment programme development, and long-run emissions accounting. Their limitation, from the perspective of a decision-maker at a specific industrial facility, is spatial and temporal aggregation. National models represent site-level industrial demand as aggregate annual loads, smoothed across many facilities and many operating regimes. The operational heterogeneity of individual facilities, the timing of their heat demand through the day and the year, and the local infrastructure constraints that determine whether a specific pathway is feasible at a specific location are necessarily absent. National models are designed for the questions they answer, and those questions are not the questions a Southland dairy processor faces when committing to a 2035 pathway.</p>
+<p>The second tradition is site-level techno-economic assessment. Engineering and financial analysis at the facility level provides the operational realism and capital cost specificity that national models cannot offer. A site-level assessment can represent boiler configurations, steam distribution, maintenance schedules, and detailed cost decompositions with precision that a national model cannot approach. Its limitation is equally characteristic: it stops at the facility boundary. The regional electricity grid conditions that determine whether electrification is feasible, the biomass supply chain dynamics that determine whether the biomass pathway is viable at scale, and the carbon price trajectories that determine which pathway’s ETS exposure is smaller across different futures are all treated as background assumptions rather than as uncertain conditions to be evaluated systematically.</p>
+<p>Between these two levels there is no governed, auditable, reproducible analytical environment that connects site-level pathway choices to time-resolved regional infrastructure consequences, evaluates those consequences under deep uncertainty about grid conditions, resource supply, and policy trajectories, and compares the results across plausible futures in a form that is defensible to the multiple stakeholders who have a legitimate interest in the outcome.</p>
+<p>That gap is the gap this framework fills. The 23-of-64 finding stated in §0.1 is the gap made analytically visible: a constraint that is structurally invisible at the site level becomes visible the moment the site’s incremental electricity demand is evaluated against the regional grid system under structured uncertainty about headroom and competing demand. The framework does not produce that finding by adding a new model. It produces it by drawing the boundary of the analysis around the decision rather than around the facility, and by connecting site-level and regional-level analysis through a governed artefact exchange that preserves the contribution of each.</p>
+<p>The framework’s positioning relative to RETA, GIDI, and TIMES-NZ is complementary rather than competitive. The Regional Energy Transition Accelerator assessments identify decarbonisation clusters and regional infrastructure needs. The GIDI Fund co-investment programme supports capital allocation for transition projects. TIMES-NZ provides the national scenario context. The framework asks a question none of these currently addresses: under which of the plausible regional futures does a given site-level pathway remain both technically feasible and comparatively attractive, and what are the system-level consequences of incentive arrangements that may not align private investment logic with public infrastructure outcomes?</p>
+</section>
+<section id="the-decision-first-boundary-principle" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-decision-first-boundary-principle"><span class="header-section-number">6.3</span> §0.3 The Decision-First Boundary Principle</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §0.3 The Decision-First Boundary Principle
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§0.1, §0.2</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>States the framework’s foundational commitment in full, with its motto, its clarification regarding physical realism, and its three principal implications for architectural design</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip only if principle is already thoroughly known from the Context Declaration; this section develops the three architectural implications that the Context Declaration states but does not elaborate</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§0.4, §0.5, Module 1, Module 3</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The diagnostic of §0.1 and the empirical gap of §0.2 both point to the same source: the boundary of the analysis is being set by the wrong thing. Setting it by the physical system guarantees that any decision-relevant consequence outside that system will be invisible. The framework’s response is not to build larger models that encompass more physical territory. It is to set the boundary differently from the outset.</p>
+<p>The decision-first boundary principle is the foundational commitment of this framework. Stated precisely: analytical boundaries are drawn primarily by the decision context and the consequences that must remain visible for comparison, not by the physical extent of the system being studied. Physical parameters, engineering constraints, and process detail matter and are incorporated, but they do not determine the architecture. What determines the architecture is the decision: what is being chosen, by whom, with consequences at which scales, and under which dimensions of uncertainty.</p>
+<p>The framework’s central motto states this commitment in its most condensed form: “The decision makes the boundary; the artefact makes the connection.” The first clause names what governs scope. The second names the mechanism by which heterogeneous components operating at different scales can participate in a single coherent analytical chain without any one of them needing to encompass or reproduce the others. Section §0.5 develops the artefact mechanism fully. The present section is concerned with what it means for boundaries to be set by the decision.</p>
+<p>One clarification is essential and must not be passed over. The decision-first boundary principle does not mean physical realism is ignored or that engineering detail is treated as unimportant. It means physical detail is incorporated where it changes the decision, the comparison, or the interpretation of consequences across layers and futures. If the thermal dynamics of a boiler network affect whether a pathway’s peak electricity demand exceeds the regional grid’s hosting capacity, that detail belongs in the site module. If it does not affect that determination, it belongs behind the thin-waist interface as internal complexity the framework need not expose. The principle is discriminating rather than dismissive: it asks of every potential addition not whether it is physically real but whether it is decision-relevant.</p>
+<p>This clarification has a practical consequence that runs throughout the framework’s architecture: physical detail is added progressively, in the order that regret sensitivity diagnostics reveal to be most consequential for the decision being explored. The framework is self-directing in its development. At each stage, the scenario discovery analysis of the DMDU orchestration layer identifies which uncertain drivers most strongly determine pathway preference, and that identification reveals which simplification, once removed, would most change what the decision-maker should choose. Complexity is not added for its own sake. It is added where it matters.</p>
+<p>Three implications for architectural design follow from the decision-first boundary principle.</p>
+<p>The first is that heterogeneous analytical components can coexist within one framework. A site-level dispatch simulation, a regional network optimisation, and a national scenario model do not share a natural physical interface. What they share is a set of decision-relevant consequences that must be comparable across futures and module generations. The artefact — a structured, versioned, validated, and provenance-carrying output — is the form in which those consequences are materialised. Governed artefacts are what allow the site module and the regional module to exchange the consequences that matter without requiring either to understand the internal workings of the other.</p>
+<p>The second is that the framework grows toward the decision rather than toward physical completeness. This makes progressive refinement architecturally principled rather than an admission of incompleteness. A first-generation site module that uses proportional dispatch to represent operational scheduling is appropriate at the stage when the primary analytical question concerns grid interface consequences rather than optimal scheduling patterns. The framework adds scheduling-grade dispatch when the regret diagnostics show that the proportional approximation is materially changing the grid adequacy assessment. Not before.</p>
+<p>The third is that AI and ML methods can contribute without compromising governance. Because what matters at a module boundary is the governed artefact rather than how it was produced, a trained ML surrogate that emits a valid, schema-conforming SignalsPack is analytically equivalent to a full PyPSA network optimisation that emits the same artefact. The decision-first principle, by making the governed artefact the unit of exchange, makes AI-assisted analytical production tractable without making it ungovernable. Section §0.5 develops the thin-waist mechanism that makes this equivalence operationally concrete.</p>
+</section>
+<section id="the-seven-functional-layers" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="the-seven-functional-layers"><span class="header-section-number">6.4</span> §0.4 The Seven Functional Layers</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §0.4 The Seven Functional Layers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§0.3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Maps the full framework architecture — seven functional layers, each with a domain-agnostic description of its role, its document location, and what is analytically absent if that layer is missing</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Do not skip — this is the primary structural map for navigating the manuscript and the framework</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>All subsequent modules</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The framework consists of seven functional layers. These are not sequential steps in an analysis but concurrent components of a system, each performing a distinct analytical role. They are described here at a level of generality appropriate to the architecture; the New Zealand process heat instantiation of each layer is developed in Modules 5 and 6. A reader working in a different domain, water infrastructure, regional transport, or land-use planning, should read these descriptions as generic specifications of what a decision-centred analytical environment requires, not as energy-specific designs.</p>
+<p>Layer 1: The Decision Layer (Module 1) is the conceptual foundation. It asks what kinds of decisions the framework is designed to support, how alternatives and futures should be structured analytically, and what standards of comparison are appropriate when stable probability distributions over futures are unavailable. This layer establishes the decision-first boundary principle in full formal terms and articulates the evaluative standards, regret, robustness, and satisficing, that govern what must remain visible in the analytical environment. Without the Decision Layer, the other layers have no principled account of what they are generating consequences for or how those consequences should be compared.</p>
+<p>Layer 2: The Modelling Foundations Layer (Module 2) provides the analytical tools through which decision-relevant consequences are generated: system representation, optimisation, simulation, and surrogate emulation. It also establishes that the choice of tool is governed by decision relevance rather than by formal sophistication, and that future ensembles are selected by their consequence-centrality rather than their input-extremity. Without this layer, the architecture lacks the analytical machinery to generate the outcomes that the Decision Layer requires for comparison.</p>
+<p>Layer 3: The Architecture Layer (Module 3) is the structural core. It defines modular decomposition, the thin-waist principle, artefacts as governed analytical objects with their canonical families and schema requirements, and the analytical data backbone that makes the environment persistent, traceable, and extensible. Without the Architecture Layer, even a well-chosen combination of tools and decision standards produces results that cannot be compared across versions, traced to their analytical origins, or progressively enriched without destroying comparability.</p>
+<p>Layer 4: The Domain Translation Layer (Module 4) translates the general architecture into the specific domain of coupled energy systems and industrial process heat. It establishes the domain-specific vocabulary, module classes, and evaluation frames used in Modules 5 and 6. Without this layer, the architecture cannot be instantiated in the energy domain because the generic module contracts have not been translated into energy-specific interface specifications.</p>
+<p>Layer 5: The Facility Module (Module 6, Appendices III-B and III-C) is the site-level analytical component. Its role, expressed generically, is always the same regardless of domain: translate facility-level technology pathway choices into the time-resolved energy demand signals that cross the facility boundary, and produce the cost, emissions, and adequacy metrics that the evaluation layer requires for comparison. How that translation is accomplished internally, whether by rule-based dispatch, LP-based optimisation, or equation-based physical simulation, is the module’s own concern, provided it emits schema-conforming governed artefacts.</p>
+<p>Layer 6: The Regional Module (Module 6, Appendices III-C and III-F) provides the infrastructure-side and resource-side analytical context that makes facility-level pathway choices legible beyond the facility boundary. Its role is always the same: receive the facility’s interface artefacts, evaluate regional constraints under the future conditions specified in the FutureArtefact, and return a SignalsPack carrying the signals that the Facility Module and the evaluation layer require. Internal implementation may range from a stylised screening model to a full network optimisation to a trained ML surrogate.</p>
+<p>Layer 7: The DMDU Orchestration Layer (Module 6) coordinates all modules across a structured future ensemble, evaluating pathway alternatives under paired conditions to produce the regret, robustness, and threshold-violation metrics that constitute the decision-relevant output of the whole environment. It is also where adaptive triggers, signposts, and pathway revision logic live when the framework is deployed in a decision-monitoring context.</p>
+<p>Table 0.1 summarises the seven layers with their primary output artefact families and their skip conditions for readers navigating selectively.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Name</th>
+<th>Module</th>
+<th>Primary output artefact</th>
+<th>Skip condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Decision Layer</td>
+<td>Module 1</td>
+<td>None (vocabulary only)</td>
+<td>Skip if DMDU evaluative standards already known</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Modelling Foundations</td>
+<td>Module 2</td>
+<td>None (tool selection logic)</td>
+<td>Skip if representation and surrogate validation already known</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Architecture</td>
+<td>Module 3</td>
+<td>All artefact families; backbone design</td>
+<td>Do not skip if implementing the framework</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Domain Translation</td>
+<td>Module 4</td>
+<td>Domain-specific module contracts</td>
+<td>Skip if not working in the energy domain</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Facility Module</td>
+<td>Module 6</td>
+<td>DemandPack, IncrementalElectricityPack, ResultArtefact</td>
+<td>Skip conceptual description if going directly to implementation</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Regional Module</td>
+<td>Module 6</td>
+<td>SignalsPack</td>
+<td>Skip conceptual description if going directly to implementation</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>DMDU Orchestration</td>
+<td>Module 6</td>
+<td>FutureArtefact, ValidationArtefact, DecisionSummaryArtefact</td>
+<td>Do not skip</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-thin-waist-principle" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="the-thin-waist-principle"><span class="header-section-number">6.5</span> §0.5 The Thin-Waist Principle</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §0.5 The Thin-Waist Principle
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§0.3, §0.4</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Develops the thin-waist principle as the architectural mechanism that makes the decision-first boundary logic operationally feasible across heterogeneous components</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader already understands modular decomposition with stable interfaces from software architecture or network design; proceed to Module 3 §3.4 for full architectural treatment</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 3, Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The decision-first boundary principle establishes what governs the scope of the analysis. It does not, by itself, explain how components operating at different scales and using different analytical methods can participate in one coherent chain without each one needing to encompass or reproduce the others. That question is answered by the thin-waist principle.</p>
+<p>A thin waist is a narrow, stable, and interpretable layer through which different analytical components exchange information, such that each component on either side of the waist may evolve freely provided it continues to satisfy the exchange specification. The term is drawn from the architecture of the internet, where the Internet Protocol serves as the thin waist between the diversity of physical network technologies below and the diversity of applications above. Neither side needs to know how the other works internally. Both sides need only to know what crosses the boundary and in what form.</p>
+<p>The internet analogy is useful but the present application extends it in one important direction. The IEA Project BlueSky initiative has advanced the argument that standardised data exchange interfaces between heterogeneous modelling components are the enabling condition for open, reusable, and composable energy system analysis. That argument is architecturally aligned with the thin-waist principle. What the present framework adds is artefact governance: the schema conformance requirements, provenance declaration obligations, validation gating logic, and append-only lineage tracking that make modelling contributions not only interoperable but auditable. Interoperability without governance allows tools to talk to each other. Interoperability with governance allows the conversation to be trusted.</p>
+<p>In this framework, the thin waist consists of the canonical artefact families and their schema specifications. What crosses a module boundary is always a governed artefact. The artefact carries everything the receiving module needs to know and nothing more. What happens inside a module to produce or consume those artefacts is entirely that module’s internal concern.</p>
+<p>This design principle has three consequences for the framework that are worth naming explicitly here.</p>
+<p>The first is internal freedom with external stability. Each module can be improved, replaced, or upgraded internally without requiring changes to any other module, provided it continues to emit schema-conforming artefacts. The Facility Module can evolve from rule-based proportional dispatch to scheduling-grade LP optimisation to OpenModelica-based thermal network simulation across development phases. None of those transitions requires rebuilding the regional module, the backbone, or the evaluation layer. The interface is stable; the implementation is free.</p>
+<p>The second is AI and ML integration without governance loss. Because what matters at a module boundary is the governed artefact rather than how it was produced, AI and ML methods can implement module internals without compromising governance requirements. A trained ML surrogate that emits a valid, schema-conforming SignalsPack is analytically equivalent to a full PyPSA network optimisation that emits the same artefact, provided both have been validated and their provenance is declared. The thin waist is what makes AI-assisted analytical production trustworthy rather than merely convenient.</p>
+<p>The third is progressive enrichment without comparability loss. Because artefact schemas are versioned and the backbone is append-only, improvements to module implementations can be deployed without invalidating existing analytical history. A DemandPack produced under a first-generation synthetic construction methodology can be compared with one produced under a higher-fidelity measured-data approach because both conform to the same schema contract and both carry their provenance. The framework can be progressively enriched precisely because the boundaries of comparison are governed.</p>
+</section>
+<section id="current-state-of-the-framework" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="current-state-of-the-framework"><span class="header-section-number">6.6</span> §0.6 Current State of the Framework</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §0.6 Current State of the Framework
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§0.1 through §0.5</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Honest declaration of current capability distinguishing what has been implemented, what has been specified for the next phase, and what remains a longer-range vision</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader wants conceptual foundations first; return here before engaging with Module 6</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The framework is not complete. Stating that plainly, and being specific about what it means, is itself a methodological commitment rather than a caveat. The progressive-refinement philosophy that runs throughout this manuscript holds that a bounded, honest, auditable starting point that reveals its own next steps is more analytically valuable than a comprehensive but opaque system. The following table is the framework’s account of its own current state.</p>
+<p>The distinction between Implemented, Specified, and Vision is not a ranking of importance. PyPSA regional module development, which is currently Specified rather than Implemented, may be more consequential for decision quality than some components that are already Implemented. The categorisation reflects the current state of the codebase and the manuscript, not the importance of each component to the framework’s eventual capability. Every Specified component has a full design documented in the relevant module or sub-module. Every Vision component has been identified as technically feasible and architecturally compatible with the existing structure; it has not yet been specified in implementation-ready detail.</p>
+<p>Table 0.2: Current implementation status</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Status</th>
+<th>Documented in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DemandPack construction (synthetic, RETA-calibrated)</td>
+<td>✓ Implemented</td>
+<td>Module 6, SM-6.3-B</td>
+</tr>
+<tr class="even">
+<td>Proportional and optimal-subset dispatch</td>
+<td>✓ Implemented</td>
+<td>Module 6, SM-6.4-C</td>
+</tr>
+<tr class="odd">
+<td>SignalsPack generator (Edendale GXP, schema v0.1.0)</td>
+<td>✓ Implemented</td>
+<td>Module 6, SM-6.5-D</td>
+</tr>
+<tr class="even">
+<td>GXP screening module (stylised)</td>
+<td>✓ Implemented</td>
+<td>Module 6</td>
+</tr>
+<tr class="odd">
+<td>Grid RDM evaluation (21 to 100 futures)</td>
+<td>✓ Implemented</td>
+<td>Module 6, SM-6.2-A</td>
+</tr>
+<tr class="even">
+<td>Site decision robustness overlay</td>
+<td>✓ Implemented</td>
+<td>Module 6</td>
+</tr>
+<tr class="odd">
+<td>Pathway comparison (2035_EB vs 2035_BB)</td>
+<td>✓ Implemented</td>
+<td>Module 6</td>
+</tr>
+<tr class="even">
+<td>DuckDB and Parquet analytical backbone</td>
+<td>○ Specified</td>
+<td>Module 3, SM-3.7-A</td>
+</tr>
+<tr class="odd">
+<td>PyPSA regional electricity module</td>
+<td>○ Specified</td>
+<td>Module 6, SM-6.6-E</td>
+</tr>
+<tr class="even">
+<td>OpenModelica site truth model</td>
+<td>○ Specified</td>
+<td>SM-6.4-C</td>
+</tr>
+<tr class="odd">
+<td>Surrogate-accelerated ensemble</td>
+<td>○ Specified</td>
+<td>Module 2, SM-2.3-A</td>
+</tr>
+<tr class="even">
+<td>TIMES-NZ scenario coupling</td>
+<td>◇ Vision</td>
+<td>Module 7</td>
+</tr>
+<tr class="odd">
+<td>Corporate-scale multi-site deployment</td>
+<td>◇ Vision</td>
+<td>Module 7</td>
+</tr>
+<tr class="even">
+<td>Multi-domain extension</td>
+<td>◇ Vision</td>
+<td>Module 7</td>
+</tr>
+<tr class="odd">
+<td>Natural-language query interface</td>
+<td>◇ Vision</td>
+<td>Module 7</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1054,5 +1625,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-0-orientation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-0-orientation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

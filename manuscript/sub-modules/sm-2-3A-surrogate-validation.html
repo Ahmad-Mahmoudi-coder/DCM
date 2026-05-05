@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -584,8 +613,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-2.3-a-decision-ranking-preservation-validation-protocol" id="toc-sm-2.3-a-decision-ranking-preservation-validation-protocol" class="nav-link active" data-scroll-target="#sm-2.3-a-decision-ranking-preservation-validation-protocol"><span class="header-section-number">13.1</span> SM-2.3-A: Decision-Ranking Preservation, Validation Protocol</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-2-modelling.html">Module 2: Modelling Foundations</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-2-3A-surrogate-validation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Sub-Module 2.3-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Sub-Module 2.3-A</span></h1>
-<p class="subtitle lead">Surrogate Validation</p>
+<p class="subtitle lead">Decision-Ranking Preservation, Validation Protocol</p>
 </div>
 
 
@@ -611,11 +646,122 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-2-3A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-2.3-A: Decision-Ranking Preservation, Validation Protocol
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§2.3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Formal definition of the decision-ranking preservation criterion, the validation workflow, confidence scoring logic, and active learning protocol for surrogate development</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if surrogate validation approach is already known; process in full when implementing a surrogate module</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§2.4, SM-6.6-E</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-2.3-a-decision-ranking-preservation-validation-protocol" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="sm-2.3-a-decision-ranking-preservation-validation-protocol"><span class="header-section-number">13.1</span> SM-2.3-A: Decision-Ranking Preservation, Validation Protocol</h2>
+<p>Formal definition. Let <span class="math inline">\(\hat{f}(\cdot)\)</span> denote a trained surrogate of a full model <span class="math inline">\(f(\cdot)\)</span>, and let <span class="math inline">\(\Omega_{\text{test}}\)</span> denote a held-out test set of futures. The surrogate satisfies decision-ranking preservation if and only if for every future <span class="math inline">\(\omega \in \Omega_{\text{test}}\)</span> and every pair of alternatives <span class="math inline">\((a_1, a_2) \in \mathcal{A} \times \mathcal{A}\)</span>:</p>
+<p><span class="math display">\[
+\text{sign}\left(Z(a_1, \omega) - Z(a_2, \omega)\right) = \text{sign}\left(\hat{Z}(a_1, \omega) - \hat{Z}(a_2, \omega)\right)
+\]</span></p>
+<p>where <span class="math inline">\(Z\)</span> and <span class="math inline">\(\hat{Z}\)</span> denote the consequences generated by the full model and the surrogate respectively. In plain terms: the surrogate must produce the same ranking of alternatives as the full model for every test future. It must also satisfy two additional conditions: the maximum regret of each alternative must agree with the full model’s assessment within a declared tolerance, and threshold-violation patterns (the set of futures in which each alternative fails a declared performance threshold) must agree within a declared discordance rate.</p>
+<p>Validation workflow. The validation process has five stages.</p>
+<p>The first stage is training set design. The surrogate is trained on a sample drawn from the full input feature space using Latin hypercube sampling across continuous uncertain drivers and stratified sampling across discrete ones. The training sample should oversample the regions of the input space where the full model output changes most rapidly, identified by a preliminary screening run. For the Southland regional electricity module, the training sample should oversample low-headroom, high-demand conditions, because this is the region where the PyPSA output changes qualitatively from feasible-without-upgrade to exceedance.</p>
+<p>The second stage is held-out test set selection. The test set must include the decision-critical futures identified by the scenario discovery analysis of §2.4 and SM-2.4-A. A random held-out set is insufficient because the futures that matter most for decision-ranking preservation are those where alternatives are most evenly matched, not those that are merely representative of the full input distribution. The test set should include at least the 21 anchor futures that span the most analytically important conditions.</p>
+<p>The third stage is performance evaluation against the three acceptance criteria: decision-ranking concordance across all test futures, maximum regret agreement within tolerance, and threshold-violation discordance below the declared rate. A surrogate that achieves high average prediction accuracy while failing any of these three criteria does not satisfy decision-ranking preservation and must be retrained, refined, or supplemented with truth model evaluations in the failing region.</p>
+<p>The fourth stage is confidence scoring. The validated surrogate is equipped with a confidence scoring mechanism, typically based on distance from the training distribution in feature space, that assigns each prediction a confidence score. Predictions with confidence scores below a declared threshold trigger a truth model verification: the full model is run for that future, and the result replaces the surrogate’s prediction. This fallback logic is the operational expression of the progressive-refinement philosophy applied to surrogate deployment.</p>
+<p>The fifth stage is active learning. As the surrogate is used in ensemble evaluations, the futures that trigger low confidence scores accumulate as candidates for additional training data. After a declared number of low-confidence evaluations, a new training batch is commissioned from the full model targeting those regions, the surrogate is retrained, and its decision-ranking preservation is re-evaluated. This active learning loop progressively improves the surrogate’s accuracy where it matters most.</p>
+<p>Table SM-2.3-A: Validation metrics for decision-ranking preservation</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Definition</th>
+<th>Acceptance threshold</th>
+<th>What failure indicates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ranking concordance</td>
+<td>Fraction of test futures where surrogate and full model agree on the preferred alternative</td>
+<td>1.00 (all test futures)</td>
+<td>Surrogate would lead to different pathway choice in some futures</td>
+</tr>
+<tr class="even">
+<td>Max regret agreement</td>
+<td>Absolute difference in maximum regret between surrogate and full model, normalised by full model value</td>
+<td>Less than 5 percent</td>
+<td>Surrogate materially understates or overstates tail exposure</td>
+</tr>
+<tr class="odd">
+<td>Threshold discordance</td>
+<td>Fraction of test futures where surrogate and full model disagree on whether a threshold is violated</td>
+<td>Less than 2 percent</td>
+<td>Surrogate misrepresents feasibility in some futures</td>
+</tr>
+<tr class="even">
+<td>Confidence coverage</td>
+<td>Fraction of ensemble futures where confidence score exceeds declared threshold</td>
+<td>Target 90 percent or above</td>
+<td>Surrogate requires many truth model verifications; consider expanding training set</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1201,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
