@@ -7,32 +7,29 @@ Set-Location $projectRoot
 
 $label = if ($args[0]) { $args[0] } else { "draft" }
 
-$drafts = "$projectRoot\_output\drafts"
-if (-not (Test-Path $drafts)) {
-    New-Item -ItemType Directory -Path $drafts | Out-Null
-}
+$drafts = "$projectRoot\drafts"
+New-Item -ItemType Directory -Path $drafts -Force | Out-Null
 
 Write-Host "Rendering DOCX..." -ForegroundColor Cyan
 quarto render --to docx
 
 Start-Sleep -Seconds 2
 
-$source = Get-ChildItem $projectRoot -Filter "*.docx" -Recurse |
-          Where-Object { $_.FullName -notlike "*\_output\drafts\*" } |
-          Sort-Object LastWriteTime -Descending |
-          Select-Object -First 1
+$source = "$projectRoot\_output\Decision-Centred-Thinking-and-Modelling.docx"
 
-if ($source) {
+if (Test-Path $source) {
     $ts = Get-Date -Format "yyyy-MM-dd_HHmm"
     $dest = "$drafts\DCM_${ts}_${label}.docx"
-    Copy-Item $source.FullName $dest -Force
+    Copy-Item $source $dest -Force
     $kb = [math]::Round((Get-Item $dest).Length / 1KB, 1)
     Write-Host ""
     Write-Host "Saved: $dest ($kb KB)" -ForegroundColor Green
-    Add-Content "$drafts\export-log.txt" "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | $label | $kb KB | $($source.FullName)"
-    Write-Host "Log updated." -ForegroundColor Gray
+    Add-Content "$drafts\export-log.txt" "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | $label | $kb KB"
+    Write-Host "Log updated: $drafts\export-log.txt" -ForegroundColor Gray
 } else {
     Write-Host ""
-    Write-Host "No DOCX found after render. All files in _output:" -ForegroundColor Yellow
+    Write-Host "Render succeeded but DOCX not found at expected path:" -ForegroundColor Yellow
+    Write-Host "  $source"
+    Write-Host "All files in _output:" -ForegroundColor Gray
     Get-ChildItem "$projectRoot\_output" | Select-Object Name, LastWriteTime
 }
