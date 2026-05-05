@@ -172,7 +172,7 @@ toc: false
     <div class="dcm-stat-l">Modules from orientation to synthesis</div>
   </div>
   <div class="dcm-stat-item">
-    <div class="dcm-stat-n">19</div>
+    <div class="dcm-stat-n">20</div>
     <div class="dcm-stat-l">Sub-modules with technical specifications</div>
   </div>
   <div class="dcm-stat-item">

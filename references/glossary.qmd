@@ -154,3 +154,34 @@ The design principle that what is exchanged between modules must be narrow, expl
 *Introduced in: §3.5*
 
 The governance artefact. Records the outcome of every acceptance gate check applied to every other artefact. Failed ValidationArtefacts are retained in the backbone alongside their associated failed artefacts as permanent governance records.
+
+---
+
+## Framework Extension Registry {.unnumbered}
+
+This registry declares planned additions to the manuscript that are specified but not yet implemented as full sections. It follows the same Implemented / Specified / Vision taxonomy as the Node Declaration system.
+
+### Planned Sub-Modules (Specified)
+
+| ID | Title | Parent section | Status | Description |
+|---|---|---|---|---|
+| SM-5.5-A | TIMES-NZ and the NZ Energy Modelling Ecosystem | §5.5 | ✓ Added | Detailed ecosystem assessment and integration pathways |
+| SM-3.9-A | External Reference Registry and ReferenceArtefact | §3.7 | ○ Specified | Governance specification for external document linkage |
+| SM-6.7-A | Iterative Coupling: Two-Pass Architecture | §6.10 | ○ Specified | Design for closing the one-pass coupling limitation |
+| SM-7.4-A | Surrogate-Accelerated Ensemble: Implementation Guide | §7.4 | ○ Specified | Step-by-step ML surrogate training and validation |
+
+### Planned Sections (Vision)
+
+| ID | Title | Placement | Status | Description |
+|---|---|---|---|---|
+| §5.7 | Knowledge Context Layer | After §5.6 | ◇ Vision | Structured manifest linking all FutureArtefact fields to primary data sources |
+| §7.10 | The Academic Attestation Platform | After §7.9 | ◇ Vision | Claim-level expert attestation as scholarly communication infrastructure |
+| §8.1–§8.6 | Module 8: Community Contributions | New module | ◇ Vision | Domain instantiations contributed by the research community |
+
+### Planned Artefact Family Extensions
+
+| Family | Status | Description |
+|---|---|---|
+| ReferenceArtefact | ○ Specified | Governed external document registry; schema in SM-3.5-A |
+| AdaptiveSignalArtefact | ◇ Vision | Monitoring and signpost records for DAPP pathway revision |
+| CommunityArtefact | ◇ Vision | Contribution records from community extension process |

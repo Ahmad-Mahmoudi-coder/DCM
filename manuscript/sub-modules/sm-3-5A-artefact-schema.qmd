@@ -112,3 +112,27 @@ The following tables provide the authoritative field-level specifications for ea
 | epoch | DemandPack, IncrementalElectricityPack, SignalsPack | Identifies the planning year context |
 | validation_status | DemandPack, IncrementalElectricityPack, ResultArtefact | Lifecycle stage for governance gating |
 | checksum | DemandPack, IncrementalElectricityPack | SHA-256 payload integrity verification |
+
+---
+
+## ReferenceArtefact (schema version 1.0) — Next-Phase Extension
+
+The ReferenceArtefact is a next-phase addition to the canonical artefact family set, specified in Sub-Module SM-5.5-A. It registers external documents as governed analytical inputs with full provenance, closing the lineage gap between FutureArtefact calibration ranges and the primary data sources from which those ranges were derived.
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| ref\_id | UUID | Required | Unique identifier |
+| schema\_version | String | Required | "1.0" |
+| artefact\_family | String | Required | "ReferenceArtefact" |
+| title | String | Required | Full document title |
+| institution | String | Required | Authoring institution |
+| authors | String | Optional | Primary authors or report number |
+| url\_or\_doi | String | Required | Stable URL or DOI |
+| publication\_date | Date | Required | Publication or last revision date |
+| calibrates\_fields | List | Required | FutureArtefact fields this document calibrates |
+| calibrates\_sections | List | Optional | Module section numbers this document informs |
+| calibration\_method | String | Required | How document content was translated into parameter ranges |
+| file\_sha256 | String | Optional | SHA256 hash of downloaded source file |
+| validation\_status | Enum | Required | provisional, validated, superseded |
+
+*Status: ○ Specified. Full implementation follows SM-3.7-A backbone development. Registry entries are declared in Table SM-5.5-A-3.*

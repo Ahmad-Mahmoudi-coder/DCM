@@ -53,6 +53,7 @@ book:
         - manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
         - manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
         - manuscript/sub-modules/sm-5-4A-ets-history.qmd
+        - manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd
     - part: "Module 6: The Proof of Concept"
       chapters:
         - manuscript/module-6-poc.qmd

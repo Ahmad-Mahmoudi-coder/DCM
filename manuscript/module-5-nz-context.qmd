@@ -160,6 +160,12 @@ GIDI (Government Investment in Decarbonising Industry) is a government co-invest
 
 TIMES-NZ is New Zealand's national energy system model, maintained by the University of Auckland's Energy Centre. It provides economy-wide scenario analysis spanning the full energy system from primary supply to end-use demand, with the long-run investment and operational logic of a least-cost energy system optimisation under declared policy constraints including the emissions budgets. TIMES-NZ scenario outputs, including electricity price trajectories, sectoral demand projections, and national emissions pathways under different policy environments, provide exactly the kind of exogenous future condition boundary data that belong in a FutureArtefact ensemble as contextual calibration for the ETS price and electricity tariff dimensions. The framework treats TIMES-NZ scenario outputs as ensemble calibration inputs: they inform the ranges of the ETS price and electricity tariff multipliers, ensuring that the futures tested in the Edendale ensemble are consistent with plausible national energy trajectories. A more advanced integration, in which TIMES-NZ and the framework exchange scenario outputs in a Gauss-Seidel coupling, is the national-scale vision item described in Module 7.
 
+::: {.callout-tip}
+## Sub-Module SM-5.5-A
+
+**TIMES-NZ and the NZ Energy Modelling Ecosystem** — detailed technical assessment of TIMES-NZ capabilities, the wider NZ modelling ecosystem, integration pathways, and the ReferenceArtefact specification for governed external document linkage — is in [SM-5.5-A](sub-modules/sm-5-5A-times-nz-ecosystem.qmd). Skip if TIMES-NZ technical detail is not required.
+:::
+
 ## §5.6 Grounding the FutureArtefact Uncertain Drivers
 
 ::: {.callout-note collapse="false" icon="false"}
