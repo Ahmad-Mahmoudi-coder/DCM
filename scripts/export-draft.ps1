@@ -2,7 +2,6 @@
 chcp 65001 | Out-Null
 
 $env:Path = "C:\Model\tools\quarto-1.9.37\bin;" + $env:Path
-
 $projectRoot = "C:\Model\decision-centred-modelling"
 Set-Location $projectRoot
 
@@ -16,7 +15,7 @@ if (-not (Test-Path $drafts)) {
 Write-Host "Rendering DOCX..." -ForegroundColor Cyan
 quarto render --to docx
 
-$source = "$projectRoot\Decision-Centred-Thinking-and-Modelling.docx"
+$source = "$projectRoot\_output\Decision-Centred-Thinking-and-Modelling.docx"
 $ts = Get-Date -Format "yyyy-MM-dd_HHmm"
 $dest = "$drafts\DCM_${ts}_${label}.docx"
 
@@ -26,6 +25,6 @@ if (Test-Path $source) {
     Write-Host "Saved: $dest ($kb KB)" -ForegroundColor Green
     Add-Content "$drafts\export-log.txt" "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | $label | $kb KB"
 } else {
-    Write-Host "DOCX not at expected path. Files found:" -ForegroundColor Yellow
-    Get-ChildItem $projectRoot -Filter "*.docx" | Select-Object Name, LastWriteTime
+    Write-Host "DOCX not found. Quarto output files:" -ForegroundColor Yellow
+    Get-ChildItem "$projectRoot\_output" -Filter "*.docx" | Select-Object Name, LastWriteTime
 }
