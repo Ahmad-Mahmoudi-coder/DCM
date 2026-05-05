@@ -85,31 +85,6 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     callout-appearance: minimal
-  pdf:
-    documentclass: scrbook
-    classoption: [twoside, openright]
-    papersize: a4
-    fontsize: 11pt
-    geometry:
-      - top=25mm
-      - bottom=25mm
-      - left=30mm
-      - right=25mm
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    colorlinks: true
-    linkcolor: "0.2,0.4,0.6"
-    include-in-header:
-      text: |
-        \usepackage{booktabs}
-        \usepackage{longtable}
-        \usepackage{array}
-        \usepackage{multirow}
-  docx:
-    toc: true
-    number-sections: true
-    highlight-style: github
 
 execute:
   echo: false
