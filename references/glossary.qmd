@@ -1,6 +1,156 @@
 ---
 title: "Glossary"
-subtitle: "Artefact Families, Schema Versions, and Key Terms"
+subtitle: "Key Terms and Artefact Families"
 ---
 
-<!-- CONTENT TO BE ADDED: See Claude content prompt GL-01 -->
+This glossary defines the key terms used throughout the manuscript in the precise sense the framework assigns them. Terms are listed alphabetically. The section where each term is first formally introduced is noted.
+
+## Analytical backbone
+
+*Introduced in: §3.7*
+
+The governed persistence layer in which all artefacts are stored, linked, and made queryable across runs, futures, epochs, and module versions. The backbone is append-only, schema-governed, lineage-linked, and technology-neutral. It is a methodological commitment, not merely a database: its governance properties are what make AI-assisted interrogation of analytical results trustworthy.
+
+## Artefact
+
+*Introduced in: §3.5*
+
+A governed analytical object: a structured, versioned, validated, and provenance-carrying output that has been admitted to the comparison chain through an explicit acceptance gate. An artefact is not merely a file or a model output. It is an output that has been materialised in a schema-conforming form, linked to the run and future conditions that produced it, passed through a validation gate, and stored in the backbone with explicit lineage.
+
+## Decision-centred modelling
+
+*Introduced in: §0.1*
+
+An approach to planning analysis in which the analytical environment is organised around the requirements of the decision being supported, specifically the alternatives, futures, consequences, and evaluative metrics that the decision requires, rather than around the internal logic of any one model class. The decision problem is the primary object of analysis; models are instruments in service of that analysis.
+
+## Decision-first boundary principle
+
+*Introduced in: §0.3*
+
+The foundational commitment of the framework: analytical boundaries are drawn primarily by the decision context and the consequences that must remain visible for comparison, not by the physical extent of the system being studied. The decision makes the boundary; the artefact makes the connection.
+
+## DecisionSummaryArtefact
+
+*Introduced in: §3.5*
+
+The evaluation layer's primary output artefact. Carries the regret, robustness, satisficing, and threshold-violation metrics for each pathway alternative across the future ensemble. Its credibility depends on the governance of the upstream artefact chain.
+
+## Deep uncertainty
+
+*Introduced in: §1.3*
+
+Conditions in which stakeholders cannot agree on the appropriate models, the probability distributions of key parameters, or the metrics by which outcomes should be judged. Deep uncertainty is structural indeterminacy, not merely parameter noise. It requires exploration across many plausible futures rather than optimisation under one presumed future.
+
+## DemandPack
+
+*Introduced in: §3.5*
+
+The canonical demand artefact. A time-resolved, versioned, acceptance-gated record of site-level heat demand for a specific epoch, scenario variant, and future condition. Produced by the site demand construction module and consumed by the site dispatch module.
+
+## DMDU (Decision Making under Deep Uncertainty)
+
+*Introduced in: §1.3*
+
+The intellectual tradition that reorients analytical practice from optimising against a single forecast toward characterising how decisions perform across a wide ensemble of plausible futures. Key methods include Robust Decision Making (RDM), Dynamic Adaptive Policy Pathways (DAPP), Exploratory Modelling and Analysis (EMA), and scenario discovery methods including PRIM and CART.
+
+## FutureArtefact
+
+*Introduced in: §3.5*
+
+The canonical uncertainty artefact. Records the specific combination of uncertain driver values under which a given pipeline run was executed. Every other artefact produced in that run carries a foreign key reference to its governing FutureArtefact.
+
+## GXP (Grid Exit Point)
+
+*Introduced in: §5.2*
+
+In the New Zealand electricity system, the metered boundary between the national transmission grid and a regional distribution network. GXP-level hosting capacity is the primary infrastructure constraint governing electrification feasibility in the Southland regional context.
+
+## IncrementalElectricityPack
+
+*Introduced in: §3.5*
+
+The canonical electricity interface artefact produced by the site dispatch module and consumed by the regional electricity module. Carries the compact signal descriptors representing the site's electricity demand increment at the GXP boundary. It is the thin-waist object at the site-to-regional boundary.
+
+## Module
+
+*Introduced in: §3.2*
+
+An analytical component of the modelling environment defined by four properties: a declared analytical role, declared inputs, declared outputs, and an explicit interface contract. A module is defined by its role and interface contract, not by its implementation. Implementations may change freely provided the interface contract is preserved.
+
+## One-pass coupling
+
+*Introduced in: §6.1*
+
+The coupling pattern implemented in the current proof of concept: modules run in a defined sequence without iterative feedback. The site dispatch module produces the incremental electricity signal; the regional screening module evaluates grid constraints; results are aggregated without looping. Declared as a current limitation of the proof of concept.
+
+## Paired-futures requirement
+
+*Introduced in: §1.4*
+
+The design requirement that competing pathway alternatives must be evaluated under identical external conditions in every future. Regret comparisons between pathways evaluated under different futures are confounded. The FutureArtefact schema and paired-futures enforcement logic enforce this requirement.
+
+## Progressive refinement
+
+*Introduced in: §0.3*
+
+The framework's development philosophy. A minimal implementation that is architecturally complete and analytically useful precedes any richer components. The architecture reveals its own next development steps through regret sensitivity diagnostics. Complexity is added where it improves decision quality, not where it increases formal sophistication.
+
+## RDM (Robust Decision Making)
+
+*Introduced in: §1.3*
+
+A DMDU method developed principally at RAND by Lempert, Popper, and Bankes. Evaluates alternatives across large ensembles of futures using regret, satisficing frequency, and vulnerability diagnostics rather than expected-value optimisation.
+
+## Regret
+
+*Introduced in: §1.5*
+
+The difference between what the best available alternative would have achieved under a given future and what the chosen alternative achieves under that same future. Regret is future-specific and comparative. It is zero for the preferred alternative under each future and positive for all others.
+
+## ResultArtefact
+
+*Introduced in: §3.5*
+
+Records the site-level and system-level consequences for a specific pathway alternative, epoch, and future. Carries annual cost decompositions, energy consumption, emissions, and adequacy metrics.
+
+## Robustness
+
+*Introduced in: §1.5*
+
+A property of a strategy that performs acceptably or competitively across many plausible futures. A robust strategy need not be optimal under any single future; its value lies in avoiding large failures and remaining acceptable across a wide range of conditions the decision-maker cannot control.
+
+## Satisficing
+
+*Introduced in: §1.5*
+
+A decision standard that asks which alternatives meet stated thresholds of acceptability across futures, rather than which is nominally optimal. Follows Herbert Simon's concept of bounded rationality. The satisficing rate is the fraction of ensemble futures in which an alternative meets all declared thresholds.
+
+## SignalsPack
+
+*Introduced in: §3.5*
+
+The canonical electricity interface artefact produced by the regional module and consumed by the site dispatch module and the evaluation layer. Carries GXP-level signals including adequacy headroom, tariff adders, scarcity proxies, upgrade-class indicators, and confidence scores.
+
+## Site decision robustness overlay
+
+*Introduced in: §6.7*
+
+A post-processing module that consolidates site dispatch cost summaries with grid RDM summaries to produce a pathway comparison reflecting uncertainty in both site-level cost components and regional infrastructure conditions. It is a post-processing overlay only: it does not re-run dispatch, modify existing artefacts, or introduce feedback loops.
+
+## System-level regret
+
+*Introduced in: §4.4*
+
+The divergence between the regret computed under the site-only cost assessment and the regret computed under the infrastructure-conditional system cost assessment. Positive system-level regret indicates that current pricing arrangements create incentives for site operators to pursue pathway choices that impose costs on the regional system that they do not privately bear. Formally derived in Sub-Module SM-4.4-A.
+
+## Thin waist
+
+*Introduced in: §0.5*
+
+The design principle that what is exchanged between modules must be narrow, explicit, and stable, while what happens inside each module may evolve freely. The thin waist separates the stability of the interface from the flexibility of the implementation. It is a design principle, not a data format.
+
+## ValidationArtefact
+
+*Introduced in: §3.5*
+
+The governance artefact. Records the outcome of every acceptance gate check applied to every other artefact. Failed ValidationArtefacts are retained in the backbone alongside their associated failed artefacts as permanent governance records.
