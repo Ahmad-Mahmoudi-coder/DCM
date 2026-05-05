@@ -1,8 +1,46 @@
 ---
 title: "Sub-Module 5.2-A"
-subtitle: "GXP Capacity"
+subtitle: "Mararoa-Waimea GXP Capacity Data"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-5-2A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-5.2-A: Mararoa-Waimea GXP Capacity Data
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ○ Specified |
+| **Assumes** | §5.2 |
+| **Contributes** | Published GXP capacity data, reserve margin methodology, connection assessment commercial framework, and the specific sources of uncertainty governing the headroom multiplier range |
+| **Skip condition** | Skip if headroom multiplier range is accepted without requiring documentary grounding; process when verifying or updating the FutureArtefact ensemble design |
+| **Passes to** | §5.6, Module 6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-5.2-A: Mararoa-Waimea GXP Capacity Data
+
+The Mararoa-Waimea transmission cluster supplies the eastern Southland region through the national grid transmission lines connecting the Mararoa and Waimea substations. Published data on GXP-level capacity in New Zealand is available through Transpower's grid reliability standards documentation and the Electricity Authority's market information platform, with GXP-level demand histories accessible through the EA's EMI portal.
+
+Hosting capacity concept and reserve margin. The hosting capacity of a GXP for a new large load is not equivalent to the nameplate capacity of the zone substation. It is the available capacity after accounting for existing committed demand, the N-1 security reserve (the capacity that must be held in reserve to maintain supply under the loss of the single largest supply element), and any demand growth committed from connection agreements already approved but not yet fully utilised. The effective hosting capacity available to a new connecting load is therefore:
+
+$$
+H_{\text{available}} = C_{\text{firm}} - D_{\text{existing}} - D_{\text{committed}} - R_{\text{security}}
+$$
+
+where $C_{\text{firm}}$ is the firm transmission capacity at the zone substation, $D_{\text{existing}}$ is the current maximum coincident demand, $D_{\text{committed}}$ is the demand committed under existing connection agreements not yet fully drawn, and $R_{\text{security}}$ is the N-1 security margin.
+
+Published capacity data. The Mararoa GXP serves the eastern Southland zone and supplies Fonterra's Edendale facility, the Fonterra Clandeboye facility in mid-Canterbury (via separate GXPs), and other rural and light commercial customers in the region. GXP-level demand data published by the Electricity Authority for EDN0331 indicates that the Edendale GXP has historically operated at moderate utilisation, with peak demands concentrated in the winter dairy processing season when heat demand and therefore steam generation and therefore GXP import are simultaneously elevated.
+
+Reference headroom estimate. The EECA RETA Southland assessment provides the reference estimate for hosting capacity available to an electrification pathway at the Edendale facility. The RETA methodology uses publicly available GXP demand data, published Transpower grid reliability standards, and indicative upgrade cost schedules to estimate the increment of electrical demand that can be accommodated without triggering reinforcement at each assessed GXP. The Southland RETA identifies the Mararoa-Waimea cluster as a constraint zone for large industrial electrification, with available hosting capacity that is sufficient for modest electrification increments but potentially insufficient for the full heat electrification demand of a facility of Edendale's scale without reinforcement.
+
+Uncertainty sources. Three sources of uncertainty govern the headroom multiplier range in the FutureArtefact ensemble. The first is competing demand from other potential industrial electrifiers in the region. The second is the timing of any planned Transpower investment in the Mararoa-Waimea cluster, which could increase firm capacity but whose timing depends on Transpower's capital planning cycle and regulatory environment. The third is the coincident demand pattern of the Edendale facility's specific load shape under the electrification pathway, which determines whether the incremental demand arrives predominantly during periods when GXP headroom is tightest.
+
+Table SM-5.2-A: FutureArtefact headroom multiplier calibration
+
+| Multiplier value | Interpretation | Conditions represented |
+|---|---|---|
+| 0.60 | Highly constrained | Multiple other industrial users electrifying simultaneously; Transpower reinforcement delayed; peak coincidence high |
+| 0.80 | Moderately constrained | Some competing demand; reinforcement on planned schedule but not accelerated |
+| 1.00 | Reference capacity | RETA reference headroom; no competing demand assumptions |
+| 1.15 | Ample headroom | Transpower reinforcement completed early; competing demand lower than reference |
+| 1.30 | Unconstrained | Full firm capacity available; no competing demand; coincidence low |

@@ -1,8 +1,45 @@
 ---
 title: "Sub-Module 5.4-A"
-subtitle: "ETS History"
+subtitle: "NZ ETS Design History and Price Trajectory"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-5-4A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-5.4-A: NZ ETS Design History and Price Trajectory
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ○ Specified |
+| **Assumes** | §5.4 |
+| **Contributes** | NZ ETS design history 2008 to 2024, price trajectory data, key design changes and their analytical implications, and the coal phase-out NES timeline relevant to the Edendale decision |
+| **Skip condition** | Skip if ETS context is already known; process when verifying the ETS price range in the FutureArtefact ensemble design |
+| **Passes to** | §5.6, Module 6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-5.4-A: NZ ETS Design History and Price Trajectory
+
+Scheme origins and early period. The NZ ETS was established under the Climate Change Response Act 2002 and began operating for the forestry sector in 2008, with the stationary energy sector including industrial process heat entering from 2010. In its initial design, the scheme allowed participants to purchase international units from the Kyoto Protocol flexible mechanisms at unrestricted quantities and used these to meet domestic obligations. Industrial allocations, the free NZU units provided to trade-exposed industries, were set at generous levels. The combination of international unit access and high allocations suppressed the domestic NZU price to negligible levels, ranging from under NZD 5 per tonne for most of the period from 2012 to 2016.
+
+The 2015 to 2019 redesign. The removal of international unit access in 2015 and the completion of New Zealand's first Kyoto commitment period removed the price suppression mechanism. The amendment programme culminating in the Climate Change Response (Zero Carbon) Amendment Act 2019 introduced new features: an independent Climate Change Commission with a mandate to set and assess emissions budgets, new industrial allocation rates scheduled to decline over time, and a redesigned price control mechanism replacing the fixed price option with an auction-based cost containment reserve. The 2019 amendments also established the greenhouse gas budgets that commit New Zealand to net-zero long-lived greenhouse gases by 2050.
+
+Price trajectory 2017 to 2024. Following the redesign, the NZU price rose from below NZD 10 in 2017 to approximately NZD 65 in 2021, peaking above NZD 80 per tonne in 2022 before softening to approximately NZD 45 to 60 per tonne through 2023 and 2024. The softening reflected both increased auction supply and economic slowdown reducing covered-sector emissions.
+
+Table SM-5.4-A: NZ ETS annual average NZU price, selected years
+
+| Year | Approximate average NZU price (NZD/tCO2) | Key design event |
+|---|---|---|
+| 2010 | 10 to 15 | ETS extended to stationary energy sector |
+| 2012 | 5 to 8 | International units accessible; price suppressed |
+| 2015 | 3 to 5 | International unit access removed |
+| 2017 | 8 to 12 | Price recovery begins |
+| 2019 | 22 to 28 | Zero Carbon Act passed |
+| 2020 | 25 to 35 | Post-Act price acceleration |
+| 2021 | 45 to 68 | Price cap raised to NZD 50; subsequent clearing above cap |
+| 2022 | 65 to 85 | Price cap raised to NZD 70 |
+| 2023 | 45 to 60 | Softening; cost containment reserve triggered |
+| 2024 | 50 to 65 | Continued uncertainty; further design review |
+
+Coal phase-out NES timeline. The National Environmental Standards for Industrial Greenhouse Gas Emissions prohibit new coal-fired boilers above 50 kW in new industrial facilities from 2023. Existing coal-fired boilers in dairy processing must be retired by 2037 under Fonterra's voluntary commitment and will face mandatory phase-out under the evolving NES. The 2037 deadline is the forcing condition that makes the Edendale pathway decision non-optional: irrespective of pathway economics, coal-fired steam generation at the facility must be replaced within the investment horizon, making the question not whether to transition but which alternative to commit to.
+
+FutureArtefact ETS price calibration. The ETS price dimension in the FutureArtefact ensemble spans NZD 30 to NZD 140 per tonne, reflecting the historical range of plausible outcomes from the scheme's current design. The lower bound represents a scenario in which political constraints lead to scheme weakening and price suppression. The upper bound represents a scenario in which the budgeted emissions reductions require price levels consistent with the Climate Change Commission's modelling of what is needed to meet the 2050 net-zero target.

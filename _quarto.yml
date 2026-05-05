@@ -11,7 +11,7 @@ book:
   date: "2026"
   date-format: "YYYY"
   
-  repo-url: https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling
+  repo-url: https://github.com/Ahmad-Mahmoudi-coder/DCM
   repo-actions: [edit, issue]
   
   chapters:

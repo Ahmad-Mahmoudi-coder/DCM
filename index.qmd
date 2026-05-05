@@ -12,7 +12,7 @@ page-layout: full
 
 ::: {style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;"}
 [Read the Framework →](manuscript/module-0-orientation.qmd){.btn style="background: white; color: #0f3460; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
-[View on GitHub →](https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling){.btn style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
+[View on GitHub →](https://github.com/Ahmad-Mahmoudi-coder/DCM){.btn style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
 :::
 :::
 
@@ -53,6 +53,7 @@ investment recommendation under deep uncertainty.
 | Read the NZ context | [Module 5: The New Zealand Context](manuscript/module-5-nz-context.qmd) |
 | See what was built | [Module 6: The Proof of Concept](manuscript/module-6-poc.qmd) |
 | Read the eleven propositions | [Module 7: §7.6 Eleven Propositions](manuscript/module-7-synthesis.qmd) |
+| Understand the tagging system | [§7.8: Open Knowledge Architecture](manuscript/module-7-synthesis.qmd#sec-7-8) |
 | Browse all key terms | [Glossary](references/glossary.qmd) |
 
 ---

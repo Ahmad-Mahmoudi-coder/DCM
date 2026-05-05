@@ -29,6 +29,8 @@ Every section and sub-module opens with a table in the following format:
 | **Skip condition** | Precise statement of when this node can be skipped |
 | **Passes to** | Subsequent sections that depend on this one |
 | **Sub-Modules here** | Sub-modules that follow this section, or None |
+| **Content Tag** | One of: ✓ Implemented / ○ Specified / ◇ Vision / ⬡ Educational / ✦ Collaborative |
+| **Engagement Tag** | One or more of: [R] Research / [P] Platform / [C] Contribute |
 :::
 
 Each field has a specific function.
@@ -68,6 +70,8 @@ need to return.
 **Sub-Modules here** lists any sub-modules that immediately follow 
 this section. Sub-modules are always optional unless a downstream 
 section explicitly lists them in its Assumes field.
+
+**Content Tag** and **Engagement Tag** are optional extended fields introduced in §7.8. They are used in sections that form part of the manuscript's community extension layer. When present, they appear on the same row as the Status field or immediately below it. They allow readers to filter sections by purpose rather than by position. Full definitions are in Table 7.8.
 
 ---
 

@@ -1,8 +1,114 @@
 ---
 title: "Sub-Module 3.5-A"
-subtitle: "Artefact Schema"
+subtitle: "Canonical Artefact Schema Reference"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-5A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-3.5-A: Canonical Artefact Schema Reference
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §3.5 |
+| **Contributes** | Complete field-level specifications for all seven canonical artefact families, schema version history, and a cross-reference table identifying fields shared across families |
+| **Skip condition** | Skip for conceptual reading; process in full when implementing any module that produces or consumes governed artefacts |
+| **Passes to** | Module 6, SM-6.4-C, SM-6.5-D |
+| **Sub-Modules here** | None |
+:::
+
+## SM-3.5-A: Canonical Artefact Schema Reference
+
+The following tables provide the authoritative field-level specifications for each canonical artefact family. Fields marked Required must be present in every instance; fields marked Optional may be absent. All timestamps use UTC ISO-8601 format with a Z suffix. All monetary values are in NZD. All energy values are in MWh or MW as declared.
+
+### DemandPack (Schema Version 1.0)
+
+| Field | Type | Unit | Required | Validation rule |
+|---|---|---|---|---|
+| artefact_id | UUID | — | Required | Globally unique; assigned at generation |
+| schema_version | String | — | Required | "1.0" |
+| artefact_family | String | — | Required | "DemandPack" |
+| site_id | String | — | Required | Site registry reference |
+| run_id | UUID | — | Required | Producing run reference |
+| future_id | UUID | — | Required | FutureArtefact reference |
+| epoch | String | — | Required | Declared epoch set (e.g., "2035_EB") |
+| produced_by | String | — | Required | Module identity and version |
+| timestamp_utc | Datetime array | UTC | Required | Monotonic, hourly, no gaps, no duplicates |
+| timestep_seconds | Integer | Seconds | Required | 3600 for hourly |
+| heat_demand_mw | Float array | MW | Required | Non-negative; length equals hours in epoch |
+| annual_total_mwh | Float | MWh | Required | Sum of hourly values within 0.5% tolerance |
+| peak_demand_mw | Float | MW | Required | Maximum of heat_demand_mw array |
+| validation_status | Enum | — | Required | provisional, validated, superseded |
+| checksum | String | — | Required | SHA-256 hex of payload |
+
+### IncrementalElectricityPack (Schema Version 1.0)
+
+| Field | Type | Unit | Required | Validation rule |
+|---|---|---|---|---|
+| artefact_id | UUID | — | Required | Globally unique |
+| schema_version | String | — | Required | "1.0" |
+| artefact_family | String | — | Required | "IncrementalElectricityPack" |
+| site_id | String | — | Required | Site registry reference |
+| run_id | UUID | — | Required | Producing run reference |
+| future_id | UUID | — | Required | FutureArtefact reference |
+| pathway_id | String | — | Required | Pathway variant identifier |
+| epoch | String | — | Required | Declared epoch |
+| annual_incremental_mwh | Float | MWh | Required | Non-negative |
+| peak_incremental_mw | Float | MW | Required | Non-negative; equals max of hourly trace |
+| p95_incremental_mw | Float | MW | Required | 95th percentile of hourly trace |
+| winter_peak_share | Float | Fraction | Required | 0 to 1 inclusive |
+| shape_cluster_label | Integer | — | Required | 1 to K; cluster label from demand classification |
+| validation_status | Enum | — | Required | provisional, validated, superseded |
+| checksum | String | — | Required | SHA-256 hex |
+
+### SignalsPack (Schema Version 0.1.0 — Edendale GXP)
+
+| Field | Type | Unit | Required | Validation rule |
+|---|---|---|---|---|
+| gxp_id | String | — | Required | "EDN0331" |
+| timestamp_utc | Datetime array | UTC | Required | Monotonic, hourly, no gaps |
+| capacity_mw | Float array | MW | Required | Non-negative |
+| baseline_import_mw | Float array | MW | Required | Non-negative |
+| reserve_margin_mw | Float array | MW | Required | Non-negative |
+| headroom_mw | Float array | MW | Required | max(capacity minus baseline minus reserve, 0) |
+| tariff_nzd_per_mwh | Float array | NZD/MWh | Required | Non-negative |
+| epoch | Integer | — | Required | Planning year |
+| feasibility_indicator | Boolean | — | Required (eval layer) | True if no exceedance without upgrade |
+| upgrade_class | Enum | — | Required (eval layer) | none, minor, moderate, major |
+| cost_adder_nzd | Float | NZD/year | Required (eval layer) | Non-negative |
+
+### FutureArtefact (Schema Version 1.0)
+
+| Field | Type | Unit | Required | Validation rule |
+|---|---|---|---|---|
+| future_id | Integer | — | Required | Unique within ensemble |
+| headroom_mult | Float | — | Required | Positive; typically 0.60 to 1.30 |
+| demand_growth_mult | Float | — | Required | Positive |
+| hydro_class | Enum | — | Required | dry, normal, wet |
+| biomass_availability_mult | Float | — | Required | Positive |
+| biomass_cost_mult | Float | — | Required | Positive |
+| ets_price_nzd_per_tco2 | Float | NZD/tCO2 | Required | Non-negative |
+| upgrade_capex_mult | Float | — | Required | Positive |
+| voll_nzd_per_mwh | Float | NZD/MWh | Required | Positive; discrete: 5000, 10000, 15000, 20000 |
+| consents_uplift | Float | — | Required | Greater than or equal to 1.0 |
+| p_elec_mult | Float | — | Required (overlay) | Positive |
+| p_biomass_mult | Float | — | Required (overlay) | Positive |
+| ets_mult | Float | — | Required (overlay) | Positive |
+
+### Schema Version History
+
+| Family | Version | Date | Change summary |
+|---|---|---|---|
+| SignalsPack | 0.1.0 | December 2025 | Initial frozen schema; GXP hourly signals, emissions intensity, upgrade menu, manifest |
+| All others | 1.0 | 2026 | Initial specification |
+
+### Cross-Reference: Fields Shared Across Families
+
+| Field | Families that carry it | Purpose |
+|---|---|---|
+| artefact_id | All families | Unique identity for lineage and cross-reference |
+| future_id | DemandPack, IncrementalElectricityPack, ResultArtefact, DecisionSummaryArtefact, ValidationArtefact | Links all analytical outputs to the future conditions under which they were produced |
+| run_id | DemandPack, IncrementalElectricityPack, ResultArtefact | Links outputs to the specific pipeline run that produced them |
+| epoch | DemandPack, IncrementalElectricityPack, SignalsPack | Identifies the planning year context |
+| validation_status | DemandPack, IncrementalElectricityPack, ResultArtefact | Lifecycle stage for governance gating |
+| checksum | DemandPack, IncrementalElectricityPack | SHA-256 payload integrity verification |

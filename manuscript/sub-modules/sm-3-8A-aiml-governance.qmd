@@ -1,8 +1,56 @@
 ---
 title: "Sub-Module 3.8-A"
-subtitle: "AI/ML Governance"
+subtitle: "AI/ML Provenance Requirements and Acceptance Protocol"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-8A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-3.8-A: AI/ML Provenance Requirements and Acceptance Protocol
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ○ Specified |
+| **Assumes** | §3.8 |
+| **Contributes** | Complete specification of the five additional provenance fields, the confidence scoring protocol, the regime boundary detection and response protocol, and the human acceptance workflow |
+| **Skip condition** | Skip until surrogate modules are being deployed |
+| **Passes to** | Module 6 SM-6.6-E |
+| **Sub-Modules here** | None |
+:::
+
+## SM-3.8-A: AI/ML Provenance Requirements and Acceptance Protocol
+
+The five additional provenance fields for AI/ML-produced artefacts are specified as follows.
+
+The model_type_version field carries a structured identifier of the form [architecture]:[version]:[commit], for example gradient\_boosting\_regressor:v2.1:a3f7c9d. It references an entry in the model registry, a governed table in the backbone that stores the full model specification, hyperparameters, and training configuration.
+
+The training_data_id field carries the artefact identifier of the governed training dataset from which the model was trained. The training dataset is itself a governed artefact in the backbone with its own provenance, schema, and validation record.
+
+The confidence_score field carries a float in [0,1] representing the surrogate's self-assessed reliability for this specific prediction. A confidence score of 1.0 indicates the input is well within the interior of the training distribution; a confidence score below the declared threshold (default 0.7) triggers a truth model verification request.
+
+The regime_flag field is a boolean indicating whether the input was detected as near a regime boundary. Regime boundaries are pre-identified from the full model's output surface during training; inputs within a declared distance of a boundary in the input feature space receive a True regime flag regardless of their confidence score.
+
+The human_acceptance_id field carries the identifier of the human acceptance record in the validation registry. This record is created when a qualified reviewer examines the artefact and confirms that its content is plausible and appropriate for the analytical context.
+
+Confidence score protocol. The confidence score is computed as $c = 1 - d_{\text{norm}}$, where $d_{\text{norm}}$ is the distance from the input feature vector to the nearest training sample, normalised by the maximum nearest-neighbour distance in the training set. Equivalently, a Gaussian process surrogate can use the posterior standard deviation normalised by the prior standard deviation as the uncertainty measure. When $c < 0.7$, the orchestration layer queues the input for truth model evaluation, runs the full PyPSA model (or equivalent full model) for that future, and replaces the surrogate prediction with the full model output before the artefact is admitted to the backbone. The full model output is recorded as a non-surrogate artefact with its own provenance.
+
+Regime boundary protocol. During surrogate training, a preliminary grid scan identifies the input regions where the full model output changes most rapidly. These regions, typically near the transition from feasible-without-upgrade to exceedance conditions for the regional electricity module, are declared as regime boundaries and stored in the model registry. When a new input is evaluated, its distance to the nearest declared boundary is compared to a declared tolerance. Inputs within tolerance receive a True regime_flag and are automatically queued for truth model verification regardless of their confidence score.
+
+Human acceptance workflow. A generated AI/ML artefact with a confidence score above the threshold and no regime flag is reviewed by a designated analyst before backbone admission. The review checks: (1) whether the output values are physically plausible given the input conditions; (2) whether the confidence score is consistent with the analyst's domain assessment of the input's difficulty; and (3) whether the artefact's declared provenance is complete and consistent. The analyst records the review outcome in the validation registry. A positive review produces a human_acceptance_id that is embedded in the artefact's provenance. A negative review returns the artefact to provisional status and flags it for investigation.
+
+Table SM-3.8-A: Standard versus AI/ML artefact provenance fields
+
+| Provenance field | Standard artefact | AI/ML artefact |
+|---|---|---|
+| artefact_id | Required | Required |
+| schema_version | Required | Required |
+| artefact_family | Required | Required |
+| run_id | Required | Required |
+| future_id | Required | Required |
+| produced_by | Required (module name and version) | Required (includes surrogate model reference) |
+| validation_status | Required | Required |
+| checksum | Required | Required |
+| model_type_version | Not applicable | Required |
+| training_data_id | Not applicable | Required |
+| confidence_score | Not applicable | Required |
+| regime_flag | Not applicable | Required |
+| human_acceptance_id | Not applicable | Required |

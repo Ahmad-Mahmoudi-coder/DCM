@@ -1,8 +1,67 @@
 ---
 title: "Sub-Module 6.5-D"
-subtitle: "SignalsPack Contract"
+subtitle: "SignalsPack Generator Repository, Interface Contract v0.1.0"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-5D -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-6.5-D: SignalsPack Generator Repository, Interface Contract v0.1.0
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §6.5 |
+| **Contributes** | Complete specification of the SignalsPack Interface Contract v0.1.0 including column definitions, file naming, manifest schema, hash integrity requirements, and the upgrade class menu |
+| **Skip condition** | Skip for results reading; process when verifying SignalsPack integrity, updating the Edendale GXP repository, or designing a replacement regional module |
+| **Passes to** | §6.6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-6.5-D: SignalsPack Generator Repository, Interface Contract v0.1.0
+
+Schema version: 0.1.0 (frozen)
+
+GXP identifier: EDN0331 (Edendale)
+
+### Hourly Signals File Schema
+
+Each epoch has one hourly signals CSV file named `signals_<epoch>_EDN0331.csv`:
+
+| Column | Type | Units | Description |
+|---|---|---|---|
+| timestamp_utc | Datetime | UTC | Hourly timestamp, ISO-8601 with Z suffix |
+| epoch | Integer | — | Planning year (2020, 2025, 2028, 2035) |
+| gxp_id | String | — | "EDN0331" |
+| capacity_mw | Float | MW | GXP firm capacity |
+| baseline_import_mw | Float | MW | Existing committed load (baseline) |
+| reserve_margin_mw | Float | MW | N-1 security reserve |
+| headroom_mw | Float | MW | max(capacity minus baseline minus reserve, 0) |
+| tariff_nzd_per_mwh | Float | NZD/MWh | Applicable network tariff |
+| grid_emissions_intensity_tco2_per_mwh | Float | tCO2/MWh | Grid emissions intensity for indirect emissions accounting |
+
+### Upgrade Option Menu
+
+The upgrade menu is declared in `upgrade_menu_EDN0331.csv`:
+
+| upgrade_id | upgrade_name | additional_capacity_mw | capex_nzd | description |
+|---|---|---|---|---|
+| 0 | none | 0 | 0 | No upgrade required |
+| 1 | fonterra_opt1_N_plus21MW | 21 | 3,500,000 | Minor transformer upgrade |
+| 2 | fonterra_opt2_N_plus32MW | 32 | 8,200,000 | Subtransmission line reconfiguration |
+| 3 | fonterra_opt3_N_plus97MW | 97 | 28,500,000 | Zone substation expansion |
+| 4 | fonterra_opt4_N_plus150MW | 150 | 52,000,000 | Major subtransmission reinforcement |
+
+### Manifest Schema (`signals_manifest.toml`)
+
+```toml
+schema_version = "0.1.0"
+gxp_id = "EDN0331"
+generated_at = "YYYY-MM-DDTHH:MM:SSZ"
+
+[[files]]
+epoch = 2035
+filename = "signals_2035_EDN0331.csv"
+sha256 = "<hex digest>"
+rows = 8760
+columns = ["timestamp_utc", "epoch", "gxp_id", "..."]
+```

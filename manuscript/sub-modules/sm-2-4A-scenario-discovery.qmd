@@ -1,8 +1,41 @@
 ---
 title: "Sub-Module 2.4-A"
-subtitle: "Scenario Discovery"
+subtitle: "Scenario Discovery Methods, PRIM and CART"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-2-4A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-2.4-A: Scenario Discovery Methods, PRIM and CART
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §2.4 |
+| **Contributes** | Technical descriptions of PRIM and CART, their application to the Edendale ensemble, and a comparison table of their strengths and appropriate uses |
+| **Skip condition** | Skip if PRIM and CART are already known; process when implementing scenario discovery in the DMDU orchestration layer |
+| **Passes to** | Module 6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-2.4-A: Scenario Discovery Methods, PRIM and CART
+
+Scenario discovery methods identify which combinations of uncertain inputs are systematically associated with decision-relevant outcomes across a large future ensemble. They answer the question: under what conditions does the performance of the preferred strategy fall below an acceptable threshold, and can those conditions be described compactly? Two complementary methods are used in this framework.
+
+PRIM (Patient Rule Induction Method), developed by Lempert and Bryant, identifies a box in the input feature space — a set of ranges for each uncertain driver — that is associated with a high concentration of cases where the strategy of interest fails to meet a performance criterion. The algorithm proceeds iteratively through a process called peeling: at each step, it removes the boundary of the current box along the dimension that maximally improves the box's density (the proportion of failures within the box) subject to a minimum coverage constraint (the minimum proportion of all failures that must fall within the box). The trade-off between density and coverage is controlled by a parameter $\alpha_{\text{peel}}$, and the PRIM trajectory, which plots density against coverage as the box is progressively refined, provides a visual summary of the trade-off.
+
+The output of PRIM is a set of interpretable rules of the form "the strategy fails to satisfy the threshold when the headroom multiplier is below 0.75 AND regional demand growth is above 1.1 AND the ETS price is below 80 NZD/tonne." Applied to the Edendale ensemble, PRIM would be expected to identify precisely these conditions as the vulnerability region for the electrification pathway: the 23-of-64 exceedance finding corresponds to a PRIM box in which low headroom and high regional demand growth co-occur, with ETS price being a secondary moderating factor. The quasi-p statistic produced by PRIM provides a measure of the statistical significance of the association between the identified box and the failure outcome.
+
+CART (Classification and Regression Trees), applied to scenario discovery, recursively partitions the feature space into regions associated with different outcome classes (typically: satisfactory performance versus failure). At each node, the algorithm selects the feature and split value that best separates the outcome classes according to a purity criterion such as the Gini impurity. The result is a binary tree whose leaves correspond to regions of the input space with different expected performance outcomes. CART produces different interpretive information from PRIM: where PRIM identifies one high-density failure region, CART reveals the hierarchical importance of different uncertain drivers and the interaction structure between them.
+
+The appropriate choice between PRIM and CART depends on the analytical goal. PRIM is more suited to exploratory vulnerability identification because its coverage-density trade-off allows the analyst to choose how broadly or narrowly to define the failure region. CART is more suited to producing communicable policy-relevant rules because its tree structure is more directly readable as a decision guide: "if headroom is below X AND demand growth is above Y, the electrification pathway fails the cost threshold." In practice, both methods are applied to the same ensemble and their outputs are compared; the combination provides a more complete characterisation of vulnerability than either alone.
+
+Table SM-2.4-A: PRIM versus CART for scenario discovery
+
+| Dimension | PRIM | CART |
+|---|---|---|
+| Algorithm structure | Iterative box refinement (peeling) | Recursive binary partitioning |
+| Output form | A box in feature space with density/coverage statistics | A binary tree with interpretable rules at each node |
+| Interpretive strengths | Flexible density/coverage trade-off; single coherent vulnerability region; PRIM trajectory visualises the trade-off | Hierarchical feature importance; clear policy-relevant rules; easy to communicate to non-technical audiences |
+| Handles interactions | Implicitly through box refinement | Explicitly through nested splits |
+| Computational cost | Moderate; scales with number of features and ensemble size | Low; standard implementation handles thousands of cases readily |
+| When preferred in this framework | Exploratory vulnerability mapping in the DMDU orchestration layer | Communicating findings to stakeholders and policy-makers; feature importance assessment |

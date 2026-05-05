@@ -3,7 +3,34 @@ title: "Sub-Module 1.1-A"
 subtitle: "Philosophical Lineage of Deep Uncertainty"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-1-1A -->
-<!-- Skip condition: Skip if reader accepts deep uncertainty stance 
-     without wanting the intellectual genealogy -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-1.1-A: Philosophical Lineage of Deep Uncertainty
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §1.1 |
+| **Contributes** | Traces the intellectual genealogy of the deep-uncertainty stance from Knight through systems thinking, bounded rationality, and wicked problems to the DMDU tradition, and establishes the epistemological position of the framework |
+| **Skip condition** | Skip if reader accepts the deep-uncertainty stance without needing the intellectual genealogy; return when engaging with the framework's epistemological claims |
+| **Passes to** | §1.3 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-1.1-A: Philosophical Lineage of Deep Uncertainty
+
+The analytical stance of this framework, which treats deep uncertainty as a structural condition requiring a specific methodological response rather than a data deficiency to be overcome with better models, has a coherent intellectual genealogy. Tracing that genealogy is useful not for historical completeness but because it clarifies what the framework is claiming and what it is not.
+
+The foundational distinction belongs to Frank Knight, whose 1921 work Risk, Uncertainty and Profit drew a sharp line between risk, in which probabilities are assignable because the structure of the decision situation is known and stable, and uncertainty, in which the decision-maker cannot assign meaningful probabilities because the situation itself may be novel, evolving, or structurally ambiguous. Knight's distinction was analytically inconvenient for subsequent economic theory, which generally treated all uncertainty as reducible to risk given sufficient information, and it was largely marginalised in formal decision theory for much of the twentieth century. It has returned with considerable force in the literature on complex infrastructure systems, where the conditions that make probability assignment defensible are routinely absent.
+
+The development of systems thinking in the mid-twentieth century added a second dimension. Norbert Wiener's work on cybernetics and Jay Forrester's development of system dynamics both emphasised that complex systems exhibit feedback, non-linearity, and emergent behaviour that make their future trajectories genuinely difficult to predict, not merely imprecisely estimated. The system is not a complicated mechanism with many parts whose behaviour adds up predictably; it is an interconnected set of feedback relationships whose dynamics can surprise even careful analysts. This insight matters for planning because it means that the difficulty of forecasting complex systems is not primarily a matter of insufficient data or computational power. It is a matter of fundamental structural indeterminacy.
+
+Herbert Simon's concept of bounded rationality, introduced in Administrative Behavior (1947) and developed through subsequent decades, reoriented decision theory from the ideal of the fully-informed, perfectly-rational agent toward the reality of the agent who must act under cognitive limitations, time pressure, and imperfect information. Simon's satisficing concept, the idea that decision-makers search for alternatives that are good enough rather than optimal, follows from bounded rationality and is directly relevant to the framework's evaluative standards. The satisficing rate, one of the primary robustness metrics used in Module 6, is not a compromise on analytical rigour but an acknowledgement of a basic reality about how consequential decisions are actually made and evaluated.
+
+Rittel and Webber's 1973 paper "Dilemmas in a General Theory of Planning" introduced the concept of wicked problems: design and planning problems that are ill-defined, that change in the process of being addressed, that have no definitive solution, and whose consequences cannot be fully foreseen. Wicked problems are not simply difficult problems; they are problems whose structure resists the kind of decomposition and formalisation that makes technical problem-solving tractable. The connection to the present framework is direct: the five-feature problem class identified in §1.1 has the characteristics of a wicked problem in Rittel and Webber's sense. This does not mean it is analytically intractable. It means it requires a different kind of analytical environment, one organised around structured exploration rather than convergence to a solution.
+
+Karl Popper's philosophy of science, and particularly his insistence on the provisional and corrigible character of all knowledge claims, provides the epistemological foundation for the framework's commitment to traceability and revisability. A model is not a description of how the world is; it is a conjecture about how it works, held provisionally and always subject to refutation by evidence or by better-designed analysis. The framework's governed artefact architecture, with its append-only backbone, explicit lineage, and validation gating, is the operational expression of this commitment: results are always traceable to the assumptions that produced them, and revision in light of better assumptions or better data is always possible without destroying what came before.
+
+The methodological response to deep uncertainty most directly relevant to the present framework is the Decision Making under Deep Uncertainty research programme. RDM, developed principally at RAND by Lempert, Popper, and Bankes, reoriented decision analysis away from identifying the optimal strategy under an assumed probability structure and toward identifying strategies that remain defensible across many plausible futures. The subsequent development of the DMDU community by Walker, Marchau, Kwakkel, and others extended this reorientation into practical methods including scenario discovery and Dynamic Adaptive Policy Pathways. Haasnoot and colleagues developed DAPP specifically for the adaptive management of long-horizon infrastructure under deep uncertainty, emphasising the role of monitoring and signposts in triggering pathway revisions.
+
+The epistemological position of the present framework is best described as post-positivist. It does not hold that models are neutral descriptions of a pre-given physical reality. It holds that models are analytical instruments designed for specific purposes, whose adequacy is measured by whether they serve those purposes credibly rather than by whether they perfectly reproduce the physical system. Under this view, the decision-first boundary principle is not a methodological convenience but a philosophical commitment: the model is designed for and evaluated by the decision it is meant to support, not by its fidelity to an independent physical truth.

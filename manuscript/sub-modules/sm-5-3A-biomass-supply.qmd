@@ -1,8 +1,33 @@
 ---
 title: "Sub-Module 5.3-A"
-subtitle: "Biomass Supply"
+subtitle: "Southland Biomass Resource and Cost Estimates"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-5-3A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-5.3-A: Southland Biomass Resource and Cost Estimates
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ○ Specified |
+| **Assumes** | §5.3 |
+| **Contributes** | Regional biomass resource estimates, delivered cost structure, seasonal availability pattern, competing demand considerations, and FutureArtefact multiplier calibration for biomass availability and cost |
+| **Skip condition** | Skip if biomass multiplier ranges are accepted without documentary grounding; process when verifying or updating the FutureArtefact ensemble design |
+| **Passes to** | §5.6, Module 6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-5.3-A: Southland Biomass Resource and Cost Estimates
+
+Regional resource base. The Southland region hosts approximately 180,000 to 220,000 hectares of plantation forestry, the majority Pinus radiata on a 25 to 30 year rotation cycle. Annual harvest volumes across Southland and the adjacent Otago region generate residue volumes in the range of 400,000 to 600,000 green tonnes per year from logging slash and harvest debris alone, with additional supply from sawmill residues and bark. Not all of this material is currently collected, processed, or available at locations with practical logistics access. The RETA Southland assessment estimates that accessible biomass supply within a 100 km radius of the Edendale facility could range from approximately 150,000 to 300,000 green tonnes per year depending on harvest scheduling, competing demand, and logistics infrastructure development.
+
+Energy content and delivered cost. Plantation forestry residues dried to 30 percent moisture content have a net calorific value of approximately 11.5 to 12.5 GJ per tonne. At the low end of the accessible supply estimate and assuming full collection and drying, the available resource represents approximately 1.7 to 3.4 PJ per year, which is of the same order as the Edendale facility's annual process heat demand. The delivered cost to an industrial user in the eastern Southland region has been estimated in various RETA and EECA assessments in the range of NZD 6 to 10 per GJ at moderate supply volumes. This compares with coal delivered to Edendale at approximately NZD 5 to 7 per GJ depending on West Coast mine prices and transport costs, and with grid electricity at a heat-equivalent delivered cost that depends strongly on the electricity tariff regime and the efficiency of the electric boiler.
+
+Seasonal availability. Plantation forestry harvesting in the Southland region is concentrated in the spring and summer months, when ground conditions favour mechanical harvesting operations and when forestry residue drying conditions are most favourable. Biomass supply availability for industrial use is therefore somewhat seasonal, requiring on-site storage to smooth the supply-demand mismatch across the winter processing season when heat demand is highest. Storage costs and the capital requirement for biomass fuel handling and storage infrastructure are included in the capital cost estimate for the 2035_BB pathway.
+
+Table SM-5.3-A: Biomass FutureArtefact multiplier calibration
+
+| Multiplier dimension | Value 0.70 | Value 0.85 | Value 1.00 | Value 1.15 | Value 1.30 |
+|---|---|---|---|---|---|
+| Availability multiplier | Severely constrained — high competing demand, logistics not developed | Constrained — moderate competition | Reference — RETA base estimate | Ample — harvest schedule favourable, limited competition | Unconstrained — full accessible resource available |
+| Cost multiplier | High cost — logistics premium, competing demand pressure | Elevated cost | Reference delivered cost | Moderate discount — logistics mature, low competition | Low cost — abundant supply, optimised logistics |

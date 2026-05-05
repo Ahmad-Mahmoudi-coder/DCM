@@ -227,3 +227,54 @@ The framework is designed to absorb those implementations progressively without 
 The invitation is open and specific. A PyPSA developer who reads Sub-Module SM-6.6-E and recognises the regional electricity module specification as work they could implement is invited to do so through the GitHub repository's contribution process. A DMDU researcher who identifies a robustness metric or a scenario discovery algorithm that would improve the evaluation layer is invited to propose its integration as a methodological extension. A practitioner in water infrastructure, regional transport, or land-use planning who recognises in §7.3 a decision structure analogous to their own is invited to contribute a domain instantiation that specifies the relevant module classes, artefact families, and uncertain drivers in terms of the framework's interface contract.
 
 The decision makes the boundary; the artefact makes the connection. This document describes, with as much precision as its current state allows, how that principle is implemented, what it reveals when it is, and what remains to be built before it reveals more.
+
+## §7.8 The Open Knowledge Architecture {#sec-7-8}
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §7.8 The Open Knowledge Architecture
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ◇ Vision [Platform] |
+| **Assumes** | §7.4 (Adaptive Decision Laboratory), §7.6 (Eleven Propositions), the Navigation Guide |
+| **Contributes** | Proposes an extension of the manuscript's Node Declaration system into a multi-dimensional tagging architecture that serves navigation, community signalling, and living document governance simultaneously |
+| **Skip condition** | Skip if reader is interested only in the framework's technical content; return when engaging with the manuscript as a collaborative and evolving knowledge resource |
+| **Passes to** | Context Declaration (Community Extension); the Navigation Guide (tagging system specification) |
+| **Sub-Modules here** | None |
+:::
+
+The manuscript's Node Declaration system, introduced in the Navigation Guide and used throughout every section and sub-module, was designed to serve two audiences: human readers who need to navigate a long and technically heterogeneous document, and AI agents that need to process the document selectively and reliably. The system's seven fields, Tier, Status, Assumes, Contributes, Skip condition, Passes to, and Sub-Modules here, provide the metadata that makes both forms of engagement efficient. Each node carries enough information about its own role and dependencies that a reader or agent can make principled decisions about which nodes to process fully and which to skip without losing analytical continuity.
+
+This section proposes an extension of that system that applies the same logic to a harder problem: how should a document that is explicitly designed to grow, through community contributions, progressive refinement, and multi-domain instantiation, govern that growth without losing coherence?
+
+The problem is not trivial. A document that simply accumulates contributions over time becomes incoherent. Sections written under different assumptions, at different levels of technical development, and for different audiences are navigable only if the document's metadata system can tell a reader, precisely and consistently, what kind of claim each section is making and what kind of engagement it is inviting. The framework's current Status field distinguishes Implemented from Specified from Vision. This is the right beginning. It is not sufficient for a document that aspires to serve researchers, practitioners, educators, policy analysts, community members, and AI agents simultaneously.
+
+The proposed extension adds two new fields to the Node Declaration Table. The first is a Content Tag, which classifies the primary purpose of the node's content. The second is an Engagement Tag, which declares what kind of contribution or response the node is inviting. Together these two fields turn the Node Declaration from a navigation aid into a governance declaration: every node states not only what it contains and what it assumes, but what it is for and what it wants from its readers.
+
+The Content Tag vocabulary uses five classes. A node tagged Implemented presents working analytical machinery whose claims are grounded in the current proof of concept. A node tagged Specified presents designed but unbuilt components whose claims are architectural commitments. A node tagged Vision presents directions whose claims are explicitly provisional. A node tagged Educational presents material whose primary purpose is building understanding rather than advancing new claims; it may draw on established methods and literature rather than original findings. A node tagged Collaborative presents an open specification or open question that is explicitly inviting domain-specific contribution, co-development, or critical engagement.
+
+The Engagement Tag vocabulary uses three classes. A node tagged Research contains unresolved methodological questions or open theoretical problems that invite scholarly engagement. A node tagged Platform relates to the broader architecture of how the manuscript functions as a knowledge resource, including the tagging system itself. A node tagged Contribute signals that the node contains a contribution template or specification that defines what a valid community contribution to that node would look like.
+
+The practical consequence is a filtered reading experience. An educator developing a course on decision-making under deep uncertainty can filter the manuscript's Table of Contents to show only Educational nodes, receiving a curated teaching sequence that does not require navigating the full technical apparatus. A PyPSA developer assessing implementation opportunities can filter for Specified + Contribute nodes, seeing a clean list of module specifications that invite implementation contributions. A doctoral student reviewing the framework's open problems can filter for Research nodes, receiving the manuscript's honest account of where its own methods are incomplete or contested. An AI agent tasked with summarising the framework's established claims can filter for Implemented nodes, confining its summary to what the proof of concept has demonstrated.
+
+This filtering is not merely a convenience. It is an expression of the decision-first principle at the level of the document itself. Just as the analytical environment draws its boundaries around what must remain visible for a given decision, the document's tagging system draws its navigation boundaries around what is relevant for a given reader's purpose. The document becomes, in this sense, a decision-centred knowledge resource rather than a sequentially structured text.
+
+The governance implication is equally important. When the manuscript grows through community contribution, each new section carries its own tags at the point of contribution. The contributor declares whether the section is Educational, Specified, or Visionary; declares whether it contains open Research questions; and declares whether it is inviting further Contribution. The editorial process assesses whether the tags are accurately applied, not only whether the content is intellectually sound. A section that claims Implemented status must demonstrate that claim through a reference to a working implementation and a ValidationArtefact. A section that claims Educational status must be written at a level of generality accessible to a reader without prior framework knowledge. The tags are not decorative; they are governance commitments that the editorial process enforces.
+
+The connection to the broader scholarly communication vision discussed in the Context Declaration and in the side argument of §7.6's Proposition XI is direct. The claim attestation system proposed there, in which specific technical claims are individually attested by named domain experts, operates most effectively when the claims to be attested are already individually identified and tagged. A manuscript with a structured Content Tag system provides the claim register that attestation requires. The tags make explicit which claims belong to which epistemic community, and that explicitness is the precondition for targeted expert engagement.
+
+The tagging system proposed here does not require immediate implementation across the full manuscript. It can be introduced progressively: first in new sections as they are contributed, then retroactively in the sections whose tags are most consequential for navigation. Table 7.8 presents the full proposed vocabulary with definitions, usage conditions, and the visual indicators used in the Table of Contents.
+
+Table 7.8: Extended Node Declaration tag vocabulary
+
+| Tag | Class | Symbol | Definition | Usage condition |
+|---|---|---|---|---|
+| Implemented | Content | ✓ | Claims grounded in the current proof of concept; working code or method exists | Requires reference to a ValidationArtefact or documented pipeline output |
+| Specified | Content | ○ | Fully designed component not yet built; claims are architectural commitments | Requires a specification document or sub-module that defines the implementation target |
+| Vision | Content | ◇ | Provisional direction; claims are exploratory and explicitly subject to revision | Must acknowledge the speculative character of the claims within the section prose |
+| Educational | Content | ⬡ | Primary purpose is understanding-building; may draw on established methods | Should be accessible to a reader without prior framework knowledge |
+| Collaborative | Content | ✦ | Open specification or open question explicitly inviting contribution | Should include or reference a contribution template declaring what a valid response looks like |
+| Research | Modifier | [R] | Contains unresolved methodological questions or open theoretical problems | Should state the question precisely enough that a reader could design a study to address it |
+| Platform | Modifier | [P] | Relates to how the manuscript functions as a knowledge resource | Used sparingly; reserved for sections whose subject is the document's own architecture |
+| Contribute | Modifier | [C] | Contains a contribution template or formal specification for community extension | Must specify the interface contract or schema requirements that a valid contribution must satisfy |

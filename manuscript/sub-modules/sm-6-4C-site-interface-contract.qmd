@@ -1,8 +1,67 @@
 ---
 title: "Sub-Module 6.4-C"
-subtitle: "Site Interface Contract"
+subtitle: "Site Module Interface Contract and Schema Tables"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-4C -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-6.4-C: Site Module Interface Contract and Schema Tables
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §6.4, Module 3 SM-3.5-A |
+| **Contributes** | Complete schema tables for all artefacts produced and consumed by the site dispatch module |
+| **Skip condition** | Skip for results reading; process when implementing or verifying module compliance |
+| **Passes to** | §6.5, Module 7 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-6.4-C: Site Module Interface Contract and Schema Tables
+
+### SiteConfigArtefact Schema
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| epoch_tag | String | Required | Epoch identifier (e.g., "2035_EB") |
+| pathway_id | String | Required | Pathway identifier ("EB" or "BB") |
+| dispatch_mode | Enum | Required | "proportional" or "optimal_subset" |
+| commitment_block_hours | Integer | Required | Commitment block length for optimal mode (168 for weekly) |
+| units | List | Required | List of unit configurations (see below) |
+| carbon_price_nzd_per_tco2 | Float | Required | ETS price used for carbon cost computation |
+
+### Unit Configuration Fields (Within SiteConfigArtefact)
+
+| Field | Type | Description |
+|---|---|---|
+| unit_id | String | Unique unit identifier (e.g., "EB1", "BB1", "GasBU") |
+| unit_type | Enum | "electric_boiler", "biomass_boiler", "coal_boiler", "gas_boiler" |
+| rated_capacity_mw | Float | Nameplate thermal capacity (MW) |
+| thermal_efficiency | Float | Heat output per unit fuel or electricity input |
+| fuel_price_nzd_per_gj | Float | Delivered fuel price (NZD/GJ); zero for electric units |
+| electricity_tariff_nzd_per_mwh | Float | Base electricity tariff; overridden by SignalsPack when available |
+| var_om_nzd_per_mwh | Float | Variable operation and maintenance cost (NZD/MWh heat) |
+| fixed_on_nzd_per_hr | Float | Fixed operating cost when committed (NZD/hour) |
+| startup_cost_nzd | Float | Cost per start event |
+| emissions_factor_tco2_per_gwh | Float | Direct combustion emissions (tCO2/GWh heat); zero for electric and biomass-neutral units |
+
+### ResultArtefact Key Output Fields
+
+| Column | Units | Description |
+|---|---|---|
+| unit_id | — | Unit identifier; "TOTAL" row contains site-wide aggregates |
+| annual_total_cost_nzd | NZD | Sum of all cost components |
+| annual_fuel_cost_nzd | NZD | Cost of delivered fuels |
+| annual_electricity_cost_nzd | NZD | Cost of electricity consumption |
+| annual_electricity_mwh | MWh | Annual electricity consumption |
+| avg_electricity_tariff_nzd_per_mwh | NZD/MWh | Weighted average electricity tariff |
+| annual_co2_tonnes | tCO2 | Annual direct combustion emissions |
+| annual_carbon_cost_nzd | NZD | ETS cost at declared carbon price |
+| annual_unserved_mwh | MWh | Unserved heat demand |
+
+### IncrementalElectricityPack Schema (Site Dispatch Output)
+
+| Column | Units | Description |
+|---|---|---|
+| timestamp_utc | UTC | Hourly timestamp |
+| incremental_electricity_mw | MW | Hourly incremental electricity demand above 2020 baseline |

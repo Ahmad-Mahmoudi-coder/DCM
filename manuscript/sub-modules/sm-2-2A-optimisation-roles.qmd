@@ -1,8 +1,53 @@
 ---
 title: "Sub-Module 2.2-A"
-subtitle: "Optimisation Roles"
+subtitle: "LP, MILP, and Stochastic Optimisation, Role Summary"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-2-2A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §2.2 |
+| **Contributes** | Formal problem statements for LP, MILP, and two-stage stochastic programming, a role summary table, and a note on how PyPSA/Linopy network optimisation outputs translate into SignalsPack fields |
+| **Skip condition** | Skip if optimisation classes and their uses are already known |
+| **Passes to** | §2.3, SM-6.6-E |
+| **Sub-Modules here** | None |
+:::
+
+## SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary
+
+Linear programming minimises a linear objective function subject to linear inequality and equality constraints. The standard form is:
+
+$$
+\min_{x} \; c^\top x \quad \text{subject to} \quad Ax \leq b, \quad x \geq 0
+$$
+
+where $x \in \mathbb{R}^n$ is the vector of decision variables, $c$ is the cost vector, and $A$, $b$ define the constraint set. The LP dual provides shadow prices for each binding constraint, which in an electricity network context correspond to the nodal marginal prices and congestion rents that inform the SignalsPack fields. A PyPSA LP optimisation of the regional electricity network under a specific future produces, among other outputs, the nodal marginal price at the Edendale GXP, the line loading fractions that indicate whether congestion is occurring, and the system adequacy margin. These outputs are post-processed into the SignalsPack fields: the feasibility indicator, the upgrade class, the cost adder, and the scarcity index.
+
+Mixed-integer programming extends LP by allowing some decision variables to take integer or binary values:
+
+$$
+\min_{x, y} \; c^\top x + d^\top y \quad \text{subject to} \quad Ax + By \leq b, \quad x \geq 0, \quad y \in \{0, 1\}^m
+$$
+
+where $y$ represents binary commitment decisions. MILP is appropriate for the unit-commitment logic in the site dispatch module, where each boiler or electric boiler unit is either committed or not in a given scheduling block, and for the upgrade option selection in the grid RDM evaluation, where each upgrade option is either installed or not.
+
+Two-stage stochastic programming adds an explicit probabilistic structure to LP or MILP. The first stage makes here-and-now decisions $x$ before uncertainty is resolved; the second stage makes recourse decisions $y(\omega)$ after scenario $\omega$ is realised:
+
+$$
+\min_x \; c^\top x + \mathbb{E}_\omega[Q(x, \omega)] \quad \text{subject to} \quad Ax \leq b, \quad x \geq 0
+$$
+
+where $Q(x, \omega) = \min_y \{q(\omega)^\top y : T(\omega)x + Wy \geq h(\omega)\}$ is the recourse cost. Two-stage stochastic programming is appropriate for near-term operational decisions within a module where a meaningful probability distribution over scenarios can be constructed. It is not appropriate for the outer DMDU ensemble, which operates under deep uncertainty where such distributions are contested.
+
+Table SM-2.2-A: Optimisation classes and their roles in the framework
+
+| Class | Formal structure | Uncertainty type handled | Example role in framework | Primary limitation in this context |
+|---|---|---|---|---|
+| LP | Linear objective, linear constraints, continuous variables | None (deterministic given future) | Regional electricity dispatch; GXP adequacy screening | Cannot represent discrete commitments; no structural uncertainty |
+| MILP | LP with binary/integer variables | None (deterministic given future) | Site unit commitment; upgrade option selection in grid RDM | Computationally expensive at scale; no structural uncertainty |
+| Two-stage stochastic | MILP or LP with scenario-weighted recourse | Parametric, probabilistic | Operational scheduling with known demand variability | Requires probability distribution; not suitable for deep uncertainty in outer ensemble |
+| Outer DMDU ensemble | Any inner optimisation across paired futures | Structural, deep | Full pathway comparison across 64 futures | Not a single optimisation — requires the architecture of Modules 3 and 6 |

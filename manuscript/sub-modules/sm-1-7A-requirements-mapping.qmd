@@ -1,8 +1,34 @@
 ---
 title: "Sub-Module 1.7-A"
-subtitle: "Requirements Mapping"
+subtitle: "Requirements-to-Architecture Mapping Table"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-1-7A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-1.7-A: Requirements-to-Architecture Mapping Table
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §1.7 |
+| **Contributes** | Extended mapping table connecting each requirement to the decision-first principle, the architectural mechanism that satisfies it, and its specific implementation in the proof of concept |
+| **Skip condition** | Skip for conceptual reading; process in full when assessing whether a specific implementation satisfies the requirements |
+| **Passes to** | Module 3, Module 6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-1.7-A: Requirements-to-Architecture Mapping Table
+
+The seven requirements of §1.7 connect the conceptual foundations of Module 1 to the architectural specifications of Module 3 and the proof-of-concept implementation of Module 6. The following extended table maps each requirement across four dimensions: its derivation from the decision-first boundary principle, the architectural mechanism that satisfies it, the specific component of Module 3 where that mechanism is specified, and the proof-of-concept implementation that demonstrates it.
+
+| Requirement | Why it follows from the decision-first principle | Architectural mechanism | Specified in | PoC implementation |
+|---|---|---|---|---|
+| 1. Explicitness of alternatives | Boundaries drawn by the decision must include the alternatives being decided between as first-class objects, not derived from interior model variables | Pathway variant identifiers in SiteConfigArtefact; each alternative is a separately stored and retrievable entity in the backbone | §3.2, §3.5 | 2035_EB and 2035_BB pathway configurations; each stores a distinct SiteConfigArtefact |
+| 2. Explicitness of futures | The future conditions that determine which consequences must remain visible must themselves be explicit and governed | FutureArtefact schema with declared uncertain driver fields; paired-futures contract enforcement | §3.5, §3.6 | futures.csv with five uncertain driver dimensions; paired contract verified before overlay computation |
+| 3. Decision-relevant outcomes | The boundary of the analysis must encompass the consequences that matter to the decision, and the outputs must be expressed in those terms | ResultArtefact and DecisionSummaryArtefact carrying cost decompositions, emissions, adequacy, regret, and satisficing metrics | §3.5 | site_dispatch summary CSVs; rdm_compare; site_decision_robustness_summary |
+| 4. Visibility of constraints and boundaries | Declaring boundaries explicitly is the operational form of the decision-first principle | Module interface declarations; module scope fields in artefact metadata | §3.2, §3.4 | One-pass coupling architecture declared; site boundary and regional boundary both specified in documentation |
+| 5. Comparability | Shared futures and consistent measurement are preconditions for the regret and robustness computations on which the comparison rests | Paired-futures design; schema versioning; SHA256 hash integrity ensuring artefact integrity across runs | §3.4, §3.6, §3.7 | Identical futures.csv used for EB and BB; hash verification on all SignalsPack outputs |
+| 6. Traceability | Progressive refinement requires that improvements can be made without destroying the analytical history against which they are evaluated | Append-only backbone; lineage table; run registry; supersession references in artefact lifecycle | §3.7 | Run-bundle folder structure; SHA256 hashes in provenance reports; lineage records connecting all pipeline artefacts |
+| 7. Targeted refinement | The framework develops toward decision-relevant parameters; the diagnostics must identify which parameters those are | Regret sensitivity diagnostics; PRIM-based scenario discovery; confidence scoring in surrogate artefacts | §3.8, SM-2.3-A, SM-2.4-A | Grid RDM results identify headroom multiplier as primary driver of pathway preference reversal; overlay isolates site-cost vs grid-side drivers |
+
+The table makes explicit a property of the requirements that §1.7 states but does not elaborate: they are not independent. Requirements 1 and 2 specify what must exist in the analytical environment (alternatives and futures as explicit objects). Requirements 3 and 4 specify what must be visible (decision-relevant outcomes and declared boundaries). Requirements 5 and 6 specify how the environment must preserve consistency and history. Requirement 7 specifies the developmental logic that makes the environment self-improving. The architecture satisfies all seven because they were the specification from which the architecture was designed.

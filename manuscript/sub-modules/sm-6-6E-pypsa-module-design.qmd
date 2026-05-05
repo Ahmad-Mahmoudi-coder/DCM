@@ -1,8 +1,36 @@
 ---
 title: "Sub-Module 6.6-E"
-subtitle: "PyPSA Module Design"
+subtitle: "PyPSA Regional Module Design, Next-Phase Specification"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-6E -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-6.6-E: PyPSA Regional Module Design, Next-Phase Specification
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ○ Specified |
+| **Assumes** | §6.6, Module 2 §2.2 (LP optimisation), Module 2 SM-2.3-A (surrogate validation) |
+| **Contributes** | Detailed design specification for the next-phase PyPSA regional electricity module including network structure, LP formulation, SignalsPack field mapping, and surrogate development pathway |
+| **Skip condition** | Skip if next-phase regional module development is not in scope |
+| **Passes to** | Module 7 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-6.6-E: PyPSA Regional Module Design, Next-Phase Specification
+
+Network structure. The PyPSA regional model for the Southland context represents the Mararoa-Waimea transmission cluster as a network of buses connected by transmission lines and transformers. The minimum viable network for the GXP adequacy assessment requires: the national grid bus at the Mararoa and Waimea 220 kV nodes; the zone substation bus at the EDN0331 GXP; the subtransmission lines connecting the two; and the demand bus representing the Edendale industrial load. A more complete representation would add the other major industrial loads in the region as separate demand buses.
+
+LP formulation. The network dispatch LP follows the PyPSA-standard formulation: minimise total generation cost subject to power balance at each bus, line capacity constraints, and generator capacity limits. The LP is run at hourly resolution for each planning epoch. The dual variable on the power balance constraint at the EDN0331 bus gives the locational marginal price, which maps directly to the tariff_nzd_per_mwh field of the SignalsPack.
+
+SignalsPack output mapping. The PyPSA LP produces the following outputs that map to SignalsPack fields:
+
+| PyPSA output | SignalsPack field | Derivation |
+|---|---|---|
+| Bus marginal price at EDN0331 | tariff_nzd_per_mwh | Dual variable on power balance constraint |
+| Line loading fraction on subtransmission | feasibility_indicator | 1 if max loading below capacity; 0 if any hour exceeds capacity |
+| System-wide adequacy margin | headroom_mw | Firm capacity minus committed load minus N-1 reserve |
+| Upgrade class from capacity check | upgrade_class | Classified from peak exceedance against upgrade menu |
+| Upgrade cost adder | cost_adder_nzd | Annualised upgrade cost attributable to the new load |
+
+Surrogate development pathway. A gradient boosting regressor trained on PyPSA outputs from a Latin Hypercube sample of 500 futures forms the first surrogate generation. The surrogate input features are the five FutureArtefact uncertain drivers. The output targets are the five SignalsPack fields above. Validation follows the decision-ranking preservation protocol of Sub-Module SM-2.3-A.

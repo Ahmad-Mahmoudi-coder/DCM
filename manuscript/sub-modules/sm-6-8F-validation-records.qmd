@@ -1,8 +1,46 @@
 ---
 title: "Sub-Module 6.8-F"
-subtitle: "Validation Records"
+subtitle: "Validation Records and Artefact Log"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-8F -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-6.8-F: Validation Records and Artefact Log
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §6.8 |
+| **Contributes** | Complete per-artefact validation gate outcomes, the DemandPack failure-correction log, and the lineage statistics for the release bundle |
+| **Skip condition** | Skip for conceptual reading; process when auditing the PoC governance record |
+| **Passes to** | §6.9 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-6.8-F: Validation Records and Artefact Log
+
+### Artefact Admission Summary
+
+| Artefact family | Total instances | Passed on first attempt | Required correction | Currently superseded |
+|---|---|---|---|---|
+| DemandPack | 8 (4 epochs × 2 pathways) | 5 | 3 (2035_EB rounding error) | 3 |
+| IncrementalElectricityPack | 4 (2 pathways × 2 epochs in comparison) | 4 | 0 | 0 |
+| SignalsPack | 4 (4 epochs) | 4 (SHA256 verified) | 0 | 0 |
+| FutureArtefact | 64 (futures 0 to 63) | 64 | 0 | 0 |
+| ResultArtefact | 4 (2 pathways × 2 epochs) | 4 | 0 | 0 |
+| ValidationArtefact | 28 | 28 | — | 0 (all retained) |
+| DecisionSummaryArtefact | 1 | 1 | 0 | 0 |
+
+### DemandPack Failure-Correction Log
+
+| Artefact ID | Epoch | Failure reason | Gate | Action | Superseded by |
+|---|---|---|---|---|---|
+| dp_2035_EB_v001 | 2035_EB | annual_total closure error 0.72% | energy_balance_closure | Algorithm corrected | dp_2035_EB_v004 |
+| dp_2035_EB_v002 | 2035_EB | annual_total closure error 0.83% | energy_balance_closure | Algorithm corrected | dp_2035_EB_v004 |
+| dp_2035_EB_v003 | 2035_EB | annual_total closure error 0.91% | energy_balance_closure | Algorithm corrected | dp_2035_EB_v004 |
+
+Root cause: Seasonal decomposition fractions summed to 0.999 rather than 1.000 due to floating-point truncation in the monthly allocation step. Fix: normalise fractions to sum exactly to 1.0 before application.
+
+### SHA256 Hash Verification Summary
+
+All four SignalsPack files were verified against their declared manifest hashes on each consuming module read. No hash mismatches were detected in the release bundle.

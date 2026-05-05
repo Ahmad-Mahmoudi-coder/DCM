@@ -3,5 +3,327 @@ title: "Module 3: Architecture"
 subtitle: "Modular Decomposition, Artefacts, and Governed Persistence"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt M3-01 -->
+::: {.callout-note collapse="false" icon="false"}
+## Module 3 Declaration
+
+| Field | Content |
+|---|---|
+| **Purpose** | Defines the structural core of the framework: how modules are decomposed, how they exchange governed artefacts through thin-waist interfaces, and how those artefacts persist in a queryable backbone |
+| **Assumes** | Modules 1 and 2 — the seven requirements of §1.7 are the specification this module's architecture is designed to satisfy; the tools of Module 2 are what the architecture organises |
+| **Contributes** | Modular decomposition logic; the five-layer architecture; the thin-waist artefact exchange; the seven canonical artefact families and their schema design principles; artefact lifecycle and acceptance gate logic; the analytical backbone design; and AI/ML artefact governance |
+| **Passes to** | Module 4 (domain translation of these architectural concepts); Module 6 (proof-of-concept instantiation) |
+| **Can be read independently** | Partially — the rationale for architectural choices is clearest after Modules 1 and 2, but the section on artefact families (§3.5) can serve as a reference independently |
+| **Sub-Modules** | SM-3.5-A (Canonical Artefact Schema Reference); SM-3.7-A (Backbone Implementation: DuckDB, Parquet, Snakemake); SM-3.8-A (AI/ML Provenance Requirements and Acceptance Protocol) |
+:::
+
+## §3.1 Why Modularity Is Necessary
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.1 Why Modularity Is Necessary
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ✓ Complete |
+| **Assumes** | Modules 1 and 2 |
+| **Contributes** | Establishes that modularity is an architectural necessity for the problem class addressed, not a software engineering preference, by identifying the four requirements that a monolithic analytical system cannot satisfy |
+| **Skip condition** | Skip if reader accepts modularity as necessary; proceed to §3.5 for the artefact schema |
+| **Passes to** | §3.2, §3.3 |
+| **Sub-Modules here** | None |
+:::
+
+The tools described in Module 2, optimisation, simulation, surrogate emulation, and ensemble construction, are powerful in isolation. When the problem requires them to work together across scales, the question of how they should be organised becomes decisive. A monolithic analytical system, one that encompasses all components within a single model or single codebase, cannot satisfy four of the seven requirements derived in §1.7. This is not a statement about computational limitations. It is a statement about what monolithic architectures structurally cannot provide, regardless of how sophisticated the underlying tools are.
+
+The first reason modularity is necessary is scale heterogeneity. The decision problem of §1.1 operates simultaneously at the scale of individual facility operations, regional electricity networks, and national policy environments. A site-level thermal dispatch simulation requires hourly or sub-hourly resolution over individual utility assets. A regional network optimisation requires nodal resolution across a transmission topology. A national scenario model requires annual resolution across economic sectors. No single model formulation can operate simultaneously at all three scales without sacrificing what each scale requires. Modularity allows the site module to operate at the scale it needs, the regional module to operate at the scale it needs, and the two to exchange only the signal-level information that crosses the boundary between them: the compact IncrementalElectricityPack from site to regional, the SignalsPack from regional back to site.
+
+The second reason is method heterogeneity. The best tool for site-level dispatch is not the best tool for regional network adequacy assessment, and neither is the best tool for DMDU ensemble evaluation. LP-based scheduling, equation-based physical simulation, network flow optimisation, and surrogate emulation are all legitimate and powerful methods for their respective purposes. A monolithic system forces all of them into one formulation, typically at the cost of the most computationally demanding component constraining the resolution or method choice for all others. Modularity allows each component to use the method most appropriate to its role.
+
+The third reason is progressive refinement. The framework begins with simplified representations and enriches them where regret diagnostics indicate that refinement is decision-relevant. This progressive development is only possible if components can be upgraded independently. In a monolithic system, changing the dispatch logic requires rebuilding the entire model. In a modular system, upgrading the site dispatch module from proportional allocation to LP-based scheduling is an internal change that requires no modifications to the regional module, the backbone, or the evaluation layer, provided the upgraded module continues to emit schema-conforming artefacts. Modularity is what makes the progressive-refinement philosophy architecturally coherent rather than merely aspirational.
+
+The fourth reason is auditability. When a result is questioned, it must be traceable to the specific modules, versions, inputs, and assumptions that produced it. In a monolithic system, this traceability is difficult to maintain as the system grows and is modified. In a modular system, each module's outputs are governed objects with explicit provenance, and the lineage from any result back to its generating conditions can be reconstructed through the backbone's lineage table.
+
+The connection to the decision-first boundary principle is direct. Each module boundary is a decision-frame boundary: it encloses exactly the components needed to produce the consequences relevant to the module's role in the decision chain. The module boundary does not follow the physical extent of the system; it follows what the decision requires to be visible at that layer of the analysis.
+
+## §3.2 What a Module Is and What It Is Not
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.2 What a Module Is and What It Is Not
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ✓ Complete |
+| **Assumes** | §3.1 |
+| **Contributes** | Provides the formal definition of a module as a role-and-interface specification rather than an implementation, and establishes the implementation-independence principle |
+| **Skip condition** | Skip if reader already knows the role/interface contract/implementation-independence definition |
+| **Passes to** | §3.3, §3.4 |
+| **Sub-Modules here** | None |
+:::
+
+The term module is used with precision throughout this framework, and the precision matters. A module, in this framework's sense, is not a software component, not a data store, and not an organisational unit of a codebase. It is an analytical component of the modelling environment defined by four properties: a declared analytical role, declared inputs, declared outputs, and an explicit interface contract. These four properties together constitute what the module is. How the module implements its role internally is entirely separate from what the module is.
+
+The analytical role is the question the module answers within the decision chain. The Facility Module answers: given this site's technology configuration and external signals, what heat demand profile and pathway-specific dispatch does this site produce? The Regional Module answers: given this increment of electrical demand at the GXP, under these regional system conditions, what are the adequacy, cost, and signal implications? The DMDU Orchestration layer answers: given the outputs of all modules across this future ensemble, which pathways are most robust and where does vulnerability concentrate? A module whose role cannot be stated concisely is a poorly defined module.
+
+The declared inputs specify what external information the module consumes. Inputs may be governed artefacts produced by other modules, parameters drawn from a configuration layer, or external data injected from a calibrated data pipeline. The crucial requirement is that inputs be declared explicitly. A module that accesses undeclared shared state or reads from a background file without a formal input declaration has hidden dependencies that undermine both traceability and replaceability.
+
+The declared outputs specify what the module produces. In this framework, all module outputs that enter the comparison chain are governed artefacts: structured, versioned, validated, and provenance-carrying objects that conform to a declared schema. The significance of this requirement is developed in §3.5 and §3.6.
+
+The interface contract is the formal specification of what crosses the module boundary: the schema of input artefacts, the schema of output artefacts, the units and frequencies of time-resolved quantities, and the validation conditions that outputs must satisfy before admission to the backbone. The interface contract is the module's public commitment to the rest of the framework.
+
+The implementation independence principle follows from these four properties. A module is defined by its role and its interface contract. Its internal implementation, the specific algorithm, data structure, programming language, or tool it uses to transform inputs into outputs, is the module's private concern. A proportional dispatch calculator and an OpenModelica thermal network simulation that both conform to the same site module interface contract are both valid implementations of the same module. Upgrading from one to the other is an internal change that requires no modifications to any other module. The interface contract is stable; the implementation is free.
+
+This distinction has a specific practical implication for the development strategy. When the interface contract of the Facility Module specifies that its output must include an IncrementalElectricityPack with declared fields at hourly resolution, the proportional dispatch implementation satisfies that contract with a simple calculation. The OpenModelica implementation satisfies it through a full thermal network simulation followed by an export step that produces the same schema-conforming artefact. The regional module and the evaluation layer cannot distinguish which implementation produced the artefact; they consume the artefact's content. The framework can upgrade from the first implementation to the second without disrupting anything outside the Facility Module. Changing the interface contract, by contrast, is an architectural change that requires coordinated updates across all modules that consume the affected artefact.
+
+## §3.3 The Five-Layer Architecture
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.3 The Five-Layer Architecture
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ✓ Complete |
+| **Assumes** | §3.1, §3.2 |
+| **Contributes** | Maps the five functional layers of the analytical environment, the artefact families that flow between adjacent layers, and the inter-layer coupling logic that makes the whole chain coherent |
+| **Skip condition** | Skip if reader knows the five-layer structure from §0.4; this section adds the coupling logic and inter-layer artefact flows |
+| **Passes to** | §3.4, Module 4 |
+| **Sub-Modules here** | None |
+:::
+
+The framework's modules are organised into five functional layers. Section §0.4 introduced these layers by name and general function. This section adds the detail that matters for implementation: what flows between layers, how the coupling is structured, and what analytical failure each layer prevents when it is absent.
+
+The site layer contains the modules that represent individual facility operations. Its primary function is to translate a facility's technology configuration, operating schedule, and pathway variant into two types of output: the time-resolved energy interface signals that cross the site boundary toward the regional system, and the cost, emissions, and adequacy summaries that feed the evaluation layer. The site layer is where the DemandPack is produced from demand construction logic, where the proportional or LP-based dispatch logic allocates heat demand across utility assets, and where the IncrementalElectricityPack is assembled from the dispatch output. The site layer's internal complexity, individual unit models, storage dynamics, maintenance schedules, can grow arbitrarily without affecting any other layer, provided the interface artefacts remain schema-conforming.
+
+The interface layer is the thin waist of the analytical chain. It performs the translation between the site layer's internal signal representation and the regional layer's signal requirements, and between the regional layer's output signals and the format in which the site dispatch module can consume them. In the Edendale proof of concept, the interface layer's primary function is to translate the site's full hourly dispatch record into the compact IncrementalElectricityPack descriptor set, and to translate the regional module's SignalsPack outputs into the tariff adder and cost signals that the dispatch module uses for pathway cost computation. The interface layer is where the thin-waist exchange occurs; its design governs what information crosses the boundary and in what form.
+
+The regional layer provides the infrastructure-side and resource-side context that makes site-level pathway choices legible at the regional scale. Its primary function is to receive the site's interface artefacts, evaluate them against regional constraint conditions drawn from the FutureArtefact, and return a SignalsPack carrying the signals that the interface layer needs. The regional layer is where GXP hosting capacity is assessed, where reinforcement cost adders are computed, and where biomass supply feasibility is evaluated. Its internal implementation ranges from the stylised screening model of the current proof of concept to a full PyPSA network optimisation to a trained ML surrogate.
+
+The evaluation layer computes the decision-relevant metrics from the outputs of all other layers. It receives ResultArtefacts from the site layer, SignalsPacks from the regional layer, and FutureArtefacts from the orchestration layer, and produces DecisionSummaryArtefacts containing the regret, robustness, satisficing, and threshold-violation metrics for each pathway under each future. The evaluation layer does not generate new analytical consequences; it aggregates and interprets the consequences generated by the layers below it. Its outputs are the primary inputs to the decision-making process.
+
+The orchestration layer coordinates the entire analytical chain across the future ensemble. It manages the sequencing of module runs, the construction and distribution of FutureArtefacts, the admission gates that ensure artefacts pass validation before downstream consumption, the backbone write operations that persist all outputs, and the PRIM and CART diagnostics that identify vulnerability regions and direct progressive refinement. The orchestration layer is implemented through the Snakemake workflow rules and the ensemble construction scripts described in Sub-Module SM-3.7-A.
+
+Table 3.3 summarises the five layers with their primary functions, input artefacts, output artefacts, and example tools.
+
+| Layer | Primary function | Input artefacts | Output artefacts | Example tool |
+|---|---|---|---|---|
+| Site | Demand construction; dispatch; pathway evaluation | SiteConfigArtefact, FutureArtefact, SignalsPack | DemandPack, IncrementalElectricityPack, ResultArtefact | Python dispatch module; OpenModelica (specified) |
+| Interface | Signal translation between site and regional formats | IncrementalElectricityPack, SignalsPack | IncrementalElectricityPack (translated), tariff and cost signals | Post-processing scripts in PoC pipeline |
+| Regional | Infrastructure and resource constraint evaluation | IncrementalElectricityPack, FutureArtefact | SignalsPack | Stylised screening model; PyPSA (specified); ML surrogate (specified) |
+| Evaluation | Regret, robustness, satisficing computation | ResultArtefact, SignalsPack, FutureArtefact | DecisionSummaryArtefact | Python analytics; site decision robustness overlay |
+| Orchestration | Ensemble coordination; validation gating; backbone management | FutureArtefact (input design) | ValidationArtefact, run registry records | Snakemake; Python ensemble scripts |
+
+## §3.4 The Thin-Waist Artefact Exchange
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.4 The Thin-Waist Artefact Exchange
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ✓ Complete |
+| **Assumes** | §3.2, §3.3 |
+| **Contributes** | Develops the thin-waist principle at the architectural implementation level, adding the interface contract stability specification and the proof-of-concept two-repository instantiation to the conceptual framing of §0.5 |
+| **Skip condition** | Skip if the thin-waist principle is already understood from §0.5; this section adds the implementation-level detail including the PoC two-repository architecture |
+| **Passes to** | §3.5, §3.6 |
+| **Sub-Modules here** | None |
+:::
+
+The thin-waist principle was introduced in §0.5 as the architectural commitment that makes the decision-first boundary logic operationally feasible across heterogeneous components. This section develops its implementation in the specific context of the framework's five-layer architecture, adding the detail that practitioners need to build conformant modules and the proof-of-concept instantiation that demonstrates the principle is not merely conceptual.
+
+At the architectural level, the thin waist consists of the interface contracts that govern what crosses each layer boundary, and the schema-conforming governed artefacts that carry that exchange. The interface contract specifies, for each artefact family that crosses a given boundary, the exact field names, data types, units, temporal resolution, naming conventions, and validation requirements that both the producing module and the consuming module must honour. The contract is frozen for a given schema version. Neither the producing module nor the consuming module can change the contract unilaterally without triggering a schema version increment that requires coordinated update across all affected modules.
+
+The IEA Project BlueSky initiative, which seeks standardised data exchange interfaces between heterogeneous modelling components in the open-source energy system modelling community, is architecturally aligned with the thin-waist principle. What the present framework adds to BlueSky's interoperability ambition is artefact governance: the schema versioning requirement that makes interface evolution traceable, the provenance fields that make the origin of every crossing-point value attributable, the validation gating that enforces schema conformance at every admission, and the append-only backbone that preserves every version of every artefact for later comparison. Interoperability without governance allows heterogeneous components to exchange data. Interoperability with governance allows the exchange to be trusted, audited, and progressively improved.
+
+Interface contract stability has a specific and consequential definition in this framework. What is stable across module evolution is everything specified in the interface contract: field names, column order, data types, units, timestamp format, file naming conventions, and schema version identifier. A module implementer may change any internal algorithm, data structure, or tool without triggering a contract revision, provided the output artefact still conforms. What is not stable and requires a formal contract revision is: any change to a required field name, any change to a field's declared data type or units, any removal of a required field, and any change to the timestamp format or file naming convention. Optional fields may be added without a major version increment. Required fields may never be changed without one.
+
+The proof-of-concept instantiation of the thin-waist principle is the two-repository architecture. The main model repository contains the site dispatch module, the demand construction code, the regional screening module, the RDM evaluation logic, and the orchestration scripts. The Edendale_GXP repository is a separate, portable module dedicated to generating the GXP-level SignalsPack signals. These signals, hourly headroom, tariff, and grid emissions intensity data for the Edendale GXP across multiple planning epochs, are produced by the Edendale_GXP repository under a frozen interface contract and consumed by the main model repository through that contract. The Edendale_GXP repository can be upgraded, its data sources improved, and its internal generation methodology evolved without requiring any changes to the main model repository, provided the output files continue to conform to schema version 0.1.0. This is the thin-waist principle operating at the codebase level: two independently maintained repositories exchanging governed artefacts through a frozen interface contract.
+
+The interface contract for the SignalsPack is documented in the INTERFACE_CONTRACT.md file of the Edendale_GXP repository and is reproduced in Sub-Module SM-6.5-D. The contract declares required file names, column names, timestamp format, SHA256 hash integrity requirements, and the version identifier that consuming modules use to confirm compatibility. Its existence at the codebase level is what makes the planned transition from synthetic RETA-calibrated signals to measured hourly data and ultimately to PyPSA-generated signals a drop-in module replacement rather than an architectural revision.
+
+## §3.5 Artefact Families and Schema Design
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.5 Artefact Families and Schema Design
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ✓ Complete |
+| **Assumes** | §3.4 |
+| **Contributes** | Defines the seven canonical artefact families, establishes the five schema design principles, and provides the summary reference table for all families |
+| **Skip condition** | Do not skip if implementing the framework; consult SM-3.5-A for full field-level specifications |
+| **Passes to** | §3.6, Module 6 |
+| **Sub-Modules here** | SM-3.5-A: Canonical Artefact Schema Reference |
+:::
+
+The thin-waist exchange of §3.4 operates through governed artefacts. An artefact, in this framework's precise sense, is not merely a file or a model output. It is a structured, versioned, validated, and provenance-carrying analytical object that has been admitted to the comparison chain through an explicit acceptance gate and persisted in the backbone with traceable lineage. The distinction between an output and an artefact is methodologically significant: many models produce outputs, but outputs become artefacts only when they have been made governable.
+
+The framework uses seven canonical artefact families. Each family corresponds to a distinct type of analytical object that flows between layers or persists in the backbone.
+
+The DemandPack is the canonical demand artefact produced by the site demand construction module and consumed by the site dispatch module. It carries a time-resolved hourly heat demand profile for a specific site, epoch, scenario variant, and future condition, together with the provenance fields that link it to the demand construction run and the FutureArtefact that governed its uncertain driver values.
+
+The IncrementalElectricityPack is the canonical electricity interface artefact produced by the site dispatch module and consumed by the regional electricity module. It carries the compact signal descriptors that represent the site's electricity demand increment at the GXP boundary: annual incremental energy, peak incremental demand, 95th percentile demand, winter-peak share, and shape cluster label. The compactness of this artefact is a deliberate design choice that implements the thin-waist principle: the regional module receives exactly what it needs to perform adequacy assessment and nothing more.
+
+The SignalsPack is the canonical electricity interface artefact produced by the regional module and consumed by the site dispatch module and the evaluation layer. It carries the GXP-level signals that make regional infrastructure conditions legible to the site evaluation: adequacy headroom, tariff adders, scarcity-price proxies, upgrade-class indicators, and confidence scores. In the current proof of concept, the SignalsPack is produced by the Edendale_GXP repository at schema version 0.1.0 with SHA256 hash integrity.
+
+The FutureArtefact records the specific combination of uncertain driver values under which a given pipeline run was executed. Every other artefact produced in that run carries a foreign key reference to its governing FutureArtefact. Without the FutureArtefact, results cannot be attributed to specific future conditions, and regret and robustness metrics have no external conditions to be interpreted against.
+
+The ResultArtefact records the site-level and system-level consequences for a specific alternative, epoch, and future. In the proof of concept, the site dispatch summary CSV is the primary ResultArtefact: it carries annual costs by component, annual electricity consumption, annual fuel use by carrier, direct emissions, and adequacy metrics for each unit and for the site total.
+
+The ValidationArtefact records the outcome of every acceptance gate check applied to every other artefact. It is the governance artefact: its existence and its content confirm that an artefact was assessed against declared criteria before being admitted to the comparison chain. Failed ValidationArtefacts, such as those produced during the DemandPack rounding error incident described in §3.6, are retained in the backbone alongside their associated failed artefacts. Their presence is evidence of the governance process working, not evidence of failure.
+
+The DecisionSummaryArtefact is the evaluation layer's primary output. It carries the regret, robustness, satisficing, and threshold-violation metrics for each alternative across the future ensemble. Its credibility depends entirely on the governance of the upstream chain: every metric it reports is traceable through the backbone's lineage table to the specific ResultArtefacts, SignalsPacks, and FutureArtefacts that contributed to its computation.
+
+Five principles govern schema design across all seven families.
+
+Minimum necessary content: a schema carries exactly the fields needed to fulfil the artefact's role. Fields that are analytically interesting but not required for the consuming module's function do not belong in the core schema.
+
+Explicit semantics: every field has a declared meaning, a declared data type, and a declared unit. Undeclared or ambiguous field semantics are a systematic source of interpretation errors when artefacts are consumed across module boundaries.
+
+Version stability: a deployed schema version is never modified in ways that break existing consumers. New optional fields may be added; required fields may never be changed or removed without a major version increment.
+
+Validation-gate alignment: every field with a validation rule has that rule declared in the schema. Validation rules are not applied informally or post-hoc; they are part of the schema specification and are enforced at admission.
+
+Technology neutrality: the schema specification is expressed in terms of field names, types, units, and relationships, not in terms of the storage technology used to implement it. A schema compliant artefact may be stored as a CSV file, a Parquet file, or a DuckDB table without changing its analytical meaning.
+
+Table 3.5 summarises all seven families with their primary producers, consumers, key fields, and current schema versions.
+
+| Artefact family | Primary producer | Primary consumer | Key fields | Schema version |
+|---|---|---|---|---|
+| DemandPack | Site demand module | Site dispatch module | timestamp_utc, heat_demand_mw, annual_total_mwh, future_id, run_id | 1.0 |
+| IncrementalElectricityPack | Site dispatch module | Regional electricity module | annual_incremental_mwh, peak_incremental_mw, p95_incremental_mw, winter_peak_share, shape_cluster_label | 1.0 |
+| SignalsPack | Regional module / Edendale_GXP repository | Site dispatch module, evaluation layer | timestamp_utc, headroom_mw, tariff_nzd_per_mwh, feasibility_indicator, upgrade_class, cost_adder_nzd | 0.1.0 |
+| FutureArtefact | Orchestration layer | All modules | future_id, headroom_mult, demand_growth_mult, hydro_class, biomass_availability_mult, ets_price_nzd | 1.0 |
+| ResultArtefact | Site dispatch module | Evaluation layer | annual_total_cost_nzd, annual_co2_tonnes, annual_electricity_mwh, annual_unserved_mwh, future_id, pathway_id | 1.0 |
+| ValidationArtefact | Orchestration layer | Backbone (governance record) | artefact_id, check_name, outcome, failure_details, timestamp | 1.0 |
+| DecisionSummaryArtefact | Evaluation layer | Decision-maker, reporting layer | pathway_id, win_rate, max_regret_nzd, p90_regret_nzd, satisficing_rate, future_id_set | 1.0 |
+
+Full field-level specifications, including data types, units, required/optional status, and validation rules for every field in every family, are in Sub-Module SM-3.5-A.
+
+::: {.callout-tip}
+## Sub-Module SM-3.5-A
+
+Canonical Artefact Schema Reference — complete field-level specifications, schema version history, and cross-reference table — is in [SM-3.5-A](sub-modules/sm-3-5A-artefact-schema.qmd). Do not skip when implementing any module that produces or consumes these artefacts.
+:::
+
+## §3.6 Artefact Lifecycle, Validation, and Acceptance Gates
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.6 Artefact Lifecycle, Validation, and Acceptance Gates
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ✓ Complete |
+| **Assumes** | §3.5 |
+| **Contributes** | Develops the governed lifecycle of an artefact from generation through validation, publication, consumption, archival, and supersession, using the DemandPack rounding error incident as a concrete illustration |
+| **Skip condition** | Skip for conceptual reading; do not skip when implementing governance infrastructure |
+| **Passes to** | §3.7, Module 6 §6.8 |
+| **Sub-Modules here** | None |
+:::
+
+An artefact's governed status is not a property assigned at creation. It is a status earned through a sequence of stages, each of which imposes specific requirements and produces specific records. The six-stage lifecycle described here is both a technical specification and an expression of the framework's epistemological commitments: no analytical claim enters the comparison chain until it has passed through a declared assessment, and no assessment outcome is ever destroyed.
+
+Stage 1: Provisional. An artefact is created in provisional status immediately upon production by its generating module. Provisional artefacts exist in the backbone but are not available to downstream consuming modules. No ResultArtefact or DecisionSummaryArtefact may reference a provisional DemandPack or SignalsPack.
+
+Stage 2: Validated. An artefact achieves validated status after passing all acceptance gates declared in its schema. Acceptance gates are not preprocessing steps; they are first-class analytical activities documented in ValidationArtefacts and stored in the backbone alongside the artefacts they assessed. The acceptance gates for a DemandPack check energy balance closure within 0.5 percent of the declared annual total, chronological integrity with no gaps or duplicates in the hourly timestamp array, non-negativity across the full demand time series, peak consistency between the array maximum and the declared peak field, and provenance completeness for all required foreign key fields.
+
+Stage 3: Published. A validated artefact is published when the orchestration layer records its admission to the backbone and notifies downstream modules that it is available for consumption.
+
+Stage 4: Consumed. An artefact is consumed when a downstream module reads it as input to a computation. The consumption event is recorded in the backbone's lineage table with the consuming module's identity and the run in which consumption occurred.
+
+Stage 5: Archived. An artefact is archived when it is superseded by a newer version. Archived artefacts are retained in the backbone indefinitely. They remain queryable through the historical view of the backbone. Their archived status prevents them from appearing in current-view queries that return only the most recent validated version.
+
+Stage 6: Superseded. An artefact is marked superseded when a replacement version has been validated and published. The supersession record in the backbone carries a reference from the superseded artefact to its replacement, allowing the full version history of any analytical object to be reconstructed.
+
+The append-only principle is the operational expression of the framework's commitment to traceability. No artefact is ever deleted from the backbone. A DemandPack that was produced under a flawed algorithm, identified by an acceptance gate failure, corrected, and replaced exists in the backbone in both its failed and corrected forms, linked by a supersession reference. The failed ValidationArtefact that recorded the failure is retained alongside both versions. This complete record is not a burden; it is the evidence that the analytical process worked as intended.
+
+The DemandPack rounding error incident in the Edendale proof of concept illustrates all six stages in operation. During initial proof-of-concept development, three DemandPacks were produced and admitted to Stage 1 (Provisional). The energy balance closure gate at Stage 2 detected that their hourly arrays summed to 0.7 to 0.9 percent below the declared annual totals, exceeding the 0.5 percent tolerance. The gate produced failed ValidationArtefacts for all three, recorded the failure reason (seasonal decomposition fractions summed to 0.999 rather than 1.000), and held the three DemandPacks in Provisional status. The algorithm was corrected, three replacement DemandPacks were produced and passed all gates, and the corrected versions were published to Stage 3. The three failed DemandPacks were moved to Superseded status with references to their replacements. The failed ValidationArtefacts were retained as permanent governance records. The entire episode added transparency to the analytical record rather than compromising it.
+
+## §3.7 The Analytical Backbone
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.7 The Analytical Backbone
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ○ Specified (current PoC uses file-system implementation; DuckDB/Parquet implementation is next-phase) |
+| **Assumes** | §3.5, §3.6 |
+| **Contributes** | Develops the backbone as a methodological commitment, establishes its logical contract and eight design principles, and describes both the current file-system implementation and the next-phase DuckDB/Parquet target |
+| **Skip condition** | Skip if reader accepts backbone necessity and wants implementation detail; proceed to SM-3.7-A |
+| **Passes to** | §3.8, Module 6 |
+| **Sub-Modules here** | SM-3.7-A: Backbone Implementation, DuckDB, Parquet, Snakemake |
+:::
+
+The analytical backbone is the governed persistence layer in which all artefacts are stored, linked, and made queryable across runs, futures, epochs, and module versions. It is not a conventional database, and the distinction is important. A conventional database stores the current state of information, with old records replaced or updated as new information arrives. The analytical backbone is append-only: records are never deleted or overwritten. It is lineage-governed: every record carries explicit references to the artefacts and runs that produced it. It is schema-validated: no artefact is admitted without passing its schema's acceptance gates. It is a methodological commitment, not merely infrastructure.
+
+The backbone's logical contract has four components. The artefact store holds the content and identifying metadata of every admitted artefact, organised by family, schema version, and identifying keys. The run registry records the metadata of every pipeline run: the modules involved, the configuration version used, the execution timestamp, and the identifiers of all artefacts produced and consumed. The lineage table records the dependency relationships between artefacts: which artefact was consumed as input to which run, and which artefacts were produced as outputs. The validation registry records the outcome of every acceptance gate check, linking each ValidationArtefact to the artefact it assessed and to the gate specification under which it was evaluated.
+
+Eight design principles govern the backbone regardless of its physical implementation.
+
+Append-only storage: artefacts are never deleted or overwritten. Every superseded version is retained with its supersession reference.
+
+Schema-governed admission: an artefact is admitted only after passing all acceptance gates declared in its schema.
+
+Mandatory provenance: every record carries its full provenance including run identifier, future identifier, producing module identity and version, and schema version.
+
+Explicit lineage: every read and write operation involving an artefact is recorded in the lineage table at the time of the operation, not inferred afterwards.
+
+Queryable design: the schema is designed for the access patterns most commonly needed in analytical workflows: retrieval by artefact family, joining across families on shared foreign keys, and aggregation across the future ensemble.
+
+Semantic versioning: every artefact family has a schema version number following the major.minor convention. The backbone stores artefacts of different versions without conflict.
+
+Current and historical views: current-view queries return only the most recently validated, non-superseded artefact for each combination of family, run, future, epoch, and pathway. Historical-view queries return all versions including superseded and failed artefacts for audit purposes.
+
+Technology neutrality: the backbone's logical design is expressed in terms of artefact families, identifying keys, and relationship types rather than specific table structures or file formats.
+
+In the current proof of concept, the backbone is implemented as a file-system run-bundle structure. All outputs are organised under Output/runs/<bundle>/, with epoch tags and layer subdirectories providing the physical organisation. SHA256 hashes in the SignalsPack provenance reports and the signals manifest serve as the artefact integrity mechanism in place of a formal schema-governed admission system. This implementation satisfies the append-only and provenance requirements through the run-bundle naming convention and the SHA256 chain. It does not yet satisfy the queryable design or the explicit lineage principles in their full form.
+
+The next-phase implementation uses DuckDB for the logical backbone and Parquet files for artefact storage. DuckDB provides SQL querying with window functions, joins, and aggregations appropriate for robustness analysis, without requiring a server and with native Python compatibility. Parquet provides efficient columnar storage for time-series arrays and is compatible with Python, R, and Julia. The migration path from the current file-system implementation to the DuckDB/Parquet implementation is documented in Sub-Module SM-3.7-A, which also specifies the entity relationship schema and the Snakemake orchestration rules that enforce the artefact lifecycle.
+
+The backbone is also the enabling condition for the natural-language query vision described in the Context Declaration. A natural-language interface over the governed artefact store is only trustworthy if the artefacts it is querying are governed: schema-conforming, provenance-carrying, validation-gated, and linked through explicit lineage. Without governance, a language model querying the backbone cannot distinguish current from superseded results, validated from provisional artefacts, or results produced under one set of assumptions from those produced under another. The backbone's governance properties are what make AI-assisted analytical interrogation analytically trustworthy.
+
+::: {.callout-tip}
+## Sub-Module SM-3.7-A
+
+Backbone Implementation: DuckDB, Parquet, Snakemake — entity relationship schema, table definitions, migration path, and orchestration rules — is in [SM-3.7-A](sub-modules/sm-3-7A-backbone-implementation.qmd). Skip if conceptual backbone understanding is sufficient; process when implementing the next-phase backbone.
+:::
+
+## §3.8 AI and ML Artefact Governance
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §3.8 AI and ML Artefact Governance
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ○ Specified |
+| **Assumes** | §3.5, §3.6, §3.7 |
+| **Contributes** | Extends the artefact governance framework to outputs produced by AI and ML methods, establishing the five additional provenance fields and the human acceptance requirement |
+| **Skip condition** | Skip if AI/ML methods are not used in the current implementation; return when surrogate modules are deployed |
+| **Passes to** | Module 6, SM-3.8-A |
+| **Sub-Modules here** | SM-3.8-A: AI/ML Provenance Requirements and Acceptance Protocol |
+:::
+
+The artefact governance framework of §§3.5 through 3.7 applies to all analytical outputs that enter the comparison chain, regardless of how they were produced. An output produced by a rule-based dispatch algorithm, a linear optimisation, an equation-based physical simulation, or a trained ML surrogate is subject to the same schema conformance requirement, the same acceptance gate logic, and the same backbone admission process. The governed artefact is the unit of trust, not the production method.
+
+However, AI and ML methods have three characteristics that require additional governance elements beyond those required for deterministic or stochastic analytical modules.
+
+The first is opacity of inference. A rule-based dispatch calculation can be audited by inspecting its logic. An LP solution can be verified by substituting its values into the constraint matrix. A trained neural network's output for a given input cannot be audited in the same way: its internal representation is not interpretable without additional tooling, and its response to inputs near the boundary of its training distribution may be unreliable in ways that are not visible from the output value alone.
+
+The second is training data dependence. An ML model's performance is conditional on the distribution of its training data. A regional electricity surrogate trained on PyPSA outputs from a sample of futures may perform well in the interior of that sample and poorly near its boundaries. The training data identifier and the training sample coverage must be part of the artefact's provenance to make this dependence visible.
+
+The third is regime boundary behaviour. Near the boundaries of a surrogate's trained regime, the mapping between inputs and outputs may change qualitatively in ways that the surrogate's smooth approximation cannot represent. A surrogate for the regional electricity module may produce systematically underestimated headroom exceedances near the transition between feasible-without-upgrade and major-upgrade regimes, precisely the transition that matters most for the decision comparison.
+
+The response to these three characteristics is five additional provenance fields for artefacts produced by AI or ML methods. The model type and version field declares the specific model architecture, hyperparameter configuration, and version used to produce the artefact. The training data identifier field references the governed dataset from which the model was trained. The confidence score field carries the surrogate's self-assessment of its prediction reliability for this specific input, computed from the distance to the training distribution in the input feature space. The regime flag field declares whether the input was within or near the boundary of the surrogate's trained regime. The human acceptance record field carries the identifier of the human reviewer who confirmed that the output was plausible and appropriate before the artefact was admitted to the backbone.
+
+The human acceptance requirement deserves explicit justification. It is not optional and it is not bureaucratic overhead. AI and ML methods can produce plausible-looking outputs for inputs that are outside their trained distribution or near regime boundaries, without any visible signal of the problem in the output value itself. The confidence score provides a quantitative flag, but it cannot replace the judgement of a domain-informed analyst who can assess whether the specific output makes physical or analytical sense given what is known about the decision context. The human acceptance record is the evidence that this assessment occurred.
+
+The detailed protocol for confidence scoring, regime boundary detection, and the human acceptance workflow is in Sub-Module SM-3.8-A.
+
+::: {.callout-tip}
+## Sub-Module SM-3.8-A
+
+AI/ML Provenance Requirements and Acceptance Protocol — confidence scoring methodology, regime boundary protocol, human acceptance workflow, and comparison table — is in [SM-3.8-A](sub-modules/sm-3-8A-aiml-governance.qmd). Process when deploying any surrogate module.
+:::

@@ -1,8 +1,64 @@
 ---
 title: "Sub-Module 1.4-A"
-subtitle: "Decision Theory"
+subtitle: "Decision Theory: Extended Technical Treatment"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-1-4A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-1.4-A: Decision Theory, Extended Technical Treatment
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §1.4 |
+| **Contributes** | Formal treatment of expected utility theory, classical decision rules, regret and robustness metrics, and value of information in a DMDU context |
+| **Skip condition** | Skip if formal decision theory is already known; consult when the technical foundations of the evaluative standards in §1.5 are needed |
+| **Passes to** | §1.5 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-1.4-A: Decision Theory, Extended Technical Treatment
+
+Expected utility theory provides the dominant formal framework for decision under uncertainty in economics and in much of operations research. The foundational result, the von Neumann-Morgenstern theorem, establishes that if a decision-maker's preferences over lotteries satisfy a small set of axioms, including completeness, transitivity, and the independence axiom, then those preferences can be represented by a utility function $u(\cdot)$ such that the decision-maker prefers lottery $L_1$ to lottery $L_2$ if and only if the expected utility of $L_1$ exceeds that of $L_2$. The theorem is a representation result: it shows that rational preferences of a certain kind can be numerically represented, not that maximising expected utility is the only reasonable way to choose.
+
+Savage's subjective expected utility extension allows the decision-maker to have personal probability beliefs over states of the world rather than requiring objective probabilities. Under Savage's axioms, there exist both a subjective probability function $\pi$ over states and a utility function $u$ over outcomes such that the agent acts as if maximising the expectation $\mathbb{E}_\pi[u(Z(a, \omega))]$. The elegance of this framework is considerable. Its limitation under deep uncertainty is equally considerable: Savage's axioms include the sure-thing principle, which requires preference consistency across known and unknown states in ways that conflict with the behaviour observed in Ellsberg's paradox and related experiments. When the structure of the decision situation is genuinely uncertain rather than merely statistically noisy, the axioms on which Savage's framework rests may not be satisfied.
+
+The classical decision rules provide alternatives to expected utility for situations where probabilities are unavailable or unreliable. Maximin identifies the worst outcome for each alternative and selects the alternative whose worst case is best, representing extreme caution. Maximax identifies the best outcome for each alternative and selects the one with the highest possible upside, representing extreme optimism. The Hurwicz criterion interpolates between these by weighting best and worst outcomes by an optimism parameter $\alpha \in [0,1]$:
+
+$$
+H(a) = \alpha \max_\omega Z(a,\omega) + (1-\alpha) \min_\omega Z(a,\omega)
+$$
+
+The Laplace criterion treats all futures as equally likely and selects the alternative with the highest average outcome.
+
+Minimax regret deserves extended treatment because it is the conceptual ancestor of the regret metrics used throughout this framework. Let $Z^*(\omega) = \max_{a'} Z(a', \omega)$ denote the best achievable outcome under future $\omega$. The regret of choosing alternative $a$ under future $\omega$ is:
+
+$$
+r(a, \omega) = Z^*(\omega) - Z(a, \omega)
+$$
+
+Minimax regret selects the alternative $a^*$ that minimises the maximum regret across all futures:
+
+$$
+a^* = \arg\min_{a \in \mathcal{A}} \max_{\omega \in \Omega} r(a, \omega)
+$$
+
+This criterion has intuitive appeal for long-horizon decisions: it asks not which alternative has the highest possible payoff but which avoids the largest avoidable loss when the future becomes known.
+
+Robustness metrics formalise different aspects of how consistently an alternative performs across the future ensemble. The satisficing rate of alternative $a$ at threshold $\theta$ is the fraction of futures in which the outcome meets or exceeds the threshold:
+
+$$
+S(a, \theta) = \frac{|\{\omega \in \Omega : Z(a, \omega) \geq \theta\}|}{|\Omega|}
+$$
+
+The maximum regret of alternative $a$ across the ensemble is $\max_{\omega \in \Omega} r(a,\omega)$. The P90 regret is the 90th percentile of the regret distribution across futures, providing a less extreme but more robust measure of tail exposure. These three metrics capture complementary dimensions of performance under uncertainty and are computed together in the DecisionSummaryArtefact for each pathway comparison.
+
+Value of information concepts bridge decision analysis and progressive refinement. The Expected Value of Perfect Information (EVPI) under a probability distribution $\pi$ is:
+
+$$
+\text{EVPI} = \mathbb{E}_\pi[\max_a Z(a, \omega)] - \max_a \mathbb{E}_\pi[Z(a, \omega)]
+$$
+
+It measures the maximum one would pay for a perfect oracle. In the DMDU context, where $\pi$ is contested, EVPI is replaced by the regret-sensitivity equivalent: how much does the maximum regret of the preferred alternative change if uncertainty about a specific uncertain driver is resolved? This measure, computed by re-running the ensemble with specific driver dimensions held fixed, identifies which uncertainties most determine the pathway comparison and therefore which analytical investments in better data or richer representation are most valuable.
+
+Multi-criteria formulations extend the single-outcome framework to settings where multiple dimensions of consequence must be considered. The scalarisation approach converts multiple criteria $Z_1(a,\omega), \ldots, Z_k(a,\omega)$ into a weighted composite $\sum_i w_i Z_i(a,\omega)$. This is tractable but depends on the weights being meaningful and widely accepted. Pareto reasoning identifies the set of non-dominated alternatives, those for which no other alternative is strictly better on every criterion simultaneously. The Pareto approach preserves trade-off information rather than suppressing it, but it requires a second-stage rule for choosing among the non-dominated set. Threshold-based multi-criteria comparison asks which alternatives simultaneously satisfy threshold conditions across all criteria and across a sufficient fraction of the future ensemble, aligning naturally with satisficing and robustness reasoning under deep uncertainty.

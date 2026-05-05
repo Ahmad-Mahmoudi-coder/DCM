@@ -1,8 +1,38 @@
 ---
 title: "Sub-Module 3.7-A"
-subtitle: "Backbone Implementation"
+subtitle: "Backbone Implementation: DuckDB, Parquet, Snakemake"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-7A -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-3.7-A: Backbone Implementation, DuckDB, Parquet, Snakemake
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ○ Specified |
+| **Assumes** | §3.7 |
+| **Contributes** | Entity relationship schema, DuckDB table definitions, Parquet storage design, Snakemake orchestration rules, and migration path from the current file-system implementation |
+| **Skip condition** | Skip for conceptual reading; process when implementing the next-phase DuckDB/Parquet backbone |
+| **Passes to** | Module 6 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-3.7-A: Backbone Implementation, DuckDB, Parquet, Snakemake
+
+DuckDB is appropriate for the backbone's query layer for four reasons. It is an in-process analytical database that requires no server, making it suitable for a research environment where infrastructure overhead must be minimal. It supports SQL with the full suite of analytical extensions: window functions for time-series operations, lateral joins for artefact cross-referencing, and GROUP BY aggregations for ensemble-level robustness metrics. It is natively compatible with Python through the duckdb package, with R through the duckdb R package, and with Parquet files through its native Parquet reader. It is open-source and actively maintained by a research-oriented community.
+
+Parquet is appropriate for artefact storage for three reasons. Its columnar format is efficient for the time-series arrays that dominate the analytical content of DemandPacks, SignalsPacks, and similar artefacts: reading a single column (for example, the heat_demand_mw array) does not require reading any other column. It is supported natively by DuckDB, Python (via PyArrow and pandas), R, and Julia. It preserves schema metadata alongside data, making it self-describing in a way that is compatible with the mandatory provenance principle.
+
+Entity relationship schema. The backbone requires four tables.
+
+The artefact table stores one row per artefact instance with columns: artefact_id (primary key, UUID), artefact_family (string), schema_version (string), site_id (string), run_id (UUID, foreign key), future_id (integer, foreign key), pathway_id (string), epoch (string), validation_status (enum), produced_at (timestamp), parquet_path (string), checksum (string).
+
+The run registry table stores one row per pipeline run with columns: run_id (primary key, UUID), bundle_id (string), module_name (string), module_version (string), executed_at (timestamp), configuration_hash (string), status (enum: completed, failed, partial).
+
+The lineage table stores one row per directed dependency relationship with columns: relationship_id (UUID), source_artefact_id (UUID, foreign key), consuming_run_id (UUID, foreign key), produced_artefact_id (UUID, foreign key), relationship_type (enum: input, output).
+
+The validation registry table stores one row per acceptance gate check with columns: validation_id (UUID), assessed_artefact_id (UUID, foreign key), gate_name (string), outcome (enum: passed, failed), failure_details (string, nullable), assessed_at (timestamp).
+
+Snakemake orchestration. The Snakemake rule file defines one rule per module run, specifying the input artefact paths as Snakemake input dependencies and the output artefact paths as Snakemake output targets. The rule body executes the module, runs the acceptance gate checks, writes ValidationArtefacts for all checks, and writes the output artefact to Parquet only if all gates pass. If any gate fails, Snakemake marks the rule as failed, preventing any downstream rule that depends on the output from executing. This rule-dependency structure enforces the acceptance gate requirement at the workflow level, not only at the module level.
+
+Migration path from the file-system implementation. The current file-system run-bundle structure maps to the backbone schema as follows. The bundle name maps to the bundle_id field in the run registry. The epoch tag subdirectory and run-id subdirectory together identify the run. The dispatch summary CSV and the RDM summary CSV are the primary ResultArtefacts. The SHA256 hash records in the provenance JSON files correspond to the checksum fields in the artefact table. Migration proceeds by: (1) reading all existing run-bundle outputs, (2) constructing artefact table rows from the file metadata, (3) constructing run registry rows from the bundle structure, (4) constructing lineage rows from the pipeline stage dependencies, and (5) loading all artefacts into Parquet files with their provenance metadata. Step 5 requires no changes to any module's internal logic; it is a post-processing step that reads the existing CSV outputs and writes them to Parquet.

@@ -1,8 +1,28 @@
 ---
 title: "Sub-Module 6.3-B"
-subtitle: "DemandPack Methods"
+subtitle: "DemandPack Generation Methods, Technical Specification"
 ---
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-3B -->
-<!-- Skip condition: TO BE ADDED -->
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-6.3-B: DemandPack Generation Methods, Technical Specification
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete |
+| **Assumes** | §6.3 |
+| **Contributes** | Construction algorithm, seasonal decomposition, calibration targets, stochastic variability specification, and diagnostic figure descriptions |
+| **Skip condition** | Skip unless reproducing or validating DemandPack construction |
+| **Passes to** | §6.4 |
+| **Sub-Modules here** | None |
+:::
+
+## SM-6.3-B: DemandPack Generation Methods, Technical Specification
+
+Construction algorithm. The DemandPack construction algorithm proceeds in four stages. The first stage sets the annual total heat demand for the epoch from the RETA-calibrated reference value, adjusted for any pathway-specific efficiency assumptions. The second stage applies a seasonal decomposition that allocates the annual total across months according to the dairy processing season: the Southland dairy processing year concentrates milk intake and therefore steam demand in the winter months, with milk production typically peaking between April and August and the processing season extending from June through October. The monthly fractions are derived from publicly available Fonterra production statistics and are held constant across futures for a given epoch.
+
+The third stage applies a diurnal profile within each month, reflecting the operating schedule of a large dairy processing facility: production typically runs on two 12-hour shifts per weekday, with reduced operation at weekends and during maintenance windows. The diurnal decomposition uses separate weekday and weekend profiles for summer, shoulder, and winter seasons, producing six diurnal profile templates from which the full hourly series is assembled. The fourth stage applies stochastic variability around the deterministic profile using a calibrated noise model that adds realistic hour-to-hour variability while preserving the daily and seasonal patterns and the annual total within the 0.5 percent closure tolerance.
+
+Calibration targets. The primary calibration target is the annual heat demand per epoch, derived from the RETA Southland assessment. Secondary calibration targets include the winter-peak heat demand, used to scale the GXP peak incremental demand in the IncrementalElectricityPack, and the load factor, the ratio of annual average demand to peak demand, which determines the temporal concentration of the grid interface signal.
+
+Diagnostic figures. The DemandPack construction module generates five diagnostic figures for each epoch: the annual hourly time series, the load duration curve, the average diurnal profile by season, the monthly totals bar chart, and the heatmap of average demand by day of week and hour of day. These figures are stored with the DemandPack artefact and are referenced in the ValidationArtefact as visual acceptance evidence.
