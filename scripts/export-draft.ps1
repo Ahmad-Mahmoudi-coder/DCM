@@ -13,17 +13,19 @@ if (-not (Test-Path $drafts)) {
     New-Item -ItemType Directory -Path $drafts | Out-Null
 }
 
+Write-Host "Rendering DOCX..." -ForegroundColor Cyan
+quarto render --to docx
+
+$source = "$projectRoot\Decision-Centred-Thinking-and-Modelling.docx"
 $ts = Get-Date -Format "yyyy-MM-dd_HHmm"
-$out = "$drafts\DCM_${ts}_${label}.docx"
+$dest = "$drafts\DCM_${ts}_${label}.docx"
 
-Write-Host "Exporting: $out" -ForegroundColor Cyan
-quarto render --to docx --output $out
-
-if (Test-Path $out) {
-    $kb = [math]::Round((Get-Item $out).Length / 1KB, 1)
-    Write-Host "Done: $out ($kb KB)" -ForegroundColor Green
+if (Test-Path $source) {
+    Copy-Item $source $dest
+    $kb = [math]::Round((Get-Item $dest).Length / 1KB, 1)
+    Write-Host "Saved: $dest ($kb KB)" -ForegroundColor Green
     Add-Content "$drafts\export-log.txt" "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | $label | $kb KB"
 } else {
-    Write-Host "Check root folder for DOCX file." -ForegroundColor Yellow
-    Get-ChildItem $projectRoot -Filter "*.docx" | Select-Object Name, Length
+    Write-Host "DOCX not at expected path. Files found:" -ForegroundColor Yellow
+    Get-ChildItem $projectRoot -Filter "*.docx" | Select-Object Name, LastWriteTime
 }
