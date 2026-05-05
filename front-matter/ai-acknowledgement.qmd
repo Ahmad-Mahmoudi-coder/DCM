@@ -1,5 +1,6 @@
 ---
 title: "Acknowledgement of AI-Assisted Development"
+number-sections: false
 ---
 
 This framework and this document were developed in active and 

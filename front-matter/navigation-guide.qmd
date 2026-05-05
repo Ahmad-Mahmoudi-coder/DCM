@@ -1,6 +1,7 @@
 ---
 title: "Navigation Guide"
 subtitle: "The Node Declaration System Explained"
+number-sections: false
 ---
 
 This document is structured so that both human readers and AI agents 

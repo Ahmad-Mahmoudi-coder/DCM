@@ -1,6 +1,7 @@
 ---
 title: "Context Declaration"
 subtitle: "For Human Readers, AI Assistants, and the Research Community"
+number-sections: false
 ---
 
 ## A Vision Before the Detail

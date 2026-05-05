@@ -1,6 +1,7 @@
 ---
 title: "Preamble"
 subtitle: "How to Read This Document"
+number-sections: false
 ---
 
 There are several ways to come to this document, and it has been 

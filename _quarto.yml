@@ -8,7 +8,7 @@ book:
   author:
     - name: "Seyed Ahmad Mahmoudi Lahijani"
       affiliation: "Auckland University of Technology"
-  date: "2025"
+  date: "2026"
   date-format: "YYYY"
   
   repo-url: https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling
@@ -66,6 +66,7 @@ book:
       chapters:
         - manuscript/module-7-synthesis.qmd
     - references/glossary.qmd
+  number-depth: 1
 
 bibliography: references/references.bib
 
@@ -79,6 +80,7 @@ format:
     toc-expand: 2
     number-sections: true
     number-depth: 3
+    number-offset: [0]
     smooth-scroll: true
     code-fold: false
     css: assets/custom.css
