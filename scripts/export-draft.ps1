@@ -15,16 +15,24 @@ if (-not (Test-Path $drafts)) {
 Write-Host "Rendering DOCX..." -ForegroundColor Cyan
 quarto render --to docx
 
-$source = "$projectRoot\_output\Decision-Centred-Thinking-and-Modelling.docx"
-$ts = Get-Date -Format "yyyy-MM-dd_HHmm"
-$dest = "$drafts\DCM_${ts}_${label}.docx"
+Start-Sleep -Seconds 2
 
-if (Test-Path $source) {
-    Copy-Item $source $dest
+$source = Get-ChildItem $projectRoot -Filter "*.docx" -Recurse |
+          Where-Object { $_.FullName -notlike "*\_output\drafts\*" } |
+          Sort-Object LastWriteTime -Descending |
+          Select-Object -First 1
+
+if ($source) {
+    $ts = Get-Date -Format "yyyy-MM-dd_HHmm"
+    $dest = "$drafts\DCM_${ts}_${label}.docx"
+    Copy-Item $source.FullName $dest -Force
     $kb = [math]::Round((Get-Item $dest).Length / 1KB, 1)
+    Write-Host ""
     Write-Host "Saved: $dest ($kb KB)" -ForegroundColor Green
-    Add-Content "$drafts\export-log.txt" "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | $label | $kb KB"
+    Add-Content "$drafts\export-log.txt" "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | $label | $kb KB | $($source.FullName)"
+    Write-Host "Log updated." -ForegroundColor Gray
 } else {
-    Write-Host "DOCX not found. Quarto output files:" -ForegroundColor Yellow
-    Get-ChildItem "$projectRoot\_output" -Filter "*.docx" | Select-Object Name, LastWriteTime
+    Write-Host ""
+    Write-Host "No DOCX found after render. All files in _output:" -ForegroundColor Yellow
+    Get-ChildItem "$projectRoot\_output" | Select-Object Name, LastWriteTime
 }
