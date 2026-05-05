@@ -23,7 +23,7 @@ jobs:
           version: 1.9.37
 
       - name: Render Quarto Book
-        run: quarto render
+        run: quarto render --to html
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
