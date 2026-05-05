@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -584,8 +619,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-6.5-d-signalspack-generator-repository-interface-contract-v0.1.0" id="toc-sm-6.5-d-signalspack-generator-repository-interface-contract-v0.1.0" class="nav-link active" data-scroll-target="#sm-6.5-d-signalspack-generator-repository-interface-contract-v0.1.0"><span class="header-section-number">29.1</span> SM-6.5-D: SignalsPack Generator Repository, Interface Contract v0.1.0</a>
+  <ul class="collapse">
+  <li><a href="#hourly-signals-file-schema" id="toc-hourly-signals-file-schema" class="nav-link" data-scroll-target="#hourly-signals-file-schema"><span class="header-section-number">29.1.1</span> Hourly Signals File Schema</a></li>
+  <li><a href="#upgrade-option-menu" id="toc-upgrade-option-menu" class="nav-link" data-scroll-target="#upgrade-option-menu"><span class="header-section-number">29.1.2</span> Upgrade Option Menu</a></li>
+  <li><a href="#manifest-schema-signals_manifest.toml" id="toc-manifest-schema-signals_manifest.toml" class="nav-link" data-scroll-target="#manifest-schema-signals_manifest.toml"><span class="header-section-number">29.1.3</span> Manifest Schema (<code>signals_manifest.toml</code>)</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +640,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-6-poc.html">Module 6: The Proof of Concept</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-6-5D-signalspack-contract.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Sub-Module 6.5-D</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Sub-Module 6.5-D</span></h1>
-<p class="subtitle lead">SignalsPack Contract</p>
+<p class="subtitle lead">SignalsPack Generator Repository, Interface Contract v0.1.0</p>
 </div>
 
 
@@ -611,11 +657,218 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-5D -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-6.5-D: SignalsPack Generator Repository, Interface Contract v0.1.0
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§6.5</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Complete specification of the SignalsPack Interface Contract v0.1.0 including column definitions, file naming, manifest schema, hash integrity requirements, and the upgrade class menu</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip for results reading; process when verifying SignalsPack integrity, updating the Edendale GXP repository, or designing a replacement regional module</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§6.6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-6.5-d-signalspack-generator-repository-interface-contract-v0.1.0" class="level2" data-number="29.1">
+<h2 data-number="29.1" class="anchored" data-anchor-id="sm-6.5-d-signalspack-generator-repository-interface-contract-v0.1.0"><span class="header-section-number">29.1</span> SM-6.5-D: SignalsPack Generator Repository, Interface Contract v0.1.0</h2>
+<p>Schema version: 0.1.0 (frozen)</p>
+<p>GXP identifier: EDN0331 (Edendale)</p>
+<section id="hourly-signals-file-schema" class="level3" data-number="29.1.1">
+<h3 data-number="29.1.1" class="anchored" data-anchor-id="hourly-signals-file-schema"><span class="header-section-number">29.1.1</span> Hourly Signals File Schema</h3>
+<p>Each epoch has one hourly signals CSV file named <code>signals_&lt;epoch&gt;_EDN0331.csv</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Type</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>timestamp_utc</td>
+<td>Datetime</td>
+<td>UTC</td>
+<td>Hourly timestamp, ISO-8601 with Z suffix</td>
+</tr>
+<tr class="even">
+<td>epoch</td>
+<td>Integer</td>
+<td>—</td>
+<td>Planning year (2020, 2025, 2028, 2035)</td>
+</tr>
+<tr class="odd">
+<td>gxp_id</td>
+<td>String</td>
+<td>—</td>
+<td>“EDN0331”</td>
+</tr>
+<tr class="even">
+<td>capacity_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>GXP firm capacity</td>
+</tr>
+<tr class="odd">
+<td>baseline_import_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>Existing committed load (baseline)</td>
+</tr>
+<tr class="even">
+<td>reserve_margin_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>N-1 security reserve</td>
+</tr>
+<tr class="odd">
+<td>headroom_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>max(capacity minus baseline minus reserve, 0)</td>
+</tr>
+<tr class="even">
+<td>tariff_nzd_per_mwh</td>
+<td>Float</td>
+<td>NZD/MWh</td>
+<td>Applicable network tariff</td>
+</tr>
+<tr class="odd">
+<td>grid_emissions_intensity_tco2_per_mwh</td>
+<td>Float</td>
+<td>tCO2/MWh</td>
+<td>Grid emissions intensity for indirect emissions accounting</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="upgrade-option-menu" class="level3" data-number="29.1.2">
+<h3 data-number="29.1.2" class="anchored" data-anchor-id="upgrade-option-menu"><span class="header-section-number">29.1.2</span> Upgrade Option Menu</h3>
+<p>The upgrade menu is declared in <code>upgrade_menu_EDN0331.csv</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>upgrade_id</th>
+<th>upgrade_name</th>
+<th>additional_capacity_mw</th>
+<th>capex_nzd</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>none</td>
+<td>0</td>
+<td>0</td>
+<td>No upgrade required</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>fonterra_opt1_N_plus21MW</td>
+<td>21</td>
+<td>3,500,000</td>
+<td>Minor transformer upgrade</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>fonterra_opt2_N_plus32MW</td>
+<td>32</td>
+<td>8,200,000</td>
+<td>Subtransmission line reconfiguration</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>fonterra_opt3_N_plus97MW</td>
+<td>97</td>
+<td>28,500,000</td>
+<td>Zone substation expansion</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>fonterra_opt4_N_plus150MW</td>
+<td>150</td>
+<td>52,000,000</td>
+<td>Major subtransmission reinforcement</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="manifest-schema-signals_manifest.toml" class="level3" data-number="29.1.3">
+<h3 data-number="29.1.3" class="anchored" data-anchor-id="manifest-schema-signals_manifest.toml"><span class="header-section-number">29.1.3</span> Manifest Schema (<code>signals_manifest.toml</code>)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">schema_version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">gxp_id</span> <span class="op">=</span> <span class="st">"EDN0331"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">generated_at</span> <span class="op">=</span> <span class="st">"YYYY-MM-DDTHH:MM:SSZ"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">[[files]]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">epoch</span> <span class="op">=</span> <span class="dv">2035</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">filename</span> <span class="op">=</span> <span class="st">"signals_2035_EDN0331.csv"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">sha256</span> <span class="op">=</span> <span class="st">"&lt;hex digest&gt;"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">rows</span> <span class="op">=</span> <span class="dv">8760</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">columns</span> <span class="op">=</span> <span class="op">[</span><span class="st">"timestamp_utc"</span><span class="op">,</span> <span class="st">"epoch"</span><span class="op">,</span> <span class="st">"gxp_id"</span><span class="op">,</span> <span class="st">"..."</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1308,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

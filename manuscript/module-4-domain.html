@@ -584,8 +584,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#coupled-energy-systems-as-a-decision-domain" id="toc-coupled-energy-systems-as-a-decision-domain" class="nav-link active" data-scroll-target="#coupled-energy-systems-as-a-decision-domain"><span class="header-section-number">19.1</span> §4.1 Coupled Energy Systems as a Decision Domain</a></li>
+  <li><a href="#industrial-process-heat-as-the-anchor-exemplar" id="toc-industrial-process-heat-as-the-anchor-exemplar" class="nav-link" data-scroll-target="#industrial-process-heat-as-the-anchor-exemplar"><span class="header-section-number">19.2</span> §4.2 Industrial Process Heat as the Anchor Exemplar</a></li>
+  <li><a href="#module-classes-and-artefact-families-in-the-energy-domain" id="toc-module-classes-and-artefact-families-in-the-energy-domain" class="nav-link" data-scroll-target="#module-classes-and-artefact-families-in-the-energy-domain"><span class="header-section-number">19.3</span> §4.3 Module Classes and Artefact Families in the Energy Domain</a></li>
+  <li><a href="#coupled-stakeholder-evaluation-and-system-level-regret" id="toc-coupled-stakeholder-evaluation-and-system-level-regret" class="nav-link" data-scroll-target="#coupled-stakeholder-evaluation-and-system-level-regret"><span class="header-section-number">19.4</span> §4.4 Coupled Stakeholder Evaluation and System-Level Regret</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-4-domain.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -611,10 +620,401 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt M4-01 -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Module 4 Declaration
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Purpose</strong></td>
+<td>Translates the general architecture of Module 3 into the specific domain of coupled energy systems and industrial process heat, establishing the domain-specific vocabulary, module classes, and evaluation frames used in Modules 5 and 6</td>
+</tr>
+<tr class="even">
+<td><strong>Assumes</strong></td>
+<td>Module 3 in full; §1.5 and §1.6 for the evaluative standards that the coupled evaluation logic extends</td>
+</tr>
+<tr class="odd">
+<td><strong>Contributes</strong></td>
+<td>Energy-domain vocabulary; the layered energy system structure; industrial process heat as the anchor exemplar and its analytical demands; the energy-domain module classes and artefact family mapping; the coupled stakeholder evaluation logic; and the system-level regret concept with its policy implications</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 5 (New Zealand context and empirical grounding); Module 6 (proof-of-concept instantiation)</td>
+</tr>
+<tr class="odd">
+<td><strong>Can be read independently</strong></td>
+<td>Partially — §4.1 and §4.2 can be read independently; §4.3 and §4.4 require Module 3</td>
+</tr>
+<tr class="even">
+<td><strong>Sub-Modules</strong></td>
+<td>SM-4.4-A: System-Level Regret, Formal Derivation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="coupled-energy-systems-as-a-decision-domain" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="coupled-energy-systems-as-a-decision-domain"><span class="header-section-number">19.1</span> §4.1 Coupled Energy Systems as a Decision Domain</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §4.1 Coupled Energy Systems as a Decision Domain
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>Module 3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes the energy domain vocabulary and the layered energy system structure that motivates the framework’s multi-layer architecture</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader is not working in the energy domain and wants to proceed to community extension in Module 7</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§4.2, §4.3, §4.4</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Energy systems are not monolithic. They are layered structures in which decisions made at one level propagate consequences to other levels through physical interfaces, market mechanisms, and institutional arrangements that are rarely under the control of any single actor. A facility operator choosing a process heat technology makes a decision at the site level. That decision creates an electricity demand increment at the regional grid level. The regional grid’s response to that increment, whether it can be accommodated, at what cost, and on what timeline, determines whether the site-level decision was well-founded. The site-level decision and the regional-level consequence are inseparable analytically, even though they are made and experienced by different actors operating under different constraints.</p>
+<p>Energy carriers are the primary physical media through which energy flows between levels. The carriers relevant to the industrial process heat domain are electricity, steam, hot water, natural gas, coal, and biomass. Each carrier has characteristic interface properties: electricity flows instantaneously through a network with nodal voltage and frequency constraints; steam carries thermal energy from a boiler to a process through a distribution network with temperature and pressure characteristics; biomass is a physical commodity that must be collected, processed, transported, and stored. The interface between an electrification pathway and the regional electricity system is fundamentally different from the interface between a biomass pathway and the regional biomass supply chain, and the framework represents both as resource-side signals flowing through the regional layer.</p>
+<p>The layered energy system structure defines the analytical scope of the framework in the energy domain. At the first layer, individual facility operations produce time-resolved heat demand profiles and carrier-specific dispatch records. At the second layer, the electrical interface between the facility and the regional grid is characterised by the facility’s incremental electricity demand profile and the grid’s hosting capacity response. At the third layer, regional grid adequacy and biomass resource availability determine the infrastructure constraints under which pathway choices are feasible. At the fourth layer, national energy system conditions, including the electricity wholesale market, the carbon price trajectory under the ETS, and the policy environment governing fuel phase-out, set the economic and regulatory context within which all lower-layer decisions are made.</p>
+<p>The decision class that this framework addresses in the energy domain is the long-horizon technology pathway choice under infrastructure uncertainty: the decision, made by an industrial facility operator, about which low-carbon heat supply technology to commit to over an investment horizon of fifteen to thirty years, in the context of uncertain grid infrastructure development, uncertain fuel supply chain evolution, uncertain carbon pricing, and a regulatory environment that is actively evolving. This decision class concentrates all five structural features identified in §1.1: the asset commitment is durable, the grid and biomass supply chain dependencies create cross-scale interaction, the infrastructure and policy futures create deep uncertainty, the cost and emissions objectives are not fully commensurate, and the facility operator, the grid operator, the regulator, and the surrounding community each have distinct and partially overlapping interests in the outcome.</p>
+<p>This domain is especially revealing as a proving ground for the framework precisely because of this concentration. A framework that can produce credible, traceable, multi-perspective decision support for this problem class has demonstrated architectural properties that transfer to any decision environment with the same structural features.</p>
+</section>
+<section id="industrial-process-heat-as-the-anchor-exemplar" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="industrial-process-heat-as-the-anchor-exemplar"><span class="header-section-number">19.2</span> §4.2 Industrial Process Heat as the Anchor Exemplar</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §4.2 Industrial Process Heat as the Anchor Exemplar
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§4.1</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Explains why industrial process heat was chosen as the anchor exemplar, establishes the global context, and introduces the New Zealand version of the process heat transition challenge</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader is not interested in the exemplar justification and wants the NZ specifics directly; proceed to Module 5</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§4.3, Module 5</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Industrial process heat accounts for approximately a quarter of global final energy demand and remains overwhelmingly fossil-fuelled despite decades of policy attention and significant investment in low-carbon electricity generation. Its resistance to decarbonisation is not primarily technological. Electrification technology for high-temperature industrial heat is available and commercially mature. Heat pumps, electric boilers, and electrode boilers can serve most industrial heat applications from the lowest temperature requirements to the highest. Biomass conversion technology is equally mature. The difficulty is not the technology; it is the combination of site-specific operational heterogeneity, long asset lifetimes, infrastructure dependency, and multiple competing non-electric pathways that makes the transition problem genuinely difficult to analyse in a way that supports confident, defensible investment decisions.</p>
+<p>Site-specific operational heterogeneity means that no two process heat users face the same transition problem. A dairy processor requiring continuous large-volume steam at moderate pressure faces a different engineering and infrastructure challenge from a ceramics manufacturer requiring high-temperature kilns or a paper mill requiring combined heat and power. The specific heat demand profile of each facility, its seasonal and diurnal patterns, its minimum load requirements, and its peak demand timing determine whether grid-based electrification creates hosting capacity problems, whether thermal storage is viable, and whether biomass logistics can supply the required volume with adequate reliability.</p>
+<p>Long asset lifetimes mean that transition decisions are made under deep uncertainty in the sense of §1.3. A boiler fleet installed today will still be operating in 2050. The carbon price that will govern its ETS exposure in 2045 is not determinable from current policy settings. The grid infrastructure that will be available to support large-scale electrification at a specific location in 2040 depends on investment decisions that have not yet been made. The pathway choice is irreversible in a meaningful sense: once a facility has committed capital to an electrification pathway, sunk costs create strong path dependence that is expensive to reverse if the grid infrastructure does not materialise on the assumed timeline.</p>
+<p>New Zealand presents a specific and analytically tractable version of this global challenge. The national electricity system is already predominantly renewable, drawing the majority of its generation from hydro, geothermal, and wind. This low-carbon grid creates a compelling case for electrification in principle: substituting grid electricity for coal combustion at an industrial facility produces substantial direct emissions reductions with minimal upstream carbon intensity. Yet the practical feasibility of large-scale industrial electrification in the South Island depends on regional grid infrastructure that was designed for a historical industrial load profile that did not include large-scale electrification. Fonterra’s commitment to phase out coal by 2037 and its corporate sustainability obligations create a specific and time-bounded decision context that makes the problem concrete without making it trivial.</p>
+<p>The South Island dairy processing sector is particularly revealing because it combines all the analytical difficulties of the process heat transition at a scale that is both large enough to have significant grid and supply chain consequences and small enough to be represented in a proof-of-concept analytical environment. Biomass provides a credible competing pathway that does not require grid infrastructure development but does require regional supply chain logistics that are genuinely uncertain at the required scale. The competition between electrification and biomass, evaluated under deep uncertainty about grid headroom, biomass supply availability, and carbon price trajectory, is the analytical core of the Edendale proof of concept in Module 6.</p>
+</section>
+<section id="module-classes-and-artefact-families-in-the-energy-domain" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="module-classes-and-artefact-families-in-the-energy-domain"><span class="header-section-number">19.3</span> §4.3 Module Classes and Artefact Families in the Energy Domain</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §4.3 Module Classes and Artefact Families in the Energy Domain
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§4.1, §4.2, Module 3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Maps the five generic analytical layers onto the specific module classes, tools, and artefact families required for the energy domain</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader knows the energy module structure from Module 3</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§4.4, Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The five-layer architecture of §3.3 is domain-agnostic in its description. Translating it into the energy domain requires specifying the module classes that instantiate each layer, the tools appropriate to each module class, and the artefact families that carry the decision-relevant signals between modules. This translation is what makes the architecture operational in the energy domain.</p>
+<p>The site layer is instantiated by the Facility Module. In the energy domain, this module represents the site’s heat demand structure, its utility asset configuration under a specified pathway variant, and its dispatch logic. The DemandPack carries the time-resolved heat demand that the dispatch module uses to compute carrier-specific consumption profiles. The ResultArtefact carries the annual cost decomposition, emissions, and adequacy metrics that the evaluation layer requires for pathway comparison. The Facility Module’s specific concern in the energy domain is the translation of heat demand into the electrical demand increment that crosses the site boundary toward the regional grid, materialised in the IncrementalElectricityPack.</p>
+<p>The interface layer in the energy domain performs two translations. On the outbound side, it compresses the site’s full hourly electrical consumption profile into the compact IncrementalElectricityPack descriptor set. On the inbound side, it translates the regional module’s SignalsPack signals, headroom, tariff adder, upgrade class, and scarcity index, into the cost and adequacy inputs that the Facility Module’s dispatch logic uses for pathway cost computation. This bidirectional translation is the thin waist of the energy domain analytical chain.</p>
+<p>The regional layer is instantiated by two parallel modules in the energy domain: the regional electricity module and the biomass resource module. The regional electricity module evaluates the GXP hosting capacity implications of the site’s incremental electrical demand under the future’s headroom and demand growth conditions. The biomass resource module evaluates whether the biomass pathway’s annual fuel requirement can be sourced from the regional supply chain under the future’s biomass availability and cost conditions. Both modules emit SignalsPacks, but with domain-specific fields: the electricity SignalsPack carries headroom, tariff, and upgrade signals; the biomass SignalsPack carries availability, delivered cost, and scarcity signals. The parallel structure of the two regional modules is a direct consequence of the decision-first boundary principle: both grid infrastructure and biomass supply chain are decision-relevant consequences of the pathway choice, and both must be represented at the regional layer.</p>
+<p>The evaluation layer receives ResultArtefacts from the Facility Module and SignalsPacks from both regional modules, and computes the pathway comparison metrics. In the energy domain, the evaluation layer specifically computes the system-level regret divergence described in §4.4: the difference between the site-perspective cost assessment and the infrastructure-conditional system-perspective cost assessment.</p>
+<p>The orchestration layer manages the ensemble of FutureArtefacts, coordinates the module runs for each future and each pathway alternative, enforces the paired-futures contract, and produces the DecisionSummaryArtefacts that carry the regret, robustness, and satisficing metrics.</p>
+<p>Table 4.3 summarises the energy domain module classes, their generic layer mapping, their primary tools, and the artefact families they produce.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Generic layer</th>
+<th>Energy module name</th>
+<th>Primary tool (current PoC)</th>
+<th>Primary tool (specified)</th>
+<th>Primary artefact produced</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Site</td>
+<td>Facility Module</td>
+<td>Python proportional dispatch</td>
+<td>OpenModelica thermal network</td>
+<td>DemandPack, IncrementalElectricityPack, ResultArtefact</td>
+</tr>
+<tr class="even">
+<td>Interface</td>
+<td>Signal translation layer</td>
+<td>Post-processing scripts</td>
+<td>Interface contract enforcement module</td>
+<td>IncrementalElectricityPack (translated), tariff signals</td>
+</tr>
+<tr class="odd">
+<td>Regional (electricity)</td>
+<td>Regional Electricity Module</td>
+<td>Stylised GXP screening</td>
+<td>PyPSA network optimisation; ML surrogate</td>
+<td>SignalsPack (electricity)</td>
+</tr>
+<tr class="even">
+<td>Regional (biomass)</td>
+<td>Biomass Resource Module</td>
+<td>Scalar multiplier</td>
+<td>Spatially explicit logistics model</td>
+<td>SignalsPack (biomass)</td>
+</tr>
+<tr class="odd">
+<td>Evaluation</td>
+<td>Pathway Evaluation Module</td>
+<td>Python analytics; robustness overlay</td>
+<td>Full multi-criteria evaluation framework</td>
+<td>DecisionSummaryArtefact</td>
+</tr>
+<tr class="even">
+<td>Orchestration</td>
+<td>DMDU Orchestration Layer</td>
+<td>Snakemake + Python ensemble scripts</td>
+<td>Snakemake + surrogate-accelerated ensemble</td>
+<td>ValidationArtefact, run registry records</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="coupled-stakeholder-evaluation-and-system-level-regret" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="coupled-stakeholder-evaluation-and-system-level-regret"><span class="header-section-number">19.4</span> §4.4 Coupled Stakeholder Evaluation and System-Level Regret</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §4.4 Coupled Stakeholder Evaluation and System-Level Regret
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.5, §1.6, §4.3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Develops the multi-perspective evaluation logic and the system-level regret concept, and establishes the three evaluation frames used in the Edendale proof of concept</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader accepts multi-perspective evaluation from §1.6; SM-4.4-A has the formal derivation</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 6 §6.9</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-4.4-A: System-Level Regret, Formal Derivation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The evaluative standards of §1.5, regret, robustness, and satisficing, assume that outcomes can be assigned to an alternative and a future and compared across alternatives under shared futures. In the energy domain, these outcomes have a specific multi-perspective structure that §1.6 identified as a general challenge: the same pathway choice produces different cost outcomes depending on whose perspective is adopted and which cost components are included in the assessment. The coupled stakeholder evaluation logic of this section makes that perspective dependence analytically explicit rather than leaving it as an unstated assumption in how the comparison is framed.</p>
+<p>Site-perspective evaluation computes the total annual cost of a pathway as experienced by the facility operator: the annualised capital cost of the installed assets, the annual operating cost including energy and maintenance, the ETS cost based on the facility’s direct combustion emissions and the current carbon price, and the reliability cost associated with any unserved heat demand. This is the perspective that governs a private investment decision: the site operator makes the pathway commitment on the basis of the costs that appear in their own financial accounts.</p>
+<p>System-perspective evaluation adds to this the regional cost adder: the annualised share of network reinforcement cost attributable to the facility’s electrification decision, computed as the upgrade cost for the applicable upgrade class divided by the number of facilities that share the reinforcement benefit, times the fraction attributable to the new load. The regional cost adder is not charged to the facility operator under current network pricing arrangements. It is borne instead by the broader network of electricity consumers through regulated network tariffs. This means the site-perspective and system-perspective evaluations may produce different rankings of the electrification and biomass pathways under the same future conditions.</p>
+<p>Three evaluation frames are distinguished in the framework. The site-only frame computes costs using only the Facility Module’s ResultArtefact, without incorporating any SignalsPack cost adder. This is the cost as the site operator would compute it from a site-level techno-economic assessment. The infrastructure-conditional frame adds the regional cost adder from the electricity SignalsPack to the site-perspective cost, representing the full system cost of the pathway including the network infrastructure it requires. The policy-adjusted frame further adjusts for the effect of policy instruments, including GIDI Fund co-investment support, that modify the effective capital cost faced by the site operator. The policy-adjusted frame is relevant when assessing whether current policy instruments are aligned with system-cost minimisation.</p>
+<p>System-level regret is the divergence between the regret computed under the site-only frame and the regret computed under the infrastructure-conditional frame. When both frames assign the same pathway preference under a given future, the divergence is zero: the site operator’s private assessment and the system-level assessment agree. When the infrastructure-conditional frame assigns a different preference from the site-only frame, the divergence is positive and attributable to the specific cost components and future conditions that drive it.</p>
+<p>The policy significance of positive system-level regret is precise: it indicates that current pricing arrangements create incentives for site operators to pursue pathway choices that impose costs on the regional system that they do not privately bear. In the Edendale proof of concept, discussed in §6.9, this divergence is found in 23 of the 64 futures in the ensemble, specifically those futures where GXP hosting capacity exceedances occur. Under current network pricing, the electrification pathway may appear cost-competitive from the site perspective in some of these futures while the infrastructure-conditional assessment identifies the biomass pathway as the lower system-cost alternative.</p>
+<p>This finding, produced by the coupled stakeholder evaluation architecture of this module, is not accessible from any single-perspective analysis. It requires computing consequences under both perspectives using the same modules and artefacts, making the divergence analytically visible and attributable to specific cost components and specific future conditions. That attributability is what turns a diagnostic finding into a policy-relevant finding: it is possible to say precisely which policy instrument, at which pricing reform point, would close the divergence under which future conditions.</p>
+<p>The formal derivation of the system-level regret concept, including the precise definitions of the three evaluation frames and the conditions under which divergence is analytically expected, is in Sub-Module SM-4.4-A.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-4.4-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>System-Level Regret: Formal Derivation — formal definitions, divergence conditions, and policy interpretation — is in <a href="../manuscript/sub-modules/sm-4-4A-system-regret.html">SM-4.4-A</a>. Skip if the conceptual account above is sufficient; process when the formal basis of the evaluation frame divergence is needed.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1054,5 +1454,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-4-domain.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-4-domain.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

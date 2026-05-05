@@ -584,8 +584,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-6.3-b-demandpack-generation-methods-technical-specification" id="toc-sm-6.3-b-demandpack-generation-methods-technical-specification" class="nav-link active" data-scroll-target="#sm-6.3-b-demandpack-generation-methods-technical-specification"><span class="header-section-number">27.1</span> SM-6.3-B: DemandPack Generation Methods, Technical Specification</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +600,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-6-poc.html">Module 6: The Proof of Concept</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-6-3B-demandpack-methods.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Sub-Module 6.3-B</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Sub-Module 6.3-B</span></h1>
-<p class="subtitle lead">DemandPack Methods</p>
+<p class="subtitle lead">DemandPack Generation Methods, Technical Specification</p>
 </div>
 
 
@@ -611,11 +617,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-3B -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-6.3-B: DemandPack Generation Methods, Technical Specification
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§6.3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Construction algorithm, seasonal decomposition, calibration targets, stochastic variability specification, and diagnostic figure descriptions</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip unless reproducing or validating DemandPack construction</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§6.4</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-6.3-b-demandpack-generation-methods-technical-specification" class="level2" data-number="27.1">
+<h2 data-number="27.1" class="anchored" data-anchor-id="sm-6.3-b-demandpack-generation-methods-technical-specification"><span class="header-section-number">27.1</span> SM-6.3-B: DemandPack Generation Methods, Technical Specification</h2>
+<p>Construction algorithm. The DemandPack construction algorithm proceeds in four stages. The first stage sets the annual total heat demand for the epoch from the RETA-calibrated reference value, adjusted for any pathway-specific efficiency assumptions. The second stage applies a seasonal decomposition that allocates the annual total across months according to the dairy processing season: the Southland dairy processing year concentrates milk intake and therefore steam demand in the winter months, with milk production typically peaking between April and August and the processing season extending from June through October. The monthly fractions are derived from publicly available Fonterra production statistics and are held constant across futures for a given epoch.</p>
+<p>The third stage applies a diurnal profile within each month, reflecting the operating schedule of a large dairy processing facility: production typically runs on two 12-hour shifts per weekday, with reduced operation at weekends and during maintenance windows. The diurnal decomposition uses separate weekday and weekend profiles for summer, shoulder, and winter seasons, producing six diurnal profile templates from which the full hourly series is assembled. The fourth stage applies stochastic variability around the deterministic profile using a calibrated noise model that adds realistic hour-to-hour variability while preserving the daily and seasonal patterns and the annual total within the 0.5 percent closure tolerance.</p>
+<p>Calibration targets. The primary calibration target is the annual heat demand per epoch, derived from the RETA Southland assessment. Secondary calibration targets include the winter-peak heat demand, used to scale the GXP peak incremental demand in the IncrementalElectricityPack, and the load factor, the ratio of annual average demand to peak demand, which determines the temporal concentration of the grid interface signal.</p>
+<p>Diagnostic figures. The DemandPack construction module generates five diagnostic figures for each epoch: the annual hourly time series, the load duration curve, the average diurnal profile by season, the monthly totals bar chart, and the heatmap of average demand by day of week and hour of day. These figures are stored with the DemandPack artefact and are referenced in the ValidationArtefact as visual acceptance evidence.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1122,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

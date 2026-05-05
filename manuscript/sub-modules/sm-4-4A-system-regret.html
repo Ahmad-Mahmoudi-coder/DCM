@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -584,8 +613,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-4.4-a-system-level-regret-formal-derivation" id="toc-sm-4.4-a-system-level-regret-formal-derivation" class="nav-link active" data-scroll-target="#sm-4.4-a-system-level-regret-formal-derivation"><span class="header-section-number">20.1</span> SM-4.4-A: System-Level Regret, Formal Derivation</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-4-4A-system-regret.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-4-domain.html">Module 4: Domain Translation</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-4-4A-system-regret.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Sub-Module 4.4-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Sub-Module 4.4-A</span></h1>
-<p class="subtitle lead">System Regret</p>
+<p class="subtitle lead">System-Level Regret, Formal Derivation</p>
 </div>
 
 
@@ -611,11 +646,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-4-4A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-4.4-A: System-Level Regret, Formal Derivation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§4.4, §1.5</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Formal definitions of site-perspective regret, system-perspective regret, the divergence function, and the conditions under which positive divergence is analytically expected</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if the conceptual account of §4.4 is sufficient; process when the formal basis is needed for the proof-of-concept evaluation or for policy analysis</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 6 §6.9</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-4.4-a-system-level-regret-formal-derivation" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="sm-4.4-a-system-level-regret-formal-derivation"><span class="header-section-number">20.1</span> SM-4.4-A: System-Level Regret, Formal Derivation</h2>
+<p>Let <span class="math inline">\(a \in \mathcal{A}\)</span> denote a pathway alternative, <span class="math inline">\(\omega \in \Omega\)</span> a future, and <span class="math inline">\(Z(a, \omega)\)</span> the total system cost consequence of choosing alternative <span class="math inline">\(a\)</span> under future <span class="math inline">\(\omega\)</span>. The framework defines three cost functions corresponding to the three evaluation frames of §4.4.</p>
+<p>The site-only cost <span class="math inline">\(C_{\text{site}}(a, \omega)\)</span> is the total annual cost as experienced by the facility operator:</p>
+<p><span class="math display">\[
+C_{\text{site}}(a, \omega) = C_{\text{capex}}(a) + C_{\text{opex}}(a, \omega) + C_{\text{ets}}(a, \omega) + C_{\text{unserved}}(a, \omega)
+\]</span></p>
+<p>where <span class="math inline">\(C_{\text{capex}}\)</span> is the annualised capital cost of the pathway’s assets, <span class="math inline">\(C_{\text{opex}}\)</span> is the annual operating cost including energy and maintenance, <span class="math inline">\(C_{\text{ets}}\)</span> is the annual ETS cost computed from direct combustion emissions and the carbon price declared in the FutureArtefact, and <span class="math inline">\(C_{\text{unserved}}\)</span> is the penalty cost for any unserved heat demand.</p>
+<p>The infrastructure-conditional cost <span class="math inline">\(C_{\text{system}}(a, \omega)\)</span> adds the regional cost adder from the SignalsPack:</p>
+<p><span class="math display">\[
+C_{\text{system}}(a, \omega) = C_{\text{site}}(a, \omega) + C_{\text{regional}}(a, \omega)
+\]</span></p>
+<p>where <span class="math inline">\(C_{\text{regional}}(a, \omega)\)</span> is the annualised regional infrastructure cost attributable to the pathway under the future’s hosting capacity conditions. For the biomass pathway, <span class="math inline">\(C_{\text{regional}}(a, \omega)\)</span> reflects any biomass supply scarcity premium declared in the biomass SignalsPack. For the electrification pathway, it reflects the upgrade cost adder associated with the upgrade class determined by the regional electricity screening module. For futures in which no upgrade is required, <span class="math inline">\(C_{\text{regional}}(a, \omega) = 0\)</span> for the electrification pathway.</p>
+<p>Site-perspective regret is defined relative to the best alternative under the site-only cost function:</p>
+<p><span class="math display">\[
+r_{\text{site}}(a, \omega) = \min_{a' \in \mathcal{A}} C_{\text{site}}(a', \omega) - C_{\text{site}}(a, \omega)
+\]</span></p>
+<p>Since lower cost is better, regret is negative for the preferred alternative and non-positive for all others. Alternatively, when cost is expressed as a loss (larger is worse), regret is the amount by which the chosen alternative’s cost exceeds the minimum available:</p>
+<p><span class="math display">\[
+r_{\text{site}}(a, \omega) = C_{\text{site}}(a, \omega) - \min_{a' \in \mathcal{A}} C_{\text{site}}(a', \omega) \geq 0
+\]</span></p>
+<p>System-perspective regret is defined analogously using the infrastructure-conditional cost:</p>
+<p><span class="math display">\[
+r_{\text{system}}(a, \omega) = C_{\text{system}}(a, \omega) - \min_{a' \in \mathcal{A}} C_{\text{system}}(a', \omega) \geq 0
+\]</span></p>
+<p>The divergence function is:</p>
+<p><span class="math display">\[
+\Delta r(a, \omega) = r_{\text{system}}(a, \omega) - r_{\text{site}}(a, \omega)
+\]</span></p>
+<p>The divergence is zero when the site-perspective and system-perspective assessments agree on which alternative has the lower cost under future <span class="math inline">\(\omega\)</span>. The divergence is positive when the system-perspective cost assessment, which includes <span class="math inline">\(C_{\text{regional}}\)</span>, assigns a different preferred alternative from the site-perspective assessment.</p>
+<p>Conditions under which <span class="math inline">\(\Delta r &gt; 0\)</span> are analytically predictable from the structure of the cost functions. For the electrification pathway under future <span class="math inline">\(\omega\)</span>:</p>
+<p><span class="math display">\[
+\Delta r(a_{\text{EB}}, \omega) &gt; 0 \iff C_{\text{regional}}(a_{\text{EB}}, \omega) &gt; C_{\text{regional}}(a_{\text{BB}}, \omega) + [C_{\text{site}}(a_{\text{EB}}, \omega) - C_{\text{site}}(a_{\text{BB}}, \omega)]
+\]</span></p>
+<p>In plain terms: the divergence is positive when the regional cost adder associated with electrification exceeds both the biomass resource cost adder and the private cost advantage of electrification over biomass. This occurs in futures where GXP hosting capacity is exceeded (triggering a major upgrade class) and where the ETS carbon price advantage of electrification is insufficient to offset the infrastructure cost. These are precisely the 23 futures in the Edendale ensemble where the divergence finding is reported in §6.9.</p>
+<p>Policy interpretation. The divergence function <span class="math inline">\(\Delta r(a, \omega)\)</span> provides a quantitative measure of the incentive misalignment created by current network pricing arrangements. A future in which <span class="math inline">\(\Delta r(a_{\text{EB}}, \omega) &gt; 0\)</span> is a future in which the site operator, making a private investment decision on the basis of <span class="math inline">\(C_{\text{site}}\)</span>, would choose or prefer the electrification pathway, while a system planner evaluating all costs would prefer the biomass pathway. The magnitude of <span class="math inline">\(\Delta r\)</span> in that future represents the minimum network cost adder that would need to be charged to the site operator to align private and system incentives. A policy instrument that charges this adder, whether through connection agreement terms, a capacity charge, or a reformed network tariff, would eliminate the divergence in that future.</p>
+<p>The divergence analysis does not prescribe which policy instrument is most appropriate. It does prescribe, with analytical precision, what the incentive misalignment is, in which futures it occurs, and what magnitude of cost reallocation would correct it. This precision is what distinguishes the framework’s policy contribution from a qualitative observation about incentive problems in the electricity sector.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1182,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-4-4A-system-regret.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-4-4A-system-regret.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

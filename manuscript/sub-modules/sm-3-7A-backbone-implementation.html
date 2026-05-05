@@ -584,8 +584,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-3.7-a-backbone-implementation-duckdb-parquet-snakemake" id="toc-sm-3.7-a-backbone-implementation-duckdb-parquet-snakemake" class="nav-link active" data-scroll-target="#sm-3.7-a-backbone-implementation-duckdb-parquet-snakemake"><span class="header-section-number">17.1</span> SM-3.7-A: Backbone Implementation, DuckDB, Parquet, Snakemake</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +600,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-3-architecture.html">Module 3: Architecture</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-3-7A-backbone-implementation.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sub-Module 3.7-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sub-Module 3.7-A</span></h1>
-<p class="subtitle lead">Backbone Implementation</p>
+<p class="subtitle lead">Backbone Implementation: DuckDB, Parquet, Snakemake</p>
 </div>
 
 
@@ -611,11 +617,77 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-7A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-3.7-A: Backbone Implementation, DuckDB, Parquet, Snakemake
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>○ Specified</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§3.7</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Entity relationship schema, DuckDB table definitions, Parquet storage design, Snakemake orchestration rules, and migration path from the current file-system implementation</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip for conceptual reading; process when implementing the next-phase DuckDB/Parquet backbone</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-3.7-a-backbone-implementation-duckdb-parquet-snakemake" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="sm-3.7-a-backbone-implementation-duckdb-parquet-snakemake"><span class="header-section-number">17.1</span> SM-3.7-A: Backbone Implementation, DuckDB, Parquet, Snakemake</h2>
+<p>DuckDB is appropriate for the backbone’s query layer for four reasons. It is an in-process analytical database that requires no server, making it suitable for a research environment where infrastructure overhead must be minimal. It supports SQL with the full suite of analytical extensions: window functions for time-series operations, lateral joins for artefact cross-referencing, and GROUP BY aggregations for ensemble-level robustness metrics. It is natively compatible with Python through the duckdb package, with R through the duckdb R package, and with Parquet files through its native Parquet reader. It is open-source and actively maintained by a research-oriented community.</p>
+<p>Parquet is appropriate for artefact storage for three reasons. Its columnar format is efficient for the time-series arrays that dominate the analytical content of DemandPacks, SignalsPacks, and similar artefacts: reading a single column (for example, the heat_demand_mw array) does not require reading any other column. It is supported natively by DuckDB, Python (via PyArrow and pandas), R, and Julia. It preserves schema metadata alongside data, making it self-describing in a way that is compatible with the mandatory provenance principle.</p>
+<p>Entity relationship schema. The backbone requires four tables.</p>
+<p>The artefact table stores one row per artefact instance with columns: artefact_id (primary key, UUID), artefact_family (string), schema_version (string), site_id (string), run_id (UUID, foreign key), future_id (integer, foreign key), pathway_id (string), epoch (string), validation_status (enum), produced_at (timestamp), parquet_path (string), checksum (string).</p>
+<p>The run registry table stores one row per pipeline run with columns: run_id (primary key, UUID), bundle_id (string), module_name (string), module_version (string), executed_at (timestamp), configuration_hash (string), status (enum: completed, failed, partial).</p>
+<p>The lineage table stores one row per directed dependency relationship with columns: relationship_id (UUID), source_artefact_id (UUID, foreign key), consuming_run_id (UUID, foreign key), produced_artefact_id (UUID, foreign key), relationship_type (enum: input, output).</p>
+<p>The validation registry table stores one row per acceptance gate check with columns: validation_id (UUID), assessed_artefact_id (UUID, foreign key), gate_name (string), outcome (enum: passed, failed), failure_details (string, nullable), assessed_at (timestamp).</p>
+<p>Snakemake orchestration. The Snakemake rule file defines one rule per module run, specifying the input artefact paths as Snakemake input dependencies and the output artefact paths as Snakemake output targets. The rule body executes the module, runs the acceptance gate checks, writes ValidationArtefacts for all checks, and writes the output artefact to Parquet only if all gates pass. If any gate fails, Snakemake marks the rule as failed, preventing any downstream rule that depends on the output from executing. This rule-dependency structure enforces the acceptance gate requirement at the workflow level, not only at the module level.</p>
+<p>Migration path from the file-system implementation. The current file-system run-bundle structure maps to the backbone schema as follows. The bundle name maps to the bundle_id field in the run registry. The epoch tag subdirectory and run-id subdirectory together identify the run. The dispatch summary CSV and the RDM summary CSV are the primary ResultArtefacts. The SHA256 hash records in the provenance JSON files correspond to the checksum fields in the artefact table. Migration proceeds by: (1) reading all existing run-bundle outputs, (2) constructing artefact table rows from the file metadata, (3) constructing run registry rows from the bundle structure, (4) constructing lineage rows from the pipeline stage dependencies, and (5) loading all artefacts into Parquet files with their provenance metadata. Step 5 requires no changes to any module’s internal logic; it is a post-processing step that reads the existing CSV outputs and writes them to Parquet.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1127,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

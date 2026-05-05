@@ -584,8 +584,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-6.6-e-pypsa-regional-module-design-next-phase-specification" id="toc-sm-6.6-e-pypsa-regional-module-design-next-phase-specification" class="nav-link active" data-scroll-target="#sm-6.6-e-pypsa-regional-module-design-next-phase-specification"><span class="header-section-number">30.1</span> SM-6.6-E: PyPSA Regional Module Design, Next-Phase Specification</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +600,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-6-poc.html">Module 6: The Proof of Concept</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-6-6E-pypsa-module-design.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Sub-Module 6.6-E</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Sub-Module 6.6-E</span></h1>
-<p class="subtitle lead">PyPSA Module Design</p>
+<p class="subtitle lead">PyPSA Regional Module Design, Next-Phase Specification</p>
 </div>
 
 
@@ -611,11 +617,113 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-6E -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-6.6-E: PyPSA Regional Module Design, Next-Phase Specification
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>○ Specified</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§6.6, Module 2 §2.2 (LP optimisation), Module 2 SM-2.3-A (surrogate validation)</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Detailed design specification for the next-phase PyPSA regional electricity module including network structure, LP formulation, SignalsPack field mapping, and surrogate development pathway</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if next-phase regional module development is not in scope</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 7</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-6.6-e-pypsa-regional-module-design-next-phase-specification" class="level2" data-number="30.1">
+<h2 data-number="30.1" class="anchored" data-anchor-id="sm-6.6-e-pypsa-regional-module-design-next-phase-specification"><span class="header-section-number">30.1</span> SM-6.6-E: PyPSA Regional Module Design, Next-Phase Specification</h2>
+<p>Network structure. The PyPSA regional model for the Southland context represents the Mararoa-Waimea transmission cluster as a network of buses connected by transmission lines and transformers. The minimum viable network for the GXP adequacy assessment requires: the national grid bus at the Mararoa and Waimea 220 kV nodes; the zone substation bus at the EDN0331 GXP; the subtransmission lines connecting the two; and the demand bus representing the Edendale industrial load. A more complete representation would add the other major industrial loads in the region as separate demand buses.</p>
+<p>LP formulation. The network dispatch LP follows the PyPSA-standard formulation: minimise total generation cost subject to power balance at each bus, line capacity constraints, and generator capacity limits. The LP is run at hourly resolution for each planning epoch. The dual variable on the power balance constraint at the EDN0331 bus gives the locational marginal price, which maps directly to the tariff_nzd_per_mwh field of the SignalsPack.</p>
+<p>SignalsPack output mapping. The PyPSA LP produces the following outputs that map to SignalsPack fields:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>PyPSA output</th>
+<th>SignalsPack field</th>
+<th>Derivation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bus marginal price at EDN0331</td>
+<td>tariff_nzd_per_mwh</td>
+<td>Dual variable on power balance constraint</td>
+</tr>
+<tr class="even">
+<td>Line loading fraction on subtransmission</td>
+<td>feasibility_indicator</td>
+<td>1 if max loading below capacity; 0 if any hour exceeds capacity</td>
+</tr>
+<tr class="odd">
+<td>System-wide adequacy margin</td>
+<td>headroom_mw</td>
+<td>Firm capacity minus committed load minus N-1 reserve</td>
+</tr>
+<tr class="even">
+<td>Upgrade class from capacity check</td>
+<td>upgrade_class</td>
+<td>Classified from peak exceedance against upgrade menu</td>
+</tr>
+<tr class="odd">
+<td>Upgrade cost adder</td>
+<td>cost_adder_nzd</td>
+<td>Annualised upgrade cost attributable to the new load</td>
+</tr>
+</tbody>
+</table>
+<p>Surrogate development pathway. A gradient boosting regressor trained on PyPSA outputs from a Latin Hypercube sample of 500 futures forms the first surrogate generation. The surrogate input features are the five FutureArtefact uncertain drivers. The output targets are the five SignalsPack fields above. Validation follows the decision-ranking preservation protocol of Sub-Module SM-2.3-A.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1163,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

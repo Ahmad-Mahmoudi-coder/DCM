@@ -584,8 +584,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-3.5-a-canonical-artefact-schema-reference" id="toc-sm-3.5-a-canonical-artefact-schema-reference" class="nav-link active" data-scroll-target="#sm-3.5-a-canonical-artefact-schema-reference"><span class="header-section-number">16.1</span> SM-3.5-A: Canonical Artefact Schema Reference</a>
+  <ul class="collapse">
+  <li><a href="#demandpack-schema-version-1.0" id="toc-demandpack-schema-version-1.0" class="nav-link" data-scroll-target="#demandpack-schema-version-1.0"><span class="header-section-number">16.1.1</span> DemandPack (Schema Version 1.0)</a></li>
+  <li><a href="#incrementalelectricitypack-schema-version-1.0" id="toc-incrementalelectricitypack-schema-version-1.0" class="nav-link" data-scroll-target="#incrementalelectricitypack-schema-version-1.0"><span class="header-section-number">16.1.2</span> IncrementalElectricityPack (Schema Version 1.0)</a></li>
+  <li><a href="#signalspack-schema-version-0.1.0-edendale-gxp" id="toc-signalspack-schema-version-0.1.0-edendale-gxp" class="nav-link" data-scroll-target="#signalspack-schema-version-0.1.0-edendale-gxp"><span class="header-section-number">16.1.3</span> SignalsPack (Schema Version 0.1.0 — Edendale GXP)</a></li>
+  <li><a href="#futureartefact-schema-version-1.0" id="toc-futureartefact-schema-version-1.0" class="nav-link" data-scroll-target="#futureartefact-schema-version-1.0"><span class="header-section-number">16.1.4</span> FutureArtefact (Schema Version 1.0)</a></li>
+  <li><a href="#schema-version-history" id="toc-schema-version-history" class="nav-link" data-scroll-target="#schema-version-history"><span class="header-section-number">16.1.5</span> Schema Version History</a></li>
+  <li><a href="#cross-reference-fields-shared-across-families" id="toc-cross-reference-fields-shared-across-families" class="nav-link" data-scroll-target="#cross-reference-fields-shared-across-families"><span class="header-section-number">16.1.6</span> Cross-Reference: Fields Shared Across Families</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-5A-artefact-schema.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +608,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-3-architecture.html">Module 3: Architecture</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-3-5A-artefact-schema.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Sub-Module 3.5-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Sub-Module 3.5-A</span></h1>
-<p class="subtitle lead">Artefact Schema</p>
+<p class="subtitle lead">Canonical Artefact Schema Reference</p>
 </div>
 
 
@@ -611,11 +625,621 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-5A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-3.5-A: Canonical Artefact Schema Reference
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§3.5</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Complete field-level specifications for all seven canonical artefact families, schema version history, and a cross-reference table identifying fields shared across families</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip for conceptual reading; process in full when implementing any module that produces or consumes governed artefacts</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 6, SM-6.4-C, SM-6.5-D</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-3.5-a-canonical-artefact-schema-reference" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="sm-3.5-a-canonical-artefact-schema-reference"><span class="header-section-number">16.1</span> SM-3.5-A: Canonical Artefact Schema Reference</h2>
+<p>The following tables provide the authoritative field-level specifications for each canonical artefact family. Fields marked Required must be present in every instance; fields marked Optional may be absent. All timestamps use UTC ISO-8601 format with a Z suffix. All monetary values are in NZD. All energy values are in MWh or MW as declared.</p>
+<section id="demandpack-schema-version-1.0" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="demandpack-schema-version-1.0"><span class="header-section-number">16.1.1</span> DemandPack (Schema Version 1.0)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Required</th>
+<th>Validation rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>artefact_id</td>
+<td>UUID</td>
+<td>—</td>
+<td>Required</td>
+<td>Globally unique; assigned at generation</td>
+</tr>
+<tr class="even">
+<td>schema_version</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>“1.0”</td>
+</tr>
+<tr class="odd">
+<td>artefact_family</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>“DemandPack”</td>
+</tr>
+<tr class="even">
+<td>site_id</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>Site registry reference</td>
+</tr>
+<tr class="odd">
+<td>run_id</td>
+<td>UUID</td>
+<td>—</td>
+<td>Required</td>
+<td>Producing run reference</td>
+</tr>
+<tr class="even">
+<td>future_id</td>
+<td>UUID</td>
+<td>—</td>
+<td>Required</td>
+<td>FutureArtefact reference</td>
+</tr>
+<tr class="odd">
+<td>epoch</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>Declared epoch set (e.g., “2035_EB”)</td>
+</tr>
+<tr class="even">
+<td>produced_by</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>Module identity and version</td>
+</tr>
+<tr class="odd">
+<td>timestamp_utc</td>
+<td>Datetime array</td>
+<td>UTC</td>
+<td>Required</td>
+<td>Monotonic, hourly, no gaps, no duplicates</td>
+</tr>
+<tr class="even">
+<td>timestep_seconds</td>
+<td>Integer</td>
+<td>Seconds</td>
+<td>Required</td>
+<td>3600 for hourly</td>
+</tr>
+<tr class="odd">
+<td>heat_demand_mw</td>
+<td>Float array</td>
+<td>MW</td>
+<td>Required</td>
+<td>Non-negative; length equals hours in epoch</td>
+</tr>
+<tr class="even">
+<td>annual_total_mwh</td>
+<td>Float</td>
+<td>MWh</td>
+<td>Required</td>
+<td>Sum of hourly values within 0.5% tolerance</td>
+</tr>
+<tr class="odd">
+<td>peak_demand_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>Required</td>
+<td>Maximum of heat_demand_mw array</td>
+</tr>
+<tr class="even">
+<td>validation_status</td>
+<td>Enum</td>
+<td>—</td>
+<td>Required</td>
+<td>provisional, validated, superseded</td>
+</tr>
+<tr class="odd">
+<td>checksum</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>SHA-256 hex of payload</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="incrementalelectricitypack-schema-version-1.0" class="level3" data-number="16.1.2">
+<h3 data-number="16.1.2" class="anchored" data-anchor-id="incrementalelectricitypack-schema-version-1.0"><span class="header-section-number">16.1.2</span> IncrementalElectricityPack (Schema Version 1.0)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Required</th>
+<th>Validation rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>artefact_id</td>
+<td>UUID</td>
+<td>—</td>
+<td>Required</td>
+<td>Globally unique</td>
+</tr>
+<tr class="even">
+<td>schema_version</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>“1.0”</td>
+</tr>
+<tr class="odd">
+<td>artefact_family</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>“IncrementalElectricityPack”</td>
+</tr>
+<tr class="even">
+<td>site_id</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>Site registry reference</td>
+</tr>
+<tr class="odd">
+<td>run_id</td>
+<td>UUID</td>
+<td>—</td>
+<td>Required</td>
+<td>Producing run reference</td>
+</tr>
+<tr class="even">
+<td>future_id</td>
+<td>UUID</td>
+<td>—</td>
+<td>Required</td>
+<td>FutureArtefact reference</td>
+</tr>
+<tr class="odd">
+<td>pathway_id</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>Pathway variant identifier</td>
+</tr>
+<tr class="even">
+<td>epoch</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>Declared epoch</td>
+</tr>
+<tr class="odd">
+<td>annual_incremental_mwh</td>
+<td>Float</td>
+<td>MWh</td>
+<td>Required</td>
+<td>Non-negative</td>
+</tr>
+<tr class="even">
+<td>peak_incremental_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>Required</td>
+<td>Non-negative; equals max of hourly trace</td>
+</tr>
+<tr class="odd">
+<td>p95_incremental_mw</td>
+<td>Float</td>
+<td>MW</td>
+<td>Required</td>
+<td>95th percentile of hourly trace</td>
+</tr>
+<tr class="even">
+<td>winter_peak_share</td>
+<td>Float</td>
+<td>Fraction</td>
+<td>Required</td>
+<td>0 to 1 inclusive</td>
+</tr>
+<tr class="odd">
+<td>shape_cluster_label</td>
+<td>Integer</td>
+<td>—</td>
+<td>Required</td>
+<td>1 to K; cluster label from demand classification</td>
+</tr>
+<tr class="even">
+<td>validation_status</td>
+<td>Enum</td>
+<td>—</td>
+<td>Required</td>
+<td>provisional, validated, superseded</td>
+</tr>
+<tr class="odd">
+<td>checksum</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>SHA-256 hex</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signalspack-schema-version-0.1.0-edendale-gxp" class="level3" data-number="16.1.3">
+<h3 data-number="16.1.3" class="anchored" data-anchor-id="signalspack-schema-version-0.1.0-edendale-gxp"><span class="header-section-number">16.1.3</span> SignalsPack (Schema Version 0.1.0 — Edendale GXP)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Required</th>
+<th>Validation rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>gxp_id</td>
+<td>String</td>
+<td>—</td>
+<td>Required</td>
+<td>“EDN0331”</td>
+</tr>
+<tr class="even">
+<td>timestamp_utc</td>
+<td>Datetime array</td>
+<td>UTC</td>
+<td>Required</td>
+<td>Monotonic, hourly, no gaps</td>
+</tr>
+<tr class="odd">
+<td>capacity_mw</td>
+<td>Float array</td>
+<td>MW</td>
+<td>Required</td>
+<td>Non-negative</td>
+</tr>
+<tr class="even">
+<td>baseline_import_mw</td>
+<td>Float array</td>
+<td>MW</td>
+<td>Required</td>
+<td>Non-negative</td>
+</tr>
+<tr class="odd">
+<td>reserve_margin_mw</td>
+<td>Float array</td>
+<td>MW</td>
+<td>Required</td>
+<td>Non-negative</td>
+</tr>
+<tr class="even">
+<td>headroom_mw</td>
+<td>Float array</td>
+<td>MW</td>
+<td>Required</td>
+<td>max(capacity minus baseline minus reserve, 0)</td>
+</tr>
+<tr class="odd">
+<td>tariff_nzd_per_mwh</td>
+<td>Float array</td>
+<td>NZD/MWh</td>
+<td>Required</td>
+<td>Non-negative</td>
+</tr>
+<tr class="even">
+<td>epoch</td>
+<td>Integer</td>
+<td>—</td>
+<td>Required</td>
+<td>Planning year</td>
+</tr>
+<tr class="odd">
+<td>feasibility_indicator</td>
+<td>Boolean</td>
+<td>—</td>
+<td>Required (eval layer)</td>
+<td>True if no exceedance without upgrade</td>
+</tr>
+<tr class="even">
+<td>upgrade_class</td>
+<td>Enum</td>
+<td>—</td>
+<td>Required (eval layer)</td>
+<td>none, minor, moderate, major</td>
+</tr>
+<tr class="odd">
+<td>cost_adder_nzd</td>
+<td>Float</td>
+<td>NZD/year</td>
+<td>Required (eval layer)</td>
+<td>Non-negative</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="futureartefact-schema-version-1.0" class="level3" data-number="16.1.4">
+<h3 data-number="16.1.4" class="anchored" data-anchor-id="futureartefact-schema-version-1.0"><span class="header-section-number">16.1.4</span> FutureArtefact (Schema Version 1.0)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Required</th>
+<th>Validation rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>future_id</td>
+<td>Integer</td>
+<td>—</td>
+<td>Required</td>
+<td>Unique within ensemble</td>
+</tr>
+<tr class="even">
+<td>headroom_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required</td>
+<td>Positive; typically 0.60 to 1.30</td>
+</tr>
+<tr class="odd">
+<td>demand_growth_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required</td>
+<td>Positive</td>
+</tr>
+<tr class="even">
+<td>hydro_class</td>
+<td>Enum</td>
+<td>—</td>
+<td>Required</td>
+<td>dry, normal, wet</td>
+</tr>
+<tr class="odd">
+<td>biomass_availability_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required</td>
+<td>Positive</td>
+</tr>
+<tr class="even">
+<td>biomass_cost_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required</td>
+<td>Positive</td>
+</tr>
+<tr class="odd">
+<td>ets_price_nzd_per_tco2</td>
+<td>Float</td>
+<td>NZD/tCO2</td>
+<td>Required</td>
+<td>Non-negative</td>
+</tr>
+<tr class="even">
+<td>upgrade_capex_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required</td>
+<td>Positive</td>
+</tr>
+<tr class="odd">
+<td>voll_nzd_per_mwh</td>
+<td>Float</td>
+<td>NZD/MWh</td>
+<td>Required</td>
+<td>Positive; discrete: 5000, 10000, 15000, 20000</td>
+</tr>
+<tr class="even">
+<td>consents_uplift</td>
+<td>Float</td>
+<td>—</td>
+<td>Required</td>
+<td>Greater than or equal to 1.0</td>
+</tr>
+<tr class="odd">
+<td>p_elec_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required (overlay)</td>
+<td>Positive</td>
+</tr>
+<tr class="even">
+<td>p_biomass_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required (overlay)</td>
+<td>Positive</td>
+</tr>
+<tr class="odd">
+<td>ets_mult</td>
+<td>Float</td>
+<td>—</td>
+<td>Required (overlay)</td>
+<td>Positive</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="schema-version-history" class="level3" data-number="16.1.5">
+<h3 data-number="16.1.5" class="anchored" data-anchor-id="schema-version-history"><span class="header-section-number">16.1.5</span> Schema Version History</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Version</th>
+<th>Date</th>
+<th>Change summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SignalsPack</td>
+<td>0.1.0</td>
+<td>December 2025</td>
+<td>Initial frozen schema; GXP hourly signals, emissions intensity, upgrade menu, manifest</td>
+</tr>
+<tr class="even">
+<td>All others</td>
+<td>1.0</td>
+<td>2026</td>
+<td>Initial specification</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cross-reference-fields-shared-across-families" class="level3" data-number="16.1.6">
+<h3 data-number="16.1.6" class="anchored" data-anchor-id="cross-reference-fields-shared-across-families"><span class="header-section-number">16.1.6</span> Cross-Reference: Fields Shared Across Families</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Families that carry it</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>artefact_id</td>
+<td>All families</td>
+<td>Unique identity for lineage and cross-reference</td>
+</tr>
+<tr class="even">
+<td>future_id</td>
+<td>DemandPack, IncrementalElectricityPack, ResultArtefact, DecisionSummaryArtefact, ValidationArtefact</td>
+<td>Links all analytical outputs to the future conditions under which they were produced</td>
+</tr>
+<tr class="odd">
+<td>run_id</td>
+<td>DemandPack, IncrementalElectricityPack, ResultArtefact</td>
+<td>Links outputs to the specific pipeline run that produced them</td>
+</tr>
+<tr class="even">
+<td>epoch</td>
+<td>DemandPack, IncrementalElectricityPack, SignalsPack</td>
+<td>Identifies the planning year context</td>
+</tr>
+<tr class="odd">
+<td>validation_status</td>
+<td>DemandPack, IncrementalElectricityPack, ResultArtefact</td>
+<td>Lifecycle stage for governance gating</td>
+</tr>
+<tr class="even">
+<td>checksum</td>
+<td>DemandPack, IncrementalElectricityPack</td>
+<td>SHA-256 payload integrity verification</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1679,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-5A-artefact-schema.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-5A-artefact-schema.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
