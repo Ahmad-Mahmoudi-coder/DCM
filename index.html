@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -629,176 +629,250 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="dcm-hero-raw">
-  <div class="dcm-hero-inner">
-    <div class="dcm-hero-tag">A Framework for Complex Decisions Under Deep Uncertainty</div>
-    <div class="dcm-hero-title">
-      <strong>Decision-Centred</strong>
-      Thinking and Modelling
+<!-- HERO BANNER -->
+<div class="dcm-hero-wrap">
+  <div class="dcm-hero-tag">
+    A Framework for Complex Decisions Under Deep Uncertainty
+  </div>
+  <div class="dcm-hero-title">
+    <strong>Decision-Centred</strong>
+    Thinking and Modelling
+  </div>
+  <p class="dcm-hero-sub">
+    A way of thinking — and a practical architecture — for decisions 
+    whose most important consequences lie outside the boundary of any 
+    single model, organisation, or planning horizon.
+  </p>
+  <p class="dcm-hero-motto">
+    "The decision makes the boundary; the artefact makes the connection."
+  </p>
+  <a href="manuscript/module-0-orientation.html" class="dcm-btn dcm-btn-primary">
+    Read the Framework →
+  </a>
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM" class="dcm-btn dcm-btn-secondary" target="_blank">
+    GitHub
+  </a>
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" class="dcm-btn dcm-btn-secondary" target="_blank">
+    Discuss
+  </a>
+</div>
+
+<!-- THE CENTRAL PROBLEM -->
+<div style="max-width:860px; margin:0 auto; padding:0 2rem;">
+
+<h2 style="font-family:'Helvetica Neue',Arial,sans-serif; 
+           color:#0f3460; margin-top:2.5rem;" class="anchored">
+  The Central Problem
+</h2>
+<p style="font-size:1.02rem; line-height:1.8; color:#2c2c3e; 
+          max-width:720px;">
+  Most planning problems look tractable until you realise that the 
+  consequences which will determine whether your decision was right lie 
+  <em>outside</em> the model you used to make it. Outside the physical 
+  boundary. Outside the time horizon. Outside the organisational 
+  perimeter. Outside the domain any single expert was trained to see.
+</p>
+<p style="font-size:1.02rem; line-height:1.8; color:#2c2c3e; 
+          max-width:720px;">
+  This framework is a response to that structural problem. It applies 
+  to infrastructure planning, corporate strategy, policy design, 
+  financial decisions, and anywhere that long-horizon commitments 
+  interact with genuine uncertainty and multiple stakeholders who see 
+  the same situation differently.
+</p>
+
+<!-- THREE QUESTIONS -->
+<div class="dcm-q-block">
+  <div class="dcm-q-label">Three Questions This Framework Addresses</div>
+
+  <div class="dcm-q-row">
+    <div class="dcm-q-circle">1</div>
+    <div class="dcm-q-content">
+      <strong>When should the boundary of your analysis be different 
+      from the boundary of the system you are studying?</strong>
+      Conventional modelling draws boundaries around what is physically 
+      tractable. Decision-centred modelling draws them around what must 
+      remain visible for the comparison to be valid — which is often 
+      much larger, and almost always different.
     </div>
-    <p class="dcm-hero-sub">
-      A way of thinking — and a practical architecture — for decisions 
-      whose most important consequences lie outside the boundary of any 
-      single model, organisation, or planning horizon.
-    </p>
-    <p class="dcm-hero-motto">
-      "The decision makes the boundary; the artefact makes the connection."
-    </p>
-    <a href="manuscript/module-0-orientation.html" class="dcm-btn dcm-btn-primary">
-      Read the Framework →
-    </a>
-    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM" class="dcm-btn dcm-btn-secondary">
-      GitHub
-    </a>
-    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" class="dcm-btn dcm-btn-secondary">
-      Discuss
-    </a>
+  </div>
+
+  <div class="dcm-q-row">
+    <div class="dcm-q-circle">2</div>
+    <div class="dcm-q-content">
+      <strong>How do you compare alternatives honestly when no one can 
+      agree on the probability of the futures that determine which is 
+      better?</strong>
+      Not by assigning probabilities anyway and computing expected 
+      values. By evaluating how each alternative behaves across the 
+      full range of plausible futures — measuring regret, robustness, 
+      and satisficing rather than a single weighted average outcome.
+    </div>
+  </div>
+
+  <div class="dcm-q-row">
+    <div class="dcm-q-circle">3</div>
+    <div class="dcm-q-content">
+      <strong>How do you build an environment that can grow toward 
+      what matters without destroying what it has already 
+      established?</strong>
+      Through governed artefacts, stable interfaces, and progressive 
+      refinement guided by what the diagnostics reveal as most 
+      consequential next. The architecture is self-directing: at each 
+      step, it reveals where the analytical torch should turn next.
+    </div>
   </div>
 </div>
-<div style="max-width: 900px; margin: 0 auto; padding: 0 2rem;">
-<section id="the-central-problem" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="the-central-problem">The Central Problem</h2>
-<p>Most planning problems look tractable until you realise that the consequences which will determine whether your decision was right lie outside the model you used to make it. Outside the physical boundary. Outside the time horizon. Outside the organisational perimeter. Outside the domain any single expert was trained to see.</p>
-<p>This framework is a response to that structural problem. It applies to infrastructure planning, corporate strategy, policy design, and wherever long-horizon commitments interact with genuine uncertainty about the future and multiple stakeholders who see the same situation differently.</p>
-</section>
-<section id="three-questions-this-framework-addresses" class="level2 unnumbered dcm-questions-block">
-<h2 class="unnumbered anchored" data-anchor-id="three-questions-this-framework-addresses">Three Questions This Framework Addresses</h2>
-<div class="dcm-question">
-<p>::: {.dcm-q-num}1::: ::: {.dcm-q-text} <strong>When should the boundary of your analysis be different from the boundary of the system you are studying?</strong> Conventional modelling draws boundaries around what is physically tractable. Decision-centred modelling draws them around what must remain visible for the comparison to be valid — which is often much larger, and almost always different.</p>
+
+<!-- THIS FRAMEWORK IS FOR -->
+<h2 style="font-family:'Helvetica Neue',Arial,sans-serif; 
+           color:#0f3460; margin-top:2rem; margin-bottom:1rem;" class="anchored">
+  This Framework Is For
+</h2>
+<div class="dcm-audience-wrap">
+  <div class="dcm-audience-item">
+    <h4 class="anchored">Researchers</h4>
+    <p>Working on DMDU, integrated assessment, and complex systems. 
+    The architecture provides a modular, governed basis for 
+    multi-scale exploration.</p>
+  </div>
+  <div class="dcm-audience-item">
+    <h4 class="anchored">Practitioners</h4>
+    <p>Infrastructure planners, energy analysts, and strategists 
+    navigating long-horizon commitments under genuine uncertainty.</p>
+  </div>
+  <div class="dcm-audience-item">
+    <h4 class="anchored">Policymakers</h4>
+    <p>Seeking analyses that reveal system-level incentive 
+    misalignments invisible to single-perspective assessments.</p>
+  </div>
+  <div class="dcm-audience-item">
+    <h4 class="anchored">Anyone</h4>
+    <p>Facing decisions where the most consequential outcomes lie 
+    outside the frame you started with. The thinking applies 
+    far beyond engineering.</p>
+  </div>
 </div>
-</section>
-<div class="dcm-question">
-<p>::: {.dcm-q-num}2::: ::: {.dcm-q-text} <strong>How do you compare alternatives honestly when no one can agree on the probability of the futures that determine which is better?</strong> Not by assigning probabilities anyway and computing expected values. By evaluating how each alternative behaves across the full range of plausible futures — measuring regret, robustness, and satisficing rather than a single weighted average outcome.</p>
+
+<!-- FOUR PRINCIPLES -->
+<h2 style="font-family:'Helvetica Neue',Arial,sans-serif; 
+           color:#0f3460; margin-top:2rem; margin-bottom:1rem;" class="anchored">
+  Four Principles
+</h2>
+<div class="dcm-pillar-wrap">
+  <div class="dcm-pillar-card">
+    <h3 class="anchored">Decision First</h3>
+    <p>Boundaries are drawn by the decision context, not by physical 
+    system extent. The model develops toward what influences the 
+    decision, not toward completeness of the system description.</p>
+  </div>
+  <div class="dcm-pillar-card">
+    <h3 class="anchored">Governed Artefacts</h3>
+    <p>Every output that enters the comparison chain is 
+    schema-conforming, provenance-carrying, and validation-gated. 
+    Without governance, results cannot be trusted across versions 
+    or questioned after the fact.</p>
+  </div>
+  <div class="dcm-pillar-card">
+    <h3 class="anchored">Deep Uncertainty</h3>
+    <p>When probabilities over futures are contested, the right 
+    standard is robustness: how does this choice perform across the 
+    range of conditions that cannot be agreed upon?</p>
+  </div>
+  <div class="dcm-pillar-card">
+    <h3 class="anchored">Progressive Refinement</h3>
+    <p>A bounded, honest starting point that reveals its own next 
+    steps is more valuable than a comprehensive but opaque system. 
+    The architecture is designed to grow toward what matters.</p>
+  </div>
 </div>
+
+<!-- STATS -->
+<div class="dcm-stats-wrap" style="margin-top:2.5rem;">
+  <div class="dcm-stat-item">
+    <div class="dcm-stat-n">8</div>
+    <div class="dcm-stat-l">Modules from orientation to synthesis</div>
+  </div>
+  <div class="dcm-stat-item">
+    <div class="dcm-stat-n">19</div>
+    <div class="dcm-stat-l">Sub-modules with technical specifications</div>
+  </div>
+  <div class="dcm-stat-item">
+    <div class="dcm-stat-n">11</div>
+    <div class="dcm-stat-l">Propositions constituting the intellectual claim</div>
+  </div>
+  <div class="dcm-stat-item">
+    <div class="dcm-stat-n">∞</div>
+    <div class="dcm-stat-l">Domains this architecture can be applied to</div>
+  </div>
 </div>
-<div class="dcm-question">
-<p>::: {.dcm-q-num}3::: ::: {.dcm-q-text} <strong>How do you build an environment for analysis that can grow toward what matters without destroying what it has already established?</strong> Through governed artefacts, stable interfaces, and progressive refinement guided by what the diagnostics reveal as most consequential next. The architecture is self-directing: at each step, it reveals where the analytical torch should turn next.</p>
-</div>
-<p>::: :::</p>
-<hr>
-<section id="this-framework-is-for" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="this-framework-is-for">This Framework Is For</h2>
-<div class="dcm-audience-strip">
-<section id="researchers" class="level4 dcm-audience-card">
-<h4 class="anchored" data-anchor-id="researchers">Researchers</h4>
-<p>Engaging with DMDU, integrated assessment, and complex systems. The architecture provides a modular, governed basis for multi-scale exploration.</p>
-</section>
-<section id="practitioners" class="level4 dcm-audience-card">
-<h4 class="anchored" data-anchor-id="practitioners">Practitioners</h4>
-<p>Infrastructure planners, energy analysts, and corporate strategists navigating long-horizon commitments under genuine uncertainty.</p>
-</section>
-<section id="policymakers" class="level4 dcm-audience-card">
-<h4 class="anchored" data-anchor-id="policymakers">Policymakers</h4>
-<p>Seeking analyses that reveal system-level incentive misalignments invisible to single-perspective assessments.</p>
-</section>
-<section id="anyone" class="level4 dcm-audience-card">
-<h4 class="anchored" data-anchor-id="anyone">Anyone</h4>
-<p>Facing decisions where the consequences that matter most are outside the frame you started with. The thinking applies far beyond engineering.</p>
-</section>
-</div>
-<hr>
-</section>
-<section id="the-four-principles" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="the-four-principles">The Four Principles</h2>
-<div class="dcm-pillar-grid">
-<section id="decision-first" class="level3 dcm-pillar" data-number="0.0.1">
-<h3 data-number="0.0.1" class="anchored" data-anchor-id="decision-first"><span class="header-section-number">0.0.1</span> Decision First</h3>
-<p>Boundaries are drawn by the decision context, not by physical system extent. The model develops toward what influences the decision, not toward completeness of the system description.</p>
-</section>
-<section id="governed-artefacts" class="level3 dcm-pillar" data-number="0.0.2">
-<h3 data-number="0.0.2" class="anchored" data-anchor-id="governed-artefacts"><span class="header-section-number">0.0.2</span> Governed Artefacts</h3>
-<p>Every output that enters the comparison chain is schema-conforming, provenance-carrying, and validation-gated. Without governance, results cannot be trusted across versions or questioned after the fact.</p>
-</section>
-<section id="deep-uncertainty" class="level3 dcm-pillar" data-number="0.0.3">
-<h3 data-number="0.0.3" class="anchored" data-anchor-id="deep-uncertainty"><span class="header-section-number">0.0.3</span> Deep Uncertainty</h3>
-<p>When probabilities over futures are contested, the right standard is robustness: how does this choice perform across the range of conditions that cannot be agreed upon? Regret, not expected value.</p>
-</section>
-<section id="progressive-refinement" class="level3 dcm-pillar" data-number="0.0.4">
-<h3 data-number="0.0.4" class="anchored" data-anchor-id="progressive-refinement"><span class="header-section-number">0.0.4</span> Progressive Refinement</h3>
-<p>A bounded, honest starting point that reveals its own next steps is more valuable than a comprehensive but opaque system. The architecture is designed to grow toward what matters.</p>
-</section>
-</div>
-<hr>
-</section>
-<section id="navigate-by-purpose" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="navigate-by-purpose">Navigate by Purpose</h2>
+
+<hr style="border:none; border-top:1px solid #dde6ef; margin:2.5rem 0;">
+
+<!-- NAVIGATE -->
+<h2 style="font-family:'Helvetica Neue',Arial,sans-serif; 
+           color:#0f3460; margin-bottom:1rem;" class="anchored">
+  Navigate by Purpose
+</h2>
+
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>I want to…</th>
-<th>Start here</th>
+<th data-quarto-table-cell-role="th">I want to...</th>
+<th data-quarto-table-cell-role="th">Start here</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Understand the core concept</td>
-<td><a href="./manuscript/module-0-orientation.html">Module 0: Orientation</a></td>
+<td><a href="manuscript/module-0-orientation.html">Module 0: Orientation</a></td>
 </tr>
 <tr class="even">
 <td>See the decision theory foundations</td>
-<td><a href="./manuscript/module-1-foundations.html">Module 1: Foundations</a></td>
+<td><a href="manuscript/module-1-foundations.html">Module 1: Foundations</a></td>
 </tr>
 <tr class="odd">
-<td>Read the full architecture</td>
-<td><a href="./manuscript/module-3-architecture.html">Module 3: Architecture</a></td>
+<td>Read the architecture design</td>
+<td><a href="manuscript/module-3-architecture.html">Module 3: Architecture</a></td>
 </tr>
 <tr class="even">
-<td>See it applied to a real case</td>
-<td><a href="./manuscript/module-6-poc.html">Module 6: The Proof of Concept</a></td>
+<td>See the proof of concept (NZ case)</td>
+<td><a href="manuscript/module-6-poc.html">Module 6: Proof of Concept</a></td>
 </tr>
 <tr class="odd">
 <td>Read the eleven propositions</td>
-<td><a href="./manuscript/module-7-synthesis.html">Module 7 §7.6</a></td>
+<td><a href="manuscript/module-7-synthesis.html">Module 7 §7.6</a></td>
 </tr>
 <tr class="even">
-<td>See where it goes next</td>
-<td><a href="./manuscript/module-7-synthesis.html">Module 7 §7.8</a></td>
+<td>See extensions and the bigger vision</td>
+<td><a href="manuscript/module-7-synthesis.html">Module 7 §7.8–7.9</a></td>
 </tr>
 <tr class="odd">
-<td>Browse key terms</td>
-<td><a href="./references/glossary.html">Glossary</a></td>
+<td>Browse all key terms</td>
+<td><a href="references/glossary.html">Glossary</a></td>
 </tr>
 <tr class="even">
 <td>Discuss or contribute</td>
-<td><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions">GitHub Discussions</a></td>
+<td><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" target="_blank">GitHub Discussions</a></td>
 </tr>
 </tbody>
 </table>
-<hr>
-<div class="dcm-stats-grid">
-<div class="dcm-stat-card">
-<p>::: {.dcm-stat-num}8::: ::: {.dcm-stat-label}Modules from orientation to synthesis:::</p>
-</div>
-<div class="dcm-stat-card">
-<p>::: {.dcm-stat-num}19::: ::: {.dcm-stat-label}Sub-modules with technical specifications:::</p>
-</div>
-<div class="dcm-stat-card">
-<p>::: {.dcm-stat-num}11::: ::: {.dcm-stat-num}11::: ::: {.dcm-stat-label}Propositions constituting the intellectual claim:::</p>
-</div>
-<div class="dcm-stat-card">
-<p>::: {.dcm-stat-num}∞::: ::: {.dcm-stat-label}Domains this architecture can be applied to:::</p>
-</div>
-</div>
-<hr>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Engage With This Framework
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Every module has a discussion link. Use it to ask questions, challenge claims, or propose extensions. The framework is designed to grow through exactly this kind of engagement.</p>
-<p><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions">Open a discussion →</a></p>
-</div>
-</div>
-<hr>
-<p><em>Seyed Ahmad Mahmoudi Lahijani — Auckland University of Technology — 2026</em> :::</p>
 
 
-</section>
+<hr style="border:none; border-top:1px solid #dde6ef; margin:2rem 0;">
+
+<p style="font-size:0.82rem; color:#888; margin-bottom:3rem;">
+  <em>Seyed Ahmad Mahmoudi Lahijani — Auckland University of Technology 
+  — 2026</em> &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">Repository</a> 
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions">
+  Contribute</a>
+</p>
+
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
