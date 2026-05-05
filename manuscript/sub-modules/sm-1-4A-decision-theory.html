@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -584,8 +613,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-1.4-a-decision-theory-extended-technical-treatment" id="toc-sm-1.4-a-decision-theory-extended-technical-treatment" class="nav-link active" data-scroll-target="#sm-1.4-a-decision-theory-extended-technical-treatment"><span class="header-section-number">9.1</span> SM-1.4-A: Decision Theory, Extended Technical Treatment</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-1-4A-decision-theory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-1-foundations.html">Module 1: Foundations</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-1-4A-decision-theory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.4-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.4-A</span></h1>
-<p class="subtitle lead">Decision Theory</p>
+<p class="subtitle lead">Decision Theory: Extended Technical Treatment</p>
 </div>
 
 
@@ -611,11 +646,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-1-4A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-1.4-A: Decision Theory, Extended Technical Treatment
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.4</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Formal treatment of expected utility theory, classical decision rules, regret and robustness metrics, and value of information in a DMDU context</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if formal decision theory is already known; consult when the technical foundations of the evaluative standards in §1.5 are needed</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.5</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-1.4-a-decision-theory-extended-technical-treatment" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sm-1.4-a-decision-theory-extended-technical-treatment"><span class="header-section-number">9.1</span> SM-1.4-A: Decision Theory, Extended Technical Treatment</h2>
+<p>Expected utility theory provides the dominant formal framework for decision under uncertainty in economics and in much of operations research. The foundational result, the von Neumann-Morgenstern theorem, establishes that if a decision-maker’s preferences over lotteries satisfy a small set of axioms, including completeness, transitivity, and the independence axiom, then those preferences can be represented by a utility function <span class="math inline">\(u(\cdot)\)</span> such that the decision-maker prefers lottery <span class="math inline">\(L_1\)</span> to lottery <span class="math inline">\(L_2\)</span> if and only if the expected utility of <span class="math inline">\(L_1\)</span> exceeds that of <span class="math inline">\(L_2\)</span>. The theorem is a representation result: it shows that rational preferences of a certain kind can be numerically represented, not that maximising expected utility is the only reasonable way to choose.</p>
+<p>Savage’s subjective expected utility extension allows the decision-maker to have personal probability beliefs over states of the world rather than requiring objective probabilities. Under Savage’s axioms, there exist both a subjective probability function <span class="math inline">\(\pi\)</span> over states and a utility function <span class="math inline">\(u\)</span> over outcomes such that the agent acts as if maximising the expectation <span class="math inline">\(\mathbb{E}_\pi[u(Z(a, \omega))]\)</span>. The elegance of this framework is considerable. Its limitation under deep uncertainty is equally considerable: Savage’s axioms include the sure-thing principle, which requires preference consistency across known and unknown states in ways that conflict with the behaviour observed in Ellsberg’s paradox and related experiments. When the structure of the decision situation is genuinely uncertain rather than merely statistically noisy, the axioms on which Savage’s framework rests may not be satisfied.</p>
+<p>The classical decision rules provide alternatives to expected utility for situations where probabilities are unavailable or unreliable. Maximin identifies the worst outcome for each alternative and selects the alternative whose worst case is best, representing extreme caution. Maximax identifies the best outcome for each alternative and selects the one with the highest possible upside, representing extreme optimism. The Hurwicz criterion interpolates between these by weighting best and worst outcomes by an optimism parameter <span class="math inline">\(\alpha \in [0,1]\)</span>:</p>
+<p><span class="math display">\[
+H(a) = \alpha \max_\omega Z(a,\omega) + (1-\alpha) \min_\omega Z(a,\omega)
+\]</span></p>
+<p>The Laplace criterion treats all futures as equally likely and selects the alternative with the highest average outcome.</p>
+<p>Minimax regret deserves extended treatment because it is the conceptual ancestor of the regret metrics used throughout this framework. Let <span class="math inline">\(Z^*(\omega) = \max_{a'} Z(a', \omega)\)</span> denote the best achievable outcome under future <span class="math inline">\(\omega\)</span>. The regret of choosing alternative <span class="math inline">\(a\)</span> under future <span class="math inline">\(\omega\)</span> is:</p>
+<p><span class="math display">\[
+r(a, \omega) = Z^*(\omega) - Z(a, \omega)
+\]</span></p>
+<p>Minimax regret selects the alternative <span class="math inline">\(a^*\)</span> that minimises the maximum regret across all futures:</p>
+<p><span class="math display">\[
+a^* = \arg\min_{a \in \mathcal{A}} \max_{\omega \in \Omega} r(a, \omega)
+\]</span></p>
+<p>This criterion has intuitive appeal for long-horizon decisions: it asks not which alternative has the highest possible payoff but which avoids the largest avoidable loss when the future becomes known.</p>
+<p>Robustness metrics formalise different aspects of how consistently an alternative performs across the future ensemble. The satisficing rate of alternative <span class="math inline">\(a\)</span> at threshold <span class="math inline">\(\theta\)</span> is the fraction of futures in which the outcome meets or exceeds the threshold:</p>
+<p><span class="math display">\[
+S(a, \theta) = \frac{|\{\omega \in \Omega : Z(a, \omega) \geq \theta\}|}{|\Omega|}
+\]</span></p>
+<p>The maximum regret of alternative <span class="math inline">\(a\)</span> across the ensemble is <span class="math inline">\(\max_{\omega \in \Omega} r(a,\omega)\)</span>. The P90 regret is the 90th percentile of the regret distribution across futures, providing a less extreme but more robust measure of tail exposure. These three metrics capture complementary dimensions of performance under uncertainty and are computed together in the DecisionSummaryArtefact for each pathway comparison.</p>
+<p>Value of information concepts bridge decision analysis and progressive refinement. The Expected Value of Perfect Information (EVPI) under a probability distribution <span class="math inline">\(\pi\)</span> is:</p>
+<p><span class="math display">\[
+\text{EVPI} = \mathbb{E}_\pi[\max_a Z(a, \omega)] - \max_a \mathbb{E}_\pi[Z(a, \omega)]
+\]</span></p>
+<p>It measures the maximum one would pay for a perfect oracle. In the DMDU context, where <span class="math inline">\(\pi\)</span> is contested, EVPI is replaced by the regret-sensitivity equivalent: how much does the maximum regret of the preferred alternative change if uncertainty about a specific uncertain driver is resolved? This measure, computed by re-running the ensemble with specific driver dimensions held fixed, identifies which uncertainties most determine the pathway comparison and therefore which analytical investments in better data or richer representation are most valuable.</p>
+<p>Multi-criteria formulations extend the single-outcome framework to settings where multiple dimensions of consequence must be considered. The scalarisation approach converts multiple criteria <span class="math inline">\(Z_1(a,\omega), \ldots, Z_k(a,\omega)\)</span> into a weighted composite <span class="math inline">\(\sum_i w_i Z_i(a,\omega)\)</span>. This is tractable but depends on the weights being meaningful and widely accepted. Pareto reasoning identifies the set of non-dominated alternatives, those for which no other alternative is strictly better on every criterion simultaneously. The Pareto approach preserves trade-off information rather than suppressing it, but it requires a second-stage rule for choosing among the non-dominated set. Threshold-based multi-criteria comparison asks which alternatives simultaneously satisfy threshold conditions across all criteria and across a sufficient fraction of the future ensemble, aligning naturally with satisficing and robustness reasoning under deep uncertainty.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1174,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-1-4A-decision-theory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-1-4A-decision-theory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
