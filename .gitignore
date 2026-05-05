@@ -46,3 +46,6 @@ secrets/
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Draft exports — kept locally, not tracked in git
+drafts/
