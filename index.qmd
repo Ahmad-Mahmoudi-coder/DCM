@@ -1,75 +1,198 @@
 ---
-title: "A Decision-Centred Modelling Environment"
+title: "Decision-Centred Thinking and Modelling"
 page-layout: full
+toc: false
 ---
 
-::: {.hero-banner style="background: linear-gradient(135deg, #0f3460, #16213e); color: white; padding: 4rem 3rem; margin: -1.5rem -1.5rem 3rem -1.5rem; border-radius: 0 0 12px 12px;"}
-## A Decision-Centred Modelling Environment {style="color: white; font-size: 2rem; margin-bottom: 0.5rem;"}
+```{=html}
+<div class="dcm-hero-raw">
+  <div class="dcm-hero-inner">
+    <div class="dcm-hero-tag">A Framework for Complex Decisions Under Deep Uncertainty</div>
+    <div class="dcm-hero-title">
+      <strong>Decision-Centred</strong>
+      Thinking and Modelling
+    </div>
+    <p class="dcm-hero-sub">
+      A way of thinking — and a practical architecture — for decisions 
+      whose most important consequences lie outside the boundary of any 
+      single model, organisation, or planning horizon.
+    </p>
+    <p class="dcm-hero-motto">
+      "The decision makes the boundary; the artefact makes the connection."
+    </p>
+    <a href="manuscript/module-0-orientation.html" class="dcm-btn dcm-btn-primary">
+      Read the Framework →
+    </a>
+    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM" class="dcm-btn dcm-btn-secondary">
+      GitHub
+    </a>
+    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" class="dcm-btn dcm-btn-secondary">
+      Discuss
+    </a>
+  </div>
+</div>
+```
 
-**Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation**
+::: {style="max-width: 900px; margin: 0 auto; padding: 0 2rem;"}
+
+## The Central Problem {.unnumbered}
+
+Most planning problems look tractable until you realise that 
+the consequences which will determine whether your decision 
+was right lie outside the model you used to make it. Outside 
+the physical boundary. Outside the time horizon. Outside the 
+organisational perimeter. Outside the domain any single expert 
+was trained to see.
+
+This framework is a response to that structural problem. It 
+applies to infrastructure planning, corporate strategy, 
+policy design, and wherever long-horizon commitments interact 
+with genuine uncertainty about the future and multiple 
+stakeholders who see the same situation differently.
+
+::: {.dcm-questions-block}
+## Three Questions This Framework Addresses {.unnumbered}
+
+::: {.dcm-question}
+::: {.dcm-q-num}1:::
+::: {.dcm-q-text}
+**When should the boundary of your analysis be different from the 
+boundary of the system you are studying?**
+Conventional modelling draws boundaries around what is physically 
+tractable. Decision-centred modelling draws them around what must 
+remain visible for the comparison to be valid — which is often 
+much larger, and almost always different.
+:::
+:::
+
+::: {.dcm-question}
+::: {.dcm-q-num}2:::
+::: {.dcm-q-text}
+**How do you compare alternatives honestly when no one can agree 
+on the probability of the futures that determine which is better?**
+Not by assigning probabilities anyway and computing expected values. 
+By evaluating how each alternative behaves across the full range of 
+plausible futures — measuring regret, robustness, and satisficing 
+rather than a single weighted average outcome.
+:::
+:::
+
+::: {.dcm-question}
+::: {.dcm-q-num}3:::
+::: {.dcm-q-text}
+**How do you build an environment for analysis that can grow 
+toward what matters without destroying what it has already 
+established?**
+Through governed artefacts, stable interfaces, and progressive 
+refinement guided by what the diagnostics reveal as most 
+consequential next. The architecture is self-directing: at each 
+step, it reveals where the analytical torch should turn next.
+:::
+:::
+:::
+
+---
+
+## This Framework Is For {.unnumbered}
+
+::: {.dcm-audience-strip}
+::: {.dcm-audience-card}
+#### Researchers
+Engaging with DMDU, integrated assessment, and complex systems. The architecture provides a modular, governed basis for multi-scale exploration.
+:::
+
+::: {.dcm-audience-card}
+#### Practitioners
+Infrastructure planners, energy analysts, and corporate strategists navigating long-horizon commitments under genuine uncertainty.
+:::
+
+::: {.dcm-audience-card}
+#### Policymakers
+Seeking analyses that reveal system-level incentive misalignments invisible to single-perspective assessments.
+:::
+
+::: {.dcm-audience-card}
+#### Anyone
+Facing decisions where the consequences that matter most are outside the frame you started with. The thinking applies far beyond engineering.
+:::
+:::
+
+---
+
+## The Four Principles {.unnumbered}
+
+::: {.dcm-pillar-grid}
+::: {.dcm-pillar}
+### Decision First
+Boundaries are drawn by the decision context, not by physical system extent. The model develops toward what influences the decision, not toward completeness of the system description.
+:::
+
+::: {.dcm-pillar}
+### Governed Artefacts
+Every output that enters the comparison chain is schema-conforming, provenance-carrying, and validation-gated. Without governance, results cannot be trusted across versions or questioned after the fact.
+:::
+
+::: {.dcm-pillar}
+### Deep Uncertainty
+When probabilities over futures are contested, the right standard is robustness: how does this choice perform across the range of conditions that cannot be agreed upon? Regret, not expected value.
+:::
+
+::: {.dcm-pillar}
+### Progressive Refinement
+A bounded, honest starting point that reveals its own next steps is more valuable than a comprehensive but opaque system. The architecture is designed to grow toward what matters.
+:::
+:::
+
+---
+
+## Navigate by Purpose {.unnumbered}
+
+| I want to... | Start here |
+|---|---|
+| Understand the core concept | [Module 0: Orientation](manuscript/module-0-orientation.qmd) |
+| See the decision theory foundations | [Module 1: Foundations](manuscript/module-1-foundations.qmd) |
+| Read the full architecture | [Module 3: Architecture](manuscript/module-3-architecture.qmd) |
+| See it applied to a real case | [Module 6: The Proof of Concept](manuscript/module-6-poc.qmd) |
+| Read the eleven propositions | [Module 7 §7.6](manuscript/module-7-synthesis.qmd) |
+| See where it goes next | [Module 7 §7.8](manuscript/module-7-synthesis.qmd) |
+| Browse key terms | [Glossary](references/glossary.qmd) |
+| Discuss or contribute | [GitHub Discussions](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions) |
+
+---
+
+::: {.dcm-stats-grid}
+::: {.dcm-stat-card}
+::: {.dcm-stat-num}8:::
+::: {.dcm-stat-label}Modules from orientation to synthesis:::
+:::
+::: {.dcm-stat-card}
+::: {.dcm-stat-num}19:::
+::: {.dcm-stat-label}Sub-modules with technical specifications:::
+:::
+::: {.dcm-stat-card}
+::: {.dcm-stat-num}11:::
+::: {.dcm-stat-num}11:::
+::: {.dcm-stat-label}Propositions constituting the intellectual claim:::
+:::
+::: {.dcm-stat-card}
+::: {.dcm-stat-num}∞:::
+::: {.dcm-stat-label}Domains this architecture can be applied to:::
+:::
+:::
+
+---
+
+::: {.callout-tip}
+## Engage With This Framework
+
+Every module has a discussion link. Use it to ask questions, 
+challenge claims, or propose extensions. The framework is 
+designed to grow through exactly this kind of engagement.
+
+[Open a discussion →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions)
+:::
+
+---
 
 *Seyed Ahmad Mahmoudi Lahijani — Auckland University of Technology — 2026*
-
-::: {style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;"}
-[Read the Framework →](manuscript/module-0-orientation.qmd){.btn style="background: white; color: #0f3460; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
-[View on GitHub →](https://github.com/Ahmad-Mahmoudi-coder/DCM){.btn style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
 :::
-:::
-
-::: {.grid style="gap: 2rem; margin-bottom: 3rem;"}
-::: {.g-col-12 .g-col-md-6}
-### The Core Finding
-
-> When the Edendale electrification pathway is evaluated 
-> against 64 plausible futures, **23 of those futures** 
-> produce grid hosting capacity exceedances invisible from 
-> within the site boundary alone.
->
-> This is the gap this framework fills — made analytically visible.
-:::
-
-::: {.g-col-12 .g-col-md-6}
-### The Central Commitment
-
-> *The decision makes the boundary;*  
-> *the artefact makes the connection.*
-
-The framework is organised around the decision, not around 
-the system. This single reversal changes what can be seen, 
-what can be compared, and what constitutes a defensible 
-investment recommendation under deep uncertainty.
-:::
-:::
-
----
-
-## Quick Navigation {.unnumbered}
-
-| If you want to... | Go to... |
-|---|---|
-| Start the conceptual argument | [Module 0: Orientation](manuscript/module-0-orientation.qmd) |
-| Understand the decision problem | [Module 1: Foundations](manuscript/module-1-foundations.qmd) |
-| See the architecture | [Module 3: Architecture](manuscript/module-3-architecture.qmd) |
-| Read the NZ context | [Module 5: The New Zealand Context](manuscript/module-5-nz-context.qmd) |
-| See what was built | [Module 6: The Proof of Concept](manuscript/module-6-poc.qmd) |
-| Read the eleven propositions | [Module 7: §7.6 Eleven Propositions](manuscript/module-7-synthesis.qmd) |
-| Understand the tagging system | [§7.8: Open Knowledge Architecture](manuscript/module-7-synthesis.qmd#sec-7-8) |
-| Browse all key terms | [Glossary](references/glossary.qmd) |
-
----
-
-## Development Status {.unnumbered}
-
-| Component | Status |
-|---|---|
-| Front Matter (Context Declaration, Preamble, Navigation Guide) | ✓ Complete |
-| Module 0: Orientation | ✓ Complete |
-| Module 1: Foundations | ✓ Complete |
-| Module 2: Modelling Foundations | ✓ Complete |
-| Module 3: Architecture | ✓ Complete |
-| Module 4: Domain Translation | ✓ Complete |
-| Module 5: The New Zealand Context | ✓ Complete |
-| Module 6: The Proof of Concept | ✓ Complete |
-| Module 7: Extension and Synthesis | ✓ Complete |
-| Figures and visualisations | ○ In progress |
-| arXiv preprint | ○ Pending |

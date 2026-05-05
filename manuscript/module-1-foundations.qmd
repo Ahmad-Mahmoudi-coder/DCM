@@ -256,3 +256,17 @@ These seven requirements define what any analytical system must provide. Module 
 [SM-1.7-A](sub-modules/sm-1-7A-requirements-mapping.qmd).
 Skip for conceptual reading; use when verifying implementation.
 :::
+
+---
+
+::: {.dcm-discuss}
+**Discuss this module** — Have a question, want to explore 
+an extension, or thinking about how this applies to your 
+domain?
+
+[Ask Claude about this module →](https://claude.ai/new){target="_blank"} 
+*(opens Claude — paste the relevant section text to start a 
+focused conversation)*  
+[Post to GitHub Discussions →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions){target="_blank"} 
+*(for recorded community conversations)*
+:::

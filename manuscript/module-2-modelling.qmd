@@ -169,3 +169,17 @@ The insufficiency has a specific character. Tools cannot draw their own appropri
 What the toolkit requires that it cannot provide for itself is a governance architecture: the infrastructure that enforces schema conformance at every module output, maintains explicit lineage from every result back to the inputs and conditions that produced it, gates admission to the comparison chain through declared acceptance criteria, and preserves the append-only analytical history that makes progressive refinement cumulative rather than destructive.
 
 The architecture of Module 3 does not introduce new tools. It creates the conditions under which the tools described in this module satisfy the seven requirements of §1.7. Requirement 5, comparability across alternatives and futures, is satisfied by the paired-futures design and schema-governed artefact exchange that Module 3 specifies. Requirement 6, traceability and revisability, is satisfied by the governed backbone that Module 3 designs. The other requirements follow from the combination of the tools of Module 2 operating within the boundaries of the architecture of Module 3. The governance architecture is not overhead; it is what transforms a collection of sophisticated tools into a decision-centred analytical environment.
+
+---
+
+::: {.dcm-discuss}
+**Discuss this module** — Have a question, want to explore 
+an extension, or thinking about how this applies to your 
+domain?
+
+[Ask Claude about this module →](https://claude.ai/new){target="_blank"} 
+*(opens Claude — paste the relevant section text to start a 
+focused conversation)*  
+[Post to GitHub Discussions →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions){target="_blank"} 
+*(for recorded community conversations)*
+:::

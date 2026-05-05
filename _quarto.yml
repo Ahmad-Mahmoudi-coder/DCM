@@ -3,7 +3,7 @@ project:
   output-dir: _output
 
 book:
-  title: "A Decision-Centred Modelling Environment for Long-Horizon Planning Under Deep Uncertainty"
+  title: "Decision-Centred Thinking and Modelling"
   subtitle: "Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation"
   author:
     - name: "Seyed Ahmad Mahmoudi Lahijani"

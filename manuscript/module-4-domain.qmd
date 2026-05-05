@@ -144,3 +144,17 @@ The formal derivation of the system-level regret concept, including the precise 
 
 System-Level Regret: Formal Derivation — formal definitions, divergence conditions, and policy interpretation — is in [SM-4.4-A](sub-modules/sm-4-4A-system-regret.qmd). Skip if the conceptual account above is sufficient; process when the formal basis of the evaluation frame divergence is needed.
 :::
+
+---
+
+::: {.dcm-discuss}
+**Discuss this module** — Have a question, want to explore 
+an extension, or thinking about how this applies to your 
+domain?
+
+[Ask Claude about this module →](https://claude.ai/new){target="_blank"} 
+*(opens Claude — paste the relevant section text to start a 
+focused conversation)*  
+[Post to GitHub Discussions →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions){target="_blank"} 
+*(for recorded community conversations)*
+:::
