@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -270,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">A Decision-Centred Modelling Environment for Long-Horizon Planning Under Deep Uncertainty</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -596,8 +596,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-frameworks-current-limits" id="toc-the-frameworks-current-limits" class="nav-link" data-scroll-target="#the-frameworks-current-limits"><span class="header-section-number">32.5</span> §7.5 The Framework’s Current Limits</a></li>
   <li><a href="#eleven-propositions" id="toc-eleven-propositions" class="nav-link" data-scroll-target="#eleven-propositions"><span class="header-section-number">32.6</span> §7.6 Eleven Propositions</a></li>
   <li><a href="#closing-argument" id="toc-closing-argument" class="nav-link" data-scroll-target="#closing-argument"><span class="header-section-number">32.7</span> §7.7 Closing Argument</a></li>
+  <li><a href="#sec-7-8" id="toc-sec-7-8" class="nav-link" data-scroll-target="#sec-7-8"><span class="header-section-number">32.8</span> §7.8 The Open Knowledge Architecture</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-7-synthesis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/module-7-synthesis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1145,6 +1146,154 @@ ul.task-list li input[type="checkbox"] {
 <p>The framework is designed to absorb those implementations progressively without losing the comparability of what has been established. The backbone is append-only. The schemas are versioned. The interface contracts are stable. The lineage is explicit. Each generation of implementation adds to the analytical record rather than replacing it, and the regret sensitivity diagnostics identify which addition should come next by revealing which uncertain driver most strongly determines the current comparison. The framework is self-directing in exactly the sense that progressive refinement requires.</p>
 <p>The invitation is open and specific. A PyPSA developer who reads Sub-Module SM-6.6-E and recognises the regional electricity module specification as work they could implement is invited to do so through the GitHub repository’s contribution process. A DMDU researcher who identifies a robustness metric or a scenario discovery algorithm that would improve the evaluation layer is invited to propose its integration as a methodological extension. A practitioner in water infrastructure, regional transport, or land-use planning who recognises in §7.3 a decision structure analogous to their own is invited to contribute a domain instantiation that specifies the relevant module classes, artefact families, and uncertain drivers in terms of the framework’s interface contract.</p>
 <p>The decision makes the boundary; the artefact makes the connection. This document describes, with as much precision as its current state allows, how that principle is implemented, what it reveals when it is, and what remains to be built before it reveals more.</p>
+</section>
+<section id="sec-7-8" class="level2" data-number="32.8">
+<h2 data-number="32.8" class="anchored" data-anchor-id="sec-7-8"><span class="header-section-number">32.8</span> §7.8 The Open Knowledge Architecture</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §7.8 The Open Knowledge Architecture
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>◇ Vision [Platform]</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§7.4 (Adaptive Decision Laboratory), §7.6 (Eleven Propositions), the Navigation Guide</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Proposes an extension of the manuscript’s Node Declaration system into a multi-dimensional tagging architecture that serves navigation, community signalling, and living document governance simultaneously</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader is interested only in the framework’s technical content; return when engaging with the manuscript as a collaborative and evolving knowledge resource</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Context Declaration (Community Extension); the Navigation Guide (tagging system specification)</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The manuscript’s Node Declaration system, introduced in the Navigation Guide and used throughout every section and sub-module, was designed to serve two audiences: human readers who need to navigate a long and technically heterogeneous document, and AI agents that need to process the document selectively and reliably. The system’s seven fields, Tier, Status, Assumes, Contributes, Skip condition, Passes to, and Sub-Modules here, provide the metadata that makes both forms of engagement efficient. Each node carries enough information about its own role and dependencies that a reader or agent can make principled decisions about which nodes to process fully and which to skip without losing analytical continuity.</p>
+<p>This section proposes an extension of that system that applies the same logic to a harder problem: how should a document that is explicitly designed to grow, through community contributions, progressive refinement, and multi-domain instantiation, govern that growth without losing coherence?</p>
+<p>The problem is not trivial. A document that simply accumulates contributions over time becomes incoherent. Sections written under different assumptions, at different levels of technical development, and for different audiences are navigable only if the document’s metadata system can tell a reader, precisely and consistently, what kind of claim each section is making and what kind of engagement it is inviting. The framework’s current Status field distinguishes Implemented from Specified from Vision. This is the right beginning. It is not sufficient for a document that aspires to serve researchers, practitioners, educators, policy analysts, community members, and AI agents simultaneously.</p>
+<p>The proposed extension adds two new fields to the Node Declaration Table. The first is a Content Tag, which classifies the primary purpose of the node’s content. The second is an Engagement Tag, which declares what kind of contribution or response the node is inviting. Together these two fields turn the Node Declaration from a navigation aid into a governance declaration: every node states not only what it contains and what it assumes, but what it is for and what it wants from its readers.</p>
+<p>The Content Tag vocabulary uses five classes. A node tagged Implemented presents working analytical machinery whose claims are grounded in the current proof of concept. A node tagged Specified presents designed but unbuilt components whose claims are architectural commitments. A node tagged Vision presents directions whose claims are explicitly provisional. A node tagged Educational presents material whose primary purpose is building understanding rather than advancing new claims; it may draw on established methods and literature rather than original findings. A node tagged Collaborative presents an open specification or open question that is explicitly inviting domain-specific contribution, co-development, or critical engagement.</p>
+<p>The Engagement Tag vocabulary uses three classes. A node tagged Research contains unresolved methodological questions or open theoretical problems that invite scholarly engagement. A node tagged Platform relates to the broader architecture of how the manuscript functions as a knowledge resource, including the tagging system itself. A node tagged Contribute signals that the node contains a contribution template or specification that defines what a valid community contribution to that node would look like.</p>
+<p>The practical consequence is a filtered reading experience. An educator developing a course on decision-making under deep uncertainty can filter the manuscript’s Table of Contents to show only Educational nodes, receiving a curated teaching sequence that does not require navigating the full technical apparatus. A PyPSA developer assessing implementation opportunities can filter for Specified + Contribute nodes, seeing a clean list of module specifications that invite implementation contributions. A doctoral student reviewing the framework’s open problems can filter for Research nodes, receiving the manuscript’s honest account of where its own methods are incomplete or contested. An AI agent tasked with summarising the framework’s established claims can filter for Implemented nodes, confining its summary to what the proof of concept has demonstrated.</p>
+<p>This filtering is not merely a convenience. It is an expression of the decision-first principle at the level of the document itself. Just as the analytical environment draws its boundaries around what must remain visible for a given decision, the document’s tagging system draws its navigation boundaries around what is relevant for a given reader’s purpose. The document becomes, in this sense, a decision-centred knowledge resource rather than a sequentially structured text.</p>
+<p>The governance implication is equally important. When the manuscript grows through community contribution, each new section carries its own tags at the point of contribution. The contributor declares whether the section is Educational, Specified, or Visionary; declares whether it contains open Research questions; and declares whether it is inviting further Contribution. The editorial process assesses whether the tags are accurately applied, not only whether the content is intellectually sound. A section that claims Implemented status must demonstrate that claim through a reference to a working implementation and a ValidationArtefact. A section that claims Educational status must be written at a level of generality accessible to a reader without prior framework knowledge. The tags are not decorative; they are governance commitments that the editorial process enforces.</p>
+<p>The connection to the broader scholarly communication vision discussed in the Context Declaration and in the side argument of §7.6’s Proposition XI is direct. The claim attestation system proposed there, in which specific technical claims are individually attested by named domain experts, operates most effectively when the claims to be attested are already individually identified and tagged. A manuscript with a structured Content Tag system provides the claim register that attestation requires. The tags make explicit which claims belong to which epistemic community, and that explicitness is the precondition for targeted expert engagement.</p>
+<p>The tagging system proposed here does not require immediate implementation across the full manuscript. It can be introduced progressively: first in new sections as they are contributed, then retroactively in the sections whose tags are most consequential for navigation. Table 7.8 presents the full proposed vocabulary with definitions, usage conditions, and the visual indicators used in the Table of Contents.</p>
+<p>Table 7.8: Extended Node Declaration tag vocabulary</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Class</th>
+<th>Symbol</th>
+<th>Definition</th>
+<th>Usage condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Implemented</td>
+<td>Content</td>
+<td>✓</td>
+<td>Claims grounded in the current proof of concept; working code or method exists</td>
+<td>Requires reference to a ValidationArtefact or documented pipeline output</td>
+</tr>
+<tr class="even">
+<td>Specified</td>
+<td>Content</td>
+<td>○</td>
+<td>Fully designed component not yet built; claims are architectural commitments</td>
+<td>Requires a specification document or sub-module that defines the implementation target</td>
+</tr>
+<tr class="odd">
+<td>Vision</td>
+<td>Content</td>
+<td>◇</td>
+<td>Provisional direction; claims are exploratory and explicitly subject to revision</td>
+<td>Must acknowledge the speculative character of the claims within the section prose</td>
+</tr>
+<tr class="even">
+<td>Educational</td>
+<td>Content</td>
+<td>⬡</td>
+<td>Primary purpose is understanding-building; may draw on established methods</td>
+<td>Should be accessible to a reader without prior framework knowledge</td>
+</tr>
+<tr class="odd">
+<td>Collaborative</td>
+<td>Content</td>
+<td>✦</td>
+<td>Open specification or open question explicitly inviting contribution</td>
+<td>Should include or reference a contribution template declaring what a valid response looks like</td>
+</tr>
+<tr class="even">
+<td>Research</td>
+<td>Modifier</td>
+<td>[R]</td>
+<td>Contains unresolved methodological questions or open theoretical problems</td>
+<td>Should state the question precisely enough that a reader could design a study to address it</td>
+</tr>
+<tr class="odd">
+<td>Platform</td>
+<td>Modifier</td>
+<td>[P]</td>
+<td>Relates to how the manuscript functions as a knowledge resource</td>
+<td>Used sparingly; reserved for sections whose subject is the document’s own architecture</td>
+</tr>
+<tr class="even">
+<td>Contribute</td>
+<td>Modifier</td>
+<td>[C]</td>
+<td>Contains a contribution template or formal specification for community extension</td>
+<td>Must specify the interface contract or schema requirements that a valid contribution must satisfy</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -1587,5 +1736,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-7-synthesis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/module-7-synthesis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
