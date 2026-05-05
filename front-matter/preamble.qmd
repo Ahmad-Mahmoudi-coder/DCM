@@ -3,4 +3,101 @@ title: "Preamble"
 subtitle: "How to Read This Document"
 ---
 
-<!-- CONTENT TO BE ADDED: See Claude content prompt PR-01 -->
+There are several ways to come to this document, and it has been 
+written to be useful from all of them. But before describing the 
+reading paths, it is worth saying something about what the document 
+is trying to do at the broadest level, because the ambition is 
+larger than the proof of concept might suggest.
+
+## The Ambition
+
+Complex planning decisions in the early twenty-first century are made 
+under conditions that conventional analytical tools were not designed 
+to handle. The decisions are long-horizon, their consequences propagate 
+across scales and actors, the futures that determine their quality 
+cannot be agreed upon probabilistically, and the stakeholders who must 
+live with the outcomes span private corporations, public regulators, 
+regional communities, and global environmental accounting systems. 
+None of the tools currently available to support such decisions was 
+designed to address all of these characteristics simultaneously. 
+National energy system models address long horizons and cross-sector 
+consistency but abstract away the operational heterogeneity of 
+individual facilities and the local infrastructure constraints that 
+determine feasibility. Site-level techno-economic assessments address 
+operational realism but cannot see beyond the facility boundary. 
+Regulatory impact assessments address stakeholder perspectives but 
+rarely achieve the analytical precision needed to evaluate pathway 
+robustness under deep uncertainty. The result is that consequential 
+decisions about the energy infrastructure of the next thirty years 
+are routinely made on the basis of analyses that are each individually 
+sophisticated but collectively incoherent, because they are not 
+connected through a common architecture that allows their contributions 
+to be evaluated together.
+
+The framework developed in this document is a response to that 
+incoherence. It is not a better model. It is an architecture within 
+which better models can contribute to a coherent analytical chain, 
+evaluated against a shared set of decision-relevant metrics, under a 
+shared representation of the futures across which the decision must 
+remain defensible.
+
+## What It Could Become
+
+The proof of concept demonstrated in Module 6 evaluates two pathways 
+for one facility against 64 futures under one analytical architecture. 
+That is a very small instantiation of what the framework's architecture 
+could support. The same architecture, deployed at the scale of a large 
+industrial company's full facility portfolio, coupled to a national 
+energy system model, equipped with a trained ML surrogate of the 
+regional electricity module allowing the ensemble to span several 
+thousand futures, and connected to a natural-language query interface 
+over the governed artefact store, would allow a regional planner, a 
+corporate sustainability officer, a policy analyst, or a community 
+representative to ask the analysis a specific question and receive an 
+answer grounded in specific artefacts whose provenance and validation 
+status are visible. That is not science fiction. Every component of 
+that vision is technically feasible with existing tools and methods. 
+What does not yet exist is the architecture that connects them in a 
+governed, traceable, decision-centred way. That architecture is what 
+this document describes.
+
+## What It Asks
+
+The framework asks readers to accept a specific intellectual commitment 
+that runs against the grain of most modelling practice: that the 
+appropriate starting point for complex planning analysis is not the 
+system but the decision; that the model should grow toward the 
+parameters that influence the decision, not toward the completeness 
+of the physical description; and that the fog of deep uncertainty is 
+not cleared by more data or more computation alone but by a more 
+disciplined organisation of what is known, what is uncertain, and 
+what must remain visible for the comparison at hand. At each step of 
+development, the framework lights up the domain that needs to be 
+explored next. It does not promise to eliminate uncertainty. It 
+promises to make decisions more intelligible in its presence.
+
+## On the Document's Own Incompleteness
+
+This document is honest about what has been built and what has not. 
+The proof of concept in Module 6 is bounded in ways that are 
+explicitly declared. Several modules are described as specifications 
+rather than implemented systems. Several sub-modules are roadmaps 
+for future development rather than accounts of existing work. This 
+incompleteness is not a deficiency. It is a feature of the 
+progressive-refinement philosophy: a bounded, auditable starting 
+point that reveals its own next steps is more valuable than a 
+complete but opaque system. The architecture is designed to absorb 
+enrichment. This document is designed to be extended.
+
+## The Reading Paths
+
+If you are new to the framework, begin with Module 0 (Orientation), 
+which provides the full module map and the three-level architecture 
+in overview form. If you are a practitioner with a specific question, 
+use the Node Declaration Tables at the front of each section and the 
+question catalogues in the Context Declaration to navigate directly. 
+If you want the conclusions before the argument, read Module 7 
+(Extension and Synthesis) first. If you want to know what has been 
+built and how to run it, read Module 6 and its sub-modules. If you 
+are an AI assistant that has been given this document, the Context 
+Declaration is addressed to you directly.

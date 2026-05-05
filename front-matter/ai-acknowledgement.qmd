@@ -2,4 +2,28 @@
 title: "Acknowledgement of AI-Assisted Development"
 ---
 
-<!-- CONTENT TO BE ADDED: See Claude content prompt AI-01 -->
+This framework and this document were developed in active and 
+sustained collaboration with AI tools throughout. Research synthesis, 
+code scaffolding, schema drafting, iterative prototyping, artefact 
+validation logic, and significant portions of the writing were produced 
+through dialogue with AI assistants, principally Claude (Anthropic), 
+ChatGPT (OpenAI), Grok, and Cursor AI, across the full duration of 
+the research process.
+
+This is acknowledged here not as a disclaimer but as a methodological 
+fact with direct relevance to the framework's own argument. The 
+framework argues that any output entering an analytical comparison 
+chain must be schema-conforming, provenance-carrying, and 
+validation-gated, regardless of whether it was produced by a 
+deterministic optimiser, a stochastic simulation, or an AI-assisted 
+development process. This document's own production is subject to the 
+same governance logic it prescribes. Without governance, AI-assisted 
+analytical work is opaque. With it, it is traceable. This document is 
+designed to make that boundary visible.
+
+Readers who are themselves using AI tools to engage with this framework 
+are doing something it explicitly anticipates and accommodates. This 
+document is designed to be an evolving, AI-readable, progressively 
+extensible knowledge environment. This is its current state. Future 
+states will be richer. The architecture is designed to absorb that 
+enrichment without losing coherence.
