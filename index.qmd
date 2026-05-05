@@ -1,35 +1,45 @@
 ---
 title: "A Decision-Centred Modelling Environment"
+page-layout: full
 ---
 
-# Welcome {.unnumbered}
+::: {.hero-banner style="background: linear-gradient(135deg, #0f3460, #16213e); color: white; padding: 4rem 3rem; margin: -1.5rem -1.5rem 3rem -1.5rem; border-radius: 0 0 12px 12px;"}
+## A Decision-Centred Modelling Environment {style="color: white; font-size: 2rem; margin-bottom: 0.5rem;"}
 
-This is the online companion to:
-
-**A Decision-Centred Modelling Environment for Long-Horizon Planning 
-Under Deep Uncertainty: Foundations, Architecture, and Application 
-to Industrial Process Heat Decarbonisation**
+**Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation**
 
 *Seyed Ahmad Mahmoudi Lahijani — Auckland University of Technology — 2026*
 
----
+::: {style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;"}
+[Read the Framework →](manuscript/module-0-orientation.qmd){.btn style="background: white; color: #0f3460; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
+[View on GitHub →](https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling){.btn style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none;"}
+:::
+:::
 
-## The Core Finding {.unnumbered}
+::: {.grid style="gap: 2rem; margin-bottom: 3rem;"}
+::: {.g-col-12 .g-col-md-6}
+### The Core Finding
 
-> When the Edendale electrification pathway is evaluated against a 
-> structured ensemble of 64 futures, **23 of those futures** produce 
-> grid hosting capacity exceedances that generate regional 
-> infrastructure costs invisible from within the site boundary alone.
+> When the Edendale electrification pathway is evaluated 
+> against 64 plausible futures, **23 of those futures** 
+> produce grid hosting capacity exceedances invisible from 
+> within the site boundary alone.
 >
-> This result — 36 percent of the ensemble revealing a constraint 
-> that site-level analysis cannot see — is the gap this framework 
-> fills, made analytically visible.
+> This is the gap this framework fills — made analytically visible.
+:::
 
----
+::: {.g-col-12 .g-col-md-6}
+### The Central Commitment
 
-## The Central Commitment {.unnumbered}
+> *The decision makes the boundary;*  
+> *the artefact makes the connection.*
 
-> *The decision makes the boundary; the artefact makes the connection.*
+The framework is organised around the decision, not around 
+the system. This single reversal changes what can be seen, 
+what can be compared, and what constitutes a defensible 
+investment recommendation under deep uncertainty.
+:::
+:::
 
 ---
 
@@ -37,31 +47,28 @@ to Industrial Process Heat Decarbonisation**
 
 | If you want to... | Go to... |
 |---|---|
-| Understand the framework's big picture | [Context Declaration](front-matter/context-declaration.qmd) |
-| Know how to read this document | [Navigation Guide](front-matter/navigation-guide.qmd) |
 | Start the conceptual argument | [Module 0: Orientation](manuscript/module-0-orientation.qmd) |
-| See what has been built | [Module 6: The Proof of Concept](manuscript/module-6-poc.qmd) |
-| Contribute an extension | [Contributing](CONTRIBUTING.md) |
+| Understand the decision problem | [Module 1: Foundations](manuscript/module-1-foundations.qmd) |
+| See the architecture | [Module 3: Architecture](manuscript/module-3-architecture.qmd) |
+| Read the NZ context | [Module 5: The New Zealand Context](manuscript/module-5-nz-context.qmd) |
+| See what was built | [Module 6: The Proof of Concept](manuscript/module-6-poc.qmd) |
+| Read the eleven propositions | [Module 7: §7.6 Eleven Propositions](manuscript/module-7-synthesis.qmd) |
+| Browse all key terms | [Glossary](references/glossary.qmd) |
 
 ---
 
-::: {.callout-note}
-## For AI Assistants
-
-Upload this document to your preferred AI assistant to ask 
-framework-specific questions. The Context Declaration contains 
-key concept definitions and audience-specific question catalogues 
-designed for AI-assisted engagement.
-:::
-
----
-
-## Current Development Status {.unnumbered}
+## Development Status {.unnumbered}
 
 | Component | Status |
 |---|---|
 | Front Matter (Context Declaration, Preamble, Navigation Guide) | ✓ Complete |
-| Module 0: Orientation | ○ In progress |
-| Module 1: Foundations | ○ In progress |
-| Modules 2–7 | ○ Scaffolded, content being added |
-| Proof of Concept (Edendale–Southland) | ✓ Implemented |
+| Module 0: Orientation | ✓ Complete |
+| Module 1: Foundations | ✓ Complete |
+| Module 2: Modelling Foundations | ✓ Complete |
+| Module 3: Architecture | ✓ Complete |
+| Module 4: Domain Translation | ✓ Complete |
+| Module 5: The New Zealand Context | ✓ Complete |
+| Module 6: The Proof of Concept | ✓ Complete |
+| Module 7: Extension and Synthesis | ✓ Complete |
+| Figures and visualisations | ○ In progress |
+| arXiv preprint | ○ Pending |
