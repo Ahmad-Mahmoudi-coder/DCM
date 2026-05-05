@@ -4,7 +4,7 @@
 Under Deep Uncertainty: Foundations, Architecture, and Application to 
 Industrial Process Heat Decarbonisation**
 
-*Seyed Ahmad Mahmoudi Lahijani | Auckland University of Technology | 2025*
+*Seyed Ahmad Mahmoudi Lahijani | Auckland University of Technology | 2026*
 
 ---
 
