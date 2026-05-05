@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -81,9 +46,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -619,14 +584,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#sm-6.2-a-poc-pipeline-commands-and-run-bundle-conventions" id="toc-sm-6.2-a-poc-pipeline-commands-and-run-bundle-conventions" class="nav-link active" data-scroll-target="#sm-6.2-a-poc-pipeline-commands-and-run-bundle-conventions"><span class="header-section-number">26.1</span> SM-6.2-A: PoC Pipeline, Commands and Run-Bundle Conventions</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -635,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-6-poc.html">Module 6: The Proof of Concept</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-6-2A-poc-pipeline.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Sub-Module 6.2-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Sub-Module 6.2-A</span></h1>
-<p class="subtitle lead">PoC Pipeline, Commands and Run-Bundle Conventions</p>
+<p class="subtitle lead">PoC Pipeline</p>
 </div>
 
 
@@ -652,115 +611,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Node Declaration — SM-6.2-A: PoC Pipeline, Commands and Run-Bundle Conventions
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Tier</strong></td>
-<td>Sub-Module</td>
-</tr>
-<tr class="even">
-<td><strong>Status</strong></td>
-<td>✓ Complete</td>
-</tr>
-<tr class="odd">
-<td><strong>Assumes</strong></td>
-<td>§6.2</td>
-</tr>
-<tr class="even">
-<td><strong>Contributes</strong></td>
-<td>Complete module execution sequence with PowerShell commands, input/output conventions, ensemble scaling workflow, and acceptance checklist</td>
-</tr>
-<tr class="odd">
-<td><strong>Skip condition</strong></td>
-<td>Skip for results reading; process when replicating or extending the pipeline</td>
-</tr>
-<tr class="even">
-<td><strong>Passes to</strong></td>
-<td>§6.3 through §6.8</td>
-</tr>
-<tr class="odd">
-<td><strong>Sub-Modules here</strong></td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<section id="sm-6.2-a-poc-pipeline-commands-and-run-bundle-conventions" class="level2" data-number="26.1">
-<h2 data-number="26.1" class="anchored" data-anchor-id="sm-6.2-a-poc-pipeline-commands-and-run-bundle-conventions"><span class="header-section-number">26.1</span> SM-6.2-A: PoC Pipeline, Commands and Run-Bundle Conventions</h2>
-<p>Step 1: DemandPack construction</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">generate_demandpack</span> <span class="op">--</span>epoch-tag 2035_EB <span class="op">--</span>outdir Output<span class="op">/</span>runs<span class="op">/&lt;</span>bundle<span class="op">&gt;/</span>epoch2035_EB<span class="op">/</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">generate_demandpack</span> <span class="op">--</span>epoch-tag 2035_BB <span class="op">--</span>outdir Output<span class="op">/</span>runs<span class="op">/&lt;</span>bundle<span class="op">&gt;/</span>epoch2035_BB<span class="op">/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Produces staged hourly demand CSVs accepted by the site dispatch module. Verify output: annual_total_mwh field within 0.5 percent of the declared annual total.</p>
-<p>Step 2: Site dispatch (proportional mode)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">site_dispatch_2020</span> <span class="op">--</span>epoch 2035_EB <span class="op">--</span>mode proportional `</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>demand-csv Output<span class="op">/</span>runs<span class="op">/&lt;</span>bundle<span class="op">&gt;/</span>epoch2035_EB<span class="op">/</span>demand_staged<span class="op">.</span><span class="fu">csv</span> `</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>output-root Output <span class="op">--</span>run-id <span class="op">&lt;</span>bundle<span class="op">&gt;/</span>epoch2035_EB<span class="op">/</span>dispatch_prop_v2_capfix1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Repeat for 2035_BB. Produces site_dispatch_2035_EB_summary.csv and incremental_electricity_MW_2035_EB.csv in the signals/ subfolder.</p>
-<p>Step 3: Futures template (first time or when scaling)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 100 paired futures (recommended for thesis PoC)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>python scripts<span class="op">/</span>generate_futures_2035<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>n <span class="dv">100</span> <span class="op">--</span>seed <span class="dv">42</span> `</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>out <span class="st">"Input/rdm/futures_2035.csv"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Validate</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>python scripts<span class="op">/</span>validate_futures_2035<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>csv <span class="st">"Input/rdm/futures_2035.csv"</span> <span class="op">--</span>n <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Anchor futures 0 to 20 are preserved exactly. Futures 21 to 99 use Latin Hypercube Sampling across continuous driver dimensions and weighted discrete sampling for VOLL.</p>
-<p>Step 4: Grid RDM screening</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">run_rdm_2035</span> <span class="op">--</span>bundle <span class="op">&lt;</span>bundle<span class="op">&gt;</span> <span class="op">--</span>epoch-tag 2035_EB `</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>futures-csv <span class="st">"Input/rdm/futures_2035.csv"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">run_rdm_2035</span> <span class="op">--</span>bundle <span class="op">&lt;</span>bundle<span class="op">&gt;</span> <span class="op">--</span>epoch-tag 2035_BB `</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>futures-csv <span class="st">"Input/rdm/futures_2035.csv"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Both runs must reference the same futures_2035.csv to enforce the paired-futures contract. Produces rdm_summary_2035_EB.csv and rdm_summary_2035_BB.csv in Output/runs/<bundle>/rdm/.</bundle></p>
-<p>Step 5: Site decision robustness overlay</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialise canonical futures.csv with site multipliers</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">site_decision_robustness</span> <span class="op">--</span>bundle <span class="op">&lt;</span>bundle<span class="op">&gt;</span> <span class="op">--</span>init-futures-multipliers</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Validate setup</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">site_decision_robustness</span> <span class="op">--</span>bundle <span class="op">&lt;</span>bundle<span class="op">&gt;</span> <span class="op">--</span>validate-only</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate overlay</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">site_decision_robustness</span> <span class="op">--</span>bundle <span class="op">&lt;</span>bundle<span class="op">&gt;</span> <span class="op">--</span>epoch-eb 2035_EB <span class="op">--</span>epoch-bb 2035_BB</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Step 6: Pathway comparison</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m src<span class="op">.</span><span class="fu">compare_pathways_2035</span> <span class="op">--</span>bundle <span class="op">&lt;</span>bundle<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Produces compare_2035_EB_vs_BB.csv and compare_2035_EB_vs_BB.md in Output/runs/<bundle>/compare/.</bundle></p>
-<p>Acceptance checklist</p>
-<p>All items below must be verified before the bundle is considered release-ready:</p>
-<ul>
-<li>All dispatch summaries exist for 2035_EB and 2035_BB</li>
-<li>All incremental electricity CSVs exist in signals/ folders</li>
-<li>RDM summaries exist for both 2035_EB and 2035_BB</li>
-<li>Paired futures: EB and BB RDM summaries use identical future_id sets</li>
-<li>No unacceptable unserved energy: annual_unserved_MWh equals zero or within declared tolerance</li>
-<li>Pathway comparison CSV and MD exist</li>
-<li>Overlay outputs exist: site_decision_robustness_summary_2035.csv</li>
-<li>SHA256 hash verification passes for all SignalsPack files</li>
-</ul>
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-6-2A -->
+<!-- Skip condition: TO BE ADDED -->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1200,5 +1055,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
