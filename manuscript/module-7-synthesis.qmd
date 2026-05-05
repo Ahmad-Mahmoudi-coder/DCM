@@ -309,16 +309,15 @@ Table 7.8: Extended Node Declaration tag vocabulary
 | Platform | Modifier | [P] | Relates to how the manuscript functions as a knowledge resource | Used sparingly; reserved for sections whose subject is the document's own architecture |
 | Contribute | Modifier | [C] | Contains a contribution template or formal specification for community extension | Must specify the interface contract or schema requirements that a valid contribution must satisfy |
 
----
-
-::: {.dcm-discuss}
-**Discuss this module** — Have a question, want to explore 
-an extension, or thinking about how this applies to your 
-domain?
-
-[Ask Claude about this module →](https://claude.ai/new){target="_blank"} 
-*(opens Claude — paste the relevant section text to start a 
-focused conversation)*  
-[Post to GitHub Discussions →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions){target="_blank"} 
-*(for recorded community conversations)*
-:::
+```{=html}
+<div class="dcm-discuss-strip">
+  <strong>Discuss this module</strong> — 
+  Have a question, want to challenge a claim, or thinking 
+  about applying this to your domain?
+  <a href="https://claude.ai/new" target="_blank">
+  Ask Claude →</a> (paste the section text to start a 
+  focused conversation) &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" 
+     target="_blank">Post to GitHub Discussions →</a>
+</div>
+```

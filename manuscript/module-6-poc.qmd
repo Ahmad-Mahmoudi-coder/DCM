@@ -329,16 +329,15 @@ It does not establish that the one-pass coupling architecture produces the same 
 
 The refinement roadmap. Four development priorities would address these four limitations in order of decision-relevance. The first priority is a higher-fidelity regional module, replacing the stylised screening with a PyPSA-based assessment or its ML surrogate, as specified in SM-6.6-E. This would directly address the third and fourth limitations and would substantially improve the confidence of the headroom assessment. The second priority is iterative coupling through a two-pass architecture in which the upgrade cost adder from the regional assessment is passed back to the site dispatch module as a tariff input for a second dispatch run. This would address the fourth limitation and close the gap between the one-pass assessment and the system-level regret derivation of SM-4.4-A. The third priority is measured DemandPack calibration: replacing the synthetic profiles with measured EMS data from the Edendale facility would address the second declared limitation and improve the temporal fidelity of the GXP peak demand assessment. The fourth priority is ensemble expansion to 500 or 1,000 futures using a trained ML surrogate of the regional module, making statistically meaningful PRIM-based scenario discovery and vulnerability mapping feasible with the methods specified in SM-2.4-A.
 
----
-
-::: {.dcm-discuss}
-**Discuss this module** — Have a question, want to explore 
-an extension, or thinking about how this applies to your 
-domain?
-
-[Ask Claude about this module →](https://claude.ai/new){target="_blank"} 
-*(opens Claude — paste the relevant section text to start a 
-focused conversation)*  
-[Post to GitHub Discussions →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions){target="_blank"} 
-*(for recorded community conversations)*
-:::
+```{=html}
+<div class="dcm-discuss-strip">
+  <strong>Discuss this module</strong> — 
+  Have a question, want to challenge a claim, or thinking 
+  about applying this to your domain?
+  <a href="https://claude.ai/new" target="_blank">
+  Ask Claude →</a> (paste the section text to start a 
+  focused conversation) &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" 
+     target="_blank">Post to GitHub Discussions →</a>
+</div>
+```

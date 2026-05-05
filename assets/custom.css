@@ -1,322 +1,7 @@
-/* ============================================
-   FULL-WIDTH LAYOUT OVERRIDE FOR LANDING PAGE
-   Quarto book layout constrains content width
-   by default — these overrides allow the index
-   page hero to span the full viewport.
-   ============================================ */
-
-/* Force full-width on the index/landing page */
-#quarto-content {
-  padding: 0 !important;
-}
-
-.page-layout-full #quarto-content {
-  max-width: 100% !important;
-  padding: 0 !important;
-}
-
-.page-layout-full .quarto-title-block {
-  display: none;
-}
-
-/* Remove default column padding on landing page */
-.page-layout-full main.content {
-  max-width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Constrain interior content after hero */
-.page-layout-full main.content > *:not(.dcm-hero-raw) {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-/* Hero spans full width */
-.dcm-hero-raw {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  background: linear-gradient(160deg, #0a1628 0%, #0f3460 50%, #1a1a2e 100%);
-  color: white;
-  padding: 5rem 3rem 4.5rem 3rem;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.dcm-hero-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.dcm-hero-raw::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  right: -10%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(
-    circle, 
-    rgba(93,173,226,0.12) 0%, 
-    transparent 70%
-  );
-  pointer-events: none;
-}
-
-.dcm-hero-tag {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 1.2rem;
-}
-
-.dcm-hero-title {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 300;
-  color: white;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.2rem;
-}
-
-.dcm-hero-title strong {
-  font-weight: 700;
-  color: #5dade2;
-  display: block;
-}
-
-.dcm-hero-sub {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.72);
-  max-width: 580px;
-  line-height: 1.75;
-  margin-bottom: 2rem;
-}
-
-.dcm-hero-motto {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.5);
-  border-left: 3px solid #5dade2;
-  padding-left: 1rem;
-  margin-bottom: 2.5rem;
-  max-width: 500px;
-}
-
-.dcm-btn {
-  display: inline-block;
-  padding: 0.65rem 1.6rem;
-  border-radius: 4px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
-  font-size: 0.88rem;
-  text-decoration: none;
-  margin-right: 0.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.dcm-btn-primary {
-  background: #5dade2;
-  color: #0a1628 !important;
-}
-
-.dcm-btn-primary:hover {
-  background: #85c1e9;
-  text-decoration: none;
-}
-
-.dcm-btn-secondary {
-  background: transparent;
-  color: rgba(255,255,255,0.85) !important;
-  border: 1.5px solid rgba(255,255,255,0.35);
-}
-
-.dcm-btn-secondary:hover {
-  border-color: rgba(255,255,255,0.7);
-  text-decoration: none;
-}
-
-/* Pillar grid */
-.dcm-pillar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-  margin: 2.5rem 0;
-}
-
-.dcm-pillar {
-  background: #f8fafc;
-  border: 1px solid #dde6ef;
-  border-top: 3px solid #0f3460;
-  padding: 1.4rem;
-  border-radius: 0 0 6px 6px;
-}
-
-.dcm-pillar h3 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #0f3460;
-  margin-bottom: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.dcm-pillar p {
-  font-size: 0.88rem;
-  color: #4a5568;
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* Three questions */
-.dcm-questions-block {
-  background: linear-gradient(135deg, #eef2f8 0%, #e4ecf6 100%);
-  border-radius: 8px;
-  padding: 2.5rem 2.5rem 1.5rem 2.5rem;
-  margin: 2.5rem 0;
-}
-
-.dcm-questions-block h2 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #0f3460;
-  font-size: 0.78rem;
-  margin-bottom: 1.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 800;
-}
-
-.dcm-question {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.dcm-q-num {
-  flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
-  background: #0f3460;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  margin-top: 0.15rem;
-}
-
-.dcm-q-text {
-  font-size: 0.95rem;
-  color: #1a2a3a;
-  line-height: 1.7;
-}
-
-/* Stats grid */
-.dcm-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-@media (max-width: 700px) {
-  .dcm-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.dcm-stat-card {
-  text-align: center;
-  padding: 1.5rem 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #dde6ef;
-  background: #fafbfd;
-}
-
-.dcm-stat-num {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #0f3460;
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-
-.dcm-stat-label {
-  font-size: 0.78rem;
-  color: #6b7a8d;
-  line-height: 1.4;
-}
-
-/* Audience callout strip */
-.dcm-audience-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.dcm-audience-card {
-  padding: 1.2rem;
-  border-radius: 6px;
-  background: white;
-  border: 1px solid #dde6ef;
-  border-left: 3px solid #5dade2;
-}
-
-.dcm-audience-card h4 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #0f3460;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.dcm-audience-card p {
-  font-size: 0.82rem;
-  color: #555;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Discuss callout in modules */
-.dcm-discuss {
-  border: 1px solid #dde6ef;
-  border-left: 4px solid #5dade2;
-  background: #f8fcff;
-  border-radius: 0 6px 6px 0;
-  padding: 1rem 1.25rem;
-  margin-top: 2rem;
-  font-size: 0.88rem;
-}
-
-.dcm-discuss a {
-  color: #0f3460;
-  font-weight: 600;
-}
-
-/* =========================================
-   Decision-Centred Modelling — Site Design
-   ========================================= */
+/* =============================================
+   Decision-Centred Thinking and Modelling
+   Custom stylesheet — full replacement
+   ============================================= */
 
 /* === TYPOGRAPHY === */
 body {
@@ -330,34 +15,276 @@ h1, h2, h3, h4, h5 {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   color: #0f3460;
-  letter-spacing: -0.01em;
 }
 
-/* === HERO BANNER ON INDEX PAGE === */
-.quarto-title-block {
-  background: linear-gradient(135deg, #0f3460 0%, #16213e 60%, #1a1a2e 100%);
-  color: white;
-  padding: 3rem 2rem;
-  margin: -1rem -1rem 2rem -1rem;
-  border-radius: 0 0 8px 8px;
+/* === SIDEBAR === */
+#quarto-sidebar {
+  background-color: #fafbfc;
+  border-right: 1px solid #dde6ef;
 }
 
-.quarto-title-block .title {
-  color: white;
-  font-size: 1.8rem;
+.sidebar-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f3460;
   line-height: 1.3;
 }
 
-.quarto-title-block .description {
-  color: rgba(255,255,255,0.85);
+.sidebar-item-text {
+  font-size: 0.8rem;
+}
+
+/* === HERO: works within book layout column, 
+         no viewport-width overflow needed === */
+.dcm-hero-wrap {
+  background: linear-gradient(150deg, 
+    #0a1628 0%, 
+    #0d2a4a 35%, 
+    #0f3460 65%, 
+    #1a1a2e 100%);
+  color: white;
+  padding: 4.5rem 3rem 4rem 3rem;
+  margin: -1.5rem -1.5rem 2.5rem -1.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+}
+
+.dcm-hero-wrap::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(93,173,226,0.18) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.dcm-hero-tag {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1rem;
+}
+
+.dcm-hero-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.2rem 0;
+}
+
+.dcm-hero-title strong {
+  font-weight: 800;
+  color: #5dade2;
+  display: block;
+}
+
+.dcm-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 580px;
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+}
+
+.dcm-hero-motto {
+  font-size: 0.92rem;
   font-style: italic;
+  color: rgba(255,255,255,0.5);
+  border-left: 3px solid #5dade2;
+  padding-left: 1rem;
+  margin-bottom: 2.2rem;
+  max-width: 480px;
 }
 
-.quarto-title-block .quarto-title-meta {
-  color: rgba(255,255,255,0.7);
+.dcm-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.86rem;
+  text-decoration: none !important;
+  margin-right: 0.6rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* === CALLOUT STYLING === */
+.dcm-btn-primary {
+  background: #5dade2;
+  color: #0a1628 !important;
+}
+
+.dcm-btn-secondary {
+  background: transparent;
+  color: rgba(255,255,255,0.85) !important;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+
+/* === QUESTIONS BLOCK === */
+.dcm-q-block {
+  background: linear-gradient(135deg, #eef2f8 0%, #e4ecf6 100%);
+  border-radius: 8px;
+  padding: 2.2rem 2.2rem 1rem 2.2rem;
+  margin: 2.5rem 0;
+}
+
+.dcm-q-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0f3460;
+  margin-bottom: 1.5rem;
+}
+
+.dcm-q-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.dcm-q-circle {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  background: #0f3460;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.dcm-q-content {
+  font-size: 0.95rem;
+  color: #1a2a3a;
+  line-height: 1.7;
+}
+
+/* === PILLAR GRID === */
+.dcm-pillar-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.dcm-pillar-card {
+  background: #f8fafc;
+  border: 1px solid #dde6ef;
+  border-top: 3px solid #0f3460;
+  padding: 1.3rem;
+  border-radius: 0 0 6px 6px;
+}
+
+.dcm-pillar-card h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0f3460;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.6rem 0;
+}
+
+.dcm-pillar-card p {
+  font-size: 0.86rem;
+  color: #4a5568;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* === AUDIENCE STRIP === */
+.dcm-audience-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.dcm-audience-item {
+  padding: 1rem 1.1rem;
+  border-radius: 6px;
+  background: white;
+  border: 1px solid #dde6ef;
+  border-left: 3px solid #5dade2;
+}
+
+.dcm-audience-item h4 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0f3460;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.4rem 0;
+}
+
+.dcm-audience-item p {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* === STATS GRID === */
+.dcm-stats-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+@media (max-width: 650px) {
+  .dcm-stats-wrap { grid-template-columns: repeat(2, 1fr); }
+  .dcm-q-row { flex-direction: column; }
+}
+
+.dcm-stat-item {
+  text-align: center;
+  padding: 1.4rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #dde6ef;
+  background: #fafbfd;
+}
+
+.dcm-stat-n {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f3460;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.dcm-stat-l {
+  font-size: 0.75rem;
+  color: #6b7a8d;
+  line-height: 1.4;
+}
+
+/* === CALLOUTS === */
 .callout-note {
   background-color: #f0f4f8;
   border-left: 4px solid #0f3460;
@@ -367,30 +294,11 @@ h1, h2, h3, h4, h5 {
 .callout-tip {
   background-color: #f0faf4;
   border-left: 4px solid #27ae60;
-  border-radius: 0 6px 6px 0;
 }
 
 .callout-important {
   background-color: #fff8f0;
   border-left: 4px solid #e67e22;
-  border-radius: 0 6px 6px 0;
-}
-
-/* === BLOCKQUOTE STYLING (core finding) === */
-blockquote {
-  background: linear-gradient(135deg, #f0f4f8 0%, #e8f0fb 100%);
-  border-left: 5px solid #0f3460;
-  padding: 1.2rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 0 8px 8px 0;
-  font-style: normal;
-  color: #0f3460;
-  font-size: 1.05rem;
-}
-
-blockquote strong {
-  color: #c0392b;
-  font-weight: 700;
 }
 
 /* === TABLES === */
@@ -399,92 +307,60 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-
 thead tr {
   background-color: #0f3460;
   color: white;
 }
-
-thead th {
-  padding: 0.6rem 0.8rem;
-  text-align: left;
-}
-
+thead th { padding: 0.6rem 0.8rem; text-align: left; }
 tbody td {
   padding: 0.5rem 0.8rem;
-  border-bottom: 1px solid #e0e6ed;
+  border-bottom: 1px solid #e8edf3;
   vertical-align: top;
 }
+tbody tr:nth-child(even) { background: #f7f9fc; }
+tbody tr:hover { background: #edf2f9; }
 
-tbody tr:nth-child(even) {
-  background-color: #f7f9fc;
-}
-
-tbody tr:hover {
-  background-color: #edf2f9;
-}
-
-/* === SIDEBAR === */
-#quarto-sidebar {
-  background-color: #fafbfc;
-  border-right: 1px solid #e0e6ed;
-  font-size: 0.82rem;
-}
-
-.sidebar-title {
-  font-size: 0.8rem;
-  font-weight: 700;
+/* === BLOCKQUOTES === */
+blockquote {
+  background: #f0f4f8;
+  border-left: 4px solid #0f3460;
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
   color: #0f3460;
-  line-height: 1.3;
 }
 
-.sidebar-item-text {
+/* === DISCUSS STRIP === */
+.dcm-discuss-strip {
+  border: 1px solid #dde6ef;
+  border-left: 4px solid #5dade2;
+  background: #f4f9ff;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.2rem;
+  margin-top: 2.5rem;
+  font-size: 0.86rem;
   color: #444;
 }
 
-.sidebar-item-text:hover {
+.dcm-discuss-strip a {
   color: #0f3460;
+  font-weight: 600;
 }
 
-/* === STATUS BADGES IN TABLES === */
-.implemented {
-  color: #27ae60;
-  font-weight: bold;
-}
-
-/* === NAVIGATION === */
-.nav-page a {
-  color: #0f3460;
-  font-weight: 500;
-}
-
-/* === FOOTER === */
-.nav-footer {
-  background-color: #f0f4f8;
-  border-top: 1px solid #e0e6ed;
-  font-size: 0.8rem;
-  color: #666;
-}
-
-/* === CODE BLOCKS === */
+/* === CODE === */
 pre {
-  background-color: #1a1a2e;
+  background: #1a1a2e;
   color: #e8f0fb;
   padding: 1rem;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
 }
 
-/* === CONTENT WIDTH === */
-.quarto-container {
-  max-width: 880px;
-}
-
-/* === NODE DECLARATION TABLES === */
-.callout-note table thead tr {
-  background-color: #0f3460;
-}
-
-.callout-note table {
-  font-size: 0.85rem;
+/* === NAVIGATION FOOTER === */
+.nav-footer {
+  border-top: 1px solid #dde6ef;
+  background: #f8fafc;
+  font-size: 0.78rem;
+  color: #777;
 }

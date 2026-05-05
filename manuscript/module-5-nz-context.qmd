@@ -198,16 +198,15 @@ Table 5.6: FutureArtefact uncertain driver grounding
 
 Together these eleven driver dimensions and their ranges constitute the analytical specification of the uncertainty space that the Edendale proof of concept explores. Each range is defensible by reference to a documented New Zealand condition. Each driver is traceable to the section of Module 5 that provides the empirical grounding. The FutureArtefact schema, as specified in Module 3 §3.5, carries all eleven fields and their specific values for each future in the ensemble. Module 6 describes how these values are used to construct and evaluate the 64-future paired ensemble.
 
----
-
-::: {.dcm-discuss}
-**Discuss this module** — Have a question, want to explore 
-an extension, or thinking about how this applies to your 
-domain?
-
-[Ask Claude about this module →](https://claude.ai/new){target="_blank"} 
-*(opens Claude — paste the relevant section text to start a 
-focused conversation)*  
-[Post to GitHub Discussions →](https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions){target="_blank"} 
-*(for recorded community conversations)*
-:::
+```{=html}
+<div class="dcm-discuss-strip">
+  <strong>Discuss this module</strong> — 
+  Have a question, want to challenge a claim, or thinking 
+  about applying this to your domain?
+  <a href="https://claude.ai/new" target="_blank">
+  Ask Claude →</a> (paste the section text to start a 
+  focused conversation) &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" 
+     target="_blank">Post to GitHub Discussions →</a>
+</div>
+```
