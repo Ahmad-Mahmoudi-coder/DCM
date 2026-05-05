@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -584,8 +584,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#representation-boundaries-scale-and-aggregation" id="toc-representation-boundaries-scale-and-aggregation" class="nav-link active" data-scroll-target="#representation-boundaries-scale-and-aggregation"><span class="header-section-number">11.1</span> §2.1 Representation: Boundaries, Scale, and Aggregation</a></li>
+  <li><a href="#optimisation-as-consequence-generation" id="toc-optimisation-as-consequence-generation" class="nav-link" data-scroll-target="#optimisation-as-consequence-generation"><span class="header-section-number">11.2</span> §2.2 Optimisation as Consequence Generation</a></li>
+  <li><a href="#simulation-and-surrogate-emulation" id="toc-simulation-and-surrogate-emulation" class="nav-link" data-scroll-target="#simulation-and-surrogate-emulation"><span class="header-section-number">11.3</span> §2.3 Simulation and Surrogate Emulation</a></li>
+  <li><a href="#constructing-and-selecting-futures" id="toc-constructing-and-selecting-futures" class="nav-link" data-scroll-target="#constructing-and-selecting-futures"><span class="header-section-number">11.4</span> §2.4 Constructing and Selecting Futures</a></li>
+  <li><a href="#from-tools-to-architecture-what-the-toolkit-cannot-do-alone" id="toc-from-tools-to-architecture-what-the-toolkit-cannot-do-alone" class="nav-link" data-scroll-target="#from-tools-to-architecture-what-the-toolkit-cannot-do-alone"><span class="header-section-number">11.5</span> §2.5 From Tools to Architecture: What the Toolkit Cannot Do Alone</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-2-modelling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -611,10 +621,428 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt M2-01 -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Module 2 Declaration
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Purpose</strong></td>
+<td>Establishes what analytical tools are available to generate decision-relevant consequences, how each tool should be used, and what limits the toolkit has that point toward the architecture of Module 3</td>
+</tr>
+<tr class="even">
+<td><strong>Assumes</strong></td>
+<td>Module 1, particularly the seven requirements of §1.7</td>
+</tr>
+<tr class="odd">
+<td><strong>Contributes</strong></td>
+<td>The decision-relevant boundary logic for representation; the reframing of optimisation as consequence generation; simulation and surrogate emulation as exploratory and scalability tools; the decision-critical future selection logic; and the governance gap that makes an architectural response necessary</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 3 (the architecture that organises these tools); Module 5 (domain-specific tool choices); Module 6 (PoC tool implementations)</td>
+</tr>
+<tr class="odd">
+<td><strong>Can be read independently</strong></td>
+<td>Yes, after Module 1</td>
+</tr>
+<tr class="even">
+<td><strong>Sub-Modules</strong></td>
+<td>SM-2.2-A (Optimisation Role Summary); SM-2.3-A (Surrogate Validation Protocol); SM-2.4-A (Scenario Discovery Methods)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="representation-boundaries-scale-and-aggregation" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="representation-boundaries-scale-and-aggregation"><span class="header-section-number">11.1</span> §2.1 Representation: Boundaries, Scale, and Aggregation</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §2.1 Representation: Boundaries, Scale, and Aggregation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>Module 1, particularly §1.7</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes that the three primary choices in model representation, boundary, scale, and aggregation level, are governed by decision relevance rather than physical convenience or computational tractability</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader already applies decision-relevant boundary logic in modelling practice</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§2.2, §2.3, §2.4</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>A model does not represent reality; it represents selected features of reality in a form that serves a purpose. The selection is never neutral. Every model boundary excludes something. Every scale choice aggregates something. Every aggregation hides variation that might be consequential. The question is not whether these choices involve trade-offs but whether they are made consciously and in service of the decision the model is meant to support. The decision-first boundary principle of §0.3 applies to representation directly: boundaries, scale, and aggregation level are set by what must remain visible for the comparison to be valid.</p>
+<p>Boundaries determine what is inside the model and what is treated as external or given. A spatial boundary defines the geographic or physical extent. A temporal boundary defines the period and resolution. A sectoral boundary determines which interacting systems are included. An institutional boundary determines which actors and their decisions are represented. Under the decision-first principle, each boundary choice should be answerable by the question: is this inclusion or exclusion required to preserve a consequence that is relevant to the comparison? If a consequence that would change the decision ranking lies outside the boundary, the boundary is wrong. If a consequence that does not change the decision ranking lies inside the boundary at significant computational cost, the boundary is over-specified. The principle is discriminating rather than permissive: it includes what the decision requires and excludes what the decision does not require.</p>
+<p>Scale determines the spatial, temporal, and organisational level at which model variables are defined and dynamics are represented. A national energy model operates at the scale of aggregated sectors and annual time periods. A site-level process simulation operates at the scale of individual equipment and sub-hourly time steps. Each scale is appropriate for the consequences it is designed to reveal; neither is appropriate for the consequences the other was designed to reveal. In decision-centred modelling, the appropriate scale for any component of the analytical environment is the scale at which the decision-relevant consequences become visible. This is a practical criterion rather than a formal one: it requires knowing what the consequences are before knowing what scale is needed to reveal them, which is why the decision must be articulated before the representation is designed.</p>
+<p>Aggregation is unavoidable in modelling but carries costs that the decision-first principle makes explicit. Two industrial facilities with the same annual energy demand may have very different temporal demand profiles, peak demand characteristics, and grid interface consequences. An aggregation that combines them into one load profile may preserve the annual total while destroying the temporal structure that determines whether the GXP hosting capacity is exceeded during winter peak periods. This is not a deficiency of aggregation in general; it is a deficiency of aggregation that removes detail that is decision-relevant. The test is always the same: does this aggregation change the decision-relevant comparison? If yes, it is destructive simplification. If no, it is appropriate abstraction.</p>
+<p>The Edendale case illustrates this test concretely. Aggregating the facility’s heat demand to an annual total would make the GXP adequacy assessment in Module 6 meaningless. The adequacy assessment depends critically on the temporal coincidence of peak electrical demand with regional grid stress conditions: the question of whether the grid’s hosting capacity is exceeded in the hours of highest simultaneous demand in a dry hydro year, during winter peak periods. That question cannot be answered from an annual total. The DemandPack artefact preserves the hourly resolution precisely because the decision-relevant consequence requires it, and the GXP assessment confirms, through the 23-of-64 finding, that the temporal structure is not a decorative detail but a material determinant of pathway feasibility.</p>
+<p>The artefact schema decisions that govern exactly which fields must be preserved at which resolution are developed in Module 3 §3.5, where the canonical artefact families are specified. Section §2.2 now turns to the analytical machinery that operates on representations to generate consequences.</p>
+</section>
+<section id="optimisation-as-consequence-generation" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="optimisation-as-consequence-generation"><span class="header-section-number">11.2</span> §2.2 Optimisation as Consequence Generation</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §2.2 Optimisation as Consequence Generation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§2.1</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Reframes optimisation as a conditional consequence-generation mechanism rather than a decision process, and establishes the appropriate roles of LP, MILP, and stochastic programming in the framework’s analytical chain</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader already understands optimisation’s role as conditional consequence generation within a DMDU outer loop</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§2.3, §2.5</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Optimisation is the most powerful analytical machinery available for a wide class of planning problems, and it has an important role throughout the framework’s analytical chain. What it cannot do is make the decisions the framework is designed to support. The distinction is not pedantic; it has practical consequences for how optimisation is deployed and interpreted.</p>
+<p>Optimisation answers a conditional question: given this representation, these constraints, these costs, and these future conditions, what allocation or configuration minimises total cost or maximises some specified objective? That conditional answer is analytically valuable. It tells the decision-maker what is efficient within the declared formulation. What it does not tell the decision-maker is whether the formulation is the right one, whether the declared future conditions are the ones that matter, or whether the optimal solution within this boundary remains optimal when consequences outside the boundary are considered. Optimisation as consequence generation is the framing that resolves this tension. Optimisation generates the consequences associated with each alternative under each future; the DMDU outer layer evaluates those consequences through regret, robustness, and satisficing metrics. Optimisation is a module-internal tool; the decision process is the outer layer. Keeping these roles distinct is what allows optimisation to be applied rigorously without the illusion of closure that §1.2 identified as one of its characteristic failure modes.</p>
+<p>Different optimisation classes serve different analytical roles within this framework. Linear programming is especially suited to dispatch and screening problems where the relationships between decision variables and objectives are approximately linear and where transparency and marginal interpretation matter. LP dual variables provide shadow prices that are directly interpretable as value indicators: the shadow price of a capacity constraint is the marginal cost of relaxing that constraint, which is precisely the kind of adequacy signal that a regional electricity module should pass to the evaluation layer through a SignalsPack. PyPSA, which uses Linopy as its algebraic modelling layer, produces these dual variables as standard outputs and is the natural implementation tool for the regional electricity module specified in SM-6.6-E.</p>
+<p>Mixed-integer programming handles discrete choices that LP cannot represent: whether a technology is committed or idle in a given period, whether a staging decision is taken in year one or year five, whether a particular upgrade option is installed or not. MILP is appropriate for the unit-commitment-lite dispatch logic already implemented in the proof of concept’s optimal-subset mode, and for the upgrade option selection in the grid RDM evaluation.</p>
+<p>Stochastic programming extends LP and MILP to represent uncertainty explicitly through scenarios with probabilities, making it appropriate when the uncertainty within a module has a defensible probabilistic structure and when the cost of recourse decisions is part of what is being optimised. This is the right tool when uncertainty is parametric, well-characterised, and specific to a module’s internal operation. It is not the right tool for the outer DMDU ensemble, where the uncertainty is structural rather than parametric and probabilities are contested. The outer ensemble is handled by the DMDU orchestration layer, not by stochastic programming.</p>
+<p>The open-source modelling ecosystem provides mature implementations of all three optimisation classes that are architecturally compatible with the framework. PyPSA and Linopy provide network-aware LP and MILP for the regional electricity module. Calliope provides flexible multi-scale energy system optimisation with strong transparency commitments. OSeMOSYS provides a lean, open-source long-range energy system modelling framework that has been used in national energy planning contexts across multiple countries and is compatible with the FutureArtefact ensemble design approach. Sub-Module SM-2.2-A provides the formal problem statements and the framework role summary for each optimisation class.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-2.2-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>LP, MILP, and Stochastic Optimisation: Role Summary — formal problem statements, role table, and PyPSA/Linopy integration note — is in <a href="../manuscript/sub-modules/sm-2-2A-optimisation-roles.html">SM-2.2-A</a>. Skip if the optimisation classes and their appropriate uses are already known.</p>
+</div>
+</div>
+</section>
+<section id="simulation-and-surrogate-emulation" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="simulation-and-surrogate-emulation"><span class="header-section-number">11.3</span> §2.3 Simulation and Surrogate Emulation</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §2.3 Simulation and Surrogate Emulation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§2.2</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes simulation as legitimate exploratory machinery and surrogate emulation as the scalability mechanism for large DMDU ensembles, and introduces the decision-ranking preservation criterion for surrogate validation</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader knows simulation-based exploration and DMDU-surrogate validation; consult SM-2.3-A for the full validation protocol</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§2.4, §2.5, Module 3</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-2.3-A: Decision-Ranking Preservation, Validation Protocol</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Optimisation is the right machinery when the question is what is best under a stated formulation. When the question is what happens, how a system evolves, how it responds to different sequences of conditions, or whether a declared operating logic remains viable across different futures, simulation is the appropriate tool. Simulation is not a fallback for cases where optimisation is intractable. It is a different kind of analytical machinery for a different kind of question.</p>
+<p>Simulation generates time-resolved trajectories of a system’s behaviour under specified rules, initial conditions, and external forcing. Its strengths are temporal realism, the representation of chronology and sequence, the ability to capture feedback and threshold effects, and its natural compatibility with uncertainty exploration: once a system can be run repeatedly under different conditions, examining distributions of consequences across those conditions becomes straightforward. In the framework’s Facility Module, the proportional dispatch logic already implemented in the proof of concept is a simulation: at each hourly timestep, heat demand is allocated across available units by capacity fraction, producing a time-resolved dispatch record that feeds the incremental electricity calculation. The OpenModelica-based thermal network simulation specified in SM-6.4-C is a higher-fidelity simulation of the same facility using equation-based physical modelling of connected thermal components.</p>
+<p>OpenModelica is particularly suited to the Facility Module because it can represent the physical connectivity of steam headers, heat exchangers, boilers, and heat pumps as a network of components governed by conservation equations. This level of physical fidelity is warranted when the dispatch pattern, peak demand timing, or thermal storage behaviour materially affects the GXP adequacy assessment. It is not warranted in a first-generation proof of concept where the primary analytical question concerns the architectural validity of the site-to-region coupling rather than the precision of the dispatch schedule. The progressive-refinement philosophy determines when OpenModelica is introduced: when the regret sensitivity diagnostics indicate that the proportional dispatch simplification is materially changing the regional adequacy finding.</p>
+<p>Surrogate emulation addresses the computational constraint that becomes binding when an expensive module must be evaluated many times inside a large DMDU ensemble. A full PyPSA regional electricity optimisation for the Southland transmission context under one future takes several minutes of computation. Running it for 500 or 5,000 futures in the ensemble is impractical at that cost. A trained ML surrogate of the PyPSA module, which learns to approximate the module’s input-output mapping from a sample of full model runs, reduces the per-evaluation cost by several orders of magnitude while retaining the analytical content that matters for the decision.</p>
+<p>The key design principle for surrogate emulation under the decision-first boundary principle is that the surrogate emulates the module at its output boundary, not at its internal variable level. A surrogate for the regional electricity module needs to produce a valid SignalsPack, the schema-conforming governed output that the Facility Module and evaluation layer consume. It does not need to reproduce every nodal price, every line loading fraction, or every dispatch dispatch decision internal to the PyPSA model. This reduction in output dimensionality is not a compromise on fidelity; it is the decision-first principle applied to the surrogate specification: what must be emulated is what crosses the thin-waist boundary, and that is the SignalsPack fields.</p>
+<p>The appropriate validation criterion for a DMDU surrogate follows from the same principle. Standard ML validation metrics, RMSE, R², mean absolute error, measure average prediction accuracy across all outputs and all inputs. What matters for a DMDU application is whether the surrogate produces the same decision-relevant outputs: the same preferred alternative, the same regret ranking, and the same threshold-violation pattern as the full model, across the futures where the decision is most sensitive. This is the decision-ranking preservation criterion, and it is the acceptance standard against which every surrogate in this framework is validated. Sub-Module SM-2.3-A develops the full validation protocol.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-2.3-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Decision-Ranking Preservation: Validation Protocol — formal definition, validation workflow, confidence scoring, and active learning protocol — is in <a href="../manuscript/sub-modules/sm-2-3A-surrogate-validation.html">SM-2.3-A</a>. Skip if the surrogate validation approach is already known.</p>
+</div>
+</div>
+</section>
+<section id="constructing-and-selecting-futures" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="constructing-and-selecting-futures"><span class="header-section-number">11.4</span> §2.4 Constructing and Selecting Futures</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §2.4 Constructing and Selecting Futures
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§2.1, §2.2, §2.3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes the decision-first logic for future construction and selection, the classification of uncertainty types, the paired-futures requirement, and the ensemble size progression from anchor futures through LHS expansion to surrogate-enabled thousands</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader understands decision-critical future selection and PRIM/CART; consult SM-2.4-A for methods detail</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§2.5, Module 5, Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-2.4-A: Scenario Discovery Methods, PRIM and CART</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Representation and analytical machinery together determine how the model generates consequences for a given set of conditions. Futures determine which conditions are tested. A poorly designed future set can narrow the analytical problem as completely as a poorly designed model; a future set that explores only familiar territory will not reveal the vulnerabilities that a long-horizon commitment may harbour.</p>
+<p>Uncertainties relevant to a decision problem fall into four classes. Parametric uncertainty concerns the values of quantities already present in the representation: technology costs, fuel prices, demand growth rates, resource availability indices. These are naturally varied through multipliers applied to reference values and are the most straightforward class to represent. Structural uncertainty concerns the possibility that the model itself may be incomplete or that the causal pathways it represents may be incorrect: a regional electricity model that does not represent multi-site demand aggregation may systematically underestimate hosting capacity stress regardless of parameter values. Policy uncertainty concerns future regulatory settings, carbon price trajectories, infrastructure investment programmes, and institutional arrangements. Policy uncertainty often manifests as discrete regime shifts rather than continuous parameter variation, making scenario classes a more appropriate representation than probability distributions. Behavioural uncertainty concerns how actors respond when conditions change: whether competing industrial users electrify simultaneously, whether regulators enforce compliance, whether Transpower prioritises a specific reinforcement project. The five uncertain driver dimensions in the Edendale ensemble, GXP headroom, regional demand growth, hydro year class, biomass availability, and ETS carbon price, span all four classes.</p>
+<p>The paired-futures requirement, introduced in §1.4 as a consequence of Requirement 5 in §1.7, has a direct implication for future construction. All pathway alternatives must be evaluated under identical external conditions in every future. This means the FutureArtefact for a given future carries the same uncertain driver values regardless of which pathway is being evaluated under it. Differences in performance outcomes across pathways are then attributable to pathway characteristics, not to asymmetric experimental conditions. The futures.csv file in the Edendale proof of concept enforces this requirement: the same file is used as the source of futures for both the 2035_EB and 2035_BB grid RDM evaluations, and the overlay module verifies that both evaluations reference identical future identifiers before computing the comparison.</p>
+<p>The selection of which futures to include in the ensemble is the most analytically consequential design choice, and it is where the decision-first principle most directly displaces the instinct to explore input-space extremes. The futures that earn a place in the ensemble are not those with the most extreme individual input values but those that are most decision-critical in the outcome space: the futures that produce rank reversals between competing pathways, threshold violations that would not be visible at central-case conditions, or regret concentrations that distinguish the strategies most sharply. This is the inversion from input-extremity to consequence-centrality that defines decision-critical future selection.</p>
+<p>In practice, ensemble construction proceeds through a staged expansion. The first stage produces a small set of hand-designed anchor futures, typically 21 in the Edendale ensemble, that span the most analytically important combinations identified by expert knowledge and preliminary screening. These anchor futures are preserved exactly in all subsequent ensemble versions, providing a stable regression test baseline. The second stage expands the ensemble to 100 futures using Latin hypercube sampling across continuous driver dimensions, preserving the 21 anchors and adding 79 futures that improve coverage of the uncertainty space. The third stage, which requires a trained and validated surrogate of the regional module, expands the ensemble to several hundred or thousand futures, making statistically meaningful scenario discovery and vulnerability mapping feasible. The three-stage progression is governed at each step by the decision-first principle: expansion is warranted when regret sensitivity diagnostics indicate that the current ensemble is missing futures that would change the decision-relevant comparison.</p>
+<p>The diagnostic methods that identify decision-critical futures and vulnerability regions, PRIM and CART, are developed in Sub-Module SM-2.4-A.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-2.4-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Scenario Discovery Methods: PRIM and CART — algorithms, worked Edendale application, and comparison table — is in <a href="../manuscript/sub-modules/sm-2-4A-scenario-discovery.html">SM-2.4-A</a>. Skip if PRIM and CART are already known.</p>
+</div>
+</div>
+</section>
+<section id="from-tools-to-architecture-what-the-toolkit-cannot-do-alone" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="from-tools-to-architecture-what-the-toolkit-cannot-do-alone"><span class="header-section-number">11.5</span> §2.5 From Tools to Architecture: What the Toolkit Cannot Do Alone</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §2.5 From Tools to Architecture: What the Toolkit Cannot Do Alone
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§2.1 through §2.4</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Identifies the governance gap that the analytical toolkit cannot close by itself and provides the transition to the architectural response of Module 3</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Do not skip — this is the bridge between Modules 2 and 3</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 3</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The four sections of this module have developed the analytical toolkit available to the framework: the representation choices governed by decision-relevance, the optimisation machinery that generates conditional consequences, the simulation and surrogate tools that extend the range of questions that can be asked and the scale at which they can be asked, and the future construction and selection logic that determines which conditions are tested. This toolkit is powerful. It is not sufficient.</p>
+<p>The insufficiency has a specific character. Tools cannot draw their own appropriate boundaries; the decision-first principle must be applied before any tool is configured. Tools cannot manage their own comparability across versions; a second-generation surrogate that produces different consequences from a first-generation full model represents progress only if the comparison between the two is itself tractable, which requires that both operated within a shared schema and that their outputs were stored with shared provenance. Tools cannot preserve their own analytical history; a result produced under a first-generation proportional dispatch assumption is only comparable with one produced under a second-generation LP-based scheduling assumption if both are stored with their generating conditions intact and linked through explicit lineage. Tools cannot validate their own outputs; a surrogate that satisfies decision-ranking preservation on a random held-out set but fails it on the decision-critical futures it encounters in deployment provides misleading confidence unless the validation was designed to test the right conditions. None of these properties can be provided by the tools themselves, regardless of how sophisticated those tools become.</p>
+<p>What the toolkit requires that it cannot provide for itself is a governance architecture: the infrastructure that enforces schema conformance at every module output, maintains explicit lineage from every result back to the inputs and conditions that produced it, gates admission to the comparison chain through declared acceptance criteria, and preserves the append-only analytical history that makes progressive refinement cumulative rather than destructive.</p>
+<p>The architecture of Module 3 does not introduce new tools. It creates the conditions under which the tools described in this module satisfy the seven requirements of §1.7. Requirement 5, comparability across alternatives and futures, is satisfied by the paired-futures design and schema-governed artefact exchange that Module 3 specifies. Requirement 6, traceability and revisability, is satisfied by the governed backbone that Module 3 designs. The other requirements follow from the combination of the tools of Module 2 operating within the boundaries of the architecture of Module 3. The governance architecture is not overhead; it is what transforms a collection of sophisticated tools into a decision-centred analytical environment.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1054,5 +1482,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-2-modelling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-2-modelling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

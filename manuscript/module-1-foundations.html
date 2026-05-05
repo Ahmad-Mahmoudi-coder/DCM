@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/custom.css">
 </head>
@@ -584,8 +613,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-kind-of-problem-is-this" id="toc-what-kind-of-problem-is-this" class="nav-link active" data-scroll-target="#what-kind-of-problem-is-this"><span class="header-section-number">7.1</span> §1.1 What Kind of Problem Is This?</a></li>
+  <li><a href="#why-conventional-tools-fall-short" id="toc-why-conventional-tools-fall-short" class="nav-link" data-scroll-target="#why-conventional-tools-fall-short"><span class="header-section-number">7.2</span> §1.2 Why Conventional Tools Fall Short</a></li>
+  <li><a href="#deep-uncertainty-and-the-case-for-exploration" id="toc-deep-uncertainty-and-the-case-for-exploration" class="nav-link" data-scroll-target="#deep-uncertainty-and-the-case-for-exploration"><span class="header-section-number">7.3</span> §1.3 Deep Uncertainty and the Case for Exploration</a></li>
+  <li><a href="#thinking-clearly-about-decisions" id="toc-thinking-clearly-about-decisions" class="nav-link" data-scroll-target="#thinking-clearly-about-decisions"><span class="header-section-number">7.4</span> §1.4 Thinking Clearly About Decisions</a></li>
+  <li><a href="#regret-robustness-and-satisficing" id="toc-regret-robustness-and-satisficing" class="nav-link" data-scroll-target="#regret-robustness-and-satisficing"><span class="header-section-number">7.5</span> §1.5 Regret, Robustness, and Satisficing</a></li>
+  <li><a href="#multiple-objectives-and-multiple-stakeholders" id="toc-multiple-objectives-and-multiple-stakeholders" class="nav-link" data-scroll-target="#multiple-objectives-and-multiple-stakeholders"><span class="header-section-number">7.6</span> §1.6 Multiple Objectives and Multiple Stakeholders</a></li>
+  <li><a href="#seven-requirements-any-analytical-system-must-meet" id="toc-seven-requirements-any-analytical-system-must-meet" class="nav-link" data-scroll-target="#seven-requirements-any-analytical-system-must-meet"><span class="header-section-number">7.7</span> §1.7 Seven Requirements Any Analytical System Must Meet</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-1-foundations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -611,10 +652,609 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt M1-01 -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Module 1 Declaration
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Purpose</strong></td>
+<td>Establishes the conceptual vocabulary and evaluative standards that govern all subsequent modules</td>
+</tr>
+<tr class="even">
+<td><strong>Assumes</strong></td>
+<td>Module 0</td>
+</tr>
+<tr class="odd">
+<td><strong>Contributes</strong></td>
+<td>The five-feature problem class; the failure modes of conventional tools; deep uncertainty as a distinct condition; the four-element decision vocabulary; regret, robustness, and satisficing as evaluative standards; the seven requirements that any analytical system must satisfy</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 2 (tools to generate consequences); Module 3 (architecture that satisfies the requirements)</td>
+</tr>
+<tr class="odd">
+<td><strong>Can be read independently</strong></td>
+<td>Yes, after Module 0</td>
+</tr>
+<tr class="even">
+<td><strong>Sub-Modules</strong></td>
+<td>SM-1.1-A (Philosophical Lineage); SM-1.4-A (Decision Theory Extended); SM-1.7-A (Requirements-to-Architecture Mapping)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="what-kind-of-problem-is-this" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="what-kind-of-problem-is-this"><span class="header-section-number">7.1</span> §1.1 What Kind of Problem Is This?</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.1 What Kind of Problem Is This?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>Module 0</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Identifies the five structural features that define the problem class this framework addresses, and explains why each feature, individually and in combination, makes conventional analysis insufficient</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader already accepts the five-feature problem class and wants the evaluative standards directly; proceed to §1.5</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.2, §1.3, §1.4</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-1.1-A: Philosophical Lineage of Deep Uncertainty</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Many planning problems that appear, on the surface, to be well-posed technical decisions are in fact something more difficult: long-horizon commitments made under conditions of deep uncertainty, propagating consequences across scales and actors that no single model naturally encompasses. The framework developed in this manuscript was designed for that problem class. Before developing the tools, the architecture, or the proof of concept, it is necessary to be precise about what that problem class consists of and why it resists conventional analytical treatment.</p>
+<p>The decisions of interest here are characterised by five structural features. These features are not separately exotic; each appears routinely in infrastructure planning, corporate investment, and policy design. Their combination is what creates the distinctive difficulty.</p>
+<p>The first feature is durable commitments. A facility that installs a new boiler fleet, a region that reinforces a transmission corridor, or a government that enacts a fuel phase-out schedule is not making a reversible choice. The consequences persist for years or decades. Assets depreciate slowly; infrastructure is expensive to decommission; institutional arrangements once established become the terrain on which future choices are made. The analytical challenge created by durable commitments is not simply uncertainty about parameter values. It is the foreclosure of future option sets. A commitment made under one set of assumptions may widen or narrow what is possible later in ways that the original analysis did not and often cannot fully anticipate.</p>
+<p>The second feature is cross-scale interaction. A site-level investment decision depends on regional grid infrastructure that the site operator does not control. A regional strategy depends on the aggregate of many facility-level choices made by operators who have no formal coordination mechanism. A private investment may create system-level consequences borne by actors with no formal role in the original decision. The decision-first boundary principle introduced in §0.3 is the direct response to this feature: if the consequences that determine whether a choice was wise lie outside the physical boundary of the system being studied, then the boundary must be drawn differently. Cross-scale interaction is the feature that most directly requires the multi-layer environment the framework provides.</p>
+<p>The third feature is incomplete and uneven knowledge. Some relevant uncertainties concern future prices, technology costs, or resource availability. Others concern behaviour, institutional responses, and the credibility of the model’s own assumptions. In many important planning settings, stable probability distributions over these uncertainties are either unavailable or contested. Stakeholders may disagree not about the values of known parameters but about which mechanisms matter, which futures deserve analytical weight, and which objectives are operative. This is what Section §1.3 will call deep uncertainty: a condition in which the usual tools of probabilistic reasoning apply only partially, if at all.</p>
+<p>The fourth feature is plural objectives. Infrastructure decisions are rarely evaluated against one criterion alone. Cost, emissions, reliability, resilience, timing, fairness, and institutional practicality are all potentially relevant. These criteria do not reduce to one another without loss of important information. A pathway that minimises capital cost may increase exposure to carbon price volatility. One that achieves the fastest emissions reduction may depend on infrastructure whose development timeline is genuinely uncertain. The analytical environment must be able to represent multiple criteria without forcing their premature collapse into a single metric.</p>
+<p>The fifth feature is multiple actors with overlapping but distinct responsibilities. A facility operator, a network planner, a fuel supplier, a regulator, a regional authority, and a policy-maker each approach the same pathway decision from a different position, with different objectives, different time horizons, and different exposure to the consequences of different outcomes. Even where one actor holds formal decision authority, the choice is embedded in a wider field of dependency, constraint, and response. An analytical environment designed for one actor’s perspective may produce findings that are legitimate within that perspective while being systematically misleading from another’s.</p>
+<p>These five features are present simultaneously in the Edendale decision problem documented in Module 6. The decision involves a multi-decade asset commitment at a specific facility. The commitment’s feasibility depends on regional electricity grid conditions the facility does not control. The futures that determine whether the chosen pathway was wise span grid headroom, biomass supply, carbon pricing, and regulatory stringency, none of which can be assigned stable probabilities. The relevant comparison involves cost, emissions, reliability, and systemic infrastructure consequences simultaneously. And the decision is observed differently by the site operator, the regional network planner, the national energy regulator, and the communities whose regional economy is at stake. Module 5 develops the New Zealand specifics; what matters here is that these five features are not idiosyncrasies of the Edendale case. They are the characteristic texture of consequential infrastructure decisions in the early twenty-first century.</p>
+<p>The philosophical lineage of the analytical stance required by this problem class, from Knight’s distinction between risk and uncertainty through bounded rationality, wicked problems, and the DMDU tradition, is developed in Sub-Module SM-1.1-A. The present section has established the problem class. Section §1.2 diagnoses why the tools most commonly brought to bear on it are insufficient.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-1.1-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Philosophical Lineage of Deep Uncertainty</strong> is covered in <a href="../manuscript/sub-modules/sm-1-1A-philosophical-lineage.html">SM-1.1-A</a>. Skip if reader accepts the deep-uncertainty stance without needing the intellectual genealogy.</p>
+</div>
+</div>
+</section>
+<section id="why-conventional-tools-fall-short" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="why-conventional-tools-fall-short"><span class="header-section-number">7.2</span> §1.2 Why Conventional Tools Fall Short</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.2 Why Conventional Tools Fall Short
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.1</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Diagnoses the specific failure modes of forecasting and optimisation in the five-feature problem class, and identifies the boundary-drawing problem as the common root</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader already accepts that forecasting and optimisation are insufficient for long-horizon multi-layer decisions</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.3, §1.4</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Forecasting and optimisation are the analytical traditions most commonly applied to the problem class described in §1.1. Both traditions are mature, well-developed, and in many settings genuinely powerful. The argument here is not that they should be abandoned but that they are insufficient on their own, and that their insufficiency has a common structural source.</p>
+<p>Forecasting is appealing because planning appears to require orientation toward the future. A facility operator deciding whether to commit capital to an electrification pathway needs some account of what electricity prices, grid conditions, and carbon price trajectories will be over the asset’s lifetime. National and regional energy forecasts, scenario analyses, and market outlooks serve a legitimate and important function in providing that orientation. The problem arises when forecasting is treated as settling the question of which pathway to choose rather than as one input to a wider analytical process. Forecasts are not observations of the future; they are structured constructions based on modelling choices, institutional expectations, and inherited assumptions about what matters. They narrow some uncertainties while leaving others untouched, and the uncertainties they leave untouched are often precisely those that matter most to a long-horizon commitment. More fundamentally, a forecast draws its boundary around the domain it was designed to represent, and that boundary is rarely set by the structure of the decision that will ultimately be informed by the forecast. The boundary of a national electricity demand forecast is the national electricity sector. The boundary of a decision about whether to electrify a specific industrial process is the set of consequences that matter for that decision, which may or may not coincide with the forecast’s scope.</p>
+<p>Optimisation introduces a different kind of confidence. Once a system has been represented mathematically, an objective function specified, and constraints declared, optimisation can recover the best achievable outcome in a disciplined, reproducible way. In many operational settings this is exactly the right tool: a dispatch scheduler, a network flow optimiser, or a capacity expansion model is solving a genuine optimisation problem in the relevant sense. The problem arises when the scope of what has been optimised is confused with the scope of what has been decided. An optimal solution is optimal within a given formulation, and the formulation embeds boundary choices, objective specifications, data assumptions, and future projections that are not themselves optimised. A site-level energy cost minimisation finds the minimum cost solution within the site boundary; it does not find the pathway that minimises regret across the set of plausible futures that determine whether the chosen pathway remains attractive in fifteen years. To solve a model well is not the same as to have framed the decision well.</p>
+<p>The common root of both failure modes is the boundary-drawing problem. Forecasting draws its boundary around a tractable domain defined by the data available and the model structure chosen. Optimisation draws its boundary around a tractable formulation defined by the variables and constraints that can be handled computationally. Neither draws its boundary around the decision: around the question of which consequences must remain visible, which futures must be tested, and which comparisons must be preserved for the choice at hand. The result is that both traditions produce results that are legitimate within their declared scope and potentially misleading outside it.</p>
+<p>The response is not to abandon forecasting or optimisation. Both remain essential and will appear throughout this manuscript and the proof of concept. The response is to embed them within a broader analytical architecture that is organised around the decision rather than around the tractability of the model. Forecasts become inputs to ensemble design rather than final answers. Optimisation becomes a consequence-generation mechanism operating inside individual modules rather than the decision process itself. The decision-first boundary principle governs what the architecture encompasses; forecasting and optimisation contribute to what happens within it. Section §1.3 now introduces the third dimension of the insufficiency argument: the specific character of deep uncertainty and why it requires not only different tools but a fundamentally different evaluative stance.</p>
+</section>
+<section id="deep-uncertainty-and-the-case-for-exploration" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="deep-uncertainty-and-the-case-for-exploration"><span class="header-section-number">7.3</span> §1.3 Deep Uncertainty and the Case for Exploration</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.3 Deep Uncertainty and the Case for Exploration
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.1, §1.2</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Introduces deep uncertainty as a qualitatively distinct condition from calculable risk and makes the case for decision exploration as the appropriate analytical response</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader is already familiar with the risk/deep-uncertainty distinction and the DMDU tradition</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.4, §1.5</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The limits of forecasting and optimisation identified in §1.2 become most acute when uncertainty itself is deeper than calculable risk. Some planning problems involve uncertainty that is well-characterised: outcomes are variable but the structure of the situation is stable enough that probabilities can be assigned, distributions can be estimated, and expected-value calculations can meaningfully guide choice. Many operational decisions, and a significant proportion of near-term investment decisions, fall into this category. The framework acknowledges this. For well-characterised uncertainty, the tools of probabilistic analysis remain appropriate and are used within individual modules wherever the uncertainty they address is amenable to probabilistic treatment.</p>
+<p>The problem class of §1.1 frequently involves something different. The difficulty is not only that parameter values are imprecise. It is that the structure of the decision situation is itself uncertain or contested: which mechanisms matter most, which consequences are decision-relevant, which futures deserve analytical weight, and what criteria are operative. Knight’s distinction between risk and uncertainty, introduced in Sub-Module SM-1.1-A, captures this difference: risk permits probability assignment because the relevant structure is known; uncertainty, in Knight’s sense, does not because the structure itself is indeterminate or disputed. Deep uncertainty, as the term is used in this framework and in the DMDU literature, refers to conditions in which stakeholders cannot agree on the appropriate models, the probability distributions of key parameters, or the metrics by which outcomes should be judged. It is structural indeterminacy, not merely parameter noise.</p>
+<p>Deep uncertainty changes what good analysis looks like. If uncertainty can be treated as risk, then expected-value reasoning is often the appropriate standard: identify the probability-weighted average outcome and choose the strategy that maximises it. The formal foundations of this reasoning, from the von Neumann-Morgenstern expected utility theorem through Savage’s subjective probability extension, are powerful and well-understood; they are treated technically in Sub-Module SM-1.4-A. Their limitation under deep uncertainty is that expected-value reasoning compresses the ensemble of futures into one summary measure, and that summary measure may obscure precisely the features that matter most to a long-horizon commitment: threshold violations, tail risks, rank reversals in pathway preference under different conditions, and futures under which a currently preferred strategy becomes seriously problematic. A strategy with a favourable expected value may still be unattractive if it carries intolerable downside exposure or performs badly in futures that are not individually the most likely but are among the most consequential.</p>
+<p>The appropriate analytical response to deep uncertainty is not to assign probabilities anyway and proceed as if the uncertainty were manageable. It is to reorient the analysis from optimising under one presumed future to exploring how decisions behave across a wide range of plausible futures. This reorientation defines the DMDU research programme. RDM, developed at RAND by Lempert, Popper, and Bankes, evaluates alternatives across large ensembles of futures using regret, satisficing frequency, and vulnerability diagnostics rather than expected-value optimisation. The broader DMDU community, represented in the work of Walker, Marchau, Kwakkel, and Haasnoot, has extended this reorientation into Dynamic Adaptive Policy Pathways, which combines ensemble evaluation with adaptive management logic by specifying the monitoring indicators and trigger conditions that should prompt pathway revision. These methods share a foundational commitment: where probabilities are contested or structurally unavailable, the analytical task is not to assign them anyway but to characterise how decisions perform across the range of conditions that cannot be given stable probability weights.</p>
+<p>The contribution of the present framework to this tradition is not a new decision method. It is a modular architectural logic within which DMDU-style exploration can be conducted across multiple scales simultaneously, governed by explicit artefacts and persistent analytical memory. The framework takes the evaluative standards and ensemble logic of RDM and DMDU and provides them with the structural support they need to operate credibly in a multi-layer planning context. The evaluative standards, regret, robustness, and satisficing, are developed in §1.5. What §1.4 establishes first is the formal vocabulary of the decision problem that those standards will be applied to.</p>
+</section>
+<section id="thinking-clearly-about-decisions" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="thinking-clearly-about-decisions"><span class="header-section-number">7.4</span> §1.4 Thinking Clearly About Decisions</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.4 Thinking Clearly About Decisions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.1, §1.2, §1.3</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes the four-element formal vocabulary of decision problems and connects each element to the decision-first boundary principle</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader knows the alternatives/futures/outcomes/constraints vocabulary; proceed to §1.5</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.5, §1.6, §1.7</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-1.4-A: Decision Theory, Extended Technical Treatment</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Good analysis requires a shared vocabulary. The terms most commonly used in planning and modelling, option, scenario, result, trade-off, risk, uncertainty, objective, have acquired enough different meanings in different traditions that their use without explicit definition can obscure more than it reveals. This section establishes the four elements that structure every decision problem addressed by this framework, connects each to the decision-first boundary principle, and introduces the formal notation used in the evaluative standards of §1.5.</p>
+<p>An alternative is a course of action that can be chosen from among a set of possibilities. Alternatives are under the decision-maker’s control, at least in principle. In the Edendale context, the primary alternatives are the 2035_EB electrification pathway and the 2035_BB biomass pathway. An alternative need not be a binary choice: it may be a staged commitment, a conditional investment, or a sequencing decision. What it must be is clearly defined, because comparison requires alternatives to be distinguished from each other and from external conditions. A vague or unstable alternative set makes all subsequent analysis appear precise while resting on a poorly specified foundation.</p>
+<p>A future is a structured representation of external conditions that affect decision outcomes but are not under the decision-maker’s control. Futures are not privileged forecasts. They are organised characterisations of plausible external states against which alternatives are tested. In this framework, futures are materialised as FutureArtefacts: governed objects carrying the specific values of the uncertain driver dimensions, the five dimensions in the Edendale ensemble being GXP headroom, regional demand growth, hydro year class, biomass availability, and ETS carbon price. The design of the future ensemble, including which conditions to vary, over what ranges, and with what selection logic, is governed by the decision-first principle: the futures that earn a place in the ensemble are those that are decision-critical in the outcome space, not those that are merely extreme in the input space. One operational consequence of this definition deserves explicit statement here: competing pathway alternatives must be evaluated under identical external conditions if the comparison is to be valid. This is the paired-futures requirement, which is enforced through the FutureArtefact schema and is the primary mechanism through which comparability across alternatives is guaranteed.</p>
+<p>An outcome is the consequence that results when a chosen alternative interacts with a given future. Formally, if <span class="math inline">\(a \in \mathcal{A}\)</span> denotes an alternative and <span class="math inline">\(\omega \in \Omega\)</span> denotes a future, then <span class="math inline">\(Z(a,\omega)\)</span> denotes the consequence of choosing <span class="math inline">\(a\)</span> under <span class="math inline">\(\omega\)</span>. This notation makes explicit what is often left implicit: outcomes are conditional. They are not properties of alternatives alone. The electrification pathway does not have a cost; it has a cost under each possible combination of electricity price trajectory, grid reinforcement timeline, and carbon price regime that is realised. This conditionality is what makes the evaluative standards of §1.5 necessary and the paired-futures requirement architectural rather than merely procedural.</p>
+<p>A constraint is what is feasible, admissible, or acceptable. Some constraints are physical: capacity limits, thermodynamic relationships, or resource availabilities. Others are financial, institutional, legal, environmental, or social. The decision-first boundary principle implies that constraints are declared as part of the decision frame, not discovered as byproducts of the optimisation. A grid hosting capacity limit is a constraint that becomes visible in the analysis because the decision frame includes regional grid consequences; it would be absent from the analysis if the boundary were drawn around the site alone. Social and community constraints, the expectations of the Southland regional economy about what a major employer’s transition strategy should look like, are constraints in the same sense: they are relevant to the decision even though they are not physical, and an analytical environment that treats only physical constraints as real produces a systematically incomplete account of the decision space.</p>
+<p>The four elements, alternatives, futures, outcomes, and constraints, define the decision problem’s formal structure. They also determine what the analytical environment must be built to make visible. The boundary of each module in the framework is governed by this structure: it encompasses exactly what is needed to produce the alternatives, expose the futures, compute the outcomes, and enforce the constraints that are relevant to its role in the decision chain. Nothing more is required; nothing less is sufficient. The extended formal treatment of decision theory, including expected utility axioms, classical decision rules, and the formal specification of regret and robustness metrics, is in Sub-Module SM-1.4-A.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-1.4-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Decision Theory: Extended Technical Treatment</strong> is in <a href="../manuscript/sub-modules/sm-1-4A-decision-theory.html">SM-1.4-A</a>. Skip if formal decision theory is already known.</p>
+</div>
+</div>
+</section>
+<section id="regret-robustness-and-satisficing" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="regret-robustness-and-satisficing"><span class="header-section-number">7.5</span> §1.5 Regret, Robustness, and Satisficing</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.5 Regret, Robustness, and Satisficing
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.3, §1.4</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Develops the three primary evaluative standards of the framework and explains why they are appropriate for long-horizon decisions under deep uncertainty</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader knows regret, robustness, and satisficing from prior DMDU literature; consult SM-1.4-A for formal definitions</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.6, §1.7, Module 3, Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>When probability distributions over futures are contested or unavailable, expected-value reasoning cannot serve as the primary evaluative standard. Three alternative standards replace it in this framework. They are not competing standards but complementary perspectives on the same fundamental question: how does this choice behave across the futures I cannot control?</p>
+<p>Regret measures the cost of choosing an option that later proves inferior under the realised future. Formally, as established in SM-1.4-A, the regret of alternative <span class="math inline">\(a\)</span> under future <span class="math inline">\(\omega\)</span> is the difference between what the best available alternative would have achieved under that future and what <span class="math inline">\(a\)</span> actually achieves: <span class="math inline">\(r(a,\omega)=Z^*(\omega)-Z(a,\omega)\)</span>. Regret is future-specific and comparative. It does not ask whether an outcome is good in isolation; it asks whether it is avoidably poor relative to the alternatives that were available when the choice was made. This comparative structure is what makes regret especially appropriate for long-horizon decisions: a decision-maker who has committed to an electrification pathway in 2025 and finds in 2035 that a biomass pathway would have been substantially cheaper under the conditions that actually materialised has experienced a regrettable outcome in this precise sense, regardless of whether the electrification pathway performed adequately in absolute terms. The regret metric makes that experience analytically visible and attributable to specific future conditions.</p>
+<p>The connection between regret and the paired-futures design requirement is direct. Regret is computed relative to the best alternative under the same future. This comparison is only valid if both alternatives have been evaluated under identical external conditions. The FutureArtefact schema and the paired-futures enforcement logic of Module 6 exist precisely to guarantee this validity. A regret comparison between pathways evaluated under different futures is not a regret comparison; it is a confounded comparison whose results cannot be interpreted.</p>
+<p>Robustness asks how consistently an alternative performs across a set of plausible futures. A robust strategy need not be the best under any single future. Its value lies in avoiding large failures across many futures and remaining acceptable across a wide range of conditions that the decision-maker cannot control or predict. Robustness is measured through multiple metrics depending on what aspect of cross-future performance matters most: the satisficing rate (what fraction of futures does the alternative satisfy declared thresholds?), the maximum regret (what is the worst avoidable loss?), or the P90 regret (what is the regret exceeded by only 10 percent of futures?). The choice among these measures embeds normative commitments about whether the decision-maker is most concerned with consistency, with avoiding catastrophic failure, or with tail exposure, and the framework supports all three rather than forcing one.</p>
+<p>The DMDU tradition, represented in the work of Lempert, Popper, Bankes, Walker, Marchau, Kwakkel, and Haasnoot, has made robustness under deep uncertainty the organising standard of decision analysis precisely because robustness does not require probability distributions over futures. It requires only that futures be plausible and that their consequences for each alternative be computable. This is the condition that the FutureArtefact ensemble design of Module 6 is built to satisfy.</p>
+<p>Satisficing adds a threshold logic that is closer to how consequential decisions are actually made and evaluated in institutional settings. Rather than asking which alternative is optimal by some composite measure, satisficing asks which alternatives are good enough according to clearly stated thresholds across multiple dimensions. In the Edendale context, a pathway might be considered satisfactory if it keeps total system cost below a declared level across a sufficient fraction of the ensemble, maintains reliability above a minimum threshold, and produces net emissions below a regulatory target. No single metric aggregates these into one number; all of them must be satisfied. This multi-threshold logic is practically important because institutional decision processes frequently operate on pass/fail criteria in multiple dimensions simultaneously. The satisficing rate computed in the DecisionSummaryArtefact makes this logic analytically tractable and comparable across pathways.</p>
+<p>The three standards, regret, robustness, and satisficing, are used in combination throughout Module 6. Neither a strategy’s dominance frequency nor its satisficing rate nor its maximum regret tells the full story by itself. A strategy that wins in most futures but suffers catastrophically in a small number of plausible ones may be less attractive than one that is slightly worse on average but avoids large failures. A strategy that satisfies all thresholds in most futures but fails a critical reliability threshold in exactly the futures most associated with infrastructure constraint may be worse than its average metrics suggest. The combination of these three evaluative standards provides a more complete and honest account of pathway behaviour than any one alone.</p>
+</section>
+<section id="multiple-objectives-and-multiple-stakeholders" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="multiple-objectives-and-multiple-stakeholders"><span class="header-section-number">7.6</span> §1.6 Multiple Objectives and Multiple Stakeholders</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.6 Multiple Objectives and Multiple Stakeholders
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.4, §1.5</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Establishes why the framework must support multiple evaluative frames without collapsing them into one objective, and how this connects to the architecture of multiple modules and perspectives</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if reader accepts multi-perspective evaluation as necessary; proceed to §1.7</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§1.7, Module 4</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The evaluative standards of §1.5 assume that the decision can be characterised by a single outcome function <span class="math inline">\(Z(a,\omega)\)</span>. In many planning contexts, this assumption is a simplification that conceals rather than reveals what matters most. A transition pathway might need to be judged simultaneously against financial cost, greenhouse gas emissions, service reliability, regional employment effects, infrastructure stress on shared networks, and institutional practicality. These dimensions are not commensurate without a set of weights that is itself often contested. Collapsing them into one weighted composite produces a tractable optimisation problem, but the weights embedded in that composite may represent neither the decision-maker’s actual priorities nor a legitimate social consensus.</p>
+<p>Three approaches to multi-criteria decisions are relevant here. Scalarisation converts multiple criteria into one weighted objective and is tractable where the weights are meaningful and widely accepted. Its limitation is that the choice of weights is itself a decision with significant consequences for which alternatives appear favourable. Pareto reasoning preserves trade-off information by identifying the set of non-dominated alternatives, those for which no other alternative is strictly better on every criterion simultaneously. Its limitation under deep uncertainty is that the Pareto frontier computed under one future may change substantially under a different future, so preserving cross-objective trade-offs at one future does not guarantee cross-future comparability. Threshold-based multi-criteria comparison, which asks which alternatives satisfy stated bounds across all objectives across a sufficient fraction of the future ensemble, aligns most naturally with the satisficing and robustness standards of §1.5 and handles the cross-future comparability problem that Pareto reasoning alone does not address.</p>
+<p>The multi-criteria challenge is further complicated by the presence of multiple stakeholders. A site operator, a network planner, a fuel supplier, a regulator, and a regional community each approach the same decision from a different evaluative position. The site operator assesses private pathway cost. The network planner assesses system-level infrastructure stress and reinforcement cost. The regulator assesses emissions compliance and investment alignment with national targets. The regional community assesses employment, economic activity, and environmental consequences. These perspectives are not reconcilable by technical analysis alone; they embody different values and different exposures to the consequences of different outcomes.</p>
+<p>The decision-first boundary principle provides a specific architectural response to this challenge. Rather than forcing all perspectives into one objective function before the analysis begins, the framework allows different modules to report consequences from different perspectives, and the evaluation layer computes regret and robustness metrics from each perspective using the same underlying artefacts. In Module 6, the site-perspective assessment and the system-perspective assessment are both computed from the same ResultArtefacts and SignalsPacks, making the divergence between them analytically visible and attributable to specific cost components and future conditions. This is the system-level regret finding that Module 6 reports: the divergence between what appears privately rational and what is systemically optimal under infrastructure-constrained futures.</p>
+<p>Social and environmental consequences are first-class objects in this analytical environment, not qualitative footnotes appended to a financial analysis. The architecture is designed to accommodate regional employment modules, biodiversity impact modules, and community infrastructure stress modules following the same thin-waist artefact contract as the financial and electricity modules. These additions are specified as Vision components in Table 0.2. Their eventual incorporation is not an expansion of scope; it is a logical extension of the decision-first boundary principle to the full scope of what the decision is actually about.</p>
+</section>
+<section id="seven-requirements-any-analytical-system-must-meet" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="seven-requirements-any-analytical-system-must-meet"><span class="header-section-number">7.7</span> §1.7 Seven Requirements Any Analytical System Must Meet</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — §1.7 Seven Requirements Any Analytical System Must Meet
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Section</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§1.1 through §1.6</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Derives the seven requirements that any analytical system must satisfy to support long-horizon planning under deep uncertainty, and presents them as the specification that Module 3’s architecture is designed to meet</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Do not skip — this section is the bridge between the conceptual foundations and the architecture</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>Module 2, Module 3</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>SM-1.7-A: Requirements-to-Architecture Mapping Table</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The analysis of §§1.1 through 1.6 produces a specific set of demands on any analytical system that claims to support long-horizon planning under deep uncertainty. These demands are not a wish list. They are logical consequences of taking the problem structure seriously, and they define the specification that the architecture of Module 3 is designed to satisfy. There are seven.</p>
+<p>Requirement 1: Explicitness of alternatives. The analytical system must represent the alternatives that matter to the decision in a form that is recognisable to the decision-maker. Alternatives must be declared, named, and configured in the analysis as distinct objects, not inferred from the interior of an optimisation. This requirement follows from the definition of the alternative in §1.4 and from the impossibility of computing regret without a clearly specified alternative set.</p>
+<p>Requirement 2: Explicitness of futures. The system must make clear under which external conditions alternatives are being evaluated. Futures must be structured, declared, and shared across alternatives through the paired-futures design. Hidden assumptions about which futures are being tested are a systematic source of incomparable results. This requirement follows from the definition of the future in §1.4 and from the paired-futures condition identified there.</p>
+<p>Requirement 3: Decision-relevant outcomes. The system must produce outputs that illuminate the decision rather than outputs that are merely byproducts of the model’s internal structure. Metrics must be tied to the decision frame: the cost, emissions, adequacy, regret, satisficing rate, and threshold-violation indicators that the decision-maker actually needs to distinguish between alternatives across futures. This requirement follows from the conditional definition of the outcome in §1.4 and from the multi-criteria evaluation standard of §1.6.</p>
+<p>Requirement 4: Visibility of constraints and boundaries. The system must make its analytical boundaries and the constraints it enforces legible rather than hidden. A result that appears robust within a declared boundary may be fragile outside it. Declaring the boundary is the operational expression of the decision-first principle: it allows the decision-maker to assess whether the boundary drawn is the boundary required by the decision. This requirement follows directly from §0.3 and §1.1.</p>
+<p>Requirement 5: Comparability across alternatives and futures. Results must be produced under conditions that support valid comparison. The paired-futures design ensures that differences in performance between alternatives are attributable to alternative characteristics rather than to different experimental conditions. Schema-governed artefact exchange ensures that metrics are measured consistently across module generations. This requirement follows from the evaluative standards of §1.5.</p>
+<p>Requirement 6: Traceability and revisability. The system must support ongoing learning, not only one round of comparison. It must be possible to identify which assumptions, data, modules, and interfaces produced a particular result, and to revise them without destroying the comparability of what came before. This requirement follows from the progressive-refinement philosophy of §0.3 and from the bounded rationality argument of Sub-Module SM-1.1-A.</p>
+<p>Requirement 7: Support for targeted refinement. The system should reveal not only which alternative is preferable under current knowledge, but also which uncertainties most determine that preference and which analytical investments would most improve decision quality. The regret sensitivity and scenario discovery diagnostics of the DMDU orchestration layer provide this service, making the ensemble analysis self-directing in its development logic.</p>
+<p>Table 1.1 summarises these requirements and their primary architectural implications. Module 3 develops each architectural response in full; Module 6 demonstrates them in the proof of concept.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Requirement</th>
+<th>Architectural implication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Explicitness of alternatives</td>
+<td>Pathway variants declared and named in module configuration; each alternative is a separately identified entity in the backbone</td>
+</tr>
+<tr class="even">
+<td>2. Explicitness of futures</td>
+<td>FutureArtefacts declare all uncertain drivers; alternatives evaluated under shared, paired futures; decision-critical futures selected by consequence</td>
+</tr>
+<tr class="odd">
+<td>3. Decision-relevant outcomes</td>
+<td>ResultArtefacts and DecisionSummaryArtefacts carry metrics tied to the decision frame, not model-internal variables</td>
+</tr>
+<tr class="even">
+<td>4. Visibility of constraints and boundaries</td>
+<td>Module interface declarations state scope, perspective, and what is excluded; results cannot be overgeneralised beyond their declared boundary</td>
+</tr>
+<tr class="odd">
+<td>5. Comparability across alternatives and futures</td>
+<td>Paired-futures design and schema-governed artefact exchange enforce consistent measurement across pathways and versions</td>
+</tr>
+<tr class="even">
+<td>6. Traceability and revisability</td>
+<td>Append-only backbone with lineage records, schema versioning, and SHA256 hash integrity</td>
+</tr>
+<tr class="odd">
+<td>7. Support for targeted refinement</td>
+<td>Regret sensitivity diagnostics and scenario discovery identify which uncertain drivers most strongly determine pathway preference</td>
+</tr>
+</tbody>
+</table>
+<p>These seven requirements define what any analytical system must provide. Module 2 asks what tools are available to generate the consequences these requirements demand. Module 3 designs the architecture that organises those tools so that the requirements are not merely stated but demonstrably satisfied.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Sub-Module SM-1.7-A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Requirements-to-Architecture Mapping Table</strong> is in <a href="../manuscript/sub-modules/sm-1-7A-requirements-mapping.html">SM-1.7-A</a>. Skip for conceptual reading; use when verifying implementation.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1054,5 +1694,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-1-foundations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/module-1-foundations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

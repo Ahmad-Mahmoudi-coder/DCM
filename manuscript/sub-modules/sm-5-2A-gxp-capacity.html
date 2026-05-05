@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -584,8 +613,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-5.2-a-mararoa-waimea-gxp-capacity-data" id="toc-sm-5.2-a-mararoa-waimea-gxp-capacity-data" class="nav-link active" data-scroll-target="#sm-5.2-a-mararoa-waimea-gxp-capacity-data"><span class="header-section-number">22.1</span> SM-5.2-A: Mararoa-Waimea GXP Capacity Data</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-5-nz-context.html">Module 5: The New Zealand Context</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-5-2A-gxp-capacity.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Sub-Module 5.2-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Sub-Module 5.2-A</span></h1>
-<p class="subtitle lead">GXP Capacity</p>
+<p class="subtitle lead">Mararoa-Waimea GXP Capacity Data</p>
 </div>
 
 
@@ -611,11 +646,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-5-2A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-5.2-A: Mararoa-Waimea GXP Capacity Data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>○ Specified</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§5.2</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Published GXP capacity data, reserve margin methodology, connection assessment commercial framework, and the specific sources of uncertainty governing the headroom multiplier range</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if headroom multiplier range is accepted without requiring documentary grounding; process when verifying or updating the FutureArtefact ensemble design</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§5.6, Module 6</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-5.2-a-mararoa-waimea-gxp-capacity-data" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="sm-5.2-a-mararoa-waimea-gxp-capacity-data"><span class="header-section-number">22.1</span> SM-5.2-A: Mararoa-Waimea GXP Capacity Data</h2>
+<p>The Mararoa-Waimea transmission cluster supplies the eastern Southland region through the national grid transmission lines connecting the Mararoa and Waimea substations. Published data on GXP-level capacity in New Zealand is available through Transpower’s grid reliability standards documentation and the Electricity Authority’s market information platform, with GXP-level demand histories accessible through the EA’s EMI portal.</p>
+<p>Hosting capacity concept and reserve margin. The hosting capacity of a GXP for a new large load is not equivalent to the nameplate capacity of the zone substation. It is the available capacity after accounting for existing committed demand, the N-1 security reserve (the capacity that must be held in reserve to maintain supply under the loss of the single largest supply element), and any demand growth committed from connection agreements already approved but not yet fully utilised. The effective hosting capacity available to a new connecting load is therefore:</p>
+<p><span class="math display">\[
+H_{\text{available}} = C_{\text{firm}} - D_{\text{existing}} - D_{\text{committed}} - R_{\text{security}}
+\]</span></p>
+<p>where <span class="math inline">\(C_{\text{firm}}\)</span> is the firm transmission capacity at the zone substation, <span class="math inline">\(D_{\text{existing}}\)</span> is the current maximum coincident demand, <span class="math inline">\(D_{\text{committed}}\)</span> is the demand committed under existing connection agreements not yet fully drawn, and <span class="math inline">\(R_{\text{security}}\)</span> is the N-1 security margin.</p>
+<p>Published capacity data. The Mararoa GXP serves the eastern Southland zone and supplies Fonterra’s Edendale facility, the Fonterra Clandeboye facility in mid-Canterbury (via separate GXPs), and other rural and light commercial customers in the region. GXP-level demand data published by the Electricity Authority for EDN0331 indicates that the Edendale GXP has historically operated at moderate utilisation, with peak demands concentrated in the winter dairy processing season when heat demand and therefore steam generation and therefore GXP import are simultaneously elevated.</p>
+<p>Reference headroom estimate. The EECA RETA Southland assessment provides the reference estimate for hosting capacity available to an electrification pathway at the Edendale facility. The RETA methodology uses publicly available GXP demand data, published Transpower grid reliability standards, and indicative upgrade cost schedules to estimate the increment of electrical demand that can be accommodated without triggering reinforcement at each assessed GXP. The Southland RETA identifies the Mararoa-Waimea cluster as a constraint zone for large industrial electrification, with available hosting capacity that is sufficient for modest electrification increments but potentially insufficient for the full heat electrification demand of a facility of Edendale’s scale without reinforcement.</p>
+<p>Uncertainty sources. Three sources of uncertainty govern the headroom multiplier range in the FutureArtefact ensemble. The first is competing demand from other potential industrial electrifiers in the region. The second is the timing of any planned Transpower investment in the Mararoa-Waimea cluster, which could increase firm capacity but whose timing depends on Transpower’s capital planning cycle and regulatory environment. The third is the coincident demand pattern of the Edendale facility’s specific load shape under the electrification pathway, which determines whether the incremental demand arrives predominantly during periods when GXP headroom is tightest.</p>
+<p>Table SM-5.2-A: FutureArtefact headroom multiplier calibration</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Multiplier value</th>
+<th>Interpretation</th>
+<th>Conditions represented</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.60</td>
+<td>Highly constrained</td>
+<td>Multiple other industrial users electrifying simultaneously; Transpower reinforcement delayed; peak coincidence high</td>
+</tr>
+<tr class="even">
+<td>0.80</td>
+<td>Moderately constrained</td>
+<td>Some competing demand; reinforcement on planned schedule but not accelerated</td>
+</tr>
+<tr class="odd">
+<td>1.00</td>
+<td>Reference capacity</td>
+<td>RETA reference headroom; no competing demand assumptions</td>
+</tr>
+<tr class="even">
+<td>1.15</td>
+<td>Ample headroom</td>
+<td>Transpower reinforcement completed early; competing demand lower than reference</td>
+</tr>
+<tr class="odd">
+<td>1.30</td>
+<td>Unconstrained</td>
+<td>Full firm capacity available; no competing demand; coincidence low</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1198,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -584,8 +613,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sm-2.2-a-lp-milp-and-stochastic-optimisation-role-summary" id="toc-sm-2.2-a-lp-milp-and-stochastic-optimisation-role-summary" class="nav-link active" data-scroll-target="#sm-2.2-a-lp-milp-and-stochastic-optimisation-role-summary"><span class="header-section-number">12.1</span> SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-2-modelling.html">Module 2: Modelling Foundations</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-2-2A-optimisation-roles.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sub-Module 2.2-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sub-Module 2.2-A</span></h1>
-<p class="subtitle lead">Optimisation Roles</p>
+<p class="subtitle lead">LP, MILP, and Stochastic Optimisation, Role Summary</p>
 </div>
 
 
@@ -611,11 +646,132 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- NODE DECLARATION TABLE TO BE ADDED -->
-<!-- CONTENT TO BE ADDED: See Claude content prompt SM-2-2A -->
-<!-- Skip condition: TO BE ADDED -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Node Declaration — SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tier</strong></td>
+<td>Sub-Module</td>
+</tr>
+<tr class="even">
+<td><strong>Status</strong></td>
+<td>✓ Complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Assumes</strong></td>
+<td>§2.2</td>
+</tr>
+<tr class="even">
+<td><strong>Contributes</strong></td>
+<td>Formal problem statements for LP, MILP, and two-stage stochastic programming, a role summary table, and a note on how PyPSA/Linopy network optimisation outputs translate into SignalsPack fields</td>
+</tr>
+<tr class="odd">
+<td><strong>Skip condition</strong></td>
+<td>Skip if optimisation classes and their uses are already known</td>
+</tr>
+<tr class="even">
+<td><strong>Passes to</strong></td>
+<td>§2.3, SM-6.6-E</td>
+</tr>
+<tr class="odd">
+<td><strong>Sub-Modules here</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="sm-2.2-a-lp-milp-and-stochastic-optimisation-role-summary" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sm-2.2-a-lp-milp-and-stochastic-optimisation-role-summary"><span class="header-section-number">12.1</span> SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary</h2>
+<p>Linear programming minimises a linear objective function subject to linear inequality and equality constraints. The standard form is:</p>
+<p><span class="math display">\[
+\min_{x} \; c^\top x \quad \text{subject to} \quad Ax \leq b, \quad x \geq 0
+\]</span></p>
+<p>where <span class="math inline">\(x \in \mathbb{R}^n\)</span> is the vector of decision variables, <span class="math inline">\(c\)</span> is the cost vector, and <span class="math inline">\(A\)</span>, <span class="math inline">\(b\)</span> define the constraint set. The LP dual provides shadow prices for each binding constraint, which in an electricity network context correspond to the nodal marginal prices and congestion rents that inform the SignalsPack fields. A PyPSA LP optimisation of the regional electricity network under a specific future produces, among other outputs, the nodal marginal price at the Edendale GXP, the line loading fractions that indicate whether congestion is occurring, and the system adequacy margin. These outputs are post-processed into the SignalsPack fields: the feasibility indicator, the upgrade class, the cost adder, and the scarcity index.</p>
+<p>Mixed-integer programming extends LP by allowing some decision variables to take integer or binary values:</p>
+<p><span class="math display">\[
+\min_{x, y} \; c^\top x + d^\top y \quad \text{subject to} \quad Ax + By \leq b, \quad x \geq 0, \quad y \in \{0, 1\}^m
+\]</span></p>
+<p>where <span class="math inline">\(y\)</span> represents binary commitment decisions. MILP is appropriate for the unit-commitment logic in the site dispatch module, where each boiler or electric boiler unit is either committed or not in a given scheduling block, and for the upgrade option selection in the grid RDM evaluation, where each upgrade option is either installed or not.</p>
+<p>Two-stage stochastic programming adds an explicit probabilistic structure to LP or MILP. The first stage makes here-and-now decisions <span class="math inline">\(x\)</span> before uncertainty is resolved; the second stage makes recourse decisions <span class="math inline">\(y(\omega)\)</span> after scenario <span class="math inline">\(\omega\)</span> is realised:</p>
+<p><span class="math display">\[
+\min_x \; c^\top x + \mathbb{E}_\omega[Q(x, \omega)] \quad \text{subject to} \quad Ax \leq b, \quad x \geq 0
+\]</span></p>
+<p>where <span class="math inline">\(Q(x, \omega) = \min_y \{q(\omega)^\top y : T(\omega)x + Wy \geq h(\omega)\}\)</span> is the recourse cost. Two-stage stochastic programming is appropriate for near-term operational decisions within a module where a meaningful probability distribution over scenarios can be constructed. It is not appropriate for the outer DMDU ensemble, which operates under deep uncertainty where such distributions are contested.</p>
+<p>Table SM-2.2-A: Optimisation classes and their roles in the framework</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Formal structure</th>
+<th>Uncertainty type handled</th>
+<th>Example role in framework</th>
+<th>Primary limitation in this context</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LP</td>
+<td>Linear objective, linear constraints, continuous variables</td>
+<td>None (deterministic given future)</td>
+<td>Regional electricity dispatch; GXP adequacy screening</td>
+<td>Cannot represent discrete commitments; no structural uncertainty</td>
+</tr>
+<tr class="even">
+<td>MILP</td>
+<td>LP with binary/integer variables</td>
+<td>None (deterministic given future)</td>
+<td>Site unit commitment; upgrade option selection in grid RDM</td>
+<td>Computationally expensive at scale; no structural uncertainty</td>
+</tr>
+<tr class="odd">
+<td>Two-stage stochastic</td>
+<td>MILP or LP with scenario-weighted recourse</td>
+<td>Parametric, probabilistic</td>
+<td>Operational scheduling with known demand variability</td>
+<td>Requires probability distribution; not suitable for deep uncertainty in outer ensemble</td>
+</tr>
+<tr class="even">
+<td>Outer DMDU ensemble</td>
+<td>Any inner optimisation across paired futures</td>
+<td>Structural, deep</td>
+<td>Full pathway comparison across 64 futures</td>
+<td>Not a single optimisation — requires the architecture of Modules 3 and 6</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1055,5 +1211,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
