@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,35 +78,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -613,14 +584,8 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#sm-3.8-a-aiml-provenance-requirements-and-acceptance-protocol" id="toc-sm-3.8-a-aiml-provenance-requirements-and-acceptance-protocol" class="nav-link active" data-scroll-target="#sm-3.8-a-aiml-provenance-requirements-and-acceptance-protocol"><span class="header-section-number">18.1</span> SM-3.8-A: AI/ML Provenance Requirements and Acceptance Protocol</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-8A-aiml-governance.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -629,7 +594,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-3-architecture.html">Module 3: Architecture</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-3-8A-aiml-governance.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sub-Module 3.8-A</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sub-Module 3.8-A</span></h1>
-<p class="subtitle lead">AI/ML Provenance Requirements and Acceptance Protocol</p>
+<p class="subtitle lead">AI/ML Governance</p>
 </div>
 
 
@@ -646,159 +611,11 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Node Declaration — SM-3.8-A: AI/ML Provenance Requirements and Acceptance Protocol
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Tier</strong></td>
-<td>Sub-Module</td>
-</tr>
-<tr class="even">
-<td><strong>Status</strong></td>
-<td>○ Specified</td>
-</tr>
-<tr class="odd">
-<td><strong>Assumes</strong></td>
-<td>§3.8</td>
-</tr>
-<tr class="even">
-<td><strong>Contributes</strong></td>
-<td>Complete specification of the five additional provenance fields, the confidence scoring protocol, the regime boundary detection and response protocol, and the human acceptance workflow</td>
-</tr>
-<tr class="odd">
-<td><strong>Skip condition</strong></td>
-<td>Skip until surrogate modules are being deployed</td>
-</tr>
-<tr class="even">
-<td><strong>Passes to</strong></td>
-<td>Module 6 SM-6.6-E</td>
-</tr>
-<tr class="odd">
-<td><strong>Sub-Modules here</strong></td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<section id="sm-3.8-a-aiml-provenance-requirements-and-acceptance-protocol" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="sm-3.8-a-aiml-provenance-requirements-and-acceptance-protocol"><span class="header-section-number">18.1</span> SM-3.8-A: AI/ML Provenance Requirements and Acceptance Protocol</h2>
-<p>The five additional provenance fields for AI/ML-produced artefacts are specified as follows.</p>
-<p>The model_type_version field carries a structured identifier of the form [architecture]:[version]:[commit], for example gradient_boosting_regressor:v2.1:a3f7c9d. It references an entry in the model registry, a governed table in the backbone that stores the full model specification, hyperparameters, and training configuration.</p>
-<p>The training_data_id field carries the artefact identifier of the governed training dataset from which the model was trained. The training dataset is itself a governed artefact in the backbone with its own provenance, schema, and validation record.</p>
-<p>The confidence_score field carries a float in [0,1] representing the surrogate’s self-assessed reliability for this specific prediction. A confidence score of 1.0 indicates the input is well within the interior of the training distribution; a confidence score below the declared threshold (default 0.7) triggers a truth model verification request.</p>
-<p>The regime_flag field is a boolean indicating whether the input was detected as near a regime boundary. Regime boundaries are pre-identified from the full model’s output surface during training; inputs within a declared distance of a boundary in the input feature space receive a True regime flag regardless of their confidence score.</p>
-<p>The human_acceptance_id field carries the identifier of the human acceptance record in the validation registry. This record is created when a qualified reviewer examines the artefact and confirms that its content is plausible and appropriate for the analytical context.</p>
-<p>Confidence score protocol. The confidence score is computed as <span class="math inline">\(c = 1 - d_{\text{norm}}\)</span>, where <span class="math inline">\(d_{\text{norm}}\)</span> is the distance from the input feature vector to the nearest training sample, normalised by the maximum nearest-neighbour distance in the training set. Equivalently, a Gaussian process surrogate can use the posterior standard deviation normalised by the prior standard deviation as the uncertainty measure. When <span class="math inline">\(c &lt; 0.7\)</span>, the orchestration layer queues the input for truth model evaluation, runs the full PyPSA model (or equivalent full model) for that future, and replaces the surrogate prediction with the full model output before the artefact is admitted to the backbone. The full model output is recorded as a non-surrogate artefact with its own provenance.</p>
-<p>Regime boundary protocol. During surrogate training, a preliminary grid scan identifies the input regions where the full model output changes most rapidly. These regions, typically near the transition from feasible-without-upgrade to exceedance conditions for the regional electricity module, are declared as regime boundaries and stored in the model registry. When a new input is evaluated, its distance to the nearest declared boundary is compared to a declared tolerance. Inputs within tolerance receive a True regime_flag and are automatically queued for truth model verification regardless of their confidence score.</p>
-<p>Human acceptance workflow. A generated AI/ML artefact with a confidence score above the threshold and no regime flag is reviewed by a designated analyst before backbone admission. The review checks: (1) whether the output values are physically plausible given the input conditions; (2) whether the confidence score is consistent with the analyst’s domain assessment of the input’s difficulty; and (3) whether the artefact’s declared provenance is complete and consistent. The analyst records the review outcome in the validation registry. A positive review produces a human_acceptance_id that is embedded in the artefact’s provenance. A negative review returns the artefact to provisional status and flags it for investigation.</p>
-<p>Table SM-3.8-A: Standard versus AI/ML artefact provenance fields</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Provenance field</th>
-<th>Standard artefact</th>
-<th>AI/ML artefact</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>artefact_id</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td>schema_version</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="odd">
-<td>artefact_family</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td>run_id</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="odd">
-<td>future_id</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td>produced_by</td>
-<td>Required (module name and version)</td>
-<td>Required (includes surrogate model reference)</td>
-</tr>
-<tr class="odd">
-<td>validation_status</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td>checksum</td>
-<td>Required</td>
-<td>Required</td>
-</tr>
-<tr class="odd">
-<td>model_type_version</td>
-<td>Not applicable</td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td>training_data_id</td>
-<td>Not applicable</td>
-<td>Required</td>
-</tr>
-<tr class="odd">
-<td>confidence_score</td>
-<td>Not applicable</td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td>regime_flag</td>
-<td>Not applicable</td>
-<td>Required</td>
-</tr>
-<tr class="odd">
-<td>human_acceptance_id</td>
-<td>Not applicable</td>
-<td>Required</td>
-</tr>
-</tbody>
-</table>
+<!-- NODE DECLARATION TABLE TO BE ADDED -->
+<!-- CONTENT TO BE ADDED: See Claude content prompt SM-3-8A -->
+<!-- Skip condition: TO BE ADDED -->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1238,5 +1055,5 @@ window.Quarto = {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-8A-aiml-governance.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/edit/main/manuscript/sub-modules/sm-3-8A-aiml-governance.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/decision-centred-modelling/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
