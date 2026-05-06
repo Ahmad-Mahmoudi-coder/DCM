@@ -72,6 +72,9 @@ bibliography: references/references.bib
 
 format:
   html:
+    fig-width: 8
+    fig-height: 5
+    fig-align: center
     theme:
       light: cosmo
       dark: darkly
