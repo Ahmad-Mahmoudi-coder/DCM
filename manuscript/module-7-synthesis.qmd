@@ -230,34 +230,6 @@ The decision makes the boundary; the artefact makes the connection. This documen
 
 ---
 
-## §7.9 Beyond Infrastructure: Personal, Organisational, and Financial Decisions
-
-::: {.callout-note collapse="false" icon="false"}
-## Node Declaration — §7.9 Beyond Infrastructure: General Application
-
-| Field | Content |
-|---|---|
-| **Tier** | Section |
-| **Status** | ◇ Vision `[Educational]` |
-| **Assumes** | §7.3 (Multi-Domain Extension) |
-| **Contributes** | Shows how the decision-centred framework applies to personal long-horizon decisions and organisational strategy, not only to infrastructure or engineering contexts |
-| **Skip condition** | Skip if reader is interested only in technical infrastructure applications |
-| **Passes to** | §7.8 |
-| **Sub-Modules here** | None |
-:::
-
-The framework described in this manuscript was developed through the lens of industrial infrastructure. The Edendale dairy facility, the Southland electricity grid, and the New Zealand ETS are specific. The underlying problem class is not. Every principle in Modules 1 through 3 applies to any situation where the following five features are present: a durable commitment, consequences that propagate beyond the boundary of the decision-maker's immediate view, genuine uncertainty that cannot be resolved into probabilities, plural objectives, and multiple stakeholders with different exposures to different outcomes.
-
-Consider a personal financial decision with a 20-year horizon: choosing a career specialisation, deciding whether to purchase property, or selecting a retirement investment allocation. The predict-and-commit logic that most financial planning tools offer assumes that a central-case projection of future income, inflation, and asset returns is the right basis for the choice. The decision-centred logic asks instead: which allocation performs acceptably across the full range of futures I cannot predict — the futures where my income trajectory is disrupted, where inflation behaves differently from the projection, where my priorities change? The regret metric applied to a personal financial portfolio is conceptually identical to the regret metric applied to an industrial energy pathway. The plausible futures are different; the evaluative logic is the same.
-
-Consider an organisational strategy decision: whether to commit to a specific technology platform, enter a new market, or restructure a supply chain. Each of these decisions involves durable commitments, cross-boundary consequences (through partners, competitors, and customers who are not inside the organisation), deep uncertainty about the regulatory and market futures that will determine whether the decision was wise, plural objectives spanning financial return and organisational resilience, and multiple stakeholders. The decision-centred architecture responds to this problem class with the same structure it applies to industrial infrastructure: explicit alternatives, explicit futures, decision-relevant outcomes, declared boundaries, paired comparison, and traceability.
-
-The extension to personal and organisational contexts does not require implementing the full technical stack of Modules 3 and 4. A person making a career decision does not need a governed analytical backbone or a schema-conforming artefact exchange. They need the intellectual discipline: what am I actually choosing between, what are the futures that will determine whether I chose well, and which choice performs acceptably across the widest range of those futures? The principles are the portable element; the architecture is the scaling mechanism that makes those principles analytically rigorous and institutionally accountable at the infrastructure scale.
-
-Module 0 states that the decision makes the boundary. This applies as much to a person deciding whether to pursue a doctorate as to a corporation deciding whether to electrify a boiler fleet. The boundary should encompass the consequences that matter for that decision — including the ones that lie outside the frame you started with.
-
----
-
 ## §7.8 The Open Knowledge Architecture {#sec-7-8}
 
 ::: {.callout-note collapse="false" icon="false"}
@@ -308,6 +280,34 @@ Table 7.8: Extended Node Declaration tag vocabulary
 | Research | Modifier | [R] | Contains unresolved methodological questions or open theoretical problems | Should state the question precisely enough that a reader could design a study to address it |
 | Platform | Modifier | [P] | Relates to how the manuscript functions as a knowledge resource | Used sparingly; reserved for sections whose subject is the document's own architecture |
 | Contribute | Modifier | [C] | Contains a contribution template or formal specification for community extension | Must specify the interface contract or schema requirements that a valid contribution must satisfy |
+
+---
+
+## §7.9 Beyond Infrastructure: Personal, Organisational, and Financial Decisions
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §7.9 Beyond Infrastructure: General Application
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ◇ Vision `[Educational]` |
+| **Assumes** | §7.3 (Multi-Domain Extension) |
+| **Contributes** | Shows how the decision-centred framework applies to personal long-horizon decisions and organisational strategy, not only to infrastructure or engineering contexts |
+| **Skip condition** | Skip if reader is interested only in technical infrastructure applications |
+| **Passes to** | Nothing (terminal section) |
+| **Sub-Modules here** | None |
+:::
+
+The framework described in this manuscript was developed through the lens of industrial infrastructure. The Edendale dairy facility, the Southland electricity grid, and the New Zealand ETS are specific. The underlying problem class is not. Every principle in Modules 1 through 3 applies to any situation where the following five features are present: a durable commitment, consequences that propagate beyond the boundary of the decision-maker's immediate view, genuine uncertainty that cannot be resolved into probabilities, plural objectives, and multiple stakeholders with different exposures to different outcomes.
+
+Consider a personal financial decision with a 20-year horizon: choosing a career specialisation, deciding whether to purchase property, or selecting a retirement investment allocation. The predict-and-commit logic that most financial planning tools offer assumes that a central-case projection of future income, inflation, and asset returns is the right basis for the choice. The decision-centred logic asks instead: which allocation performs acceptably across the full range of futures I cannot predict — the futures where my income trajectory is disrupted, where inflation behaves differently from the projection, where my priorities change? The regret metric applied to a personal financial portfolio is conceptually identical to the regret metric applied to an industrial energy pathway. The plausible futures are different; the evaluative logic is the same.
+
+Consider an organisational strategy decision: whether to commit to a specific technology platform, enter a new market, or restructure a supply chain. Each of these decisions involves durable commitments, cross-boundary consequences (through partners, competitors, and customers who are not inside the organisation), deep uncertainty about the regulatory and market futures that will determine whether the decision was wise, plural objectives spanning financial return and organisational resilience, and multiple stakeholders. The decision-centred architecture responds to this problem class with the same structure it applies to industrial infrastructure: explicit alternatives, explicit futures, decision-relevant outcomes, declared boundaries, paired comparison, and traceability.
+
+The extension to personal and organisational contexts does not require implementing the full technical stack of Modules 3 and 4. A person making a career decision does not need a governed analytical backbone or a schema-conforming artefact exchange. They need the intellectual discipline: what am I actually choosing between, what are the futures that will determine whether I chose well, and which choice performs acceptably across the widest range of those futures? The principles are the portable element; the architecture is the scaling mechanism that makes those principles analytically rigorous and institutionally accountable at the infrastructure scale.
+
+Module 0 states that the decision makes the boundary. This applies as much to a person deciding whether to pursue a doctorate as to a corporation deciding whether to electrify a boiler fleet. The boundary should encompass the consequences that matter for that decision — including the ones that lie outside the frame you started with.
 
 ```{=html}
 <div class="dcm-discuss-strip">
