@@ -71,12 +71,10 @@ bibliography: references/references.bib
 
 format:
   html:
+    theme: [default, assets/custom.css]
     fig-width: 8
     fig-height: 5
     fig-align: center
-    theme:
-      light: cosmo
-      dark: darkly
     toc: true
     toc-depth: 3
     toc-expand: 2
@@ -84,10 +82,15 @@ format:
     number-depth: 3
     smooth-scroll: true
     code-fold: false
-    css: assets/custom.css
     link-external-icon: true
     link-external-newwindow: true
     callout-appearance: minimal
+  docx:
+    fig-width: 6
+    fig-height: 4
+    fig-align: center
+    number-sections: true
+    reference-doc: null
 
 execute:
   echo: false

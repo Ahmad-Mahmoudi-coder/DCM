@@ -113,19 +113,11 @@ The third is that AI and ML methods can contribute without compromising governan
 
 The framework consists of seven functional layers. These are not sequential steps in an analysis but concurrent components of a system, each performing a distinct analytical role. They are described here at a level of generality appropriate to the architecture; the New Zealand process heat instantiation of each layer is developed in Modules 5 and 6. A reader working in a different domain, water infrastructure, regional transport, or land-use planning, should read these descriptions as generic specifications of what a decision-centred analytical environment requires, not as energy-specific designs.
 
-```{=html}
-<div style="margin:1.5rem 0 2rem 0;">
-  <img src="../assets/figures/diagram1-architecture-stack.svg" 
-       alt="DCM seven-layer architecture" 
-       style="width:100%;max-width:720px;border-radius:8px;
-              border:1px solid #dde6ef;"/>
-  <p style="font-size:0.8rem;color:#8899aa;margin-top:0.5rem;
-            text-align:center;">
-    Figure 0.1  Seven analytical layers of the DCM 
-    framework — artefact exchange and governed backbone
-  </p>
-</div>
-```
+![Figure 0.1: Seven analytical layers of the 
+Decision-Centred Modelling framework — artefact 
+exchange across the governed backbone.](
+../assets/figures/diagram1-architecture-stack.svg
+){#fig-architecture width=100%}
 
 Layer 1: The Decision Layer (Module 1) is the conceptual foundation. It asks what kinds of decisions the framework is designed to support, how alternatives and futures should be structured analytically, and what standards of comparison are appropriate when stable probability distributions over futures are unavailable. This layer establishes the decision-first boundary principle in full formal terms and articulates the evaluative standards, regret, robustness, and satisficing, that govern what must remain visible in the analytical environment. Without the Decision Layer, the other layers have no principled account of what they are generating consequences for or how those consequences should be compared.
 

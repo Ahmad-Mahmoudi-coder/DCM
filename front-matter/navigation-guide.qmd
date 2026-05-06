@@ -232,3 +232,14 @@ This Navigation Guide is itself governed by a Node Declaration.
 It has no skip condition: it should be read by all users before 
 engaging with the manuscript's main body.
 :::
+
+## Framework Map {.unnumbered}
+
+The following diagram shows the dependency 
+relationships between modules. Arrows indicate 
+prerequisite reading direction.
+
+![Figure N.1: Module dependency map — prerequisite 
+reading paths across Modules 0 through 7.](
+../assets/figures/diagram2-module-map.svg
+){#fig-module-map width=100%}

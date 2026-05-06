@@ -289,41 +289,46 @@ Validation Records and Artefact Log — per-artefact acceptance gate outcomes, f
 | **Sub-Modules here** | None |
 :::
 
-```{=html}
-<div style="margin:1.5rem 0 2rem 0;">
-  <img src="../assets/figures/diagram3-pathway-comparison.svg" 
-       alt="EB vs BB pathway comparison — 93 of 100 futures" 
-       style="width:100%;max-width:760px;border-radius:8px;
-              border:1px solid #dde6ef;"/>
-  <p style="font-size:0.8rem;color:#8899aa;margin-top:0.5rem;
-            text-align:center;">
-    Figure 6.0  Decision tree and robustness outcomes — 
-    EB vs BB, Edendale–Southland PoC, 100 paired futures
-  </p>
-</div>
-```
+![Figure 6.0: Decision tree and robustness outcomes 
+— EB vs BB pathway comparison, 100 paired futures, 
+Edendale–Southland PoC.](
+../assets/figures/diagram3-pathway-comparison.svg
+){#fig-pathway-decision width=100%}
 
 The proof of concept establishes five findings from the 100-future paired ensemble. Each is stated in terms of the boundary declarations of §6.1 and is traceable to the artefact chain documented in §6.8.
 
 **Finding 1: The grid upgrade finding.**
 
-![Figure 6.1: Site-layer dispatch results across planning epochs.](../assets/figures/fig6_1_dispatch_epochs.png){#fig-dispatch-epochs width=95%}
+![Figure 6.1: Site-layer dispatch results across 
+planning epochs — annual cost, direct CO₂ emissions, 
+and GXP incremental electricity demand.](
+../assets/figures/fig6_1_dispatch_epochs.png
+){#fig-dispatch-epochs width=100%}
 
 All four planning epochs deliver the same 819 GWh of annual heat demand. Direct CO₂ emissions fall from 244,703 tCO₂ in 2020 to zero under the EB pathway and to 1,610 tCO₂ under the BB pathway in 2035. The site annual cost rises from NZD 14.2M in 2020 to NZD 91.0M (EB) and NZD 76.8M (BB) in 2035, reflecting the higher electricity tariff under full electrification. BB therefore offers a NZD 14.2M/year private cost advantage over EB at the site level under baseline conditions.
 
-![Figure 6.2: Grid upgrade selection across 100 paired futures — EB vs BB pathways.](../assets/figures/fig6_2_rdm_upgrade_distribution.png){#fig-rdm-upgrade width=95%}
+![Figure 6.2: Grid upgrade selection across 100 
+paired futures — EB and BB pathways compared.](
+../assets/figures/fig6_2_rdm_upgrade_distribution.png
+){#fig-rdm-upgrade width=100%}
 
 Under the regional screening model with the 100-future paired ensemble, the EB pathway requires a grid upgrade in every future without exception. In 51 of 100 futures the required upgrade is N+97 MW (zone substation expansion, NZD 28.5M capex); in the remaining 49 of 100 futures a major N+150 MW reinforcement (NZD 52.0M capex) is required. The BB pathway requires the N+97 MW upgrade in all 100 futures but never triggers the N+150 MW class. The distinction is not whether a grid upgrade is needed — both pathways require one in every future — but whether the EB pathway's higher incremental peak demand (133 MW vs 95 MW) forces the costlier upgrade class in a given future. Twenty-four of the 100 futures produce binding hourly headroom constraints under EB, with a maximum shed event of 181.9 MWh.
 
 **Finding 2: The robustness analysis.**
 
-![Figure 6.3: Robustness comparison — EB vs BB across 100 paired futures.](../assets/figures/fig6_3_robustness_comparison.png){#fig-robustness width=95%}
+![Figure 6.3: Robustness comparison — EB vs BB 
+across 100 paired futures, five metrics.](
+../assets/figures/fig6_3_robustness_comparison.png
+){#fig-robustness width=100%}
 
 Under the site decision robustness overlay, BB achieves an 88% satisficing rate against the declared cost threshold, compared with 35% for EB. BB wins on system cost in 93 of 100 futures. EB's mean system-level regret is NZD 8.8M/year; BB's mean regret is NZD 0.1M/year. EB's maximum regret reaches NZD 18.9M/year, compared with NZD 4.5M/year for BB. EB carries a 49% exposure to the N+150 MW upgrade class; BB carries zero exposure to that class in any future.
 
 **Finding 3: The system-level cost divergence.**
 
-![Figure 6.4: System-level regret CDF and per-future cost difference — EB vs BB.](../assets/figures/fig6_4_regret_cdf_and_cost_difference.png){#fig-regret-cdf width=95%}
+![Figure 6.4: System-level regret CDF and 
+per-future cost difference — EB vs BB.](
+../assets/figures/fig6_4_regret_cdf_and_cost_difference.png
+){#fig-regret-cdf width=100%}
 
 In 93 of 100 futures, the system-perspective total cost (site operating cost plus annualised upgrade cost) is lower for BB than for EB. The mean annualised upgrade cost for EB is NZD 6.73M/year; for BB it is NZD 5.77M/year. This divergence reflects the infrastructure-conditional cost penalty of EB's higher peak demand, which exceeds BB's by 38 MW at the 95th percentile. The private cost advantage of BB (NZD 14.2M/year lower site cost) is reinforced, not reversed, by the system-level perspective. Both dimensions of the comparison favour BB under current conditions.
 
