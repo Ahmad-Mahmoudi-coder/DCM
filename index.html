@@ -9,7 +9,7 @@
 <meta name="author" content="Seyed Ahmad Mahmoudi Lahijani">
 <meta name="dcterms.date" content="2026-01-01">
 
-<title>Decision-Centred Thinking and Modelling</title>
+<title>Decision-Centred Modelling (DCM)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4e061325f75ba7fba053004d9d2e9411.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -269,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Decision-Centred Thinking and Modelling</a> 
+      <a href="./">Decision-Centred Modelling (DCM)</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -598,28 +598,21 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Decision-Centred Thinking and Modelling</h1>
+<h1 class="title">Decision-Centred Modelling (DCM)</h1>
 <p class="subtitle lead">Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation</p>
 </div>
 
 
-<div class="quarto-title-meta-author column-page-right">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Seyed Ahmad Mahmoudi Lahijani </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Auckland University of Technology
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta column-page-right">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Seyed Ahmad Mahmoudi Lahijani </p>
+          </div>
+  </div>
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
@@ -641,13 +634,15 @@ ul.task-list li input[type="checkbox"] {
     A Framework for Complex Decisions Under Deep Uncertainty
   </div>
   <div class="dcm-hero-title">
-    <strong>Decision-Centred</strong>
-    Thinking and Modelling
+    <strong>Decision-Centred Modelling</strong>
+    <span style="font-size:0.65em; opacity:0.7; 
+          display:block; margin-top:0.3rem;">
+      (DCM)
+    </span>
   </div>
   <p class="dcm-hero-sub">
-    A way of thinking — and a practical architecture — for decisions 
-    whose most important consequences lie outside the boundary of any 
-    single model, organisation, or planning horizon.
+    Foundations, Architecture, and Application to 
+    Industrial Process Heat Decarbonisation
   </p>
   <p class="dcm-hero-motto">
     "The decision makes the boundary; the artefact makes the connection."
@@ -815,6 +810,28 @@ ul.task-list li input[type="checkbox"] {
 
 <hr style="border:none; border-top:1px solid #dde6ef; margin:2.5rem 0;">
 
+<hr>
+<section id="the-framework-at-a-glance" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-framework-at-a-glance">The Framework at a Glance</h2>
+<div style="margin:2rem 0;">
+  <p style="font-size:0.88rem;color:#6b7a8d;margin-bottom:0.75rem;">
+    <strong style="color:#0f3460;">Diagram 1:</strong> 
+    Seven analytical layers — from facility demand 
+    construction through the governed backbone to 
+    the decision layer.
+  </p>
+  <img src="assets/figures/diagram1-architecture-stack.svg" alt="DCM Framework Architecture — Seven Layers" style="width:100%;max-width:720px;border-radius:8px;
+              border:1px solid #dde6ef;">
+</div>
+<div style="margin:2rem 0;">
+  <p style="font-size:0.88rem;color:#6b7a8d;margin-bottom:0.75rem;">
+    <strong style="color:#0f3460;">Diagram 2:</strong> 
+    Module dependency map — prerequisite reading 
+    paths across Modules 0 through 7.
+  </p>
+  <img src="assets/figures/diagram2-module-map.svg" alt="DCM Module Dependency Map" style="width:100%;max-width:720px;border-radius:8px;
+              border:1px solid #dde6ef;">
+</div>
 <!-- NAVIGATE -->
 <h2 style="font-family:'Helvetica Neue',Arial,sans-serif; 
            color:#0f3460; margin-bottom:1rem;" class="anchored">
@@ -824,41 +841,45 @@ ul.task-list li input[type="checkbox"] {
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">I want to...</th>
+<th data-quarto-table-cell-role="th">If you are...</th>
 <th data-quarto-table-cell-role="th">Start here</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Understand the core concept</td>
-<td><a href="manuscript/module-0-orientation.html">Module 0: Orientation</a></td>
+<td>New to this framework — start here</td>
+<td><a href="manuscript/module-0-orientation.html">Module 0: Orientation (15 min)</a></td>
 </tr>
 <tr class="even">
-<td>See the decision theory foundations</td>
+<td>A researcher in DMDU, integrated assessment, or systems modelling</td>
 <td><a href="manuscript/module-1-foundations.html">Module 1: Foundations</a></td>
 </tr>
 <tr class="odd">
-<td>Read the architecture design</td>
+<td>An energy system modeller or tool developer</td>
 <td><a href="manuscript/module-3-architecture.html">Module 3: Architecture</a></td>
 </tr>
 <tr class="even">
-<td>See the proof of concept (NZ case)</td>
+<td>A practitioner or corporate strategist</td>
+<td><a href="manuscript/module-4-domain.html">Module 4: Domain Translation</a></td>
+</tr>
+<tr class="odd">
+<td>Working in NZ energy policy or infrastructure</td>
+<td><a href="manuscript/module-5-nz-context.html">Module 5: NZ Context</a></td>
+</tr>
+<tr class="even">
+<td>Interested in the full proof of concept and results</td>
 <td><a href="manuscript/module-6-poc.html">Module 6: Proof of Concept</a></td>
 </tr>
 <tr class="odd">
-<td>Read the eleven propositions</td>
-<td><a href="manuscript/module-7-synthesis.html">Module 7 §7.6</a></td>
+<td>Evaluating the intellectual contribution</td>
+<td><a href="manuscript/module-7-synthesis.html">Module 7 §7.6: Eleven Propositions</a></td>
 </tr>
 <tr class="even">
-<td>See extensions and the bigger vision</td>
-<td><a href="manuscript/module-7-synthesis.html">Module 7 §7.8–7.9</a></td>
+<td>Thinking about applying this outside energy systems</td>
+<td><a href="manuscript/module-7-synthesis.html">Module 7 §7.9: Beyond Infrastructure</a></td>
 </tr>
 <tr class="odd">
-<td>Browse all key terms</td>
-<td><a href="references/glossary.html">Glossary</a></td>
-</tr>
-<tr class="even">
-<td>Discuss or contribute</td>
+<td>Wanting to contribute a domain extension</td>
 <td><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" target="_blank">GitHub Discussions</a></td>
 </tr>
 </tbody>
@@ -867,16 +888,18 @@ ul.task-list li input[type="checkbox"] {
 
 <hr style="border:none; border-top:1px solid #dde6ef; margin:2rem 0;">
 
-<p style="font-size:0.82rem; color:#888; margin-bottom:3rem;">
-  <em>Seyed Ahmad Mahmoudi Lahijani — Auckland University of Technology 
-  — 2026</em> &nbsp;·&nbsp;
-  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">Repository</a> 
+<p style="font-size:0.82rem; color:#888; 
+          margin-bottom:3rem; margin-top:1rem;">
+  <em>Seyed Ahmad Mahmoudi Lahijani — 2026</em>
   &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">
+  Repository</a> &nbsp;·&nbsp;
   <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions">
   Contribute</a>
 </p>
 
-</div>
+</section></div>
+
 
 
 
