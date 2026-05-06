@@ -321,3 +321,62 @@ Module 0 states that the decision makes the boundary. This applies as much to a 
      target="_blank">Post to GitHub Discussions →</a>
 </div>
 ```
+
+---
+
+## §7.10 Governed Expert Attestation: A Community Quality Architecture
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — §7.10 Governed Expert Attestation
+
+| Field | Content |
+|---|---|
+| **Tier** | Section |
+| **Status** | ◇ Vision `[Platform]` `[Collaborative]` |
+| **Assumes** | §7.8 (Open Knowledge Architecture), §7.9 (Beyond Infrastructure) |
+| **Contributes** | Proposes a claim-level expert attestation mechanism as the quality governance layer for community-contributed extensions to the framework, and connects the attestation logic to the framework's ValidationArtefact architecture |
+| **Skip condition** | Skip if reader is not interested in scholarly communication architecture |
+| **Passes to** | Nothing — terminal section |
+| **Sub-Modules here** | None |
+:::
+
+The open knowledge architecture of §7.8 establishes how content is classified, tagged, and governed as it enters the manuscript. It establishes that modules may carry Implemented, Specified, or Vision status; that individual claims may be tagged for Research investigation or Collaborative contribution; and that the manuscript is designed to grow through community extension without losing coherence. What §7.8 does not yet establish is how the intellectual quality of contributed content is assured once it has been classified and admitted. This section proposes a governed expert attestation mechanism that addresses that question, not as an optional quality check applied after publication but as a structural component of the framework's community extension architecture.
+
+**The problem it solves is specific.** A manuscript about decision-centred modelling for industrial process heat decarbonisation makes technical claims that span at least five distinct epistemic communities: DMDU methodology, energy system modelling, New Zealand electricity network operation, industrial process heat technology, and applied decision theory. No single reviewer commands genuine expertise across all five. The academic peer review system, which assigns two or three reviewers for a paper as a whole, covers this epistemic landscape imperfectly and cannot be expected to provide domain-specific attestation for claims that lie outside each reviewer's primary competence. The result is a systematic gap: methodological claims are reviewed by methods specialists who may not evaluate their application validity; application-specific claims are reviewed by practitioners who may not evaluate their methodological rigour.
+
+The gap matters because it directly affects the value of the framework's outputs. A planning decision supported by a framework whose technical claims have been independently attested by named domain experts occupies a qualitatively different institutional position from one supported by a framework that has passed undifferentiated peer review. The former can be audited claim by claim; the latter can only be accepted or rejected as a whole.
+
+**The proposed mechanism** is claim-level expert attestation. Individual technical claims within the manuscript are registered in a public claims register — a structured document maintained in the project repository as `CLAIMS.md`. Each registered claim carries: a unique claim identifier, the module and section where it appears, a plain-language statement of the claim, the epistemic community whose expertise is most relevant to evaluating it, and its current attestation status.
+
+Domain experts attest to the validity of specific claims within their declared competence. An attestation record carries: the claim identifier, the attesting expert's full name and institutional affiliation, their declared domain of competence, the date of attestation, and a structured verdict from the following vocabulary: *confirmed* (the claim is correct within its stated scope), *confirmed with qualification* (the claim is substantially correct but requires a specific caveat), or *contested* (the claim is disputed, with a documented basis for the contestation). Contested attestations are as valuable as confirmations: they identify, precisely, where the analytical environment's assumptions are most uncertain and where refinement would most improve decision quality.
+
+**The governance parallel is exact.** The mechanism operates on the same logic as the framework's ValidationArtefact. Just as every analytical artefact that enters the comparison chain must pass a declared acceptance gate and carry a validation record before it is admitted to the backbone, every technical claim in a community-contributed module carries a public attestation record before it is considered established within the framework's knowledge base. The attestation record does not replace peer review of the manuscript as a whole; it complements it by making the domain-specific quality assurance of individual claims visible, traceable, and cumulative across the framework's development history.
+
+**The connection to progressive refinement** is direct. A claim that attracts contestation from a domain expert is exactly the kind of signal that the framework's self-directing development logic is designed to act on. It identifies, precisely, where the analytical environment's assumptions are most contested and therefore where refinement most improves the quality of the decision support provided. A claim that is confirmed by experts from multiple epistemic communities simultaneously achieves a higher epistemic status than one confirmed by a single community. A module that has received attested confirmations from experts in three or more distinct epistemic communities carries a qualitatively different epistemic standing than one that has not, and the attestation register makes that standing visible and queryable by any reader, AI agent, or institutional auditor.
+
+**The minimum viable implementation** does not require building a new platform. A public claims register is maintained as `CLAIMS.md` in the project repository. Attestations are submitted through structured GitHub Issues using a declared template, reviewed by the lead author, and admitted to the register with a provenance record. The register is linked from the relevant module section in the manuscript, so any reader who wants to assess the attestation status of a specific claim can navigate directly to the record. The template for a contribution is:
+Claim ID: [from CLAIMS.md]
+Attester name and institution:
+Declared domain of competence:
+Date:
+Verdict: [confirmed / confirmed with qualification / contested]
+Basis (required if contested or qualified):
+
+This infrastructure is operational today. The CLAIMS.md file and the GitHub Issues template represent a two-hour implementation investment. What requires investment is the community norm: the shared understanding that claim-level attestation is a valuable form of scholarly contribution, that domain experts who provide attestations are acknowledged contributors to the framework's knowledge base, and that the attestation register constitutes a living quality record that improves the framework's institutional credibility over time.
+
+The broader vision described in the Context Declaration — a framework that is simultaneously rigorous, community-governed, and institutionally accountable — depends on exactly this kind of quality architecture. The thin-waist artefact governance that makes analytical outputs trustworthy, the decision-first boundary principle that keeps the analysis relevant, and the expert attestation mechanism that makes knowledge claims auditable are three expressions of the same underlying commitment: that what the framework asserts, it can defend, trace, and improve through principled engagement with the relevant expert communities.
+
+::: {.callout-tip}
+## Contribute an Attestation `[Collaborative]`
+
+If you have domain expertise relevant to any claim in 
+this manuscript, you are invited to submit an attestation 
+through GitHub Issues. The claims register and submission 
+template are maintained at:
+
+[github.com/Ahmad-Mahmoudi-coder/DCM](
+https://github.com/Ahmad-Mahmoudi-coder/DCM){target="_blank"}
+
+Attestations from any epistemic community relevant to 
+the framework's claims are welcomed.
+:::

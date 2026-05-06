@@ -289,6 +289,20 @@ Validation Records and Artefact Log — per-artefact acceptance gate outcomes, f
 | **Sub-Modules here** | None |
 :::
 
+```{=html}
+<div style="margin:1.5rem 0 2rem 0;">
+  <img src="../assets/figures/diagram3-pathway-comparison.svg" 
+       alt="EB vs BB pathway comparison — 93 of 100 futures" 
+       style="width:100%;max-width:760px;border-radius:8px;
+              border:1px solid #dde6ef;"/>
+  <p style="font-size:0.8rem;color:#8899aa;margin-top:0.5rem;
+            text-align:center;">
+    Figure 6.0  Decision tree and robustness outcomes — 
+    EB vs BB, Edendale–Southland PoC, 100 paired futures
+  </p>
+</div>
+```
+
 The proof of concept establishes five findings from the 100-future paired ensemble. Each is stated in terms of the boundary declarations of §6.1 and is traceable to the artefact chain documented in §6.8.
 
 **Finding 1: The grid upgrade finding.**

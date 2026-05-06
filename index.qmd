@@ -11,13 +11,15 @@ toc: false
     A Framework for Complex Decisions Under Deep Uncertainty
   </div>
   <div class="dcm-hero-title">
-    <strong>Decision-Centred</strong>
-    Thinking and Modelling
+    <strong>Decision-Centred Modelling</strong>
+    <span style="font-size:0.65em; opacity:0.7; 
+          display:block; margin-top:0.3rem;">
+      (DCM)
+    </span>
   </div>
   <p class="dcm-hero-sub">
-    A way of thinking — and a practical architecture — for decisions 
-    whose most important consequences lie outside the boundary of any 
-    single model, organisation, or planning horizon.
+    Foundations, Architecture, and Application to 
+    Industrial Process Heat Decarbonisation
   </p>
   <p class="dcm-hero-motto">
     "The decision makes the boundary; the artefact makes the connection."
@@ -187,6 +189,39 @@ toc: false
 
 <hr style="border:none; border-top:1px solid #dde6ef; margin:2.5rem 0;">
 
+```
+
+---
+
+## The Framework at a Glance {.unnumbered}
+
+```{=html}
+<div style="margin:2rem 0;">
+  <p style="font-size:0.88rem;color:#6b7a8d;margin-bottom:0.75rem;">
+    <strong style="color:#0f3460;">Diagram 1:</strong> 
+    Seven analytical layers — from facility demand 
+    construction through the governed backbone to 
+    the decision layer.
+  </p>
+  <img src="assets/figures/diagram1-architecture-stack.svg" 
+       alt="DCM Framework Architecture — Seven Layers" 
+       style="width:100%;max-width:720px;border-radius:8px;
+              border:1px solid #dde6ef;"/>
+</div>
+<div style="margin:2rem 0;">
+  <p style="font-size:0.88rem;color:#6b7a8d;margin-bottom:0.75rem;">
+    <strong style="color:#0f3460;">Diagram 2:</strong> 
+    Module dependency map — prerequisite reading 
+    paths across Modules 0 through 7.
+  </p>
+  <img src="assets/figures/diagram2-module-map.svg" 
+       alt="DCM Module Dependency Map" 
+       style="width:100%;max-width:720px;border-radius:8px;
+              border:1px solid #dde6ef;"/>
+</div>
+```
+
+```{=html}
 <!-- NAVIGATE -->
 <h2 style="font-family:'Helvetica Neue',Arial,sans-serif; 
            color:#0f3460; margin-bottom:1rem;">
@@ -194,42 +229,68 @@ toc: false
 </h2>
 <table>
   <thead>
-    <tr><th>I want to...</th><th>Start here</th></tr>
+    <tr><th>If you are...</th><th>Start here</th></tr>
   </thead>
   <tbody>
-    <tr><td>Understand the core concept</td>
-        <td><a href="manuscript/module-0-orientation.html">
-        Module 0: Orientation</a></td></tr>
-    <tr><td>See the decision theory foundations</td>
-        <td><a href="manuscript/module-1-foundations.html">
-        Module 1: Foundations</a></td></tr>
-    <tr><td>Read the architecture design</td>
-        <td><a href="manuscript/module-3-architecture.html">
-        Module 3: Architecture</a></td></tr>
-    <tr><td>See the proof of concept (NZ case)</td>
-        <td><a href="manuscript/module-6-poc.html">
-        Module 6: Proof of Concept</a></td></tr>
-    <tr><td>Read the eleven propositions</td>
-        <td><a href="manuscript/module-7-synthesis.html">
-        Module 7 §7.6</a></td></tr>
-    <tr><td>See extensions and the bigger vision</td>
-        <td><a href="manuscript/module-7-synthesis.html">
-        Module 7 §7.8–7.9</a></td></tr>
-    <tr><td>Browse all key terms</td>
-        <td><a href="references/glossary.html">Glossary</a></td></tr>
-    <tr><td>Discuss or contribute</td>
-        <td><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" 
-               target="_blank">GitHub Discussions</a></td></tr>
+    <tr>
+      <td>New to this framework — start here</td>
+      <td><a href="manuscript/module-0-orientation.html">
+      Module 0: Orientation (15 min)</a></td>
+    </tr>
+    <tr>
+      <td>A researcher in DMDU, integrated assessment, 
+      or systems modelling</td>
+      <td><a href="manuscript/module-1-foundations.html">
+      Module 1: Foundations</a></td>
+    </tr>
+    <tr>
+      <td>An energy system modeller or tool developer</td>
+      <td><a href="manuscript/module-3-architecture.html">
+      Module 3: Architecture</a></td>
+    </tr>
+    <tr>
+      <td>A practitioner or corporate strategist</td>
+      <td><a href="manuscript/module-4-domain.html">
+      Module 4: Domain Translation</a></td>
+    </tr>
+    <tr>
+      <td>Working in NZ energy policy or infrastructure</td>
+      <td><a href="manuscript/module-5-nz-context.html">
+      Module 5: NZ Context</a></td>
+    </tr>
+    <tr>
+      <td>Interested in the full proof of concept 
+      and results</td>
+      <td><a href="manuscript/module-6-poc.html">
+      Module 6: Proof of Concept</a></td>
+    </tr>
+    <tr>
+      <td>Evaluating the intellectual contribution</td>
+      <td><a href="manuscript/module-7-synthesis.html">
+      Module 7 §7.6: Eleven Propositions</a></td>
+    </tr>
+    <tr>
+      <td>Thinking about applying this outside 
+      energy systems</td>
+      <td><a href="manuscript/module-7-synthesis.html">
+      Module 7 §7.9: Beyond Infrastructure</a></td>
+    </tr>
+    <tr>
+      <td>Wanting to contribute a domain extension</td>
+      <td><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" 
+      target="_blank">GitHub Discussions</a></td>
+    </tr>
   </tbody>
 </table>
 
 <hr style="border:none; border-top:1px solid #dde6ef; margin:2rem 0;">
 
-<p style="font-size:0.82rem; color:#888; margin-bottom:3rem;">
-  <em>Seyed Ahmad Mahmoudi Lahijani — Auckland University of Technology 
-  — 2026</em> &nbsp;·&nbsp;
-  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">Repository</a> 
+<p style="font-size:0.82rem; color:#888; 
+          margin-bottom:3rem; margin-top:1rem;">
+  <em>Seyed Ahmad Mahmoudi Lahijani — 2026</em>
   &nbsp;·&nbsp;
+  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">
+  Repository</a> &nbsp;·&nbsp;
   <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions">
   Contribute</a>
 </p>

@@ -3,11 +3,10 @@ project:
   output-dir: _output
 
 book:
-  title: "Decision-Centred Thinking and Modelling"
+  title: "Decision-Centred Modelling (DCM)"
   subtitle: "Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation"
   author:
-    - name: "Seyed Ahmad Mahmoudi Lahijani"
-      affiliation: "Auckland University of Technology"
+    - name: Seyed Ahmad Mahmoudi Lahijani
   date: "2026"
   date-format: "YYYY"
   
