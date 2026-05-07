@@ -1,0 +1,158 @@
+---
+title: "Sub-Module 1.2-A"
+subtitle: "Mathematical Foundations and Formal Notation"
+number-sections: false
+---
+
+::: {.callout-note collapse="false" icon="false"}
+## Node Declaration — SM-1.2-A: Mathematical Foundations
+
+| Field | Content |
+|---|---|
+| **Tier** | Sub-Module |
+| **Status** | ✓ Complete `[Educational]` |
+| **Assumes** | §1.3 (Deep uncertainty), §1.5 (Regret, robustness, satisficing) |
+| **Contributes** | Formal specification of all symbols, indices, and mathematical definitions used throughout the manuscript, enabling rigorous engagement with the framework's analytical claims |
+| **Skip condition** | Skip if notation is familiar from the DMDU literature; return when encountering any formal expression in the manuscript |
+| **Passes to** | All sections using formal notation, particularly Module 2, Module 6 §6.4, and SM-4.4-A |
+| **Sub-Modules here** | None |
+:::
+
+---
+
+## Indices and Sets
+
+The following indices are used throughout the manuscript.
+All time series operate at hourly resolution unless
+otherwise stated.
+
+| Symbol | Range | Description |
+|---|---|---|
+| $t \in \mathcal{T}$ | $1,\ldots,8760$ | Hourly time index [h] |
+| $y \in \mathcal{Y}$ | $\{2020, 2025, 2028, 2035\}$ | Epoch/year index |
+| $u \in \mathcal{U}$ | — | Utility/technology unit index |
+| $s \in \mathcal{S}$ | $\{\text{EB, BB}\}$ | Pathway/strategy index |
+| $\omega \in \Omega$ | $0,\ldots,99$ | Future/uncertainty realisation index |
+
+---
+
+## Demand Construction (DemandPack)
+
+The DemandPack construction maps a normalised hourly shape
+to absolute demand via a scaling factor:
+
+$$D_{t,e} = \alpha_e \cdot s_{t,e}$$
+
+where $s_{t,e}$ is the normalised shape (dimensionless) for
+end-use $e$ at hour $t$, and $\alpha_e$ is the scaling factor
+derived from annual energy consistency:
+
+$$E_e^{\text{ann}} = \sum_{t \in \mathcal{T}} D_{t,e} \cdot \Delta t$$
+
+The scaling factor $\alpha_e$ is determined by solving this
+consistency condition given the declared annual total
+$E_e^{\text{ann}}$.
+
+---
+
+## Site Dispatch
+
+Proportional dispatch allocates total heat demand $D_t$ across
+committed units in proportion to nameplate capacity:
+
+$$q_{t,u} = D_t \cdot \frac{C_u}{\sum_{u' \in \mathcal{U}^{\text{on}}} C_{u'}}$$
+
+where $C_u$ is the nameplate thermal capacity of unit $u$ and
+$\mathcal{U}^{\text{on}}$ is the set of committed units.
+
+Unserved heat is:
+
+$$U_t = \max\left(0,\ D_t - \sum_{u \in \mathcal{U}} q_{t,u}\right)$$
+
+---
+
+## GXP Interface Signals
+
+The incremental electricity signal exported by the site module:
+
+$$\Delta E_t = p_t^{\text{pathway}} - p_t^{\text{baseline}}$$
+
+where $p_t$ is the site's electricity import at hour $t$.
+
+GXP headroom exceedance at time $t$:
+
+$$X_t = \max\left(0,\ \Delta E_t - H_t\right)$$
+
+where $H_t$ is the available GXP headroom, scaled per future
+$\omega$ by the headroom multiplier $U_{\text{head}}^\omega$:
+
+$$H_t^\omega = H_t^{\text{ref}} \cdot U_{\text{head}}^\omega$$
+
+---
+
+## Economic Notation
+
+| Symbol | Units | Description |
+|---|---|---|
+| $C_{\text{fuel}}$ | NZD/MWh | Delivered fuel cost |
+| $C_{\text{elec}}$ | NZD/MWh | Electricity tariff |
+| $C_{\text{capex}}$ | NZD | Capital cost |
+| $C_{\text{fix}}$ | NZD/yr | Fixed operation and maintenance |
+| $C_{\text{var}}$ | NZD/MWh | Variable operation and maintenance |
+| $\text{VOLL}$ | NZD/MWh | Value of lost load |
+| $r$ | — | Discount rate |
+| $\text{CRF}$ | — | Capital recovery factor |
+| $p_{\text{CO}_2}$ | NZD/tCO₂e | Carbon price (ETS) |
+
+Total system cost for pathway $s$ under future $\omega$:
+
+$$Z(s,\omega) = C_{\text{site}}(s,\omega) + C_{\text{grid}}(s,\omega)$$
+
+where $C_{\text{grid}}$ includes annualised upgrade cost and
+unserved energy penalty.
+
+---
+
+## Robustness and Regret
+
+**Regret** of pathway $s$ in future $\omega$:
+
+$$\rho(s,\omega) = Z(s,\omega) - \min_{s' \in \mathcal{S}} Z(s',\omega)$$
+
+Regret is zero for the minimum-cost pathway in each future
+and positive for all others.
+
+**Maximum regret**:
+
+$$R_{\max}(s) = \max_{\omega \in \Omega} \rho(s,\omega)$$
+
+**Satisficing rate** at threshold $\tau$:
+
+$$\text{SR}(s,\tau) = \frac{|\{\omega \in \Omega : Z(s,\omega) \leq \tau\}|}{|\Omega|}$$
+
+**Win rate** (fraction of futures where $s$ is minimum-cost):
+
+$$\text{WR}(s) = \frac{|\{\omega \in \Omega : \rho(s,\omega) = 0\}|}{|\Omega|}$$
+
+---
+
+## Uncertainty Multipliers (Paired-Futures Ensemble)
+
+Each future $\omega$ is characterised by a vector of
+uncertain driver realisations. In the proof-of-concept
+ensemble of 100 paired futures:
+
+| Multiplier | Applied to | P10 / Median / P90 |
+|---|---|---|
+| $P_{\text{elec}}^\omega$ | Site electricity cost | 0.785 / 0.987 / 1.184 |
+| $P_{\text{bio}}^\omega$ | Site biomass cost | 1.133 / 1.486 / 2.038 |
+| $P_{\text{ETS}}^\omega$ | Carbon proxy cost | 0.950 / 1.275 / 1.654 |
+| $U_{\text{head}}^\omega$ | GXP headroom | 0.817 / 0.890 / 0.950 |
+| $U_{\text{inc}}^\omega$ | Incremental load | 0.927 / 1.003 / 1.081 |
+| $U_{\text{upgrade}}^\omega$ | Upgrade CAPEX | 0.920 / 1.071 / 1.285 |
+| $\text{VOLL}^\omega$ | Unserved penalty | 10,000–20,000 NZD/MWh |
+
+All multipliers are applied multiplicatively to baseline
+values. The paired-futures contract requires that both EB
+and BB pathways are evaluated under identical
+$\{\omega\}_{0}^{99}$ to ensure comparability.

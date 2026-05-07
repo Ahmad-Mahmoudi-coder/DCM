@@ -4,7 +4,8 @@ project:
 
 book:
   title: "Decision-Centred Modelling (DCM)"
-  subtitle: "Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation"
+  subtitle: "Foundations, Architecture, and Application 
+             to Industrial Process Heat Decarbonisation"
   author:
     - name: Seyed Ahmad Mahmoudi Lahijani
   date: "2026"
@@ -15,45 +16,40 @@ book:
   
   chapters:
     - index.qmd
-    - part: "Front Matter"
+    - part: "Preface — The General Landscape"
       chapters:
         - front-matter/context-declaration.qmd
         - front-matter/ai-acknowledgement.qmd
         - front-matter/preamble.qmd
         - front-matter/navigation-guide.qmd
-    - part: "Module 0: Orientation"
+    - part: "The Framework — Part I: Foundations"
       chapters:
         - manuscript/module-0-orientation.qmd
-    - part: "Module 1: Foundations"
-      chapters:
         - manuscript/module-1-foundations.qmd
         - manuscript/sub-modules/sm-1-1A-philosophical-lineage.qmd
+        - manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd
         - manuscript/sub-modules/sm-1-4A-decision-theory.qmd
         - manuscript/sub-modules/sm-1-7A-requirements-mapping.qmd
-    - part: "Module 2: Modelling Foundations"
-      chapters:
         - manuscript/module-2-modelling.qmd
         - manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd
         - manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd
         - manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
-    - part: "Module 3: Architecture"
+    - part: "The Framework — Part II: Architecture"
       chapters:
         - manuscript/module-3-architecture.qmd
         - manuscript/sub-modules/sm-3-5A-artefact-schema.qmd
         - manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd
         - manuscript/sub-modules/sm-3-8A-aiml-governance.qmd
-    - part: "Module 4: Domain Translation"
-      chapters:
         - manuscript/module-4-domain.qmd
         - manuscript/sub-modules/sm-4-4A-system-regret.qmd
-    - part: "Module 5: The New Zealand Context"
+    - part: "The Evidence — Part III: NZ Context"
       chapters:
         - manuscript/module-5-nz-context.qmd
         - manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
         - manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
         - manuscript/sub-modules/sm-5-4A-ets-history.qmd
         - manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd
-    - part: "Module 6: The Proof of Concept"
+    - part: "The Evidence — Part IV: Proof of Concept"
       chapters:
         - manuscript/module-6-poc.qmd
         - manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd
@@ -62,10 +58,12 @@ book:
         - manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd
         - manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd
         - manuscript/sub-modules/sm-6-8F-validation-records.qmd
-    - part: "Module 7: Extension and Synthesis"
+    - part: "Synthesis — Part V: Extension and Conclusions"
       chapters:
         - manuscript/module-7-synthesis.qmd
-    - references/glossary.qmd
+    - part: "Reference"
+      chapters:
+        - references/glossary.qmd
 
 bibliography: references/references.bib
 
@@ -77,14 +75,6 @@ format:
     fig-align: center
     toc: true
     toc-depth: 3
-    toc-expand: 2
-    number-sections: true
-    number-depth: 3
-    smooth-scroll: true
-    code-fold: false
-    link-external-icon: true
-    link-external-newwindow: true
-    callout-appearance: minimal
   docx:
     fig-width: 6
     fig-height: 4

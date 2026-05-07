@@ -34,6 +34,16 @@ subtitle: "Modular Decomposition, Artefacts, and Governed Persistence"
 
 The tools described in Module 2, optimisation, simulation, surrogate emulation, and ensemble construction, are powerful in isolation. When the problem requires them to work together across scales, the question of how they should be organised becomes decisive. A monolithic analytical system, one that encompasses all components within a single model or single codebase, cannot satisfy four of the seven requirements derived in §1.7. This is not a statement about computational limitations. It is a statement about what monolithic architectures structurally cannot provide, regardless of how sophisticated the underlying tools are.
 
+::: {.column-margin}
+**Quick reference**
+
+Status: ✓ Implemented  
+Thin waist: §3.4  
+Artefact schema: SM-3.5-A  
+Backbone: SM-3.7-A  
+AI/ML governance: SM-3.8-A
+:::
+
 The first reason modularity is necessary is scale heterogeneity. The decision problem of §1.1 operates simultaneously at the scale of individual facility operations, regional electricity networks, and national policy environments. A site-level thermal dispatch simulation requires hourly or sub-hourly resolution over individual utility assets. A regional network optimisation requires nodal resolution across a transmission topology. A national scenario model requires annual resolution across economic sectors. No single model formulation can operate simultaneously at all three scales without sacrificing what each scale requires. Modularity allows the site module to operate at the scale it needs, the regional module to operate at the scale it needs, and the two to exchange only the signal-level information that crosses the boundary between them: the compact IncrementalElectricityPack from site to regional, the SignalsPack from regional back to site.
 
 The second reason is method heterogeneity. The best tool for site-level dispatch is not the best tool for regional network adequacy assessment, and neither is the best tool for DMDU ensemble evaluation. LP-based scheduling, equation-based physical simulation, network flow optimisation, and surrogate emulation are all legitimate and powerful methods for their respective purposes. A monolithic system forces all of them into one formulation, typically at the cost of the most computationally demanding component constraining the resolution or method choice for all others. Modularity allows each component to use the method most appropriate to its role.
