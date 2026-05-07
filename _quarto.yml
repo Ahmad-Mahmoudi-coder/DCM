@@ -69,7 +69,8 @@ bibliography: references/references.bib
 
 format:
   html:
-    theme: [default, assets/custom.css]
+    theme: default
+    css: assets/custom.css
     fig-width: 8
     fig-height: 5
     fig-align: center
