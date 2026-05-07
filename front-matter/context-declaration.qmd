@@ -185,7 +185,7 @@ Module 7 synthesises extending the framework beyond its current instantiation, s
 The following terms are used throughout this 
 document in the precise senses defined below. 
 Full definitions for all framework terms are in 
-the [Glossary](references/glossary.qmd).
+the [Glossary](../references/glossary.qmd).
 
 **Decision-first boundary principle.** Analytical 
 boundaries are drawn by the decision context — what 
