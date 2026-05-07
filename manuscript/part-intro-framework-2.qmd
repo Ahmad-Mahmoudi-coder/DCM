@@ -1,0 +1,8 @@
+---
+title: "The Framework — Part II: Architecture"
+---
+Modules 3 and 4 specify the analytical architecture: 
+modular decomposition, the thin-waist artefact 
+exchange, the governed backbone, and the energy-domain 
+translation layer that makes the framework 
+instantiable in practice.

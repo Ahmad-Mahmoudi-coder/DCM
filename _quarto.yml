@@ -18,12 +18,14 @@ book:
     - index.qmd
     - part: "Preface — The General Landscape"
       chapters:
+        - front-matter/part-intro-preface.qmd
         - front-matter/context-declaration.qmd
         - front-matter/ai-acknowledgement.qmd
         - front-matter/preamble.qmd
         - front-matter/navigation-guide.qmd
     - part: "The Framework — Part I: Foundations"
       chapters:
+        - manuscript/part-intro-framework-1.qmd
         - manuscript/module-0-orientation.qmd
         - manuscript/module-1-foundations.qmd
         - manuscript/sub-modules/sm-1-1A-philosophical-lineage.qmd
@@ -36,14 +38,16 @@ book:
         - manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
     - part: "The Framework — Part II: Architecture"
       chapters:
+        - manuscript/part-intro-framework-2.qmd
         - manuscript/module-3-architecture.qmd
         - manuscript/sub-modules/sm-3-5A-artefact-schema.qmd
         - manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd
         - manuscript/sub-modules/sm-3-8A-aiml-governance.qmd
         - manuscript/module-4-domain.qmd
         - manuscript/sub-modules/sm-4-4A-system-regret.qmd
-    - part: "The Evidence — Part III: NZ Context"
+    - part: "The Evidence"
       chapters:
+        - manuscript/part-intro-evidence.qmd
         - manuscript/module-5-nz-context.qmd
         - manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
         - manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
@@ -60,6 +64,7 @@ book:
         - manuscript/sub-modules/sm-6-8F-validation-records.qmd
     - part: "Synthesis — Part V: Extension and Conclusions"
       chapters:
+        - manuscript/part-intro-synthesis.qmd
         - manuscript/module-7-synthesis.qmd
     - part: "Reference"
       chapters:

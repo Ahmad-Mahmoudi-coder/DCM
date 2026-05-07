@@ -1,0 +1,7 @@
+---
+title: "Preface and Orientation"
+---
+The following sections establish the intellectual 
+context, community governance, and navigation 
+architecture for the Decision-Centred Modelling 
+framework before the analytical modules begin.

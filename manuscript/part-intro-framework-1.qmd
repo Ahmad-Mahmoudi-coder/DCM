@@ -1,0 +1,8 @@
+---
+title: "The Framework — Part I: Foundations"
+---
+Modules 0 through 2 establish the conceptual and 
+methodological foundations: why decision-centred 
+boundary setting is necessary, why conventional 
+tools are insufficient, and what kind of 
+mathematical and modelling architecture is required.

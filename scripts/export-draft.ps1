@@ -1,4 +1,4 @@
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+﻿[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 chcp 65001 | Out-Null
 
 $env:Path = "C:\Model\tools\quarto-1.9.37\bin;" + $env:Path
@@ -15,7 +15,7 @@ quarto render --to docx
 
 Start-Sleep -Seconds 2
 
-$source = "$projectRoot\_output\Decision-Centred-Thinking-and-Modelling.docx"
+$source = "$projectRoot\_output\Decision-Centred-Modelling--DCM-.docx"
 
 if (Test-Path $source) {
     $ts = Get-Date -Format "yyyy-MM-dd_HHmm"
@@ -33,3 +33,4 @@ if (Test-Path $source) {
     Write-Host "All files in _output:" -ForegroundColor Gray
     Get-ChildItem "$projectRoot\_output" | Select-Object Name, LastWriteTime
 }
+
