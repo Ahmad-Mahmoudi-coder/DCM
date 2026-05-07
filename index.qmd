@@ -1,5 +1,5 @@
 ---
-title: "Decision-Centred Thinking and Modelling"
+title: "Decision-Centred Modelling (DCM)"
 page-layout: full
 toc: false
 ---
