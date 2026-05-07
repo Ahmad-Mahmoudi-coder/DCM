@@ -292,7 +292,7 @@ Validation Records and Artefact Log — per-artefact acceptance gate outcomes, f
 ![Figure 6.0: Decision tree and robustness outcomes 
 — EB vs BB pathway comparison, 100 paired futures, 
 Edendale–Southland PoC.](
-../assets/figures/diagram3-pathway-comparison.svg
+../assets/figures/diagram3-pathway-comparison.png
 ){#fig-pathway-decision width=100%}
 
 The proof of concept establishes five findings from the 100-future paired ensemble. Each is stated in terms of the boundary declarations of §6.1 and is traceable to the artefact chain documented in §6.8.

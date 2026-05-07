@@ -10,6 +10,20 @@ $label = if ($args[0]) { $args[0] } else { "draft" }
 $drafts = "$projectRoot\drafts"
 New-Item -ItemType Directory -Path $drafts -Force | Out-Null
 
+# QMD figure paths use PNG in assets/figures for DOCX embedding; SVG remains for sharp HTML.
+$diagramPngs = @(
+    "diagram1-architecture-stack.png",
+    "diagram2-module-map.png",
+    "diagram3-pathway-comparison.png"
+)
+$figDir = Join-Path $projectRoot "assets\figures"
+foreach ($f in $diagramPngs) {
+    $p = Join-Path $figDir $f
+    if (-not (Test-Path $p)) {
+        Write-Host "WARNING: Missing $f under assets\figures — DOCX may omit diagram figures." -ForegroundColor Yellow
+    }
+}
+
 Write-Host "Rendering DOCX..." -ForegroundColor Cyan
 quarto render --to docx
 

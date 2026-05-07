@@ -241,5 +241,5 @@ prerequisite reading direction.
 
 ![Figure N.1: Module dependency map — prerequisite 
 reading paths across Modules 0 through 7.](
-../assets/figures/diagram2-module-map.svg
+../assets/figures/diagram2-module-map.png
 ){#fig-module-map width=100%}

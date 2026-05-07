@@ -116,7 +116,7 @@ The framework consists of seven functional layers. These are not sequential step
 ![Figure 0.1: Seven analytical layers of the 
 Decision-Centred Modelling framework — artefact 
 exchange across the governed backbone.](
-../assets/figures/diagram1-architecture-stack.svg
+../assets/figures/diagram1-architecture-stack.png
 ){#fig-architecture width=100%}
 
 Layer 1: The Decision Layer (Module 1) is the conceptual foundation. It asks what kinds of decisions the framework is designed to support, how alternatives and futures should be structured analytically, and what standards of comparison are appropriate when stable probability distributions over futures are unavailable. This layer establishes the decision-first boundary principle in full formal terms and articulates the evaluative standards, regret, robustness, and satisficing, that govern what must remain visible in the analytical environment. Without the Decision Layer, the other layers have no principled account of what they are generating consequences for or how those consequences should be compared.
