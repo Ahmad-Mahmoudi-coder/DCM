@@ -90,7 +90,6 @@ format:
     fig-height: 4
     fig-align: center
     number-sections: true
-    reference-doc: null
 
 execute:
   echo: false
