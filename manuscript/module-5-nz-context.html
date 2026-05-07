@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>21&nbsp; Module 5: The New Zealand Context – Decision-Centred Modelling (DCM)</title>
+<title>22&nbsp; Module 5: The New Zealand Context – Decision-Centred Modelling (DCM)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -41,14 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-acff971833d9769290026d534105daaa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-94509cf776e35d8cf5b7004333b6cf71.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -76,175 +72,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../assets/custom.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -253,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html">Module 5: The New Zealand Context</a></li><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html">The Evidence — Part III: NZ Context</a></li><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -271,7 +104,6 @@ ul.task-list li input[type="checkbox"] {
       <a href="../">Decision-Centred Modelling (DCM)</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -291,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Front Matter</span></a>
+ <span class="menu-text">Preface — The General Landscape</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -326,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 0: Orientation</span></a>
+ <span class="menu-text">The Framework — Part I: Foundations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -338,17 +170,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Module 0: Orientation</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 1: Foundations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../manuscript/module-1-foundations.html" class="sidebar-item-text sidebar-link">
@@ -363,14 +184,91 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-1-2A-mathematical-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.2-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../manuscript/sub-modules/sm-1-4A-decision-theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.4-A</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sub-Module 1.4-A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../manuscript/sub-modules/sm-1-7A-requirements-mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sub-Module 1.7-A</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sub-Module 1.7-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/module-2-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Module 2: Modelling Foundations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-2-2A-optimisation-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Sub-Module 2.2-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-2-3A-surrogate-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sub-Module 2.3-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-2-4A-scenario-discovery.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Sub-Module 2.4-A</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">The Framework — Part II: Architecture</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/module-3-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Module 3: Architecture</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-3-5A-artefact-schema.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sub-Module 3.5-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-3-7A-backbone-implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sub-Module 3.7-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-3-8A-aiml-governance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Sub-Module 3.8-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/module-4-domain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Module 4: Domain Translation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-4-4A-system-regret.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Sub-Module 4.4-A</span></span></a>
   </div>
 </li>
       </ul>
@@ -378,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 2: Modelling Foundations</span></a>
+ <span class="menu-text">The Evidence — Part III: NZ Context</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -386,26 +284,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/module-2-modelling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Module 2: Modelling Foundations</span></span></a>
+  <a href="../manuscript/module-5-nz-context.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-2-2A-optimisation-roles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sub-Module 2.2-A</span></span></a>
+  <a href="../manuscript/sub-modules/sm-5-2A-gxp-capacity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sub-Module 5.2-A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-2-3A-surrogate-validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Sub-Module 2.3-A</span></span></a>
+  <a href="../manuscript/sub-modules/sm-5-3A-biomass-supply.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sub-Module 5.3-A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-2-4A-scenario-discovery.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sub-Module 2.4-A</span></span></a>
+  <a href="../manuscript/sub-modules/sm-5-4A-ets-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Sub-Module 5.4-A</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Sub-Module 5.5-A</span></span></a>
   </div>
 </li>
       </ul>
@@ -413,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 3: Architecture</span></a>
+ <span class="menu-text">The Evidence — Part IV: Proof of Concept</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -421,26 +325,44 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/module-3-architecture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Module 3: Architecture</span></span></a>
+  <a href="../manuscript/module-6-poc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Module 6: The Proof of Concept</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-3-5A-artefact-schema.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Sub-Module 3.5-A</span></span></a>
+  <a href="../manuscript/sub-modules/sm-6-2A-poc-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Sub-Module 6.2-A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-3-7A-backbone-implementation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sub-Module 3.7-A</span></span></a>
+  <a href="../manuscript/sub-modules/sm-6-3B-demandpack-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Sub-Module 6.3-B</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-3-8A-aiml-governance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sub-Module 3.8-A</span></span></a>
+  <a href="../manuscript/sub-modules/sm-6-4C-site-interface-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Sub-Module 6.4-C</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-6-5D-signalspack-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Sub-Module 6.5-D</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-6-6E-pypsa-module-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Sub-Module 6.6-E</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuscript/sub-modules/sm-6-8F-validation-records.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Sub-Module 6.8-F</span></span></a>
   </div>
 </li>
       </ul>
@@ -448,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 4: Domain Translation</span></a>
+ <span class="menu-text">Synthesis — Part V: Extension and Conclusions</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -456,14 +378,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/module-4-domain.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Module 4: Domain Translation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-4-4A-system-regret.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Sub-Module 4.4-A</span></span></a>
+  <a href="../manuscript/module-7-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Module 7: Extension and Synthesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -471,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 5: The New Zealand Context</span></a>
+ <span class="menu-text">Reference</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -479,138 +395,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../manuscript/module-5-nz-context.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-5-2A-gxp-capacity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Sub-Module 5.2-A</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-5-3A-biomass-supply.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sub-Module 5.3-A</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-5-4A-ets-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sub-Module 5.4-A</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Sub-Module 5.5-A</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 6: The Proof of Concept</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/module-6-poc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Module 6: The Proof of Concept</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-6-2A-poc-pipeline.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Sub-Module 6.2-A</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-6-3B-demandpack-methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Sub-Module 6.3-B</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-6-4C-site-interface-contract.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Sub-Module 6.4-C</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-6-5D-signalspack-contract.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Sub-Module 6.5-D</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-6-6E-pypsa-module-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Sub-Module 6.6-E</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/sub-modules/sm-6-8F-validation-records.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Sub-Module 6.8-F</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 7: Extension and Synthesis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../manuscript/module-7-synthesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Module 7: Extension and Synthesis</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../references/glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#a-renewable-grid-against-a-fossil-heat-sector" id="toc-a-renewable-grid-against-a-fossil-heat-sector" class="nav-link active" data-scroll-target="#a-renewable-grid-against-a-fossil-heat-sector"><span class="header-section-number">21.1</span> §5.1 A Renewable Grid Against a Fossil Heat Sector</a></li>
-  <li><a href="#the-gxp-structure-and-electrification-constraints" id="toc-the-gxp-structure-and-electrification-constraints" class="nav-link" data-scroll-target="#the-gxp-structure-and-electrification-constraints"><span class="header-section-number">21.2</span> §5.2 The GXP Structure and Electrification Constraints</a></li>
-  <li><a href="#biomass-as-the-competing-pathway" id="toc-biomass-as-the-competing-pathway" class="nav-link" data-scroll-target="#biomass-as-the-competing-pathway"><span class="header-section-number">21.3</span> §5.3 Biomass as the Competing Pathway</a></li>
-  <li><a href="#policy-uncertainty-as-a-structural-driver" id="toc-policy-uncertainty-as-a-structural-driver" class="nav-link" data-scroll-target="#policy-uncertainty-as-a-structural-driver"><span class="header-section-number">21.4</span> §5.4 Policy Uncertainty as a Structural Driver</a></li>
-  <li><a href="#the-analytical-landscape-reta-gidi-and-times-nz" id="toc-the-analytical-landscape-reta-gidi-and-times-nz" class="nav-link" data-scroll-target="#the-analytical-landscape-reta-gidi-and-times-nz"><span class="header-section-number">21.5</span> §5.5 The Analytical Landscape: RETA, GIDI, and TIMES-NZ</a></li>
-  <li><a href="#grounding-the-futureartefact-uncertain-drivers" id="toc-grounding-the-futureartefact-uncertain-drivers" class="nav-link" data-scroll-target="#grounding-the-futureartefact-uncertain-drivers"><span class="header-section-number">21.6</span> §5.6 Grounding the FutureArtefact Uncertain Drivers</a></li>
+  <li><a href="#a-renewable-grid-against-a-fossil-heat-sector" id="toc-a-renewable-grid-against-a-fossil-heat-sector" class="nav-link active" data-scroll-target="#a-renewable-grid-against-a-fossil-heat-sector"><span class="header-section-number">22.1</span> §5.1 A Renewable Grid Against a Fossil Heat Sector</a></li>
+  <li><a href="#the-gxp-structure-and-electrification-constraints" id="toc-the-gxp-structure-and-electrification-constraints" class="nav-link" data-scroll-target="#the-gxp-structure-and-electrification-constraints"><span class="header-section-number">22.2</span> §5.2 The GXP Structure and Electrification Constraints</a></li>
+  <li><a href="#biomass-as-the-competing-pathway" id="toc-biomass-as-the-competing-pathway" class="nav-link" data-scroll-target="#biomass-as-the-competing-pathway"><span class="header-section-number">22.3</span> §5.3 Biomass as the Competing Pathway</a></li>
+  <li><a href="#policy-uncertainty-as-a-structural-driver" id="toc-policy-uncertainty-as-a-structural-driver" class="nav-link" data-scroll-target="#policy-uncertainty-as-a-structural-driver"><span class="header-section-number">22.4</span> §5.4 Policy Uncertainty as a Structural Driver</a></li>
+  <li><a href="#the-analytical-landscape-reta-gidi-and-times-nz" id="toc-the-analytical-landscape-reta-gidi-and-times-nz" class="nav-link" data-scroll-target="#the-analytical-landscape-reta-gidi-and-times-nz"><span class="header-section-number">22.5</span> §5.5 The Analytical Landscape: RETA, GIDI, and TIMES-NZ</a></li>
+  <li><a href="#grounding-the-futureartefact-uncertain-drivers" id="toc-grounding-the-futureartefact-uncertain-drivers" class="nav-link" data-scroll-target="#grounding-the-futureartefact-uncertain-drivers"><span class="header-section-number">22.6</span> §5.6 Grounding the FutureArtefact Uncertain Drivers</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/module-5-nz-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html">Module 5: The New Zealand Context</a></li><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html">The Evidence — Part III: NZ Context</a></li><li class="breadcrumb-item"><a href="../manuscript/module-5-nz-context.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></h1>
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Module 5: The New Zealand Context</span></h1>
 <p class="subtitle lead">Conditions, Constraints, and Empirical Grounding</p>
 </div>
 
@@ -628,7 +443,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -681,9 +496,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="a-renewable-grid-against-a-fossil-heat-sector" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="a-renewable-grid-against-a-fossil-heat-sector"><span class="header-section-number">21.1</span> §5.1 A Renewable Grid Against a Fossil Heat Sector</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="a-renewable-grid-against-a-fossil-heat-sector" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="a-renewable-grid-against-a-fossil-heat-sector"><span class="header-section-number">22.1</span> §5.1 A Renewable Grid Against a Fossil Heat Sector</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -746,9 +561,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Fonterra’s commitment, made publicly and incorporated into its sustainability reporting framework, to eliminate coal from its New Zealand manufacturing operations by 2037 creates a specific and time-bounded decision context for the largest single industrial heat user in the country. Fonterra operates eight large dairy processing facilities in the South Island alone, together consuming a substantial fraction of the South Island’s total industrial coal demand. The scale and concentration of this demand commitment makes the transition pathway choices analytically important beyond the individual facility level: the aggregate grid impact of multiple large-scale electrification decisions occurring simultaneously within the same regional transmission zone creates infrastructure consequences that individual site assessments cannot anticipate and that make the system-level regret architecture of Module 4 analytically necessary rather than merely theoretically attractive.</p>
 <p>The structural disconnect identified here, a low-carbon grid that is not straightforwardly accessible to the large fossil-fuelled heat users most likely to benefit from electrification, is the empirical grounding for the framework’s multi-layer architecture. It is what makes the GXP hosting capacity assessment a first-order analytical concern rather than a background condition, and it is what gives the 23-of-64 finding its practical significance.</p>
 </section>
-<section id="the-gxp-structure-and-electrification-constraints" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="the-gxp-structure-and-electrification-constraints"><span class="header-section-number">21.2</span> §5.2 The GXP Structure and Electrification Constraints</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="the-gxp-structure-and-electrification-constraints" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="the-gxp-structure-and-electrification-constraints"><span class="header-section-number">22.2</span> §5.2 The GXP Structure and Electrification Constraints</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -810,10 +625,10 @@ ul.task-list li input[type="checkbox"] {
 <p>For large industrial connections with a contracted supply capacity exceeding 100 kVA, additional obligations apply. When the projected coincident demand of the new connection exceeds 10 percent of the available subtransmission capacity at the relevant zone substation, and the existing demand at that substation already exceeds 80 percent of its firm capacity, a Customer Contribution towards subtransmission network expansion may be required. The customer is also required to enter into a Capacity Guarantee Agreement, a formal contractual commitment to maintain the contracted supply capacity for a period of ten years, or to compensate the network for the balance of its unrecovered investment if the capacity is reduced before that period expires. These commercial terms are directly relevant to the framework’s system-level regret calculation: the Customer Contribution and associated network upgrade costs represent a genuine system cost that may not appear in the site-perspective assessment but is borne by someone, either the connecting customer or the broader network, depending on the specific commercial outcome of the connection assessment.</p>
 <p>The Edendale dairy processing facility connects to the national transmission system at the Edendale GXP (identifier EDN0331) within the Mararoa-Waimea transmission cluster. The Mararoa-Waimea cluster serves the eastern Southland region and supplies Fonterra’s Edendale facility, which is among the largest individual electricity consumers connected to this part of the Southland distribution network. The GXP’s hosting capacity, meaning the additional electrical demand that can be accommodated without triggering subtransmission reinforcement, is subject to genuine uncertainty because it depends on the simultaneously evolving demand from other users in the zone, the timing of planned Transpower investments in the national grid infrastructure serving the cluster, and the coincident demand pattern of any new large loads connecting in the same region.</p>
 <p>The uncertainty in headroom estimation is the empirical basis for the headroom multiplier dimension of the FutureArtefact ensemble. The multiplier spans the range from a constrained scenario, in which other industrial users in the region are also electrifying and residual headroom is limited, to an unconstrained scenario, in which the reference headroom is available in full. Sub-Module SM-5.2-A documents the published capacity data for the Mararoa-Waimea cluster and the reserve margin methodology that governs how headroom is estimated.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Sub-Module SM-5.2-A
@@ -824,9 +639,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="biomass-as-the-competing-pathway" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="biomass-as-the-competing-pathway"><span class="header-section-number">21.3</span> §5.3 Biomass as the Competing Pathway</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="biomass-as-the-competing-pathway" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="biomass-as-the-competing-pathway"><span class="header-section-number">22.3</span> §5.3 Biomass as the Competing Pathway</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -888,10 +703,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The economics of the biomass pathway depend on three interacting factors that are each genuinely uncertain at the planning horizon relevant to a 2035 investment decision. The first is biomass availability, which is a function of plantation harvest schedules, the competing demand from other potential biomass users including the wood-processing industries, electricity generators with co-generation capacity, and any new industrial biomass demand from other coal-phase-out commitments in the same region. The Southland region’s dairy, meat processing, and wood products sectors share potential access to the same biomass resource base, and the simultaneous pursuit of biomass pathways by multiple users could constrain availability and drive up delivered costs above levels that are currently indicative.</p>
 <p>The second factor is delivered cost, which reflects logistics as much as feedstock price. Biomass has a lower energy density than coal on both a mass and volume basis, meaning that the transport cost per unit of delivered energy is higher. The delivered cost from a specific supply zone to the Edendale facility depends on the distance from the supply cluster, the transport mode, and the processing required to bring the moisture content and particle size within combustion specifications. These logistics characteristics mean that the biomass supply chain is spatially sensitive in a way that the coal supply chain, which uses established rail logistics from the West Coast, was not.</p>
 <p>The third factor is the sustainability certification requirement. While biomass is treated as carbon-neutral under New Zealand’s ETS, the policy treatment is subject to ongoing review, and the conditions under which biomass remains exempt from ETS liability may change. Internationally, sustainability certification requirements for biomass are becoming more stringent, and facilities seeking to use biomass as a coal replacement under corporate sustainability commitments face reputational as well as regulatory risks if supply chain sustainability is inadequately documented. Sub-Module SM-5.3-A provides the resource and cost estimates and the FutureArtefact calibration for biomass availability and cost multipliers.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Sub-Module SM-5.3-A
@@ -902,9 +717,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="policy-uncertainty-as-a-structural-driver" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="policy-uncertainty-as-a-structural-driver"><span class="header-section-number">21.4</span> §5.4 Policy Uncertainty as a Structural Driver</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="policy-uncertainty-as-a-structural-driver" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="policy-uncertainty-as-a-structural-driver"><span class="header-section-number">22.4</span> §5.4 Policy Uncertainty as a Structural Driver</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -965,10 +780,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The scheme’s price history illustrates the point. From its inception until approximately 2017, the New Zealand ETS price was suppressed to near-zero levels by the availability of cheap international units, in particular Assigned Amount Units from countries with surplus Kyoto commitments, which domestic participants could use to meet their obligations at negligible cost. The removal of international unit access in 2015 and the subsequent redesign of the scheme through the 2019 amendments produced a substantial and sustained increase in the NZU price from under NZD 10 per tonne in 2017 to above NZD 60 per tonne by 2021, with further increases to above NZD 80 per tonne by 2022 before price softening through 2023. The fixed price option, which sets a cap on the NZU price, has been progressively raised from NZD 25 per tonne to NZD 50 per tonne to the current NZD 173 per tonne, signalling an intent to allow prices to rise substantially but with the political mechanism for reversing that intent still in place.</p>
 <p>For an investment decision with a fifteen-year horizon, the ETS price trajectory from 2025 to 2040 is one of the most important uncertain drivers of pathway economics. The electrification pathway eliminates direct combustion emissions and therefore eliminates ETS liability on that component of the facility’s carbon account. The biomass pathway also eliminates direct combustion emissions if biomass is accepted as carbon-neutral, which is the current policy treatment but is subject to review. The coal baseline, if it were to continue, would face escalating ETS costs. The question of whether the ETS price rises sufficiently to make either transition pathway clearly more attractive than the other on carbon-cost grounds alone cannot be answered from current settings or historical trends. It requires the structured exploration across plausible ETS price trajectories that the FutureArtefact ensemble provides.</p>
 <p>The National Environmental Standards for Industrial Greenhouse Gas Emissions, commonly called the NES, establish a coal phase-out pathway that prohibits new coal-fired boilers above a defined scale threshold and sets sunset dates for existing coal-fired equipment in specified industrial categories. The NES timeline directly constrains the Edendale decision: the deadline for coal phase-out creates a forcing condition that makes the decision non-optional regardless of whether the pathway economics are favourable at any given ETS price. The interaction between the NES timeline and the uncertainty about which pathway performs best across plausible futures is what makes the proof-of-concept analysis analytically interesting and practically important. Sub-Module SM-5.4-A provides the ETS design history, price trajectory data, and NES timeline that ground the ETS and policy dimensions of the FutureArtefact ensemble.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Sub-Module SM-5.4-A
@@ -979,9 +794,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="the-analytical-landscape-reta-gidi-and-times-nz" class="level2" data-number="21.5">
-<h2 data-number="21.5" class="anchored" data-anchor-id="the-analytical-landscape-reta-gidi-and-times-nz"><span class="header-section-number">21.5</span> §5.5 The Analytical Landscape: RETA, GIDI, and TIMES-NZ</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="the-analytical-landscape-reta-gidi-and-times-nz" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="the-analytical-landscape-reta-gidi-and-times-nz"><span class="header-section-number">22.5</span> §5.5 The Analytical Landscape: RETA, GIDI, and TIMES-NZ</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1042,10 +857,10 @@ ul.task-list li input[type="checkbox"] {
 <p>RETA (Regional Energy Transition Accelerator) is an EECA-led programme that provides rapid, standardised assessments of decarbonisation opportunities and infrastructure requirements across New Zealand’s industrial and commercial heat sectors at a regional scale. The RETA methodology uses publicly available GXP capacity data, survey-based energy demand estimates, and indicative technology cost parameters to screen large numbers of sites quickly, identifying clusters where electrification and biomass transitions are potentially feasible and mapping the grid infrastructure that would be required to enable them. The Southland RETA assessment identifies the Mararoa-Waimea cluster as a constraint zone and provides the reference capacity estimate that grounds the headroom multiplier in the FutureArtefact ensemble. The RETA methodology is designed for coverage and speed: it produces regional maps of opportunity and constraint, not site-specific investment decisions. The framework takes RETA outputs as calibration inputs, not as decision-informing conclusions.</p>
 <p>GIDI (Government Investment in Decarbonising Industry) is a government co-investment fund administered by EECA that provides capital grants to industrial facilities committing to fossil fuel phase-out. GIDI funding changes the effective capital cost of transition investments for eligible applicants, shifting the private cost of the transition partially from the facility operator to the government. For the framework’s site-perspective evaluation, GIDI co-investment reduces the capital cost component of the pathway NPV calculation. For the system-perspective evaluation, GIDI funding represents a transfer that reduces the private cost without reducing the system cost; it does not affect the regional infrastructure consequences of the pathway choice. The framework’s multi-perspective evaluation makes this distinction analytically visible: a GIDI-supported electrification pathway may appear cost-competitive from the private perspective even in futures where the infrastructure-conditional system cost assessment would prefer the biomass pathway. The policy-adjusted evaluation frame of Module 4’s §4.4 is specifically designed to capture this effect.</p>
 <p>TIMES-NZ is New Zealand’s national energy system model, maintained by the University of Auckland’s Energy Centre. It provides economy-wide scenario analysis spanning the full energy system from primary supply to end-use demand, with the long-run investment and operational logic of a least-cost energy system optimisation under declared policy constraints including the emissions budgets. TIMES-NZ scenario outputs, including electricity price trajectories, sectoral demand projections, and national emissions pathways under different policy environments, provide exactly the kind of exogenous future condition boundary data that belong in a FutureArtefact ensemble as contextual calibration for the ETS price and electricity tariff dimensions. The framework treats TIMES-NZ scenario outputs as ensemble calibration inputs: they inform the ranges of the ETS price and electricity tariff multipliers, ensuring that the futures tested in the Edendale ensemble are consistent with plausible national energy trajectories. A more advanced integration, in which TIMES-NZ and the framework exchange scenario outputs in a Gauss-Seidel coupling, is the national-scale vision item described in Module 7.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Sub-Module SM-5.5-A
@@ -1056,9 +871,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="grounding-the-futureartefact-uncertain-drivers" class="level2" data-number="21.6">
-<h2 data-number="21.6" class="anchored" data-anchor-id="grounding-the-futureartefact-uncertain-drivers"><span class="header-section-number">21.6</span> §5.6 Grounding the FutureArtefact Uncertain Drivers</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="grounding-the-futureartefact-uncertain-drivers" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="grounding-the-futureartefact-uncertain-drivers"><span class="header-section-number">22.6</span> §5.6 Grounding the FutureArtefact Uncertain Drivers</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1232,19 +1047,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1330,13 +1132,6 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
-            // default icon
-            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1653,12 +1448,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../manuscript/sub-modules/sm-4-4A-system-regret.html" class="pagination-link" aria-label="Sub-Module 4.4-A">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Sub-Module 4.4-A</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Sub-Module 4.4-A</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../manuscript/sub-modules/sm-5-2A-gxp-capacity.html" class="pagination-link" aria-label="Sub-Module 5.2-A">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Sub-Module 5.2-A</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sub-Module 5.2-A</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1667,5 +1462,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/module-5-nz-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/module-5-nz-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

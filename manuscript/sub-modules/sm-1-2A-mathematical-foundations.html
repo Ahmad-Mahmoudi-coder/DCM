@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sub-Module 5.5-A – Decision-Centred Modelling (DCM)</title>
+<title>Sub-Module 1.2-A – Decision-Centred Modelling (DCM)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../manuscript/module-6-poc.html" rel="next">
-<link href="../../manuscript/sub-modules/sm-5-4A-ets-history.html" rel="prev">
+<link href="../../manuscript/sub-modules/sm-1-4A-decision-theory.html" rel="next">
+<link href="../../manuscript/sub-modules/sm-1-1A-philosophical-lineage.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/custom.css">
 </head>
@@ -86,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-5-nz-context.html">The Evidence — Part III: NZ Context</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Sub-Module 5.5-A</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-0-orientation.html">The Framework — Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-1-2A-mathematical-foundations.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.2-A</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -184,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manuscript/sub-modules/sm-1-2A-mathematical-foundations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../manuscript/sub-modules/sm-1-2A-mathematical-foundations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.2-A</span></span></a>
   </div>
 </li>
@@ -308,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Sub-Module 5.5-A</span></span></a>
   </div>
 </li>
@@ -411,24 +440,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-times-nz-is-and-how-it-works" id="toc-what-times-nz-is-and-how-it-works" class="nav-link active" data-scroll-target="#what-times-nz-is-and-how-it-works">What TIMES-NZ Is and How It Works</a></li>
-  <li><a href="#temporal-resolution-the-critical-limitation" id="toc-temporal-resolution-the-critical-limitation" class="nav-link" data-scroll-target="#temporal-resolution-the-critical-limitation">Temporal Resolution: The Critical Limitation</a></li>
-  <li><a href="#spatial-resolution-two-regions" id="toc-spatial-resolution-two-regions" class="nav-link" data-scroll-target="#spatial-resolution-two-regions">Spatial Resolution: Two Regions</a></li>
-  <li><a href="#sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble" id="toc-sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble" class="nav-link" data-scroll-target="#sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble">Sensitivity Analysis: Scenario Comparison versus DMDU Ensemble</a></li>
-  <li><a href="#integration-pathway-times-nz-and-the-dcm-framework" id="toc-integration-pathway-times-nz-and-the-dcm-framework" class="nav-link" data-scroll-target="#integration-pathway-times-nz-and-the-dcm-framework">Integration Pathway: TIMES-NZ and the DCM Framework</a></li>
-  <li><a href="#the-wider-nz-energy-modelling-ecosystem" id="toc-the-wider-nz-energy-modelling-ecosystem" class="nav-link" data-scroll-target="#the-wider-nz-energy-modelling-ecosystem">The Wider NZ Energy Modelling Ecosystem</a></li>
-  <li><a href="#the-referenceartefact-governed-external-document-linkage" id="toc-the-referenceartefact-governed-external-document-linkage" class="nav-link" data-scroll-target="#the-referenceartefact-governed-external-document-linkage">The ReferenceArtefact: Governed External Document Linkage</a></li>
-  <li><a href="#future-extension-the-knowledge-context-layer" id="toc-future-extension-the-knowledge-context-layer" class="nav-link" data-scroll-target="#future-extension-the-knowledge-context-layer">Future Extension: The Knowledge Context Layer</a></li>
+  <li><a href="#indices-and-sets" id="toc-indices-and-sets" class="nav-link active" data-scroll-target="#indices-and-sets">Indices and Sets</a></li>
+  <li><a href="#demand-construction-demandpack" id="toc-demand-construction-demandpack" class="nav-link" data-scroll-target="#demand-construction-demandpack">Demand Construction (DemandPack)</a></li>
+  <li><a href="#site-dispatch" id="toc-site-dispatch" class="nav-link" data-scroll-target="#site-dispatch">Site Dispatch</a></li>
+  <li><a href="#gxp-interface-signals" id="toc-gxp-interface-signals" class="nav-link" data-scroll-target="#gxp-interface-signals">GXP Interface Signals</a></li>
+  <li><a href="#economic-notation" id="toc-economic-notation" class="nav-link" data-scroll-target="#economic-notation">Economic Notation</a></li>
+  <li><a href="#robustness-and-regret" id="toc-robustness-and-regret" class="nav-link" data-scroll-target="#robustness-and-regret">Robustness and Regret</a></li>
+  <li><a href="#uncertainty-multipliers-paired-futures-ensemble" id="toc-uncertainty-multipliers-paired-futures-ensemble" class="nav-link" data-scroll-target="#uncertainty-multipliers-paired-futures-ensemble">Uncertainty Multipliers (Paired-Futures Ensemble)</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-5-nz-context.html">The Evidence — Part III: NZ Context</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Sub-Module 5.5-A</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/module-0-orientation.html">The Framework — Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../../manuscript/sub-modules/sm-1-2A-mathematical-foundations.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sub-Module 1.2-A</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Sub-Module 5.5-A</span></h1>
-<p class="subtitle lead">TIMES-NZ and the NZ Energy Modelling Ecosystem</p>
+<h1 class="title"><span class="chapter-title">Sub-Module 1.2-A</span></h1>
+<p class="subtitle lead">Mathematical Foundations and Formal Notation</p>
 </div>
 
 
@@ -451,7 +479,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Node Declaration — SM-5.5-A: TIMES-NZ and the NZ Energy Modelling Ecosystem
+<span class="screen-reader-only">Note</span>Node Declaration — SM-1.2-A: Mathematical Foundations
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -475,23 +503,23 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><strong>Status</strong></td>
-<td>✓ Complete <code>[Educational]</code> <code>[Research]</code></td>
+<td>✓ Complete <code>[Educational]</code></td>
 </tr>
 <tr class="odd">
 <td><strong>Assumes</strong></td>
-<td>§5.5 (RETA, GIDI, TIMES-NZ as the Analytical Landscape)</td>
+<td>§1.3 (Deep uncertainty), §1.5 (Regret, robustness, satisficing)</td>
 </tr>
 <tr class="even">
 <td><strong>Contributes</strong></td>
-<td>Detailed technical assessment of TIMES-NZ capabilities, temporal and spatial resolution, sensitivity analysis methods, the integration pathway with the DCM framework, the wider NZ modelling ecosystem, and the ReferenceArtefact specification for governed external document linkage</td>
+<td>Formal specification of all symbols, indices, and mathematical definitions used throughout the manuscript, enabling rigorous engagement with the framework’s analytical claims</td>
 </tr>
 <tr class="odd">
 <td><strong>Skip condition</strong></td>
-<td>Skip if TIMES-NZ technical detail is not required; return when designing the FutureArtefact ensemble calibration or the national-scale coupling architecture</td>
+<td>Skip if notation is familiar from the DMDU literature; return when encountering any formal expression in the manuscript</td>
 </tr>
 <tr class="even">
 <td><strong>Passes to</strong></td>
-<td>§5.6, Module 7 §7.2, SM-3.5-A (ReferenceArtefact schema extension)</td>
+<td>All sections using formal notation, particularly Module 2, Module 6 §6.4, and SM-4.4-A</td>
 </tr>
 <tr class="odd">
 <td><strong>Sub-Modules here</strong></td>
@@ -503,302 +531,212 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <hr>
-<section id="what-times-nz-is-and-how-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="what-times-nz-is-and-how-it-works">What TIMES-NZ Is and How It Works</h2>
-<p>TIMES-NZ is a national energy system model built on the IEA ETSAP TIMES framework, maintained at the University of Auckland Energy Centre in partnership with the BusinessNZ Energy Council. It finds the least-cost configuration of the New Zealand energy system over a declared planning horizon, subject to technology, resource, demand, and policy constraints. It covers all energy sectors simultaneously — electricity generation, industrial process heat, space heating, transport, and agriculture — making it the most comprehensive model of the national energy system available in New Zealand and the primary tool informing EECA, MfE, and the Climate Change Commission’s long-run pathway analysis.</p>
-<p><strong>Mathematical structure.</strong> TIMES is a linear programme. The objective function minimises the discounted total system cost over the planning horizon. Constraints encompass technology capacity balances, resource availability limits, demand satisfaction requirements, and policy mandates including the coal phase-out NES and the ETS carbon price trajectory. The LP structure assumes all relationships between decision variables and costs are linear, which is a strong simplification that enables tractable optimisation over a 30 to 50 year horizon at national scale but forecloses the representation of non-linear grid dynamics, threshold effects, and the temporal coincidences that determine hosting capacity exceedances.</p>
-<p><strong>Technology representation.</strong> Each energy conversion technology is represented as a process with declared capital cost, operating cost, thermal efficiency, and asset lifetime. The investment decision for each technology in each period is an endogenous model variable: the optimiser decides how much capacity to build, when to build it, and when to retire it. This produces an economy-wide investment pathway rather than a single-year snapshot, and the technology mix in any given year is determined by the full inter-temporal optimisation rather than by year-by-year myopic decisions.</p>
-<hr>
-</section>
-<section id="temporal-resolution-the-critical-limitation" class="level2">
-<h2 class="anchored" data-anchor-id="temporal-resolution-the-critical-limitation">Temporal Resolution: The Critical Limitation</h2>
-<p>TIMES-NZ 2.0 represents a full year using 24 time slices — combinations of season and time-of-day that together approximate the variety of supply and demand conditions across the year. This is adequate for capturing seasonal variation in renewable generation (winter hydro scarcity versus summer hydro abundance) and broad demand patterns, but it is entirely inadequate for capturing the hour-by-hour grid dynamics that determine whether a large industrial electrification commitment triggers a GXP hosting capacity exceedance.</p>
-<p>Subsequent NZ-specific implementations have partially addressed this. A more recent NZIES model instance uses 96 time slices (24 hours multiplied by 4 seasons), requiring generation and transfer capacity to meet demand in both seasonal and daily peak periods. Even at 96 slices, however, the model cannot represent the specific coincidence of events that constitutes a GXP exceedance: the winter peak hour when Edendale’s electric boilers are drawing maximum load, a dry hydro year has reduced South Island generation headroom, and competing industrial users in the Mararoa-Waimea zone are simultaneously at high demand. This coincidence is an hourly event requiring the 8,760-timestep representation that the DCM framework’s DemandPack and SignalsPack architecture provides.</p>
-<p>This structural temporal gap is the primary reason why TIMES-NZ cannot perform the analysis that Module 6 performs. The 23-of-64 GXP exceedance finding is not visible in a 96-slice or 24-slice national model. It only emerges when hourly demand traces are evaluated against hourly grid signal data across a structured future ensemble — precisely the architecture this framework provides.</p>
-<hr>
-</section>
-<section id="spatial-resolution-two-regions" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-resolution-two-regions">Spatial Resolution: Two Regions</h2>
-<p>TIMES-NZ 2.0 aggregates New Zealand to two regions — broadly North Island and South Island — connected by the HVDC inter-island link. This captures the fundamental geographic constraint of the NZ electricity system without representing the distribution-level constraints within each island that determine site-level feasibility.</p>
-<p>The two-region structure cannot distinguish Southland from Canterbury. It cannot represent the Mararoa-Waimea transmission cluster. It cannot assess whether the Fonterra Edendale facility and Alliance Group’s Lorneville processing plant, both in eastern Southland, are competing for the same zone substation headroom. These spatial distinctions are precisely what determines the infrastructure feasibility of the investment decisions that EECA’s GIDI programme is designed to accelerate. The gap between two-region national representation and GXP-level site representation is the spatial dimension of the analytical gap that the DCM framework fills.</p>
-<hr>
-</section>
-<section id="sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble" class="level2">
-<h2 class="anchored" data-anchor-id="sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble">Sensitivity Analysis: Scenario Comparison versus DMDU Ensemble</h2>
-<p>TIMES-NZ sensitivity analysis is conducted through scenario comparison rather than probabilistic or DMDU-style ensemble evaluation. Typical studies vary one parameter at a time across a set of internally consistent configurations: high versus low electricity demand growth, faster versus slower EV uptake, different carbon price trajectories, alternative technology cost assumptions. Each scenario produces a complete optimal investment pathway for the national system.</p>
-<p>The strengths of this approach are transparency and interpretability: each scenario is a coherent, self-consistent account of a possible future. The limitation is coverage. With five to eight scenarios, the analysis explores only a tiny fraction of the combinatorial uncertainty space, and the scenarios are typically designed to bound a range rather than to identify the specific combinations of conditions that most strongly determine pathway preference — which is precisely what PRIM-based scenario discovery of the type specified in Sub-Module SM-2.4-A is designed to reveal.</p>
-<p>The RETA Southland report explicitly recommends that future RETA pathways make greater use of sensitivity analysis to illustrate how resource costs and carbon prices influence the pathway choice, acknowledging that current sensitivity methods are insufficient for communicating the depth of genuine uncertainty about which pathway is preferred. The DCM framework’s DMDU ensemble approach is the direct methodological response to that recommendation: where TIMES-NZ produces five to eight internally consistent national scenarios, the DCM ensemble evaluates 64 to 1,000 structured combinations of the uncertain drivers that most influence the site-level decision.</p>
-<hr>
-</section>
-<section id="integration-pathway-times-nz-and-the-dcm-framework" class="level2">
-<h2 class="anchored" data-anchor-id="integration-pathway-times-nz-and-the-dcm-framework">Integration Pathway: TIMES-NZ and the DCM Framework</h2>
-<p>The most defensible integration approach uses TIMES-NZ scenario outputs to calibrate the <em>boundary conditions</em> of the FutureArtefact ensemble rather than to constrain the site-level decision directly.</p>
-<p><strong>One-directional calibration (current implementation, §5.6).</strong> TIMES-NZ scenario outputs provide plausible national electricity price trajectories, carbon price pathways under different ETS designs, and sectoral demand projections under different technology adoption assumptions. These outputs are translated into the upper and lower bounds of the FutureArtefact’s ETS price dimension and the electricity tariff multiplier range, ensuring that the futures explored in the DCM ensemble are consistent with plausible national energy trajectories rather than with arbitrary parameter ranges constructed independently of the national system context.</p>
-<p><strong>Gauss-Seidel iterative coupling (next-phase vision, §7.2).</strong> The aggregate industrial pathway commitments revealed by DCM ensemble analysis — for example, that 60 percent of plausible futures prefer biomass over electrification for the Southland dairy cluster — can be summarised as industrial demand scenarios and passed back to TIMES-NZ as updated demand constraints. TIMES-NZ re-runs under those constraints, producing updated national electricity price and carbon price trajectories, which recalibrate the FutureArtefact ensemble for the next iteration. Convergence is achieved when site-level and national-level projections are mutually consistent. This coupling architecture is the operational expression of the multi-scale analytical environment described in Module 7 §7.2, and it is technically feasible with existing tools.</p>
-<hr>
-</section>
-<section id="the-wider-nz-energy-modelling-ecosystem" class="level2">
-<h2 class="anchored" data-anchor-id="the-wider-nz-energy-modelling-ecosystem">The Wider NZ Energy Modelling Ecosystem</h2>
-<p><strong>Table SM-5.5-A: NZ energy modelling tools — capabilities and DCM integration roles</strong></p>
+<section id="indices-and-sets" class="level2">
+<h2 class="anchored" data-anchor-id="indices-and-sets">Indices and Sets</h2>
+<p>The following indices are used throughout the manuscript. All time series operate at hourly resolution unless otherwise stated.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tool</th>
-<th>Type</th>
-<th>Temporal res.</th>
-<th>Spatial res.</th>
-<th>Primary NZ role</th>
-<th>DCM integration role</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TIMES-NZ 2.0</td>
-<td>LP optimisation</td>
-<td>24 slices/year</td>
-<td>2 regions</td>
-<td>National least-cost pathways</td>
-<td>FutureArtefact ETS and price calibration</td>
-</tr>
-<tr class="even">
-<td>NZIES</td>
-<td>LP optimisation</td>
-<td>96 slices/year</td>
-<td>3 to 5 regions</td>
-<td>Hydrogen and deep electrification analysis</td>
-<td>Enhanced calibration with HVDC constraints</td>
-</tr>
-<tr class="odd">
-<td>PyPSA-NZ</td>
-<td>Network LP</td>
-<td>Hourly (8,760)</td>
-<td>Nodal</td>
-<td>Electricity dispatch and investment</td>
-<td>Regional Module implementation (SM-6.6-E)</td>
-</tr>
-<tr class="even">
-<td>REMix-NZ</td>
-<td>Integrated simulation</td>
-<td>Hourly</td>
-<td>Sub-regional</td>
-<td>Renewable integration and multi-carrier demand</td>
-<td>Regional electricity calibration; demand projection</td>
-</tr>
-<tr class="odd">
-<td>RETA methodology</td>
-<td>Screening</td>
-<td>Annual and peak</td>
-<td>GXP-level</td>
-<td>Industrial decarbonisation opportunity mapping</td>
-<td>SignalsPack headroom calibration; SM-5.2-A</td>
-</tr>
-<tr class="even">
-<td>GIDI Fund analysis</td>
-<td>Project appraisal</td>
-<td>Project lifetime</td>
-<td>Site-level</td>
-<td>Co-investment eligibility and grant assessment</td>
-<td>Site-perspective cost adjustment in overlay</td>
-</tr>
-<tr class="odd">
-<td>EnergyPLAN</td>
-<td>Simulation</td>
-<td>Hourly</td>
-<td>National</td>
-<td>Renewable energy system simulation</td>
-<td>Alternative Regional Module implementation</td>
-</tr>
-<tr class="even">
-<td>TIMES (IEA-ETSAP)</td>
-<td>LP optimisation</td>
-<td>Configurable</td>
-<td>Configurable</td>
-<td>Global and regional energy pathways</td>
-<td>Methodological parent of TIMES-NZ</td>
-</tr>
-</tbody>
-</table>
-<p><strong>PyPSA-NZ</strong> is the most important next-phase Regional Module implementation target. It provides nodal network optimisation at hourly resolution for the New Zealand transmission system, producing dual variables and line loading fractions that map directly to SignalsPack fields: the nodal marginal price at EDN0331 becomes the <code>tariff_nzd_per_mwh</code> field; the line loading fraction on the subtransmission circuit becomes the <code>feasibility_indicator</code>; the system adequacy margin becomes <code>headroom_mw</code>. The national PyPSA-NZ model can be subset to the Southland regional context, reducing computational cost while retaining network-aware dispatch accuracy. Full implementation is specified in Sub-Module SM-6.6-E.</p>
-<p><strong>REMix-NZ</strong>, developed at DLR Stuttgart with NZ researchers, provides integrated energy system modelling with hourly resolution across electricity, heat, and transport carriers. Its published demand projection dataset — released in 2026 with regional and hourly resolution to 2050 — provides exactly the calibration data required for the DCM framework’s regional demand growth multiplier dimension, covering sector-specific electrification trajectories at sub-national spatial resolution that TIMES-NZ cannot provide.</p>
-<hr>
-</section>
-<section id="the-referenceartefact-governed-external-document-linkage" class="level2">
-<h2 class="anchored" data-anchor-id="the-referenceartefact-governed-external-document-linkage">The ReferenceArtefact: Governed External Document Linkage</h2>
-<p>The DCM framework’s analytical backbone currently traces lineage from DecisionSummaryArtefacts through ResultArtefacts, SignalsPacks, FutureArtefacts, and DemandPacks back to generating runs and module versions. One important link in this chain is not yet formally governed: the relationship between the FutureArtefact’s uncertain driver ranges and the external documents — RETA reports, Transpower Grid Investment Plans, Climate Change Commission modelling, and TIMES-NZ scenario outputs — from which those ranges were calibrated.</p>
-<p>The <strong>ReferenceArtefact</strong> closes this gap. It is a new canonical artefact family that registers external documents as governed analytical inputs with full provenance. A ReferenceArtefact carries: the document’s title and institution; its URL or DOI; its publication date; the specific FutureArtefact fields or module sections it calibrates; the calibration methodology used to translate document content into parameter ranges; and a SHA256 hash of the source file where a downloadable version exists.</p>
-<p>Once registered, every FutureArtefact field has a traceable chain: the ETS price range in a given future references the ReferenceArtefact for the Climate Change Commission’s Demonstration Path modelling, which in turn references the specific table or figure from which the price bounds were derived. The SignalsPack headroom estimate references the ReferenceArtefact for the RETA Southland assessment, linking the analytical finding back to the EECA report that provided the reference capacity data. This makes the complete audit trail from framework results back to primary data sources recoverable without analyst interpretation.</p>
-<p><strong>Table SM-5.5-A-2: ReferenceArtefact schema</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Required</th>
+<th>Symbol</th>
+<th>Range</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ref_id</td>
-<td>UUID</td>
-<td>Required</td>
-<td>Unique identifier for this reference</td>
+<td><span class="math inline">\(t \in \mathcal{T}\)</span></td>
+<td><span class="math inline">\(1,\ldots,8760\)</span></td>
+<td>Hourly time index [h]</td>
 </tr>
 <tr class="even">
-<td>title</td>
-<td>String</td>
-<td>Required</td>
-<td>Full document title</td>
+<td><span class="math inline">\(y \in \mathcal{Y}\)</span></td>
+<td><span class="math inline">\(\{2020, 2025, 2028, 2035\}\)</span></td>
+<td>Epoch/year index</td>
 </tr>
 <tr class="odd">
-<td>institution</td>
-<td>String</td>
-<td>Required</td>
-<td>Authoring institution</td>
+<td><span class="math inline">\(u \in \mathcal{U}\)</span></td>
+<td>—</td>
+<td>Utility/technology unit index</td>
 </tr>
 <tr class="even">
-<td>authors</td>
-<td>String</td>
-<td>Optional</td>
-<td>Primary authors or report number</td>
+<td><span class="math inline">\(s \in \mathcal{S}\)</span></td>
+<td><span class="math inline">\(\{\text{EB, BB}\}\)</span></td>
+<td>Pathway/strategy index</td>
 </tr>
 <tr class="odd">
-<td>url_or_doi</td>
-<td>String</td>
-<td>Required</td>
-<td>Stable URL or DOI</td>
-</tr>
-<tr class="even">
-<td>publication_date</td>
-<td>Date</td>
-<td>Required</td>
-<td>Date of publication or last revision</td>
-</tr>
-<tr class="odd">
-<td>calibrates_fields</td>
-<td>List</td>
-<td>Required</td>
-<td>FutureArtefact fields this document calibrates</td>
-</tr>
-<tr class="even">
-<td>calibrates_sections</td>
-<td>List</td>
-<td>Optional</td>
-<td>Module section numbers this document informs</td>
-</tr>
-<tr class="odd">
-<td>calibration_method</td>
-<td>String</td>
-<td>Required</td>
-<td>How document content was translated into parameter ranges</td>
-</tr>
-<tr class="even">
-<td>file_sha256</td>
-<td>String</td>
-<td>Optional</td>
-<td>SHA256 hash of downloaded source file</td>
-</tr>
-<tr class="odd">
-<td>schema_version</td>
-<td>String</td>
-<td>Required</td>
-<td>“1.0”</td>
+<td><span class="math inline">\(\omega \in \Omega\)</span></td>
+<td><span class="math inline">\(0,\ldots,99\)</span></td>
+<td>Future/uncertainty realisation index</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Table SM-5.5-A-3: Current ReferenceArtefact registry entries (planned)</strong></p>
+<hr>
+</section>
+<section id="demand-construction-demandpack" class="level2">
+<h2 class="anchored" data-anchor-id="demand-construction-demandpack">Demand Construction (DemandPack)</h2>
+<p>The DemandPack construction maps a normalised hourly shape to absolute demand via a scaling factor:</p>
+<p><span class="math display">\[D_{t,e} = \alpha_e \cdot s_{t,e}\]</span></p>
+<p>where <span class="math inline">\(s_{t,e}\)</span> is the normalised shape (dimensionless) for end-use <span class="math inline">\(e\)</span> at hour <span class="math inline">\(t\)</span>, and <span class="math inline">\(\alpha_e\)</span> is the scaling factor derived from annual energy consistency:</p>
+<p><span class="math display">\[E_e^{\text{ann}} = \sum_{t \in \mathcal{T}} D_{t,e} \cdot \Delta t\]</span></p>
+<p>The scaling factor <span class="math inline">\(\alpha_e\)</span> is determined by solving this consistency condition given the declared annual total <span class="math inline">\(E_e^{\text{ann}}\)</span>.</p>
+<hr>
+</section>
+<section id="site-dispatch" class="level2">
+<h2 class="anchored" data-anchor-id="site-dispatch">Site Dispatch</h2>
+<p>Proportional dispatch allocates total heat demand <span class="math inline">\(D_t\)</span> across committed units in proportion to nameplate capacity:</p>
+<p><span class="math display">\[q_{t,u} = D_t \cdot \frac{C_u}{\sum_{u' \in \mathcal{U}^{\text{on}}} C_{u'}}\]</span></p>
+<p>where <span class="math inline">\(C_u\)</span> is the nameplate thermal capacity of unit <span class="math inline">\(u\)</span> and <span class="math inline">\(\mathcal{U}^{\text{on}}\)</span> is the set of committed units.</p>
+<p>Unserved heat is:</p>
+<p><span class="math display">\[U_t = \max\left(0,\ D_t - \sum_{u \in \mathcal{U}} q_{t,u}\right)\]</span></p>
+<hr>
+</section>
+<section id="gxp-interface-signals" class="level2">
+<h2 class="anchored" data-anchor-id="gxp-interface-signals">GXP Interface Signals</h2>
+<p>The incremental electricity signal exported by the site module:</p>
+<p><span class="math display">\[\Delta E_t = p_t^{\text{pathway}} - p_t^{\text{baseline}}\]</span></p>
+<p>where <span class="math inline">\(p_t\)</span> is the site’s electricity import at hour <span class="math inline">\(t\)</span>.</p>
+<p>GXP headroom exceedance at time <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[X_t = \max\left(0,\ \Delta E_t - H_t\right)\]</span></p>
+<p>where <span class="math inline">\(H_t\)</span> is the available GXP headroom, scaled per future <span class="math inline">\(\omega\)</span> by the headroom multiplier <span class="math inline">\(U_{\text{head}}^\omega\)</span>:</p>
+<p><span class="math display">\[H_t^\omega = H_t^{\text{ref}} \cdot U_{\text{head}}^\omega\]</span></p>
+<hr>
+</section>
+<section id="economic-notation" class="level2">
+<h2 class="anchored" data-anchor-id="economic-notation">Economic Notation</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Document</th>
-<th>Institution</th>
-<th>Calibrates</th>
-<th>Method</th>
+<th>Symbol</th>
+<th>Units</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>RETA Southland Assessment</td>
-<td>EECA</td>
-<td>headroom_mult range</td>
-<td>Reference capacity from GXP screening table</td>
+<td><span class="math inline">\(C_{\text{fuel}}\)</span></td>
+<td>NZD/MWh</td>
+<td>Delivered fuel cost</td>
 </tr>
 <tr class="even">
-<td>Climate Change Commission — Demonstration Path</td>
-<td>Climate Change Commission</td>
-<td>ets_price range</td>
-<td>Table 5.3 NZU price trajectory low and high bounds</td>
+<td><span class="math inline">\(C_{\text{elec}}\)</span></td>
+<td>NZD/MWh</td>
+<td>Electricity tariff</td>
 </tr>
 <tr class="odd">
-<td>TIMES-NZ 2.0 Energy Scenarios</td>
-<td>University of Auckland / BEC</td>
-<td>p_elec_mult range; ets_price range</td>
-<td>Tūī and Kea scenario wholesale price trajectories</td>
+<td><span class="math inline">\(C_{\text{capex}}\)</span></td>
+<td>NZD</td>
+<td>Capital cost</td>
 </tr>
 <tr class="even">
-<td>Transpower GIP 2024</td>
-<td>Transpower</td>
-<td>upgrade_capex_mult range</td>
-<td>Indicative subtransmission upgrade cost schedule</td>
+<td><span class="math inline">\(C_{\text{fix}}\)</span></td>
+<td>NZD/yr</td>
+<td>Fixed operation and maintenance</td>
 </tr>
 <tr class="odd">
-<td>PowerNet PF-025</td>
-<td>PowerNet Limited</td>
-<td>Customer Contribution methodology</td>
-<td>Section 5.4 subtransmission capacity trigger thresholds</td>
+<td><span class="math inline">\(C_{\text{var}}\)</span></td>
+<td>NZD/MWh</td>
+<td>Variable operation and maintenance</td>
 </tr>
 <tr class="even">
-<td>REMix-NZ demand projections</td>
-<td>DLR Stuttgart / University of Auckland</td>
-<td>demand_growth_mult range</td>
-<td>Regional industrial electricity demand 2030–2050</td>
+<td><span class="math inline">\(\text{VOLL}\)</span></td>
+<td>NZD/MWh</td>
+<td>Value of lost load</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(r\)</span></td>
+<td>—</td>
+<td>Discount rate</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\text{CRF}\)</span></td>
+<td>—</td>
+<td>Capital recovery factor</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p_{\text{CO}_2}\)</span></td>
+<td>NZD/tCO₂e</td>
+<td>Carbon price (ETS)</td>
 </tr>
 </tbody>
 </table>
-<p>This specification is designated as a next-phase backbone extension. The schema is declared here; implementation follows the governed backbone development pathway specified in Sub-Module SM-3.7-A.</p>
+<p>Total system cost for pathway <span class="math inline">\(s\)</span> under future <span class="math inline">\(\omega\)</span>:</p>
+<p><span class="math display">\[Z(s,\omega) = C_{\text{site}}(s,\omega) + C_{\text{grid}}(s,\omega)\]</span></p>
+<p>where <span class="math inline">\(C_{\text{grid}}\)</span> includes annualised upgrade cost and unserved energy penalty.</p>
 <hr>
 </section>
-<section id="future-extension-the-knowledge-context-layer" class="level2">
-<h2 class="anchored" data-anchor-id="future-extension-the-knowledge-context-layer">Future Extension: The Knowledge Context Layer</h2>
-<p>Beyond governing links to external documents, the ReferenceArtefact registry provides the foundation for a <strong>Knowledge Context Layer</strong> — a structured manifest that an AI agent or analyst can query to determine which external sources are relevant to any given FutureArtefact field, module section, or analytical finding. When the natural-language query interface described in Module 7 §7.4 is deployed, the Knowledge Context Layer is what allows it to ground its answers in specific, citable primary sources rather than in the model’s training data.</p>
-<p>The Knowledge Context Layer also supports the tagging system of §7.8: a section tagged <code>[Research]</code> can carry a ReferenceArtefact link to the specific literature gap it identifies, making the open research question not only declared but traceable to its empirical foundation. A section tagged <code>[Collaborative]</code> can carry a ReferenceArtefact link to a comparable implementation in another domain, lowering the barrier for domain specialists who want to contribute an instantiation.</p>
-<p>This layer is declared here as a Vision component. Its specification will be developed as a separate sub-module in Module 3 (Architecture) once the primary backbone implementation described in SM-3.7-A is complete.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Contribute to This Sub-Module <code>[Collaborative]</code>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This sub-module invites contributions in three areas: calibration data for TIMES-NZ scenarios, PyPSA-NZ implementation for the Regional Module, and additional ReferenceArtefact registry entries linking external NZ energy analyses to specific FutureArtefact fields.</p>
-<p><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" target="_blank">Post to GitHub Discussions →</a></p>
-</div>
-</div>
+<section id="robustness-and-regret" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-and-regret">Robustness and Regret</h2>
+<p><strong>Regret</strong> of pathway <span class="math inline">\(s\)</span> in future <span class="math inline">\(\omega\)</span>:</p>
+<p><span class="math display">\[\rho(s,\omega) = Z(s,\omega) - \min_{s' \in \mathcal{S}} Z(s',\omega)\]</span></p>
+<p>Regret is zero for the minimum-cost pathway in each future and positive for all others.</p>
+<p><strong>Maximum regret</strong>:</p>
+<p><span class="math display">\[R_{\max}(s) = \max_{\omega \in \Omega} \rho(s,\omega)\]</span></p>
+<p><strong>Satisficing rate</strong> at threshold <span class="math inline">\(\tau\)</span>:</p>
+<p><span class="math display">\[\text{SR}(s,\tau) = \frac{|\{\omega \in \Omega : Z(s,\omega) \leq \tau\}|}{|\Omega|}\]</span></p>
+<p><strong>Win rate</strong> (fraction of futures where <span class="math inline">\(s\)</span> is minimum-cost):</p>
+<p><span class="math display">\[\text{WR}(s) = \frac{|\{\omega \in \Omega : \rho(s,\omega) = 0\}|}{|\Omega|}\]</span></p>
 <hr>
-<p>End of SM-5.5-A</p>
+</section>
+<section id="uncertainty-multipliers-paired-futures-ensemble" class="level2">
+<h2 class="anchored" data-anchor-id="uncertainty-multipliers-paired-futures-ensemble">Uncertainty Multipliers (Paired-Futures Ensemble)</h2>
+<p>Each future <span class="math inline">\(\omega\)</span> is characterised by a vector of uncertain driver realisations. In the proof-of-concept ensemble of 100 paired futures:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Multiplier</th>
+<th>Applied to</th>
+<th>P10 / Median / P90</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P_{\text{elec}}^\omega\)</span></td>
+<td>Site electricity cost</td>
+<td>0.785 / 0.987 / 1.184</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P_{\text{bio}}^\omega\)</span></td>
+<td>Site biomass cost</td>
+<td>1.133 / 1.486 / 2.038</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P_{\text{ETS}}^\omega\)</span></td>
+<td>Carbon proxy cost</td>
+<td>0.950 / 1.275 / 1.654</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{\text{head}}^\omega\)</span></td>
+<td>GXP headroom</td>
+<td>0.817 / 0.890 / 0.950</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{\text{inc}}^\omega\)</span></td>
+<td>Incremental load</td>
+<td>0.927 / 1.003 / 1.081</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{\text{upgrade}}^\omega\)</span></td>
+<td>Upgrade CAPEX</td>
+<td>0.920 / 1.071 / 1.285</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\text{VOLL}^\omega\)</span></td>
+<td>Unserved penalty</td>
+<td>10,000–20,000 NZD/MWh</td>
+</tr>
+</tbody>
+</table>
+<p>All multipliers are applied multiplicatively to baseline values. The paired-futures contract requires that both EB and BB pathways are evaluated under identical <span class="math inline">\(\{\omega\}_{0}^{99}\)</span> to ensure comparability.</p>
 
 
 </section>
@@ -1206,13 +1144,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../manuscript/sub-modules/sm-5-4A-ets-history.html" class="pagination-link" aria-label="Sub-Module 5.4-A">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Sub-Module 5.4-A</span></span>
+      <a href="../../manuscript/sub-modules/sm-1-1A-philosophical-lineage.html" class="pagination-link" aria-label="Sub-Module 1.1-A">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sub-Module 1.1-A</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../manuscript/module-6-poc.html" class="pagination-link" aria-label="Module 6: The Proof of Concept">
-        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Module 6: The Proof of Concept</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../manuscript/sub-modules/sm-1-4A-decision-theory.html" class="pagination-link" aria-label="Sub-Module 1.4-A">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sub-Module 1.4-A</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1221,4 +1159,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/edit/main/manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
