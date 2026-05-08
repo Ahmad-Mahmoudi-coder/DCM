@@ -535,7 +535,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <section id="what-times-nz-is-and-how-it-works" class="level2">
 <h2 class="anchored" data-anchor-id="what-times-nz-is-and-how-it-works">What TIMES-NZ Is and How It Works</h2>
-<p>TIMES-NZ is a national energy system model built on the IEA ETSAP TIMES framework, maintained at the University of Auckland Energy Centre in partnership with the BusinessNZ Energy Council. It finds the least-cost configuration of the New Zealand energy system over a declared planning horizon, subject to technology, resource, demand, and policy constraints. It covers all energy sectors simultaneously — electricity generation, industrial process heat, space heating, transport, and agriculture — making it the most comprehensive model of the national energy system available in New Zealand and the primary tool informing EECA, MfE, and the Climate Change Commission’s long-run pathway analysis.</p>
+<p>TIMES-NZ is a national energy system model built on the IEA ETSAP TIMES framework, maintained at the University of Auckland Energy Centre in partnership with the BusinessNZ Energy Council. It finds the least-cost configuration of the New Zealand energy system over a declared planning horizon, subject to technology, resource, demand, and policy constraints. It covers all energy sectors simultaneously — electricity generation, industrial process heat, space heating, transport, and agriculture — making it the most comprehensive model of the national energy system available in New Zealand and the primary tool informing EECA, MfE, and the Climate Change Commission’s long-run pathway analysis. EECA maintains the TIMES-NZ model files and a data visualisation application as open-source repositories at github.com/EECA-NZ, enabling direct access to the scenario outputs that calibrate the DCM FutureArtefact ensemble boundaries.</p>
 <p><strong>Mathematical structure.</strong> TIMES is a linear programme. The objective function minimises the discounted total system cost over the planning horizon. Constraints encompass technology capacity balances, resource availability limits, demand satisfaction requirements, and policy mandates including the coal phase-out NES and the ETS carbon price trajectory. The LP structure assumes all relationships between decision variables and costs are linear, which is a strong simplification that enables tractable optimisation over a 30 to 50 year horizon at national scale but forecloses the representation of non-linear grid dynamics, threshold effects, and the temporal coincidences that determine hosting capacity exceedances.</p>
 <p><strong>Technology representation.</strong> Each energy conversion technology is represented as a process with declared capital cost, operating cost, thermal efficiency, and asset lifetime. The investment decision for each technology in each period is an endogenous model variable: the optimiser decides how much capacity to build, when to build it, and when to retire it. This produces an economy-wide investment pathway rather than a single-year snapshot, and the technology mix in any given year is determined by the full inter-temporal optimisation rather than by year-by-year myopic decisions.</p>
 <hr>
@@ -555,7 +555,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble" class="level2">
 <h2 class="anchored" data-anchor-id="sensitivity-analysis-scenario-comparison-versus-dmdu-ensemble">Sensitivity Analysis: Scenario Comparison versus DMDU Ensemble</h2>
-<p>TIMES-NZ sensitivity analysis is conducted through scenario comparison rather than probabilistic or DMDU-style ensemble evaluation. Typical studies vary one parameter at a time across a set of internally consistent configurations: high versus low electricity demand growth, faster versus slower EV uptake, different carbon price trajectories, alternative technology cost assumptions. Each scenario produces a complete optimal investment pathway for the national system.</p>
+<p>TIMES-NZ sensitivity analysis is conducted through scenario comparison rather than probabilistic ensemble evaluation. The two primary TIMES-NZ 2.0 scenarios are named <strong>Tūī</strong> and <strong>Kea</strong> — they represent contrasted possible energy futures (reflecting different technology adoption assumptions) rather than probability-weighted projections. EECA describes them explicitly as tools for thinking about uncertainty, not predictions or prescriptive pathways. Typical sensitivity studies vary one parameter at a time across a set of internally consistent scenario configurations: high versus low electricity demand growth, faster versus slower EV uptake, different carbon price trajectories, alternative technology cost assumptions. Each scenario produces a complete optimal investment pathway for the national system.</p>
 <p>The strengths of this approach are transparency and interpretability: each scenario is a coherent, self-consistent account of a possible future. The limitation is coverage. With five to eight scenarios, the analysis explores only a tiny fraction of the combinatorial uncertainty space, and the scenarios are typically designed to bound a range rather than to identify the specific combinations of conditions that most strongly determine pathway preference — which is precisely what PRIM-based scenario discovery of the type specified in Sub-Module SM-2.4-A is designed to reveal.</p>
 <p>The RETA Southland report explicitly recommends that future RETA pathways make greater use of sensitivity analysis to illustrate how resource costs and carbon prices influence the pathway choice, acknowledging that current sensitivity methods are insufficient for communicating the depth of genuine uncertainty about which pathway is preferred. The DCM framework’s DMDU ensemble approach is the direct methodological response to that recommendation: where TIMES-NZ produces five to eight internally consistent national scenarios, the DCM ensemble evaluates 64 to 1,000 structured combinations of the uncertain drivers that most influence the site-level decision.</p>
 <hr>
@@ -657,7 +657,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p><strong>PyPSA-NZ</strong> is the most important next-phase Regional Module implementation target. It provides nodal network optimisation at hourly resolution for the New Zealand transmission system, producing dual variables and line loading fractions that map directly to SignalsPack fields: the nodal marginal price at EDN0331 becomes the <code>tariff_nzd_per_mwh</code> field; the line loading fraction on the subtransmission circuit becomes the <code>feasibility_indicator</code>; the system adequacy margin becomes <code>headroom_mw</code>. The national PyPSA-NZ model can be subset to the Southland regional context, reducing computational cost while retaining network-aware dispatch accuracy. Full implementation is specified in Sub-Module SM-6.6-E.</p>
-<p><strong>REMix-NZ</strong>, developed at DLR Stuttgart with NZ researchers, provides integrated energy system modelling with hourly resolution across electricity, heat, and transport carriers. Its published demand projection dataset — released in 2026 with regional and hourly resolution to 2050 — provides exactly the calibration data required for the DCM framework’s regional demand growth multiplier dimension, covering sector-specific electrification trajectories at sub-national spatial resolution that TIMES-NZ cannot provide.</p>
+<p><strong>REMix-NZ</strong>, developed at DLR Stuttgart with NZ researchers, provides integrated energy system modelling with hourly resolution across electricity, heat, and transport carriers. Its published demand projection dataset — released in 2026 with regional and hourly resolution to 2050 — provides exactly the calibration data required for the DCM framework’s regional demand growth multiplier dimension, covering sector-specific electrification trajectories at sub-national spatial resolution that TIMES-NZ cannot provide. The full dataset, providing hourly and regional energy demand projections for electricity, heat, and transport in New Zealand to 2050, was published as an open dataset in January 2026 with DOI 10.1038/s41597-025-06511-6 (Canessa et al., 2026), directly providing the calibration data required for the DCM framework’s regional demand growth multiplier dimension.</p>
 <hr>
 </section>
 <section id="the-referenceartefact-governed-external-document-linkage" class="level2">
@@ -786,18 +786,24 @@ ul.task-list li input[type="checkbox"] {
 <td>Tūī and Kea scenario wholesale price trajectories</td>
 </tr>
 <tr class="even">
+<td>EECA TIMES-NZ Model Files</td>
+<td>EECA-NZ (GitHub)</td>
+<td>TIMES-NZ model inputs and scenario data</td>
+<td>Direct download from github.com/EECA-NZ/TIMES-NZ-Model-Files</td>
+</tr>
+<tr class="odd">
 <td>Transpower GIP 2024</td>
 <td>Transpower</td>
 <td>upgrade_capex_mult range</td>
 <td>Indicative subtransmission upgrade cost schedule</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>PowerNet PF-025</td>
 <td>PowerNet Limited</td>
 <td>Customer Contribution methodology</td>
 <td>Section 5.4 subtransmission capacity trigger thresholds</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>REMix-NZ demand projections</td>
 <td>DLR Stuttgart / University of Auckland</td>
 <td>demand_growth_mult range</td>
