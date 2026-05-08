@@ -28,40 +28,61 @@ book:
         - manuscript/part-intro-framework-1.qmd
         - manuscript/module-0-orientation.qmd
         - manuscript/module-1-foundations.qmd
-        - manuscript/sub-modules/sm-1-1A-philosophical-lineage.qmd
-        - manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd
-        - manuscript/sub-modules/sm-1-4A-decision-theory.qmd
-        - manuscript/sub-modules/sm-1-7A-requirements-mapping.qmd
+        - text: "SM-1.1-A — Philosophical Lineage"
+          href: manuscript/sub-modules/sm-1-1A-philosophical-lineage.qmd
+        - text: "SM-1.2-A — Mathematical Foundations"
+          href: manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd
+        - text: "SM-1.4-A — Decision Theory"
+          href: manuscript/sub-modules/sm-1-4A-decision-theory.qmd
+        - text: "SM-1.7-A — Requirements Mapping"
+          href: manuscript/sub-modules/sm-1-7A-requirements-mapping.qmd
         - manuscript/module-2-modelling.qmd
-        - manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd
-        - manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd
-        - manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
+        - text: "SM-2.2-A — Optimisation Roles"
+          href: manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd
+        - text: "SM-2.3-A — Surrogate Validation"
+          href: manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd
+        - text: "SM-2.4-A — Scenario Discovery"
+          href: manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
     - part: "The Framework — Part II: Architecture"
       chapters:
         - manuscript/part-intro-framework-2.qmd
         - manuscript/module-3-architecture.qmd
-        - manuscript/sub-modules/sm-3-5A-artefact-schema.qmd
-        - manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd
-        - manuscript/sub-modules/sm-3-8A-aiml-governance.qmd
+        - text: "SM-3.5-A — Artefact Schema"
+          href: manuscript/sub-modules/sm-3-5A-artefact-schema.qmd
+        - text: "SM-3.7-A — Backbone Implementation"
+          href: manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd
+        - text: "SM-3.8-A — AI/ML Governance"
+          href: manuscript/sub-modules/sm-3-8A-aiml-governance.qmd
         - manuscript/module-4-domain.qmd
-        - manuscript/sub-modules/sm-4-4A-system-regret.qmd
+        - text: "SM-4.4-A — System-Level Regret"
+          href: manuscript/sub-modules/sm-4-4A-system-regret.qmd
     - part: "The Evidence"
       chapters:
         - manuscript/part-intro-evidence.qmd
         - manuscript/module-5-nz-context.qmd
-        - manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
-        - manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
-        - manuscript/sub-modules/sm-5-4A-ets-history.qmd
-        - manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd
+        - text: "SM-5.2-A — Mararoa-Waimea GXP"
+          href: manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
+        - text: "SM-5.3-A — Biomass Resource"
+          href: manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
+        - text: "SM-5.4-A — NZ ETS History"
+          href: manuscript/sub-modules/sm-5-4A-ets-history.qmd
+        - text: "SM-5.5-A — TIMES-NZ Ecosystem"
+          href: manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd
     - part: "The Evidence — Part IV: Proof of Concept"
       chapters:
         - manuscript/module-6-poc.qmd
-        - manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd
-        - manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd
-        - manuscript/sub-modules/sm-6-4C-site-interface-contract.qmd
-        - manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd
-        - manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd
-        - manuscript/sub-modules/sm-6-8F-validation-records.qmd
+        - text: "SM-6.2-A — PoC Pipeline"
+          href: manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd
+        - text: "SM-6.3-B — DemandPack Methods"
+          href: manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd
+        - text: "SM-6.4-C — Site Interface Contract"
+          href: manuscript/sub-modules/sm-6-4C-site-interface-contract.qmd
+        - text: "SM-6.5-D — SignalsPack Contract"
+          href: manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd
+        - text: "SM-6.6-E — PyPSA Regional Module"
+          href: manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd
+        - text: "SM-6.8-F — Validation Records"
+          href: manuscript/sub-modules/sm-6-8F-validation-records.qmd
     - part: "Synthesis — Part V: Extension and Conclusions"
       chapters:
         - manuscript/part-intro-synthesis.qmd
