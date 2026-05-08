@@ -42,7 +42,7 @@ This structural temporal gap is the primary reason why TIMES-NZ cannot perform t
 
 ## Spatial Resolution: Two Regions
 
-TIMES-NZ 3.0 aggregates New Zealand to two regions — broadly North Island and South Island — connected by the HVDC inter-island link. This captures the fundamental geographic constraint of the NZ electricity system without representing the distribution-level constraints within each island that determine site-level feasibility.
+TIMES-NZ 2.0 aggregated New Zealand to two regions — broadly North Island and South Island — connected by the HVDC inter-island link. The spatial resolution of TIMES-NZ 3.0 has not been publicly confirmed at the time of writing and should be verified at times-nz-dev.readthedocs.io. This captures the fundamental geographic constraint of the NZ electricity system without representing the distribution-level constraints within each island that determine site-level feasibility.
 
 The two-region structure cannot distinguish Southland from Canterbury. It cannot represent the Mararoa-Waimea transmission cluster. It cannot assess whether the Fonterra Edendale facility and Alliance Group's Lorneville processing plant, both in eastern Southland, are competing for the same zone substation headroom. These spatial distinctions are precisely what determines the infrastructure feasibility of the investment decisions that EECA's GIDI programme is designed to accelerate. The gap between two-region national representation and GXP-level site representation is the spatial dimension of the analytical gap that the DCM framework fills.
 
