@@ -18,8 +18,7 @@ toc: false
     </span>
   </div>
   <p class="dcm-hero-sub">
-    Foundations, Architecture, and Application to 
-    Industrial Process Heat Decarbonisation
+    Foundations, Architecture, and Application to Industrial Process Heat Decarbonisation
   </p>
   <p class="dcm-hero-motto">
     "The decision makes the boundary; the artefact makes the connection."
@@ -285,15 +284,56 @@ toc: false
 
 <hr style="border:none; border-top:1px solid #dde6ef; margin:2rem 0;">
 
-<p style="font-size:0.82rem; color:#888; 
-          margin-bottom:3rem; margin-top:1rem;">
-  <em>Seyed Ahmad Mahmoudi Lahijani — 2026</em>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">
-  Repository</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions">
-  Contribute</a>
-</p>
+<div style="background:#f0f4f8;border-left:4px solid 
+#0f3460;padding:1rem 1.25rem;border-radius:0 6px 6px 0;
+margin:2rem 0 1.5rem 0;">
+  <p style="font-size:0.78rem;font-weight:700;
+  color:#0f3460;text-transform:uppercase;
+  letter-spacing:0.08em;margin-bottom:0.5rem;">
+    How to cite this work
+  </p>
+  <p style="font-size:0.85rem;color:#1a1a2e;
+  font-family:'Courier New',monospace;line-height:1.7;">
+    Mahmoudi Lahijani, S.A. (2026). 
+    <em>Decision-Centred Modelling (DCM): 
+    Foundations, Architecture, and Application to 
+    Industrial Process Heat Decarbonisation.</em> 
+    Open framework platform. Auckland University 
+    of Technology. 
+    https://ahmad-mahmoudi-coder.github.io/DCM/
+  </p>
+  <p style="font-size:0.75rem;color:#6b7a8d;
+  margin-top:0.5rem;">
+    For the primary research paper: Mahmoudi Lahijani 
+    et al. (2025), <em>Renewable and Sustainable 
+    Energy Reviews</em>. Available at Google Scholar 
+    (343 citations).
+  </p>
+</div>
+
+<div style="border-top:1px solid #dde6ef;
+padding-top:1rem;margin-top:1.5rem;
+font-size:0.78rem;color:#888;">
+  <p>
+    <em>Seyed Ahmad Mahmoudi Lahijani — 2026</em>
+    &nbsp;·&nbsp;
+    Auckland University of Technology
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM">
+    Repository</a>
+    &nbsp;·&nbsp;
+    <a href="references/glossary.html">Glossary</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Ahmad-Mahmoudi-coder/DCM/discussions" 
+    target="_blank">Contribute</a>
+  </p>
+  <p style="margin-top:0.3rem;">
+    Licensed under 
+    <a href="https://creativecommons.org/licenses/by/4.0/" 
+    target="_blank">CC BY 4.0</a> — 
+    content may be reused with attribution.
+  </p>
+</div>
 
 </div>
 ```
