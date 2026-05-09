@@ -13,7 +13,6 @@ book:
   
   repo-url: https://github.com/Ahmad-Mahmoudi-coder/DCM
   repo-actions: [edit, issue]
-  number-sections: false
   
   chapters:
     - index.qmd
