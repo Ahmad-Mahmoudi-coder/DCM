@@ -6,6 +6,8 @@ book:
   title: "Decision-Centred Modelling (DCM)"
   subtitle: "Foundations, Architecture, and Application 
              to Industrial Process Heat Decarbonisation"
+  description: "A governed, modular analytical environment for long-horizon planning under deep uncertainty—demonstrated on NZ industrial process heat decarbonisation; 93/100 futures favour biomass over full electrification when regional infrastructure costs are visible."
+  image: "assets/figures/diagram1-architecture-stack.png"
   author:
     - name: Seyed Ahmad Mahmoudi Lahijani
   date: "2026"
@@ -13,6 +15,13 @@ book:
   
   repo-url: https://github.com/Ahmad-Mahmoudi-coder/DCM
   repo-actions: [edit, issue]
+  site-url: "https://ahmad-mahmoudi-coder.github.io/DCM/"
+  open-graph: true
+  twitter-card:
+    card-style: summary_large_image
+    title: "Decision-Centred Modelling (DCM)"
+    description: "A decision-centred analytical framework for deep uncertainty planning. Live platform with interactive proof of concept."
+    image: "assets/figures/diagram1-architecture-stack.png"
   
   chapters:
     - index.qmd
@@ -99,17 +108,6 @@ format:
       light: default
       dark: darkly
     css: assets/custom.css
-    include-in-header:
-      - text: |
-          <meta property="og:title" content="Decision-Centred Modelling (DCM)">
-          <meta property="og:description" content="A governed, modular analytical environment for long-horizon planning under deep uncertainty. Demonstrated on NZ industrial process heat decarbonisation. 93 of 100 futures favour the biomass pathway over full electrification when regional infrastructure costs are visible.">
-          <meta property="og:type" content="website">
-          <meta property="og:url" content="https://ahmad-mahmoudi-coder.github.io/DCM/">
-          <meta property="og:image" content="https://ahmad-mahmoudi-coder.github.io/DCM/assets/figures/diagram1-architecture-stack.png">
-          <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:title" content="Decision-Centred Modelling (DCM)">
-          <meta name="twitter:description" content="A decision-centred analytical framework for deep uncertainty planning. Live platform with interactive proof of concept.">
-          <meta name="description" content="Decision-Centred Modelling (DCM): a governed, modular framework for infrastructure planning under deep uncertainty. Built on DMDU methodology. Demonstrated in New Zealand industrial process heat decarbonisation.">
     fig-width: 8
     fig-height: 5
     fig-align: center
