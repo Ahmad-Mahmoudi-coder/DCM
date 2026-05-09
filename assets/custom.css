@@ -23,6 +23,15 @@ h1, h2, h3, h4, h5 {
   border-right: 1px solid #dde6ef;
 }
 
+.sidebar-item .chapter-number,
+.sidebar-item .chapter-sep {
+  display: none;
+}
+
+.sidebar-item-text {
+  padding-left: 0 !important;
+}
+
 .sidebar-title {
   font-size: 0.82rem;
   font-weight: 700;
@@ -32,13 +41,6 @@ h1, h2, h3, h4, h5 {
 
 .sidebar-item-text {
   font-size: 0.8rem;
-}
-
-/* Hide chapter numbers in sidebar navigation only (keep in-page numbering) */
-#quarto-sidebar .chapter-number,
-#quarto-sidebar .chapter-numbering,
-#quarto-sidebar span[data-chapter-number] {
-  display: none !important;
 }
 
 /* === HERO: works within book layout column, 
