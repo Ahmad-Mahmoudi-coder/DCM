@@ -19,6 +19,42 @@ subtitle: "LP, MILP, and Stochastic Optimisation, Role Summary"
 
 ## SM-2.2-A: LP, MILP, and Stochastic Optimisation, Role Summary
 
+### The Four Classes of Policy: Powell's Unified Framework
+
+Any method for making decisions in a sequential decision problem — from a simple dispatch rule to a full stochastic programme — can be classified into one of four policy classes, or a hybrid of several. This taxonomy was developed by Warren Powell at Princeton University and provides the organising framework for understanding what role each modelling method plays within the DCM analytical environment.
+
+A policy $\pi$ is any function that maps the current state $S_t$ to a decision $X_t$:
+
+$$X_t = X^\pi(S_t \mid \theta)$$
+
+where $\theta$ are tunable parameters and $f$ is the function class. Searching for the best policy means searching over both $f \in F$ (the class of function) and $\theta \in \Theta$ (the parameterisation within that class).
+
+The four classes are:
+
+**1. Policy Function Approximations (PFAs)**
+Any analytical function that returns a decision directly from the state variable, without solving an embedded optimisation problem. Rule-based dispatch logic — "run the base boiler first, then the peaking boiler" — is a PFA. Proportional dispatch, as used in the DCM PoC, is a PFA parameterised by the capacity fractions.
+
+**2. Cost Function Approximations (CFAs)**
+Parameterised versions of deterministic approximations that do not explicitly plan into the future. These modify the immediate cost function to produce better behaviour over time. A CFA is appropriate when the full stochastic programme is computationally intractable or when probabilities over futures cannot be specified — both conditions that apply in the DCM context.
+
+**3. Value Function Approximations (VFAs)**
+These approximate Bellman's value function, representing the expected future value of being in state $S_t$. VFAs are the domain of reinforcement learning and approximate dynamic programming. They are powerful for problems with large, well-characterised state spaces and available training data. In the DCM framework, VFAs become relevant as surrogate models (SM-2.3-A) that accelerate ensemble evaluation by approximating the dispatch module's outputs without running full simulations.
+
+**4. Direct Lookahead Approximations (DLAs)**
+These solve a deterministic or stochastic approximation of the decision problem over a finite horizon — the familiar rolling horizon procedure, parameterised to perform well under uncertainty. LP dispatch with a 24-hour or seasonal lookahead horizon is a DLA. Two-stage stochastic programming (Dantzig) is a DLA that explicitly represents one stage of future uncertainty.
+
+**The DCM framework in Powell's taxonomy**
+
+The current DCM proof-of-concept uses a PFA (proportional dispatch) for computational tractability across 100 futures. The LP dispatch module is a single-period DLA. The surrogate acceleration pathway in SM-2.3-A moves toward VFA territory. Powell's insight — that the policy class taxonomy produces better decisions than knowledge of any single method — is directly analogous to the DCM framework's argument: understanding the decision structure produces better outcomes than optimising any single assumed future.
+
+**The critical extension: deep uncertainty**
+
+Powell's unified formulation maximises expected cumulative contribution:
+
+$$\max_{f \in F}\max_{\theta \in \Theta} \mathbb{E}\left[\sum_{t=0}^T C_t\!\left(S_t, X^\pi(S_t|\theta)\right) \middle| S_0\right]$$
+
+The DCM framework is the appropriate generalisation for conditions where the expectation operator $\mathbb{E}[\cdot]$ cannot be applied — because probabilities over futures are not available or not defensible. Under deep uncertainty, the expectation is replaced by the robustness, regret, and satisficing metrics defined in SM-1.2-A. Powell's four policy classes apply in both regimes; only the evaluative standard changes.
+
 Linear programming minimises a linear objective function subject to linear inequality and equality constraints. The standard form is:
 
 $$
@@ -51,3 +87,9 @@ Table SM-2.2-A: Optimisation classes and their roles in the framework
 | MILP | LP with binary/integer variables | None (deterministic given future) | Site unit commitment; upgrade option selection in grid RDM | Computationally expensive at scale; no structural uncertainty |
 | Two-stage stochastic | MILP or LP with scenario-weighted recourse | Parametric, probabilistic | Operational scheduling with known demand variability | Requires probability distribution; not suitable for deep uncertainty in outer ensemble |
 | Outer DMDU ensemble | Any inner optimisation across paired futures | Structural, deep | Full pathway comparison across 64 futures | Not a single optimisation — requires the architecture of Modules 3 and 6 |
+
+::: {.callout-tip}
+## Connection: Powell and the DMDU Tradition
+
+Powell's framework originates in stochastic optimisation — a domain where probability distributions over futures are assumed available. The DMDU tradition (Lempert, Walker, Kwakkel) addresses the case where they are not. The DCM framework bridges the two: it uses Powell's policy class taxonomy to structure the analytical choices, and the DMDU evaluative standards (regret, robustness, satisficing) to replace expected value when probabilities cannot be specified. See SM-1.4-A for the intellectual lineage and SM-1.2-A for the formal definitions.
+:::
