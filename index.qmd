@@ -2,6 +2,8 @@
 title: "Decision-Centred Modelling (DCM)"
 page-layout: full
 toc: false
+title-block-banner: false
+title-block-style: none
 ---
 
 ```{=html}
@@ -240,12 +242,12 @@ toc: false
       <td>A researcher in DMDU, integrated assessment, 
       or systems modelling</td>
       <td><a href="manuscript/module-1-foundations.html">
-      Module 1: Foundations</a></td>
+      Part I: The Decision Problem</a></td>
     </tr>
     <tr>
       <td>An energy system modeller or tool developer</td>
       <td><a href="manuscript/module-3-architecture.html">
-      Module 3: Architecture</a></td>
+      Part II: The Framework Design</a></td>
     </tr>
     <tr>
       <td>A practitioner or corporate strategist</td>
@@ -261,7 +263,7 @@ toc: false
       <td>Interested in the full proof of concept 
       and results</td>
       <td><a href="manuscript/module-6-poc.html">
-      Module 6: Proof of Concept</a></td>
+      Part IV: The Proof of Concept</a></td>
     </tr>
     <tr>
       <td>Evaluating the intellectual contribution</td>
@@ -303,11 +305,23 @@ margin:2rem 0 1.5rem 0;">
     https://ahmad-mahmoudi-coder.github.io/DCM/
   </p>
   <p style="font-size:0.75rem;color:#6b7a8d;
-  margin-top:0.5rem;">
-    For the primary research paper: Mahmoudi Lahijani 
-    et al. (2025), <em>Renewable and Sustainable 
-    Energy Reviews</em>. Available at Google Scholar 
-    (343 citations).
+  margin-top:0.75rem;line-height:1.7;">
+    <strong style="color:#0f3460;font-size:0.72rem;
+    text-transform:uppercase;letter-spacing:0.06em;">
+    Related publications
+    </strong><br>
+    Lahijani, A.M., Protheroe, M.D. &amp; 
+    Gschwendtner, M. (2025). A modelling tool 
+    selection for decarbonising industrial process 
+    heat systems. <em>Renewable &amp; Sustainable 
+    Energy Reviews</em>, 210, 115149.
+    <a href="https://doi.org/10.1016/j.rser.2024.115149"
+    target="_blank" style="color:#5dade2;">
+    doi:10.1016/j.rser.2024.115149</a><br>
+    <span style="color:#8899aa;font-size:0.72rem;">
+    PhD thesis and preprint: available after 
+    examination and submission (2026).
+    </span>
   </p>
 </div>
 

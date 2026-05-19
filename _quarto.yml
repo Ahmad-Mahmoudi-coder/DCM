@@ -32,70 +32,88 @@ book:
         - front-matter/ai-acknowledgement.qmd
         - front-matter/preamble.qmd
         - front-matter/navigation-guide.qmd
-    - part: "The Framework — Part I: Foundations"
+
+    - part: "I — The Decision Problem"
       chapters:
-        - manuscript/part-intro-framework-1.qmd
-        - manuscript/module-0-orientation.qmd
-        - manuscript/module-1-foundations.qmd
-        - text: "SM-1.1-A — Philosophical Lineage"
+        - text: "Why This Framework Exists"
+          href: manuscript/part-intro-framework-1.qmd
+        - text: "What Decisions Require"
+          href: manuscript/module-0-orientation.qmd
+        - text: "Deep Uncertainty and Its Consequences"
+          href: manuscript/module-1-foundations.qmd
+        - text: "Philosophical Roots of DMDU"
           href: manuscript/sub-modules/sm-1-1A-philosophical-lineage.qmd
-        - text: "SM-1.2-A — Mathematical Foundations"
-          href: manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd
-        - text: "SM-1.4-A — Decision Theory"
+        - text: "From Von Neumann to Satisficing"
           href: manuscript/sub-modules/sm-1-4A-decision-theory.qmd
-        - text: "SM-1.7-A — Requirements Mapping"
+        - text: "Seven Requirements for Defensible Analysis"
           href: manuscript/sub-modules/sm-1-7A-requirements-mapping.qmd
-        - manuscript/module-2-modelling.qmd
-        - text: "SM-2.2-A — Optimisation Roles"
-          href: manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd
-        - text: "SM-2.3-A — Surrogate Validation"
-          href: manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd
-        - text: "SM-2.4-A — Scenario Discovery"
-          href: manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
-    - part: "The Framework — Part II: Architecture"
+        - text: "Mathematical Notation and Formal Definitions"
+          href: manuscript/sub-modules/sm-1-2A-mathematical-foundations.qmd
+
+    - part: "II — The Framework Design"
       chapters:
-        - manuscript/part-intro-framework-2.qmd
-        - manuscript/module-3-architecture.qmd
-        - text: "SM-3.5-A — Artefact Schema"
+        - text: "Architecture Overview"
+          href: manuscript/part-intro-framework-2.qmd
+        - text: "Modular Architecture and Artefact Governance"
+          href: manuscript/module-3-architecture.qmd
+        - text: "Artefact Schema Specification"
           href: manuscript/sub-modules/sm-3-5A-artefact-schema.qmd
-        - text: "SM-3.7-A — Backbone Implementation"
+        - text: "Backbone Implementation"
           href: manuscript/sub-modules/sm-3-7A-backbone-implementation.qmd
-        - text: "SM-3.8-A — AI/ML Governance"
+        - text: "AI and ML Governance Layer"
           href: manuscript/sub-modules/sm-3-8A-aiml-governance.qmd
-        - manuscript/module-4-domain.qmd
-        - text: "SM-4.4-A — System-Level Regret"
+        - text: "Available Modelling Methods"
+          href: manuscript/module-2-modelling.qmd
+        - text: "Optimisation Roles and Selection"
+          href: manuscript/sub-modules/sm-2-2A-optimisation-roles.qmd
+        - text: "Surrogate Modelling and Validation"
+          href: manuscript/sub-modules/sm-2-3A-surrogate-validation.qmd
+        - text: "Scenario Discovery — PRIM and CART"
+          href: manuscript/sub-modules/sm-2-4A-scenario-discovery.qmd
+        - text: "Domain Translation to Process Heat"
+          href: manuscript/module-4-domain.qmd
+        - text: "System-Level Regret"
           href: manuscript/sub-modules/sm-4-4A-system-regret.qmd
-    - part: "The Evidence"
+
+    - part: "III — The New Zealand Evidence"
       chapters:
-        - manuscript/part-intro-evidence.qmd
-        - manuscript/module-5-nz-context.qmd
-        - text: "SM-5.2-A — Mararoa-Waimea GXP"
+        - text: "NZ Industrial Context"
+          href: manuscript/part-intro-evidence.qmd
+        - text: "New Zealand Energy System Overview"
+          href: manuscript/module-5-nz-context.qmd
+        - text: "GXP Hosting Capacity — Mararoa-Waimea"
           href: manuscript/sub-modules/sm-5-2A-gxp-capacity.qmd
-        - text: "SM-5.3-A — Biomass Resource"
+        - text: "Biomass Resource Assessment — Southland"
           href: manuscript/sub-modules/sm-5-3A-biomass-supply.qmd
-        - text: "SM-5.4-A — NZ ETS History"
+        - text: "NZ Emissions Trading Scheme History"
           href: manuscript/sub-modules/sm-5-4A-ets-history.qmd
-        - text: "SM-5.5-A — TIMES-NZ Ecosystem"
+        - text: "TIMES-NZ 3.0 — Scenarios and Uncertainty"
           href: manuscript/sub-modules/sm-5-5A-times-nz-ecosystem.qmd
-    - part: "The Evidence — Part IV: Proof of Concept"
+
+    - part: "IV — The Proof of Concept"
       chapters:
-        - manuscript/module-6-poc.qmd
-        - text: "SM-6.2-A — PoC Pipeline"
+        - text: "Edendale PoC — Overview and Results"
+          href: manuscript/module-6-poc.qmd
+        - text: "Pipeline Architecture and Data Flow"
           href: manuscript/sub-modules/sm-6-2A-poc-pipeline.qmd
-        - text: "SM-6.3-B — DemandPack Methods"
+        - text: "Demand Profile Construction"
           href: manuscript/sub-modules/sm-6-3B-demandpack-methods.qmd
-        - text: "SM-6.4-C — Site Interface Contract"
+        - text: "Site-to-GXP Interface Contract"
           href: manuscript/sub-modules/sm-6-4C-site-interface-contract.qmd
-        - text: "SM-6.5-D — SignalsPack Contract"
+        - text: "SignalsPack Specification"
           href: manuscript/sub-modules/sm-6-5D-signalspack-contract.qmd
-        - text: "SM-6.6-E — PyPSA Regional Module"
+        - text: "Regional Extension — PyPSA Module Design"
           href: manuscript/sub-modules/sm-6-6E-pypsa-module-design.qmd
-        - text: "SM-6.8-F — Validation Records"
+        - text: "Validation and Acceptance Records"
           href: manuscript/sub-modules/sm-6-8F-validation-records.qmd
-    - part: "Synthesis — Part V: Extension and Conclusions"
+
+    - part: "V — Synthesis and Extension"
       chapters:
-        - manuscript/part-intro-synthesis.qmd
-        - manuscript/module-7-synthesis.qmd
+        - text: "Synthesis Overview"
+          href: manuscript/part-intro-synthesis.qmd
+        - text: "Eleven Propositions and Intellectual Contribution"
+          href: manuscript/module-7-synthesis.qmd
+
     - part: "Reference"
       chapters:
         - references/glossary.qmd

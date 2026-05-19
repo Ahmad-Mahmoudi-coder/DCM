@@ -1,8 +1,20 @@
 ---
-title: "The Framework — Part II: Architecture"
+title: "The Framework Design"
 ---
-Modules 3 and 4 specify the analytical architecture: 
-modular decomposition, the thin-waist artefact 
-exchange, the governed backbone, and the energy-domain 
-translation layer that makes the framework 
-instantiable in practice.
+
+This cluster specifies how the analytical 
+environment is built — the artefact governance 
+architecture, the thin-waist interface design, 
+the modelling methods available at each layer, 
+and the domain translation that makes the 
+framework instantiable in a specific industrial 
+context.
+
+The architecture section (modular design and 
+artefact governance) is the intellectual core 
+of the framework. The modelling methods section 
+provides the toolbox. Domain translation shows 
+how general principles become specific to 
+industrial process heat.
+
+---

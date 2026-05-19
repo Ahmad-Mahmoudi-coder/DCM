@@ -1,8 +1,27 @@
 ---
-title: "The Framework — Part I: Foundations"
+title: "Why This Framework Exists"
 ---
-Modules 0 through 2 establish the conceptual and 
-methodological foundations: why decision-centred 
-boundary setting is necessary, why conventional 
-tools are insufficient, and what kind of 
-mathematical and modelling architecture is required.
+
+This cluster addresses a foundational question: 
+why do conventional analytical approaches fail 
+for long-horizon infrastructure decisions, and 
+what conditions make a different framework 
+necessary?
+
+The sections here establish the intellectual 
+terrain — the philosophical roots of decision 
+analysis under deep uncertainty, the seven 
+requirements that any defensible decision 
+support environment must satisfy, and the 
+formal mathematical foundations that underpin 
+the evaluative standards of regret, robustness, 
+and satisficing used throughout the framework.
+
+Readers already fluent in DMDU methodology 
+can read the [seven requirements](
+sm-1-7A-requirements-mapping.html) and 
+[mathematical notation](
+sm-1-2A-mathematical-foundations.html) 
+and proceed directly to Part II.
+
+---
