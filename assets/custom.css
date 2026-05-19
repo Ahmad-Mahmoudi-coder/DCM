@@ -418,3 +418,12 @@ pre {
   margin: 1.25rem 0;
   overflow-x: auto;
 }
+
+/* Suppress Quarto auto-title on landing page.
+   Hero banner provides the title instead. */
+#title-block-header.quarto-title-block {
+  display: none !important;
+}
+.quarto-title-block {
+  display: none !important;
+}
