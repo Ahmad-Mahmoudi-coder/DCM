@@ -9,7 +9,7 @@ subtitle: "Energy Systems, Process Heat, and Coupled Evaluation"
 | Field | Content |
 |---|---|
 | **Purpose** | Translates the general architecture of Module 3 into the specific domain of coupled energy systems and industrial process heat, establishing the domain-specific vocabulary, module classes, and evaluation frames used in Modules 5 and 6 |
-| **Assumes** | Module 3 in full; §1.5 and §1.6 for the evaluative standards that the coupled evaluation logic extends |
+| **Assumes** | Module 3 in full; Module 1 §1.5 and Module 1 §1.6 for the evaluative standards that the coupled evaluation logic extends |
 | **Contributes** | Energy-domain vocabulary; the layered energy system structure; industrial process heat as the anchor exemplar and its analytical demands; the energy-domain module classes and artefact family mapping; the coupled stakeholder evaluation logic; and the system-level regret concept with its policy implications |
 | **Passes to** | Module 5 (New Zealand context and empirical grounding); Module 6 (proof-of-concept instantiation) |
 | **Can be read independently** | Partially — §4.1 and §4.2 can be read independently; §4.3 and §4.4 require Module 3 |
@@ -116,7 +116,7 @@ Table 4.3 summarises the energy domain module classes, their generic layer mappi
 |---|---|
 | **Tier** | Section |
 | **Status** | ✓ Complete |
-| **Assumes** | §1.5, §1.6, §4.3 |
+| **Assumes** | Module 1 §1.5, Module 1 §1.6, §4.3 |
 | **Contributes** | Develops the multi-perspective evaluation logic and the system-level regret concept, and establishes the three evaluation frames used in the Edendale proof of concept |
 | **Skip condition** | Skip if reader accepts multi-perspective evaluation from §1.6; SM-4.4-A has the formal derivation |
 | **Passes to** | Module 6 §6.9 |

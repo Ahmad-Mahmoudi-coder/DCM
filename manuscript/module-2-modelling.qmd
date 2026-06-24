@@ -9,7 +9,7 @@ subtitle: "Tools, Machinery, and the Logic of Exploration"
 | Field | Content |
 |---|---|
 | **Purpose** | Establishes what analytical tools are available to generate decision-relevant consequences, how each tool should be used, and what limits the toolkit has that point toward the architecture of Module 3 |
-| **Assumes** | Module 1, particularly the seven requirements of §1.7 |
+| **Assumes** | Module 1, particularly the seven requirements of Module 1 §1.7 |
 | **Contributes** | The decision-relevant boundary logic for representation; the reframing of optimisation as consequence generation; simulation and surrogate emulation as exploratory and scalability tools; the decision-critical future selection logic; and the governance gap that makes an architectural response necessary |
 | **Passes to** | Module 3 (the architecture that organises these tools); Module 5 (domain-specific tool choices); Module 6 (PoC tool implementations) |
 | **Can be read independently** | Yes, after Module 1 |
@@ -25,7 +25,7 @@ subtitle: "Tools, Machinery, and the Logic of Exploration"
 |---|---|
 | **Tier** | Section |
 | **Status** | ✓ Complete |
-| **Assumes** | Module 1, particularly §1.7 |
+| **Assumes** | Module 1, particularly Module 1 §1.7 |
 | **Contributes** | Establishes that the three primary choices in model representation, boundary, scale, and aggregation level, are governed by decision relevance rather than physical convenience or computational tractability |
 | **Skip condition** | Skip if reader already applies decision-relevant boundary logic in modelling practice |
 | **Passes to** | §2.2, §2.3, §2.4 |

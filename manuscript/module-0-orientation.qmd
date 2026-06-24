@@ -45,7 +45,7 @@ The reversal carries a memorable formulation, introduced here and maintained thr
 | **Assumes** | §0.1 |
 | **Contributes** | Translates the abstract architectural wrong into a specific, empirically grounded gap in the analytical landscape for New Zealand process heat decarbonisation |
 | **Skip condition** | Skip if reader is already familiar with the NZ process heat analytical landscape; proceed to §0.3 |
-| **Passes to** | §0.3, Module 5, §6.9 |
+| **Passes to** | §0.3, Module 5, Module 6 §6.9 |
 | **Sub-Modules here** | None |
 :::
 

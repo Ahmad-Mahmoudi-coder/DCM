@@ -166,7 +166,7 @@ Site Module Interface Contract and Schema Tables — SiteConfigArtefact, ResultA
 |---|---|
 | **Tier** | Section |
 | **Status** | ✓ Complete |
-| **Assumes** | §6.2, Module 3 §3.4, §3.5 |
+| **Assumes** | §6.2, Module 3 §3.4, Module 3 §3.5 |
 | **Contributes** | Documents the Edendale GXP repository as the thin-waist interface instantiation, the frozen schema version 0.1.0 contract, and the SHA256 hash integrity mechanism |
 | **Skip condition** | Skip if the GXP interface concept is already understood; process when verifying the SignalsPack integrity or planning a module upgrade |
 | **Passes to** | §6.6 |

@@ -9,7 +9,7 @@ subtitle: "Conditions, Constraints, and Empirical Grounding"
 | Field | Content |
 |---|---|
 | **Purpose** | Grounds the framework's architectural decisions in the specific New Zealand conditions that motivate the proof of concept, tracing each uncertain driver in the FutureArtefact ensemble to an observable, documented New Zealand condition |
-| **Assumes** | Module 4, particularly §4.2 (industrial process heat) and §4.4 (system-level regret); Module 3 §3.5 for the FutureArtefact schema |
+| **Assumes** | Module 4, particularly Module 4 §4.2 (industrial process heat) and Module 4 §4.4 (system-level regret); Module 3 §3.5 for the FutureArtefact schema |
 | **Contributes** | The structural disconnect between the renewable grid and the fossil heat sector; the GXP hosting capacity concept and Southland-specific constraints; biomass as a competing pathway with its resource and logistics characteristics; policy uncertainty as a structural analytical driver; the positioning of RETA, GIDI, and TIMES-NZ as complementary analytical tools; and the explicit mapping of every FutureArtefact uncertain driver to an observable NZ condition |
 | **Passes to** | Module 6 (proof-of-concept implementation and results) |
 | **Can be read independently** | Partially — §5.1 and §5.2 can be read independently with Module 4; §5.6 requires Module 3 §3.5 |

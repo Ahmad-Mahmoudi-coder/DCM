@@ -1,5 +1,5 @@
 ---
-title: "Synthesis — Part V: Extension and Conclusions"
+title: "Module 7: Extension and Synthesis"
 ---
 Module 7 extends the framework beyond the 
 proof-of-concept context, states the eleven 

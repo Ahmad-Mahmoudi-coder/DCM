@@ -40,11 +40,29 @@ powershell -File scripts\export-draft.ps1 V##-description
 
 ## PHASE 1 — Immediate (current session)
 
-- [ ] Run render + publish (all recent changes go live)
-- [ ] Export V05 DOCX and verify figures appear
-- [ ] Upload V05 to Claude for content review
-- [ ] Enable GitHub Discussions (github.com/Ahmad-Mahmoudi-coder/DCM/settings)
-- [ ] Set up Claude Project with V05 DOCX
+- [x] Run render + publish (all recent changes go live)
+- [x] Export V05 DOCX and verify figures appear
+- [x] Upload V05 to Claude for content review
+- [x] Enable GitHub Discussions (github.com/Ahmad-Mahmoudi-coder/DCM/settings)
+- [x] Set up Claude Project with V05 DOCX
+
+## Layer 1 Milestone — Completed 2026-05-08
+
+- [x] 40 sections rendering cleanly (35 original + 5 part intros)
+- [x] Two-part structure: Framework (Parts I-II) / Evidence (Parts III-IV) / Synthesis (Part V)
+- [x] All 7 figures present in DOCX (4 PNGs + 3 diagrams)
+- [x] Mathematical foundations sub-module SM-1.2-A with 157 math elements
+- [x] Part introduction pages visible in DOCX
+- [x] Margin note CSS (Distill-style aside elements)
+- [x] Site published at https://ahmad-mahmoudi-coder.github.io/DCM/
+- [x] V07 DOCX = 1,279.5 KB (all content present)
+- [x] CLAIMS.md expert attestation register created
+- [x] WORKPLAN.md tracking document in place
+
+Layer 1 gap remaining:
+- [ ] Citations — references.bib is empty (Phase 2 priority 1)
+- [ ] SVG diagram3 deleted from site — verify HTML still shows correctly
+- [ ] arXiv preprint draft (Phase 4)
 
 ---
 

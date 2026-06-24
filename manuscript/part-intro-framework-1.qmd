@@ -22,6 +22,6 @@ can read the [seven requirements](
 sm-1-7A-requirements-mapping.html) and 
 [mathematical notation](
 sm-1-2A-mathematical-foundations.html) 
-and proceed directly to Part II.
+and proceed directly to Module 3.
 
 ---

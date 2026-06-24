@@ -9,7 +9,7 @@ subtitle: "Modular Decomposition, Artefacts, and Governed Persistence"
 | Field | Content |
 |---|---|
 | **Purpose** | Defines the structural core of the framework: how modules are decomposed, how they exchange governed artefacts through thin-waist interfaces, and how those artefacts persist in a queryable backbone |
-| **Assumes** | Modules 1 and 2 — the seven requirements of §1.7 are the specification this module's architecture is designed to satisfy; the tools of Module 2 are what the architecture organises |
+| **Assumes** | Modules 1 and 2 — the seven requirements of Module 1 §1.7 are the specification this module's architecture is designed to satisfy; the tools of Module 2 are what the architecture organises |
 | **Contributes** | Modular decomposition logic; the five-layer architecture; the thin-waist artefact exchange; the seven canonical artefact families and their schema design principles; artefact lifecycle and acceptance gate logic; the analytical backbone design; and AI/ML artefact governance |
 | **Passes to** | Module 4 (domain translation of these architectural concepts); Module 6 (proof-of-concept instantiation) |
 | **Can be read independently** | Partially — the rationale for architectural choices is clearest after Modules 1 and 2, but the section on artefact families (§3.5) can serve as a reference independently |

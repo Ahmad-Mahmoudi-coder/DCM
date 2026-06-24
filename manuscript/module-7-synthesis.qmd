@@ -11,7 +11,7 @@ subtitle: "Beyond Process Heat and the Closing Argument"
 | **Purpose** | Extends the framework beyond the Edendale proof of concept, states its limits honestly, synthesises its intellectual contribution in eleven propositions, and closes the argument |
 | **Assumes** | Modules 0 through 6 in full |
 | **Contributes** | Corporate-scale and national-scale extension architectures; multi-domain instantiation logic; the adaptive decision laboratory vision; honest statement of four current limits; eleven propositions; and the closing argument |
-| **Passes to** | Nothing — this is the terminal module |
+| **Passes to** | References (Glossary) |
 | **Can be read independently** | §7.6 and §7.7 can be read as a standalone statement of the framework's intellectual claim; all other sections benefit from Modules 1 through 6 |
 | **Sub-Modules** | None |
 :::
