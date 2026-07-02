@@ -409,7 +409,12 @@ The current PoC demonstrates Layer 1 treatment only.
 Layer 2 structural scenario branching and Layer 3
 stress testing are specified in the framework
 architecture and represent natural extensions of the
-current implementation.
+current implementation. The current proof of concept
+addresses parametric uncertainty only; structural
+scenario branching and stress-testing of deep narrative
+conditions are architectural capabilities within the
+framework design, available for future instantiation but
+scoped out of the present demonstration.
 
 ---
 
@@ -505,6 +510,8 @@ the headroom multiplier continues to dominate regret
 sensitivity in subsequent ensemble designs.
 
 ### 5.4 Results
+
+A conventional site-boundary analysis of the two pathways produces the following comparison: the BB pathway carries a private cost advantage of NZD 14.2M per year (NZD 76.8M versus NZD 91.0M annual site cost under the declared PoC cost components), while the EB pathway eliminates direct CO2 emissions entirely. From within the facility boundary, both pathways require grid connection and neither triggers a visible infrastructure cost consequence. A site-boundary analysis frames the decision as a cost-emissions trade-off with no further structural complexity.
 
 **From within the facility boundary,** the comparison
 appears as a cost-emissions trade-off with no
