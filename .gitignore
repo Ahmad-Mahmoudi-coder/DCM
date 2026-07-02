@@ -49,3 +49,5 @@ secrets/
 
 # Draft exports — kept locally, not tracked in git
 drafts/
+
+~$*.docx
